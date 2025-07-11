@@ -548,6 +548,31 @@ function App() {
         </div>
       </section>
 
+      {/* Website Section */}
+      <section className="py-16 px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-gray-900/95 backdrop-blur-sm border border-gray-700/30 rounded-3xl p-8 md:p-12 text-center shadow-2xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Want to Know More?
+            </h2>
+            <p className="text-gray-300 text-lg md:text-xl mb-8 leading-relaxed">
+              To learn more about our games and discover what our studio is all about, visit our official 
+              website for the latest updates, behind-the-scenes content, and exclusive insights into our 
+              development process.
+            </p>
+            <a
+              href="https://alphaden.club"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            >
+              <Globe className="w-5 h-5" />
+              Visit alphaden.club
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Skills Section */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
