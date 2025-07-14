@@ -571,7 +571,7 @@ function App() {
                   <ExternalLink className="w-5 h-5" />
                 </a>
               </div>
-              <p className="text-gray-700 mb-4 text-sm">Addictive 3D puzzle game with satisfying bolt mechanics!</p>
+              <p className="text-gray-700 mb-4 text-sm">Screw Sort Puzzle is a hyper‑casual 3D unscrewing game that blends satisfying tactile mechanics with light strategic challenge. Tap to pop colorful bolts from charming voxel models, sort them into matching slots, and reveal hidden surprises inside adorable objects—from donuts and rockets to castles.</p>
               <div className="flex space-x-1">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
