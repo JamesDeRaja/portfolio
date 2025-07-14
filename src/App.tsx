@@ -542,7 +542,7 @@ function App() {
             Featured Games! 🎮✨
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-            <a href="https://play.google.com/store/apps/details?id=com.AlphaDen.BoltPop3D" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-br from-amber-200 via-orange-200 to-yellow-300 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 relative overflow-hidden block cursor-pointer">
+            <a href="https://boltpop3d.netlify.app/" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-br from-amber-200 via-orange-200 to-yellow-300 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 relative overflow-hidden block cursor-pointer">
               {/* Lightning pattern background */}
               <div className="absolute inset-0 opacity-10">
                 <div className="absolute top-4 left-4 text-yellow-600">
@@ -579,7 +579,7 @@ function App() {
               </div>
             </a>
 
-            <a href="https://play.google.com/store/apps/details?id=com.AlphaDen.AuqaSpin" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-br from-cyan-200 via-blue-200 to-indigo-300 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 relative overflow-hidden block cursor-pointer">
+            <a href="https://aquaspin.netlify.app/" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-br from-cyan-200 via-blue-200 to-indigo-300 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 relative overflow-hidden block cursor-pointer">
               {/* Water droplet pattern background */}
               <div className="absolute inset-0 opacity-15">
                 <div className="absolute top-6 right-6 text-blue-500">
@@ -616,7 +616,7 @@ function App() {
               </div>
             </a>
 
-            <a href="https://play.google.com/store/apps/details?id=com.AlphaDen.CollectFlowers" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-br from-pink-200 via-rose-200 to-green-200 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 relative overflow-hidden block cursor-pointer">
+            <a href="https://collectflowers.netlify.app/" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-br from-pink-200 via-rose-200 to-green-200 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 relative overflow-hidden block cursor-pointer">
               {/* Flower pattern background */}
               <div className="absolute inset-0 opacity-12">
                 <div className="absolute top-4 right-4 text-pink-500">
@@ -653,7 +653,7 @@ function App() {
               </div>
             </a>
 
-            <a href="https://play.google.com/store/apps/details?id=com.AlphaDen.NewspaperMaker" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-br from-slate-200 via-gray-200 to-blue-200 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 relative overflow-hidden block cursor-pointer">
+            <a href="https://newspapermaker.netlify.app/" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-br from-slate-200 via-gray-200 to-blue-200 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 relative overflow-hidden block cursor-pointer">
               {/* Newspaper/document pattern background */}
               <div className="absolute inset-0 opacity-10">
                 <div className="absolute top-6 left-6 text-slate-600">
@@ -706,7 +706,7 @@ function App() {
               development process.
             </p>
             <a
-              href="https://alphaden.club"
+              href="mailto:james@alphaden.com"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
@@ -986,14 +986,22 @@ function App() {
       <footer className="bg-gray-900 text-white py-12 border-t-8 border-yellow-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center mb-6">
-            <div className="w-12 h-12 bg-white/0 rounded-full shadow-lg backdrop-blur-sm overflow-hidden">
-              <img 
-                src="/images/DP.png" 
-                alt="Profile Picture" 
-                className="w-12 h-12 rounded-full object-cover"
-              />
-            </div>
-            <span className="text-2xl font-black">James De Raja! </span>
+            <div className="flex items-center">
+  {/* Icon */}
+  <div className="w-12 h-12 rounded-full overflow-hidden shadow-lg mr-2">
+    <img 
+      src="/images/DP.png" 
+      alt="Profile Picture" 
+      className="w-full h-full object-cover"
+    />
+  </div>
+
+  {/* Text block — left-aligned and vertically centered */}
+  <div className="flex flex-col justify-center text-left">
+    <span className="text-xl font-black leading-tight text-white">James De Raja</span>
+    <span className="text-sm font-semibold text-gray-400 leading-tight">@jamesderaja</span>
+  </div>
+</div>
           </div>
           <p className="text-gray-300 font-bold text-lg">
             🎮 Turning Ideas into Amazing Games! | 🚀 Powered by AI & Innovation! | 🏢 Founder of AlphaDen Studio! ✨
