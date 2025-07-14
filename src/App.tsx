@@ -38,7 +38,11 @@ import {
   Square,
   Triangle,
   Hexagon,
-  Diamond
+  Diamond,
+  Box,
+  Waves,
+  FlowerIcon,
+  FileText
 } from 'lucide-react';
 
 const FloatingShape = ({ children, className = "", delay = 0 }) => (
@@ -124,7 +128,11 @@ const GameCard = ({ title, url, description, icon: Icon }) => (
     <div className="flex items-center justify-between mb-4">
       <div className="flex items-center space-x-3">
         <div className="w-12 h-12 bg-white/30 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm">
-          <Icon className="w-7 h-7 text-white" />
+          <img 
+            src="/images/Icon_3.png" 
+            alt="Custom Icon" 
+            className="w-6 h-6"
+          />
         </div>
         <h3 className="text-xl font-black text-white drop-shadow-lg">{title}</h3>
       </div>
@@ -219,9 +227,13 @@ function App() {
       <header className="bg-white/90 backdrop-blur-md shadow-2xl sticky top-0 z-50 border-b-4 border-yellow-400">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center shadow-xl transform hover:scale-110 transition-transform border-4 border-white">
-                <Gamepad2 className="w-8 h-8 text-white" />
+            <div className="flex items-center space-x-2">
+              <div className="w-20 h-20 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center mr-4 shadow-xl border-4 border-white">
+                <img 
+                  src="/images/DP copy.png" 
+                  alt="James - Game Developer" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <h1 className="text-3xl font-black bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
@@ -288,7 +300,7 @@ function App() {
           <StatCard icon={Download} number="1M+" label="Downloads 📥" color="bg-gradient-to-br from-green-400 to-teal-500" />
           <StatCard icon={Eye} number="1M+" label="YouTube Views 👀" color="bg-gradient-to-br from-red-400 to-pink-500" />
           <StatCard icon={Trophy} number="13+" label="Years Experience 🏆" color="bg-gradient-to-br from-yellow-400 to-orange-500" />
-          <StatCard icon={DollarSign} number="$2500+" label="Per Prototype 💰" color="bg-gradient-to-br from-purple-400 to-pink-500" />
+          <StatCard icon={Gamepad2} number="1000+" label="GAMES PUBLISHED" color="bg-gradient-to-br from-purple-400 to-pink-500" />
         </div>
       </section>
 
@@ -378,8 +390,13 @@ function App() {
                 <div className="relative z-10">
                   <div className="flex flex-col lg:flex-row items-center justify-between mb-8">
                     <div className="flex items-center space-x-6 mb-6 lg:mb-0">
-                      <div className="w-24 h-24 bg-white/30 rounded-3xl flex items-center justify-center shadow-2xl border-4 border-white/50 backdrop-blur-sm">
-                        <Gamepad2 className="w-12 h-12 text-white" />
+                      <div className="w-24 h-24 bg-white/30 rounded-3xl flex items-center justify-center shadow-2xl border-4 border-white/50 backdrop-blur-sm relative">
+                        <img 
+                          src="/images/Bolt.png" 
+                          alt="Game Developer Icon" 
+                          className="w-full h-full object-cover rounded-2xl absolute inset-0 z-0"
+                        />
+                        <div className="absolute inset-0 rounded-3xl border-4 border-white/50 z-10 pointer-events-none"></div>
                       </div>
                       <div>
                         <h3 className="text-5xl font-black mb-2 drop-shadow-lg">Bolt Pop 3D! ⚡</h3>
@@ -388,7 +405,7 @@ function App() {
                           {[...Array(5)].map((_, i) => (
                             <Star key={i} className="w-6 h-6 text-yellow-300 mr-1 fill-current drop-shadow" />
                           ))}
-                          <span className="text-white font-black ml-3 text-lg drop-shadow">50K+ Downloads! 🎉</span>
+                          <span className="text-white font-black ml-3 text-lg drop-shadow">1K+ Downloads! 🎉</span>
                         </div>
                       </div>
                     </div>
@@ -410,7 +427,7 @@ function App() {
                   
                   <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                     <div className="bg-white/20 border-4 border-white/40 rounded-2xl p-6 text-center backdrop-blur-sm shadow-xl">
-                      <div className="text-3xl font-black mb-2 drop-shadow">50K+</div>
+                      <div className="text-3xl font-black mb-2 drop-shadow">1K+</div>
                       <div className="text-sm text-white/90 font-bold drop-shadow">Downloads! 📥</div>
                     </div>
                     <div className="bg-white/20 border-4 border-white/40 rounded-2xl p-6 text-center backdrop-blur-sm shadow-xl">
@@ -475,7 +492,12 @@ function App() {
                   
                   <div className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-3xl p-8 text-center border-4 border-white shadow-xl">
                     <div className="aspect-video bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 relative overflow-hidden border-4 border-white shadow-xl">
-                      <div className="absolute inset-0 bg-black/20"></div>
+                      <div className="absolute inset-0" style={{
+                        backgroundImage: 'url("/images/ChatGPT Image May 16, 2025, 09_06_15 PM.png")',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat'
+                      }}></div>
                       <a href="https://www.youtube.com/watch?v=CF7oYY80WUM" 
                          target="_blank" rel="noopener noreferrer"
                          className="relative z-10 bg-white/30 hover:bg-white/40 w-20 h-20 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-125 border-4 border-white/50 backdrop-blur-sm shadow-xl">
@@ -520,30 +542,153 @@ function App() {
             Featured Games! 🎮✨
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <GameCard 
-              title="Bolt Pop 3D ⚡" 
-              url="https://play.google.com/store/apps/details?id=com.AlphaDen.BoltPop3D"
-              description="Addictive 3D puzzle game with satisfying bolt mechanics! 🧩"
-              icon={Zap}
-            />
-            <GameCard 
-              title="Aqua Spin 💧" 
-              url="https://play.google.com/store/apps/details?id=com.AlphaDen.AuqaSpin"
-              description="Refreshing water-based puzzle adventure! 🌊"
-              icon={Droplets}
-            />
-            <GameCard 
-              title="Collect Flowers 🌸" 
-              url="https://play.google.com/store/apps/details?id=com.AlphaDen.CollectFlowers"
-              description="Beautiful flower collection game! 🌺"
-              icon={Flower}
-            />
-            <GameCard 
-              title="Newspaper Maker 📰" 
-              url="https://play.google.com/store/apps/details?id=com.AlphaDen.NewspaperMaker"
-              description="Creative newspaper design simulator! ✍️"
-              icon={Newspaper}
-            />
+            <div className="bg-gradient-to-br from-amber-200 via-orange-200 to-yellow-300 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 relative overflow-hidden">
+              {/* Lightning pattern background */}
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute top-4 left-4 text-yellow-600">
+                  <Zap className="w-8 h-8 animate-pulse" />
+                </div>
+                <div className="absolute top-12 right-8 text-orange-600">
+                  <Zap className="w-6 h-6 animate-pulse" style={{ animationDelay: '0.5s' }} />
+                </div>
+                <div className="absolute bottom-8 left-12 text-amber-600">
+                  <Zap className="w-7 h-7 animate-pulse" style={{ animationDelay: '1s' }} />
+                </div>
+              </div>
+              <div className="flex items-start justify-between mb-4">
+                <div className="flex items-center space-x-3">
+                  <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
+                    {/* <Box className="w-6 h-6 text-white" /> */}
+                    <img 
+  src="/images/Bolt.png" 
+  alt="Bolt Pop" 
+  className="w-10 h-10 object-cover rounded-full"
+/>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800">Bolt Pop 3D</h3>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=com.AlphaDen.BoltPop3D" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-800 transition-colors">
+                  <ExternalLink className="w-5 h-5" />
+                </a>
+              </div>
+              <p className="text-gray-700 mb-4 text-sm">Addictive 3D puzzle game with satisfying bolt mechanics!</p>
+              <div className="flex space-x-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-cyan-200 via-blue-200 to-indigo-300 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 relative overflow-hidden">
+              {/* Water droplet pattern background */}
+              <div className="absolute inset-0 opacity-15">
+                <div className="absolute top-6 right-6 text-blue-500">
+                  <Droplets className="w-6 h-6 animate-bounce" />
+                </div>
+                <div className="absolute top-16 left-8 text-cyan-500">
+                  <Droplets className="w-4 h-4 animate-bounce" style={{ animationDelay: '0.3s' }} />
+                </div>
+                <div className="absolute bottom-12 right-12 text-indigo-500">
+                  <Droplets className="w-5 h-5 animate-bounce" style={{ animationDelay: '0.6s' }} />
+                </div>
+              </div>
+              <div className="flex items-start justify-between mb-4">
+                <div className="flex items-center space-x-3">
+                  <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center shadow-lg">
+                    {/* <Waves className="w-6 h-6 text-white" /> */}
+                    <img 
+  src="/images/AquaSpin.png" 
+  alt="Aqua Spin" 
+  className="w-10 h-10 object-cover rounded-full"
+/>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800">Aqua Spin</h3>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=com.AlphaDen.AuqaSpin" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-800 transition-colors">
+                  <ExternalLink className="w-5 h-5" />
+                </a>
+              </div>
+              <p className="text-gray-700 mb-4 text-sm">Refreshing water-based puzzle adventure!</p>
+              <div className="flex space-x-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-pink-200 via-rose-200 to-green-200 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 relative overflow-hidden">
+              {/* Flower pattern background */}
+              <div className="absolute inset-0 opacity-12">
+                <div className="absolute top-4 right-4 text-pink-500">
+                  <Flower className="w-8 h-8 animate-spin opacity-10" style={{ animationDuration: '8s' }} />
+                </div>
+                <div className="absolute top-20 left-6 text-rose-500">
+                  <Flower className="w-6 h-6 animate-spin opacity-10" style={{ animationDuration: '6s', animationDelay: '1s' }} />
+                </div>
+                <div className="absolute bottom-6 right-8 text-green-500">
+                  <Flower className="w-7 h-7 animate-spin opacity-10" style={{ animationDuration: '10s', animationDelay: '2s' }} />
+                </div>
+              </div>
+              <div className="flex items-start justify-between mb-4">
+                <div className="flex items-center space-x-3">
+                  <div className="w-12 h-12 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full flex items-center justify-center shadow-lg">
+                    {/* <FlowerIcon className="w-6 h-6 text-white" /> */}
+                    <img 
+  src="/images/Flower.png" 
+  alt="Collect Flowers 3D" 
+  className="w-10 h-10 object-cover rounded-full"
+/>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800">Collect Flowers</h3>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=com.AlphaDen.CollectFlowers" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-800 transition-colors">
+                  <ExternalLink className="w-5 h-5" />
+                </a>
+              </div>
+              <p className="text-gray-700 mb-4 text-sm">Beautiful flower collection game!</p>
+              <div className="flex space-x-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-slate-200 via-gray-200 to-blue-200 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 relative overflow-hidden">
+              {/* Newspaper/document pattern background */}
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute top-6 left-6 text-slate-600">
+                  <FileText className="w-8 h-8" />
+                </div>
+                <div className="absolute top-4 right-8 text-gray-600">
+                  <FileText className="w-6 h-6 rotate-12" />
+                </div>
+                <div className="absolute bottom-8 right-6 text-blue-600">
+                  <FileText className="w-7 h-7 -rotate-6" />
+                </div>
+              </div>
+              <div className="flex items-start justify-between mb-4">
+                <div className="flex items-center space-x-3">
+                  <div className="w-12 h-12 bg-gradient-to-br from-slate-400 to-gray-500 rounded-full flex items-center justify-center shadow-lg">
+                    {/* <Newspaper className="w-6 h-6 text-white" /> */}
+                    <img 
+                      src="/images/News.png" 
+                      alt="Newspaper Maker" 
+                      className="w-10 h-10 object-cover rounded-full"
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800">Newspaper Maker</h3>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=com.AlphaDen.NewspaperMaker" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-800 transition-colors">
+                  <ExternalLink className="w-5 h-5" />
+                </a>
+              </div>
+              <p className="text-gray-700 mb-4 text-sm">Creative newspaper design simulator!</p>
+              <div className="flex space-x-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -748,7 +893,7 @@ function App() {
               icon={Dumbbell} 
               title="Fitness Beast! 💪" 
               items={[
-                "10,000+ steps daily! 🚶‍♂️",
+                "25,000+ PR steps 🚶‍♂️",
                 "Bench: 100kg PR! 🏋️‍♂️",
                 "Squats: 80kg PR! 🦵", 
                 "Deadlift: 160kg PR! 💀"
@@ -841,10 +986,14 @@ function App() {
       <footer className="bg-gray-900 text-white py-12 border-t-8 border-yellow-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center mb-6">
-            <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center mr-4 shadow-xl border-4 border-white">
-              <Gamepad2 className="w-6 h-6 text-white" />
+            <div className="w-12 h-12 bg-white/0 rounded-full shadow-lg backdrop-blur-sm overflow-hidden">
+              <img 
+                src="/images/DP.png" 
+                alt="Profile Picture" 
+                className="w-12 h-12 rounded-full object-cover"
+              />
             </div>
-            <span className="text-2xl font-black">James De Raja! 🎮</span>
+            <span className="text-2xl font-black">James De Raja! </span>
           </div>
           <p className="text-gray-300 font-bold text-lg">
             🎮 Turning Ideas into Amazing Games! | 🚀 Powered by AI & Innovation! | 🏢 Founder of AlphaDen Studio! ✨
