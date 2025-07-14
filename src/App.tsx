@@ -542,7 +542,7 @@ function App() {
             Featured Games! 🎮✨
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-            <div className="bg-gradient-to-br from-amber-200 via-orange-200 to-yellow-300 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 relative overflow-hidden">
+            <a href="https://play.google.com/store/apps/detail" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-br from-amber-200 via-orange-200 to-yellow-300 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 relative overflow-hidden block cursor-pointer">
               {/* Lightning pattern background */}
               <div className="absolute inset-0 opacity-10">
                 <div className="absolute top-4 left-4 text-yellow-600">
@@ -577,9 +577,9 @@ function App() {
                   <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
                 ))}
               </div>
-            </div>
+            </a>
 
-            <div className="bg-gradient-to-br from-cyan-200 via-blue-200 to-indigo-300 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 relative overflow-hidden">
+            <a href="https://play.google.com/store/apps/details?id=com.AlphaDen.AuqaSpin" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-br from-cyan-200 via-blue-200 to-indigo-300 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 relative overflow-hidden block cursor-pointer">
               {/* Water droplet pattern background */}
               <div className="absolute inset-0 opacity-15">
                 <div className="absolute top-6 right-6 text-blue-500">
@@ -608,15 +608,15 @@ function App() {
                   <ExternalLink className="w-5 h-5" />
                 </a>
               </div>
-              <p className="text-gray-700 mb-4 text-sm">Unleash your puzzle mastery in Aqua Spin—a fresh twist on Tetris-style gameplay where gravity becomes your rival. Each level drops buoyant raft pieces onto a swaying platform, and it’s up to you to rotate and stack them with precision. One misstep and your raft tilts or topples—get it right and it locks perfectly in place.</p>
+              <p className="text-gray-700 mb-4 text-sm">Unleash your puzzle mastery in Aqua Spin—a fresh twist on Tetris-style gameplay where gravity becomes your rival. Each level drops buoyant raft pieces onto a swaying platform, and it's up to you to rotate and stack them with precision. One misstep and your raft tilts or topples—get it right and it locks perfectly in place.</p>
               <div className="flex space-x-1">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
                 ))}
               </div>
-            </div>
+            </a>
 
-            <div className="bg-gradient-to-br from-pink-200 via-rose-200 to-green-200 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 relative overflow-hidden">
+            <a href="https://play.google.com/store/apps/details?id=com.AlphaDen.CollectFlowers" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-br from-pink-200 via-rose-200 to-green-200 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 relative overflow-hidden block cursor-pointer">
               {/* Flower pattern background */}
               <div className="absolute inset-0 opacity-12">
                 <div className="absolute top-4 right-4 text-pink-500">
@@ -645,15 +645,15 @@ function App() {
                   <ExternalLink className="w-5 h-5" />
                 </a>
               </div>
-              <p className="text-gray-700 mb-4 text-sm">In Collect Flowers, vibrant petals fall from above—and it’s up to you to catch and sort them into the right pots. Sounds simple? Not quite. Shifting pots, sneaky obstacles, and fast drops test your timing and focus. Nail the combo for a satisfying bloom. Miss it, and your bouquet falls apart.</p>
+              <p className="text-gray-700 mb-4 text-sm">In Collect Flowers, vibrant petals fall from above—and it's up to you to catch and sort them into the right pots. Sounds simple? Not quite. Shifting pots, sneaky obstacles, and fast drops test your timing and focus. Nail the combo for a satisfying bloom. Miss it, and your bouquet falls apart.</p>
               <div className="flex space-x-1">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
                 ))}
               </div>
-            </div>
+            </a>
 
-            <div className="bg-gradient-to-br from-slate-200 via-gray-200 to-blue-200 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 relative overflow-hidden">
+            <a href="https://play.google.com/store/apps/details?id=com.AlphaDen.NewspaperMaker" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-br from-slate-200 via-gray-200 to-blue-200 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 relative overflow-hidden block cursor-pointer">
               {/* Newspaper/document pattern background */}
               <div className="absolute inset-0 opacity-10">
                 <div className="absolute top-6 left-6 text-slate-600">
@@ -682,13 +682,13 @@ function App() {
                   <ExternalLink className="w-5 h-5" />
                 </a>
               </div>
-              <p className="text-gray-700 mb-4 text-sm">Unleash your inner editor in this bite‑sized newspaper simulation. Each level presents a cheeky or dramatic image—race the clock to craft the perfect headline by picking words from a jumbled pool. Get it right and watch your front page print; mess up, and readers won’t bite.</p>
+              <p className="text-gray-700 mb-4 text-sm">Unleash your inner editor in this bite‑sized newspaper simulation. Each level presents a cheeky or dramatic image—race the clock to craft the perfect headline by picking words from a jumbled pool. Get it right and watch your front page print; mess up, and readers won't bite.</p>
               <div className="flex space-x-1">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
                 ))}
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>
