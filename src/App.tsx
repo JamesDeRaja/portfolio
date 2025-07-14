@@ -645,7 +645,7 @@ function App() {
                   <ExternalLink className="w-5 h-5" />
                 </a>
               </div>
-              <p className="text-gray-700 mb-4 text-sm">Step into a blooming puzzle world where timing and precision are everything. In Collect Flowers, vibrant petals fall from above—and it’s your job to catch and sort them into the right pots. Sounds simple? Think again. With moving targets, tricky obstacles, and unexpected flower patterns, every level tests your reflexes and focus. Nail the placement for a perfect floral combo. Miss it, and watch your bouquet go bust.</p>
+              <p className="text-gray-700 mb-4 text-sm">In Collect Flowers, vibrant petals fall from above—and it’s up to you to catch and sort them into the right pots. Sounds simple? Not quite. Shifting pots, sneaky obstacles, and fast drops test your timing and focus. Nail the combo for a satisfying bloom. Miss it, and your bouquet falls apart.</p>
               <div className="flex space-x-1">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
