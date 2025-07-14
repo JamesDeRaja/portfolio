@@ -541,7 +541,9 @@ function App() {
           <h2 className="text-5xl font-black text-center mb-12 bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
             Featured Games! 🎮✨
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+            href="https://play.google.com/store/apps/details?id=com.AlphaDen.BoltPop3D" 
+            target="_blank"
             <div className="bg-gradient-to-br from-amber-200 via-orange-200 to-yellow-300 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 relative overflow-hidden">
               {/* Lightning pattern background */}
               <div className="absolute inset-0 opacity-10">
@@ -608,7 +610,7 @@ function App() {
                   <ExternalLink className="w-5 h-5" />
                 </a>
               </div>
-              <p className="text-gray-700 mb-4 text-sm">Refreshing water-based puzzle adventure!</p>
+              <p className="text-gray-700 mb-4 text-sm">Unleash your puzzle mastery in Aqua Spin—a fresh twist on Tetris-style gameplay where gravity becomes your rival. Each level drops buoyant raft pieces onto a swaying platform, and it’s up to you to rotate and stack them with precision. One misstep and your raft tilts or topples—get it right and it locks perfectly in place.</p>
               <div className="flex space-x-1">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
@@ -645,7 +647,7 @@ function App() {
                   <ExternalLink className="w-5 h-5" />
                 </a>
               </div>
-              <p className="text-gray-700 mb-4 text-sm">Beautiful flower collection game!</p>
+              <p className="text-gray-700 mb-4 text-sm">Step into a blooming puzzle world where timing and precision are everything. In Collect Flowers, vibrant petals fall from above—and it’s your job to catch and sort them into the right pots. Sounds simple? Think again. With moving targets, tricky obstacles, and unexpected flower patterns, every level tests your reflexes and focus. Nail the placement for a perfect floral combo. Miss it, and watch your bouquet go bust.</p>
               <div className="flex space-x-1">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
@@ -682,7 +684,7 @@ function App() {
                   <ExternalLink className="w-5 h-5" />
                 </a>
               </div>
-              <p className="text-gray-700 mb-4 text-sm">Creative newspaper design simulator!</p>
+              <p className="text-gray-700 mb-4 text-sm">Unleash your inner editor in this bite‑sized newspaper simulation. Each level presents a cheeky or dramatic image—race the clock to craft the perfect headline by picking words from a jumbled pool. Get it right and watch your front page print; mess up, and readers won’t bite.</p>
               <div className="flex space-x-1">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
