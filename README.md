@@ -1,50 +1,71 @@
-# 🎮 AlphaDen — Games Built to Tingle Your Brain
+# 🧠 James De Raja – Puzzle Game Developer Portfolio
 
-Welcome to the official source of **AlphaDen**, the puzzle-focused game studio led by veteran game developer **James** — with over 13 years of experience, 10+ years in Unity, and nearly **1 million downloads** across mobile platforms.
+Welcome to the official portfolio repo of **James De Raja**, a solo game developer and Unity expert with over a decade of experience building hit puzzle games for mobile.
 
-From hyper-casual hits to hybrid-casual experiments, every project here is crafted with logic, love, and laser-sharp attention to detail.
-
----
-
-## 🚀 What This Website Is
-
-This is **AlphaDen's official portfolio and showcase site**, built to highlight:
-- 🧩 **Our best games** — featuring top-performing puzzle mechanics
-- 🔧 **Behind-the-scenes tech** — like AI-driven workflows and Unity automation
-- 🧠 **New ideas** — where innovation meets execution, backed by data
-- 📲 **Publisher-ready prototypes** — with top-tier polish and hit potential
-
-Whether you're a **publisher**, **collaborator**, or just a curious player — you’ll get a real sense of how we build games that *hook hard and scale smart*.
+🌐 **Live Portfolio:** [james.alphaden.club](https://james.alphaden.club)  
+🏢 **Game Studio:** [AlphaDen Games → alphaden.club](https://alphaden.club)
 
 ---
 
-## 👤 Who’s Behind AlphaDen?
+## 🎮 Who I Am
 
-Meet **James** — developer, designer, marketer, strategist.
+Hi, I'm **James** — game designer, coder, creative technologist, and the mind behind **AlphaDen**.
 
-Over the years, he has:
-- 🏗️ Built complete games solo — from concept to launch
-- 📊 Partnered with **Lion Studios**, **Supersonic**, **Voodoo**
-- 📈 Managed game metrics (CPI, retention, LTV) with deep precision
-- 🛠️ Solved complex integration and product design problems at **Zoho**, leading teams and working directly with platforms like Google and Slack
-- 💡 Spearheaded innovations in polling logic, error handling, marketing analytics, and more
-
-To know more about James and his personal portfolio, visit 👉 [**james.alphaden.club**](https://james.alphaden.club)
+- 🧩 13+ years building mobile games (Unity, Android, iOS)
+- ⚡ 10+ years with Unity – full-stack game development
+- 🧪 Published with **Lion Studios**, **Supersonic**, **Voodoo**
+- 📈 1,000,000+ lifetime downloads across platforms
+- 🤖 I integrate AI & automation to scale creativity and workflows
+- 💼 Full-time engineer at **Zoho** – API integrations, team lead, system design
 
 ---
 
-## 🌐 Want More?
+## 🚀 Games I’ve Built
 
-Explore more games, ideas, and partnership opportunities on our main site:  
-👉 [**alphaden.club**](https://alphaden.club)
+| Game | Publisher | Description |
+|------|-----------|-------------|
+| **Bolt Pop 3D** | Lion Studios | Addictive screw puzzle game with satisfying bolt mechanics |
+| **Crayon Rush 3D** | Supersonic Studios | Race-to-color game with vibrant fill effects and polish |
+| **Aqua Spin** | Indie (AlphaDen) | Raft-physics puzzle with smooth controls and rafts |
 
-Or get in touch if you're:
-- A **publisher** looking for your next hit
-- A **collaborator** seeking game dev magic
-- Or just someone who appreciates satisfying puzzles 😉
+> 🎮 **See all my projects here →** [james.alphaden.club/#featured](https://james.alphaden.club/#featured)
 
 ---
 
-Thanks for visiting. Stay curious. Stay playful.
+## 🧠 What I Specialize In
 
-🧠✨
+### Game Dev
+- Unity, C#, Firebase, PlayFab
+- Spine, particle systems, level balancing
+- CPI optimization, retention metrics, ad monetization
+
+### Web / Tools
+- React + Vite + TypeScript
+- Tailwind CSS, Framer Motion, Node.js (Vercel Functions)
+- AI: Midjourney, Gemini API, Notion AI, OpenAI, custom workflows
+
+### Product + Leadership
+- Led teams at Zoho, designed scalable Intergrations
+- Built error handling, marketing automation, and client integrations
+- Created internal tooling that shaped product direction
+
+---
+
+## 🧩 About AlphaDen
+
+**AlphaDen** is my personal game studio where I prototype, test, and publish hyper-casual and hybrid puzzle games.
+
+- 🛠️ Over 1000 prototypes built
+- 🔁 Automations for fast iteration
+- 🤝 Published with top mobile publishers
+- 🌎 Website: [alphaden.club](https://alphaden.club)
+
+---
+
+## 🛠 Tech Stack
+
+```bash
+Frontend:  React, Vite, Tailwind CSS, Framer Motion
+Backend:   Node.js, Vercel Serverless Functions
+Games:     Unity, C#, Spine, Firebase
+AI Tools:  Midjourney, OpenAI, Gemini API, Bolt
