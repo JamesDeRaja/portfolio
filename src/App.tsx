@@ -597,10 +597,10 @@ function App() {
                   <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center shadow-lg">
                     {/* <Waves className="w-6 h-6 text-white" /> */}
                     <img 
-  src="/images/AquaSpin.png" 
-  alt="Aqua Spin" 
-  className="w-10 h-10 object-cover rounded-full"
-/>
+                      src="/images/AquaSpin.png" 
+                      alt="Aqua Spin" 
+                      className="w-10 h-10 object-cover rounded-full"
+                    />
                   </div>
                   <h3 className="text-xl font-bold text-gray-800">Aqua Spin</h3>
                 </div>
@@ -634,10 +634,10 @@ function App() {
                   <div className="w-12 h-12 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full flex items-center justify-center shadow-lg">
                     {/* <FlowerIcon className="w-6 h-6 text-white" /> */}
                     <img 
-  src="/images/Flower.png" 
-  alt="Collect Flowers 3D" 
-  className="w-10 h-10 object-cover rounded-full"
-/>
+                      src="/images/Flower.png" 
+                      alt="Collect Flowers 3D" 
+                      className="w-10 h-10 object-cover rounded-full"
+                    />
                   </div>
                   <h3 className="text-xl font-bold text-gray-800">Collect Flowers</h3>
                 </div>
