@@ -3,7 +3,7 @@
 Welcome to the official portfolio repo of **James De Raja**, a solo game developer and Unity expert with over a decade of experience building hit puzzle games for mobile.
 
 🌐 **Live Portfolio:** [james.alphaden.club](https://james.alphaden.club)  
-🏢 **Game Studio:** [AlphaDen](https://alphaden.club)
+🏢 **Game Studio:** [AlphaDen(alphaden.club)](https://alphaden.club)
 
 ---
 
