@@ -542,8 +542,6 @@ function App() {
             Featured Games! 🎮✨
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-            href="https://play.google.com/store/apps/details?id=com.AlphaDen.BoltPop3D" 
-            target="_blank"
             <div className="bg-gradient-to-br from-amber-200 via-orange-200 to-yellow-300 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 relative overflow-hidden">
               {/* Lightning pattern background */}
               <div className="absolute inset-0 opacity-10">
