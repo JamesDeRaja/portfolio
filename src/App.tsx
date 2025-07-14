@@ -560,10 +560,10 @@ function App() {
                   <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
                     {/* <Box className="w-6 h-6 text-white" /> */}
                     <img 
-  src="/images/Bolt.png" 
-  alt="Bolt Pop" 
-  className="w-10 h-10 object-cover rounded-full"
-/>
+                      src="/images/Bolt.png" 
+                      alt="Bolt Pop" 
+                      className="w-10 h-10 object-cover rounded-full"
+                    />
                   </div>
                   <h3 className="text-xl font-bold text-gray-800">Bolt Pop 3D</h3>
                 </div>
