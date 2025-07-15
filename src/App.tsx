@@ -255,7 +255,7 @@ function App() {
               <a href="https://www.instagram.com/jamesderaja" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-pink-600 transition-colors transform hover:scale-125 duration-300" title="Instagram">
                 <Instagram className="w-7 h-7" />
               </a>
-              <a href="https://alphaden.club" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-green-600 transition-colors transform hover:scale-125 duration-300" title="AlphaDen Studio">
+              <a href="https://www.alphaden.club/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-green-600 transition-colors transform hover:scale-125 duration-300" title="AlphaDen Studio">
                 <Globe className="w-7 h-7" />
               </a>
             </div>
@@ -281,7 +281,7 @@ function App() {
             🎮 13+ Years of Mobile Game Magic ✨ | 🚀 1M+ Downloads 📱 | 🤖 AI-Powered Fun! 
           </p>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto font-medium">
-            Founder & Owner of <a href="https://alphaden.club" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:text-purple-800 font-black underline decoration-wavy decoration-pink-400">AlphaDen Studio</a> 🏢
+            Founder & Owner of <a href="https://www.alphaden.club/" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:text-purple-800 font-black underline decoration-wavy decoration-pink-400">AlphaDen Studio</a> 🏢
           </p>
           <div className="flex flex-wrap justify-center gap-6 mb-12">
             <a href="https://play.google.com/store/apps/dev?id=8149791665541446457" target="_blank" rel="noopener noreferrer" 
@@ -973,7 +973,7 @@ function App() {
               <Instagram className="w-6 h-6 mr-2" />
               Instagram! 📸
             </a>
-            <a href="https://alphaden.club" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.alphaden.club/" target="_blank" rel="noopener noreferrer"
                className="bg-white/30 text-white px-8 py-4 rounded-full font-black hover:bg-white/40 transition-all duration-300 transform hover:scale-110 flex items-center border-4 border-white/50 backdrop-blur-sm shadow-xl">
               <Globe className="w-6 h-6 mr-2" />
               AlphaDen Studio! 🏢
