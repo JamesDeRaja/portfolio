@@ -285,7 +285,7 @@ function App() {
   href="https://www.alphaden.club/" 
   target="_blank" 
   rel="noopener noreferrer" 
-  className="relative inline-block font-black text-purple-700 hover:text-purple-900 transition-transform duration-100 transform hover:rotate-4"
+  className="relative inline-block font-black text-purple-700 hover:text-purple-900 transition-transform duration-200 transform hover:rotate-6"
 >
   <span className="relative z-10 px-1">AlphaDen Studio</span>
   <span 
