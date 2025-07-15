@@ -281,7 +281,18 @@ function App() {
             🎮 13+ Years of Mobile Game Magic ✨ | 🚀 1M+ Downloads 📱 | 🤖 AI-Powered Fun! 
           </p>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto font-medium">
-            Founder & Owner of <a href="https://www.alphaden.club/" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:text-purple-800 font-black underline decoration-wavy decoration-pink-400">AlphaDen Studio</a> 🏢
+            Founder & Owner of <a 
+  href="https://www.alphaden.club/" 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  className="relative inline-block font-black text-purple-600 hover:text-purple-800"
+>
+  <span className="relative z-10">AlphaDen Studio</span>
+  <span 
+    className="absolute inset-0 bg-pink-300 skew-y-[-2deg] rounded-sm -z-0" 
+    style={{ transform: 'skewY(-2deg)', boxShadow: 'inset 0 -4px 0 rgba(0,0,0,0.1)' }}
+  ></span>
+</a> 🏢
           </p>
           <div className="flex flex-wrap justify-center gap-6 mb-12">
             <a href="https://play.google.com/store/apps/dev?id=8149791665541446457" target="_blank" rel="noopener noreferrer" 
