@@ -554,7 +554,7 @@ function App() {
             Featured Games! 🎮✨
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-            <a href="https://boltpop3d.netlify.app/" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-br from-amber-200 via-orange-200 to-yellow-300 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 relative overflow-hidden block cursor-pointer">
+            <a href="https://play.google.com/store/apps/details?id=com.AlphaDen.BoltPop3D" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-br from-amber-200 via-orange-200 to-yellow-300 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 relative overflow-hidden block cursor-pointer">
               {/* Lightning pattern background */}
               <div className="absolute inset-0 opacity-10">
                 <div className="absolute top-4 left-4 text-yellow-600">
@@ -591,7 +591,7 @@ function App() {
               </div>
             </a>
 
-            <a href="https://aquaspin.netlify.app/" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-br from-cyan-200 via-blue-200 to-indigo-300 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 relative overflow-hidden block cursor-pointer">
+            <a href="https://play.google.com/store/apps/details?id=com.AlphaDen.AuqaSpin" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-br from-cyan-200 via-blue-200 to-indigo-300 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 relative overflow-hidden block cursor-pointer">
               {/* Water droplet pattern background */}
               <div className="absolute inset-0 opacity-15">
                 <div className="absolute top-6 right-6 text-blue-500">
@@ -628,7 +628,7 @@ function App() {
               </div>
             </a>
 
-            <a href="https://collectflowers.netlify.app/" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-br from-pink-200 via-rose-200 to-green-200 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 relative overflow-hidden block cursor-pointer">
+            <a href="https://play.google.com/store/apps/details?id=com.AlphaDen.CollectFlowers" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-br from-pink-200 via-rose-200 to-green-200 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 relative overflow-hidden block cursor-pointer">
               {/* Flower pattern background */}
               <div className="absolute inset-0 opacity-12">
                 <div className="absolute top-4 right-4 text-pink-500">
@@ -665,7 +665,7 @@ function App() {
               </div>
             </a>
 
-            <a href="https://newspapermaker.netlify.app/" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-br from-slate-200 via-gray-200 to-blue-200 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 relative overflow-hidden block cursor-pointer">
+            <a href="https://play.google.com/store/apps/details?id=com.AlphaDen.NewspaperMaker" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-br from-slate-200 via-gray-200 to-blue-200 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 relative overflow-hidden block cursor-pointer">
               {/* Newspaper/document pattern background */}
               <div className="absolute inset-0 opacity-10">
                 <div className="absolute top-6 left-6 text-slate-600">
