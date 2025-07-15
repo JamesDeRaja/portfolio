@@ -285,14 +285,15 @@ function App() {
   href="https://www.alphaden.club/" 
   target="_blank" 
   rel="noopener noreferrer" 
-  className="relative inline-block font-black text-purple-600 hover:text-purple-800"
+  className="relative inline-block font-black text-purple-700 hover:text-purple-900 transition-transform duration-200"
 >
-  <span className="relative z-10">AlphaDen Studio</span>
+  <span className="relative z-10 px-1">AlphaDen Studio</span>
   <span 
-    className="absolute inset-0 bg-pink-300 skew-y-[-2deg] rounded-sm -z-0" 
-    style={{ transform: 'skewY(-2deg)', boxShadow: 'inset 0 -4px 0 rgba(0,0,0,0.1)' }}
+    className="absolute inset-0 rounded-md -skew-y-3 bg-gradient-to-r from-pink-400 to-pink-500 shadow-inner -z-10"
+    style={{ boxShadow: 'inset 0 -4px 6px rgba(0, 0, 0, 0.08)' }}
   ></span>
-</a> 🏢
+</a>
+<span className="ml-1 text-xl align-middle">🏢</span>
           </p>
           <div className="flex flex-wrap justify-center gap-6 mb-12">
             <a href="https://play.google.com/store/apps/dev?id=8149791665541446457" target="_blank" rel="noopener noreferrer" 
