@@ -1,71 +1,90 @@
-# 🧠 James De Raja – Puzzle Game Developer Portfolio
+# Real-Time Performance Engineering Portfolio
 
-Welcome to the official portfolio repo of **James De Raja**, a solo game developer and Unity expert with over a decade of experience building hit puzzle games for mobile.
+Systems-focused performance engineering case studies in Unity (URP / OpenXR), centered on measurable frame budgets, rendering cost control, and XR constraints.
 
-🌐 **Live Portfolio:** [james.alphaden.club](https://james.alphaden.club)  
-🏢 **Game Studio:** [AlphaDen(alphaden.club)](https://alphaden.club)
-
----
-
-## 🎮 Who I Am
-
-Hi, I'm **James** — game designer, coder, creative technologist, and the mind behind **AlphaDen**.
-
-- 🧩 13+ years building mobile games (Unity, Android, iOS)
-- ⚡ 10+ years with Unity – full-stack game development
-- 🧪 Published with **Lion Studios**, **Supersonic**, **Voodoo**
-- 📈 1,000,000+ lifetime downloads across platforms
-- 🤖 I integrate AI & automation to scale creativity and workflows
-- 💼 Full-time engineer at **Zoho** – API integrations, team lead, system design
+This repository powers my personal site showcasing structured, profiler-backed experiments rather than creative portfolio pieces.
 
 ---
 
-## 🚀 Games I’ve Built
+## Focus Areas
 
-| Game | Publisher | Description |
-|------|-----------|-------------|
-| **Bolt Pop 3D** | Lion Studios | Addictive screw puzzle game with satisfying bolt mechanics |
-| **Crayon Rush 3D** | Supersonic Studios | Race-to-color game with vibrant fill effects and polish |
-| **Aqua Spin** | Indie (AlphaDen) | Raft-physics puzzle with smooth controls and rafts |
-
-> 🎮 **See all my projects here →** [james.alphaden.club/#featured](https://james.alphaden.club/#featured)
-
----
-
-## 🧠 What I Specialize In
-
-### Game Dev
-- Unity, C#, Firebase, PlayFab
-- Spine, particle systems, level balancing
-- CPI optimization, retention metrics, ad monetization
-
-### Web / Tools
-- React + Vite + TypeScript
-- Tailwind CSS, Framer Motion, Node.js (Vercel Functions)
-- AI: Midjourney, Gemini API, Notion AI, OpenAI, custom workflows
-
-### Product + Leadership
-- Led teams at Zoho, designed scalable Intergrations
-- Built error handling, marketing automation, and client integrations
-- Created internal tooling that shaped product direction
+- Frame timing discipline (11ms / 16ms budgets)
+- CPU vs GPU bottleneck isolation
+- Rendering cost control (overdraw, MSAA, transparency)
+- Submission overhead (instancing vs batching)
+- Frame pacing stability under stress
+- Reproducible measurement workflows
 
 ---
 
-## 🧩 About AlphaDen
+## XR Performance Stress Lab
 
-**AlphaDen** is my personal game studio where I prototype, test, and publish hyper-casual and hybrid puzzle games.
+A controlled benchmarking lab built in Unity to quantify rendering and frame stability under deterministic workloads.
 
-- 🛠️ Over 1000 prototypes built
-- 🔁 Automations for fast iteration
-- 🤝 Published with top mobile publishers
-- 🌎 Website: [alphaden.club](https://alphaden.club)
+### Goals
+
+- Measure baseline vs stress deltas
+- Classify bottlenecks (CPU-bound vs GPU-bound)
+- Document mitigation strategies
+- Produce reproducible profiling artifacts
+
+### Experiments
+
+- Baseline deterministic scene
+- Overdraw stress (stacked transparency)
+- MSAA bandwidth impact (0x / 2x / 4x)
+- Instancing vs non-instancing (submission overhead)
+- CPU stress simulation
+- Frame pacing variance under load
+
+Each experiment includes:
+
+- Measurement plan (CPU ms, GPU ms, draw calls, variance)
+- Hypothesis
+- Bottleneck classification
+- Mitigation notes
+- Profiler / Frame Debugger evidence
 
 ---
 
-## 🛠 Tech Stack
+## Tooling
 
-```bash
-Frontend:  React, Vite, Tailwind CSS, Framer Motion
-Backend:   Node.js, Vercel Serverless Functions
-Games:     Unity, C#, Spine, Firebase
-AI Tools:  Midjourney, OpenAI, Gemini API, Bolt
+- Unity Profiler
+- Frame Debugger
+- URP
+- OpenXR
+- RenderDoc (optional capture)
+- Custom runtime overlay (frame metrics HUD)
+
+---
+
+## Philosophy
+
+Performance engineering is not about maximizing FPS.
+
+It is about:
+
+- Protecting frame budgets
+- Reducing variance
+- Ensuring stability under load
+- Building repeatable diagnostics
+
+This repository reflects that mindset.
+
+---
+
+## Deployment
+
+Built with:
+
+- Vite
+- React
+- TypeScript
+- TailwindCSS
+- Deployed via Vercel
+
+---
+
+## Contact
+
+Open to senior-level real-time systems and rendering roles focused on measurable performance outcomes.
