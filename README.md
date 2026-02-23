@@ -87,7 +87,7 @@ Built with:
 
 ## Contact
 
-Email: jamesderaja@email.com  
+Email: jamesderaja@gmail.com  
 LinkedIn: https://www.linkedin.com/in/james-de-raja  
 Portfolio: https://james.alphaden.club
 
