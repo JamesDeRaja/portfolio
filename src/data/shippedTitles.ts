@@ -12,13 +12,13 @@ export const shippedTitles: ShippedTitle[] = [
     googlePlay: 'https://play.google.com/store/apps/details?id=com.AlphaDen.BoltPop3D'
   },
   {
-    name: 'Aqua Spin',
+    name: 'Snake Hole Puzzle',
     technicalFocus: 'Runtime performance balancing for effects-heavy loops under mobile GPU constraints.',
-    googlePlay: 'https://play.google.com/store/apps/details?id=com.AlphaDen.AuqaSpin'
+    googlePlay: 'https://play.google.com/store/apps/details?id=com.AlphaDen.SnakeHolePuzzleWormBlockBlast'
   },
   {
-    name: 'Newspaper Maker',
+    name: 'Sneaky Warriour',
     technicalFocus: 'Post-launch diagnostics and targeted optimization for stability across device tiers.',
-    googlePlay: 'https://play.google.com/store/apps/details?id=com.AlphaDen.NewspaperMaker'
+    googlePlay: 'https://apps.apple.com/us/app/sneaky-warriour-3d/id1626719884'
   }
 ];
