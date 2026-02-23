@@ -1,4 +1,5 @@
 import type { Experiment } from '../types';
+import ExperimentSpec from './ExperimentSpec';
 
 type ExperimentAccordionProps = {
   experiments: Experiment[];
@@ -15,13 +16,9 @@ export default function ExperimentAccordion({ experiments }: ExperimentAccordion
               <span className="text-xs text-slate-500 transition group-open:rotate-180">⌄</span>
             </div>
           </summary>
-          <div className="mt-4 grid gap-3 text-sm text-slate-700 sm:grid-cols-2">
-            <p><span className="font-semibold text-slate-900">Goal:</span> {experiment.goal}</p>
-            <p><span className="font-semibold text-slate-900">Toggle(s):</span> {experiment.toggles}</p>
-            <p><span className="font-semibold text-slate-900">Measured:</span> {experiment.measurements}</p>
-            <p><span className="font-semibold text-slate-900">Expected bottleneck:</span> {experiment.expectedBottleneck}</p>
-            <p className="sm:col-span-2"><span className="font-semibold text-slate-900">Mitigation notes:</span> {experiment.mitigation}</p>
-          </div>
+
+          <ExperimentSpec spec={experiment.spec} />
+
           <div className="mt-4 rounded-xl border border-slate-200 bg-slate-50 p-3 text-sm text-slate-700">
             <p className="font-semibold text-slate-900">Measurement Plan</p>
             <ul className="mt-2 list-disc space-y-1 pl-5">

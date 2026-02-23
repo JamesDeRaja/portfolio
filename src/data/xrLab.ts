@@ -9,56 +9,73 @@ export const xrExperiments: Experiment[] = [
   {
     id: 'baseline-scene',
     title: 'Baseline Scene',
-    goal: 'Establish a controlled baseline with deterministic camera motion and fixed content.',
-    toggles: 'Reference scene only, no stress toggles enabled.',
-    measurements: 'CPU ms, GPU ms, draw calls, frame time variance.',
-    expectedBottleneck: 'None expected; baseline should remain balanced.',
-    mitigation: 'Lock scene conditions and maintain deterministic benchmark path.'
+    spec: {
+      goal: 'Establish a controlled baseline with deterministic camera motion and fixed content.',
+      toggles: ['Reference scene only', 'No stress toggles enabled'],
+      controls: ['Fixed camera path', 'Constant scene content', 'Stable render settings'],
+      metrics: ['CPU ms', 'GPU ms', 'Draw calls', 'Frame time variance'],
+      hypothesis: 'None expected; baseline should remain balanced.',
+      notes: ['Lock scene conditions', 'Maintain deterministic benchmark path']
+    }
   },
   {
     id: 'overdraw-toggle',
     title: 'Overdraw Stress Toggle',
-    goal: 'Quantify fragment pressure impact caused by stacked transparent surfaces.',
-    toggles: 'Enable layered transparent quads and UI overlays.',
-    measurements: 'GPU ms increase, overdraw heatmap, draw calls.',
-    expectedBottleneck: 'GPU fragment bottleneck.',
-    mitigation: 'Reduce transparent overlap, simplify shaders, tighten UI layering.'
+    spec: {
+      goal: 'Quantify fragment pressure impact caused by stacked transparent surfaces.',
+      toggles: ['Enable layered transparent quads', 'Enable UI overlays'],
+      controls: ['Keep camera and geometry constant', 'Same shader/material baseline'],
+      metrics: ['GPU ms increase', 'Overdraw heatmap', 'Draw calls'],
+      hypothesis: 'GPU fragment bottleneck.',
+      notes: ['Reduce transparent overlap', 'Simplify shaders', 'Tighten UI layering']
+    }
   },
   {
     id: 'msaa-toggle',
     title: 'MSAA Toggle (0x/2x/4x)',
-    goal: 'Measure anti-aliasing quality-to-cost tradeoff under identical geometry.',
-    toggles: 'MSAA 0x, 2x, 4x runtime switch.',
-    measurements: 'GPU ms delta, frame variance under each MSAA level.',
-    expectedBottleneck: 'GPU rasterization cost growth.',
-    mitigation: 'Use lowest acceptable MSAA, tune render scale, combine with content simplification.'
+    spec: {
+      goal: 'Measure anti-aliasing quality-to-cost tradeoff under identical geometry.',
+      toggles: ['MSAA 0x', 'MSAA 2x', 'MSAA 4x'],
+      controls: ['Identical geometry', 'Fixed content and camera path'],
+      metrics: ['GPU ms delta', 'Frame variance by MSAA level'],
+      hypothesis: 'GPU rasterization cost growth.',
+      notes: ['Use lowest acceptable MSAA', 'Tune render scale', 'Combine with content simplification']
+    }
   },
   {
     id: 'instancing-vs-batching',
     title: 'Instancing vs Non-Instancing (300 meshes)',
-    goal: 'Compare draw submission overhead and GPU behavior across batching strategies.',
-    toggles: 'Switch between instanced and non-instanced render paths.',
-    measurements: 'CPU render thread ms, draw call count, GPU ms.',
-    expectedBottleneck: 'CPU submission pressure in non-instanced mode.',
-    mitigation: 'Favor instancing for repeated meshes and reduce material variants.'
+    spec: {
+      goal: 'Compare draw submission overhead and GPU behavior across batching strategies.',
+      toggles: ['Instanced render path', 'Non-instanced render path'],
+      controls: ['Same 300 mesh set', 'Same material and lighting context'],
+      metrics: ['CPU render thread ms', 'Draw call count', 'GPU ms'],
+      hypothesis: 'CPU submission pressure in non-instanced mode.',
+      notes: ['Favor instancing for repeated meshes', 'Reduce material variants']
+    }
   },
   {
     id: 'cpu-stress',
     title: 'CPU Stress Simulation',
-    goal: 'Stress gameplay-side scheduling to observe frame-time headroom erosion.',
-    toggles: 'Inject scripted workload in update loop.',
-    measurements: 'Main thread ms, render thread ms, spike frequency.',
-    expectedBottleneck: 'CPU main thread saturation.',
-    mitigation: 'Move expensive work off-frame, optimize update cadence, profile hotspots.'
+    spec: {
+      goal: 'Stress gameplay-side scheduling to observe frame-time headroom erosion.',
+      toggles: ['Inject scripted workload in update loop'],
+      controls: ['Render path unchanged', 'Scene content unchanged'],
+      metrics: ['Main thread ms', 'Render thread ms', 'Spike frequency'],
+      hypothesis: 'CPU main thread saturation.',
+      notes: ['Move expensive work off-frame', 'Optimize update cadence', 'Profile hotspots']
+    }
   },
   {
     id: 'frame-pacing-stability',
     title: 'Frame Pacing Stability (variance + spikes)',
-    goal: 'Track consistency over time rather than single-frame peaks.',
-    toggles: 'Variance monitor with optional disturbance events.',
-    measurements: 'Frame variance, spike count, 1% low frame time.',
-    expectedBottleneck: 'Mixed; pacing instability from CPU/GPU sync disruptions.',
-    mitigation: 'Identify recurring spike signatures and align workloads to frame budget.'
+    spec: {
+      goal: 'Track consistency over time rather than single-frame peaks.',
+      toggles: ['Variance monitor enabled', 'Optional disturbance events'],
+      metrics: ['Frame variance', 'Spike count', '1% low frame time'],
+      hypothesis: 'Mixed; pacing instability from CPU/GPU sync disruptions.',
+      notes: ['Identify recurring spike signatures', 'Align workloads to frame budget']
+    }
   }
 ];
 

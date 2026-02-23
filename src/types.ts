@@ -9,14 +9,19 @@ export type WorkProject = {
   featured?: boolean;
 };
 
+export type ExperimentSpecData = {
+  goal: string;
+  toggles: string[];
+  controls?: string[];
+  metrics: string[];
+  hypothesis: string;
+  notes: string[];
+};
+
 export type Experiment = {
   id: string;
   title: string;
-  goal: string;
-  toggles: string;
-  measurements: string;
-  expectedBottleneck: string;
-  mitigation: string;
+  spec: ExperimentSpecData;
 };
 
 export type ResultRow = {
