@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Play } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
 const Games = () => {
   const games = [
