@@ -65,7 +65,14 @@ const GameSuggestion = () => {
     }));
   };
 
-  const generateGameSuggestion = async (preferences: any) => {
+  type GamePreferences = {
+  gameType: string;
+  character: string;
+  control: string;
+  additionalInfo: string;
+};
+
+  const generateGameSuggestion = async (preferences: GamePreferences) => {
     try {
       const response = await fetch('/api/generate-game-suggestion', {
         method: 'POST',
@@ -87,7 +94,7 @@ const GameSuggestion = () => {
     }
   };
 
-  const sendEmail = async (email: string, gameSuggestion: string, preferences: any) => {
+  const sendEmail = async (email: string, gameSuggestion: string, preferences: GamePreferences) => {
     try {
       const response = await fetch('/api/send-game-suggestion', {
         method: 'POST',
@@ -152,7 +159,7 @@ const GameSuggestion = () => {
         additionalInfo: ''
       });
 
-    } catch (error) {
+    } catch {
       setMessage('❌ Sorry, there was an error generating your game suggestion. Please try again.');
     } finally {
       setIsLoading(false);
