@@ -1,8 +1,8 @@
 # Real-Time Performance Engineering Portfolio
 
-Systems-focused performance engineering case studies in Unity (URP / OpenXR), centered on measurable frame budgets, rendering cost control, and XR constraints.
+Systems-focused performance engineering case studies in Unity (URP / OpenXR), emphasizing deterministic frame budgets, rendering cost control, and XR constraints.
 
-This repository powers my personal site showcasing structured, profiler-backed experiments rather than creative portfolio pieces.
+This repository powers a systems-focused site presenting structured, profiler-backed experiments rather than creative portfolio work.
 
 ---
 
@@ -86,5 +86,9 @@ Built with:
 ---
 
 ## Contact
+
+Email: jamesderaja@email.com  
+LinkedIn: https://www.linkedin.com/in/james-de-raja  
+Portfolio: https://james.alphaden.club
 
 Open to senior-level real-time systems and rendering roles focused on measurable performance outcomes.
