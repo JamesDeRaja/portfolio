@@ -9,17 +9,23 @@ const evidenceItems = [
   {
     title: 'Unity Profiler (CPU / Main Thread)',
     description: 'Main-thread frame budget and scheduling behavior capture.',
-    imagePath: '/lab/Overdraw_CPU_RenderThread_Comparison.png'
+    imagePath: '/lab/Overdraw_CPU_RenderThread_Comparison.png',
+    caption:
+      'Baseline vs overdraw comparison. CPU remains ~0.5 ms while render thread increases from 6.37 ms to 13.64 ms under identical scene conditions.'
   },
   {
     title: 'Unity Profiler (GPU / Render Thread)',
     description: 'GPU frame cost and render-thread contribution snapshot.',
-    imagePath: '/lab/Overdraw_FrameDebugger_TransparentPass.png'
+    imagePath: '/lab/Overdraw_FrameDebugger_TransparentPass.png',
+    caption:
+      'Render-thread dominated under overdraw stress. Transparent stacking doubled fragment workload, increasing GPU cost by ~7 ms.'
   },
   {
     title: 'Frame Debugger / RenderDoc Capture',
     description: 'Pass-level evidence for overdraw and submission behavior.',
-    imagePath: '/lab/Overdraw_Experiment_Summary.png'
+    imagePath: '/lab/Overdraw_Experiment_Summary.png',
+    caption:
+      '201 sequential transparent draw calls (ZWrite Off). Fragment workload scales linearly with stacked layers.'
   }
 ];
 
