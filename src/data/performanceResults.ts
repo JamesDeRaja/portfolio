@@ -1,3 +1,13 @@
+export interface ExperimentResult {
+  name: string;
+  baseline: string;
+  stress: string;
+  bottleneck: string;
+  rootCause: string;
+  mitigation: string;
+  notes: string;
+}
+
 export const performanceResults: ExperimentResult[] = [
   {
     name: 'Baseline Scene',
@@ -18,20 +28,35 @@ export const performanceResults: ExperimentResult[] = [
     rootCause:
       'Fragment overdraw scaling in XR from stacked transparency and stereo fragment workload.',
     mitigation:
-      'Reduce transparency, limit stacked layers, prefer opaque materials, optimize fill-rate.',
+      'Reduce transparency, limit stacked layers, prefer opaque where possible, reduce render scale / use foveation.',
     notes:
       'Moderate (40 layers): CPU 12.63 / GPU 12.03 ms. Extreme (200 layers): CPU 18.23 / GPU 17.79 ms.'
   },
+
+  // ✅ Split MSAA into two experiments:
+
   {
-    name: 'MSAA Toggle (0x / 2x / 4x)',
+    name: 'MSAA Cost (Edge Density)',
     baseline: '14.23 / 3.50 ms (MSAA 0x)',
     stress: '15.26 / 4.36 ms (MSAA 4x)',
-    bottleneck: 'CPU / pacing-limited (GPU cost increases)',
+    bottleneck: 'CPU / pacing-limited (GPU rises with MSAA)',
     rootCause:
-      'MSAA increases per-pixel sample count at geometric edges, raising depth and color bandwidth plus resolve cost. GPU time scales with MSAA level, but overall frame time remains CPU/pacing constrained in this workload.',
+      'MSAA increases sample count at triangle edges, raising depth/color bandwidth and resolve work. In an edge-dense scene the GPU cost scales with MSAA level, while overall frame time is still dominated by CPU/pacing in this setup.',
     mitigation:
-      'Use lowest acceptable MSAA level (2x–4x in XR). Reduce edge density where possible. Avoid combining high MSAA with heavy transparency or overdraw.',
+      'Use 2x–4x MSAA only when needed. Reduce edge density (thin geometry, micro-edges) and prefer render-scale/foveation tradeoffs over pushing MSAA higher.',
     notes:
-      'Measured (edge-dense geometry): 0x → GPU 3.50 ms, 2x → 3.73 ms, 4x → 4.36 ms. MSAA 8x showed no meaningful delta vs 4x and was excluded. Combining MSAA 4x with overdraw (40 layers) raised GPU to 8.75 ms.'
+      'Edge-dense geometry measurements: MSAA 0x → GPU 3.50 ms, 2x → 3.73 ms, 4x → 4.36 ms. MSAA 8x showed no meaningful delta vs 4x and was excluded.'
+  },
+  {
+    name: 'MSAA × Overdraw Interaction',
+    baseline: '15.26 / 4.36 ms (MSAA 4x, overdraw OFF)',
+    stress: '20.04 / 8.75 ms (MSAA 4x + overdraw 40 layers)',
+    bottleneck: 'GPU-bound (bandwidth + fragment amplification)',
+    rootCause:
+      'Transparency overdraw multiplies fragment shading, while MSAA increases sample storage/resolve bandwidth. Together they compound GPU work, producing a much larger GPU jump than MSAA alone.',
+    mitigation:
+      'Avoid stacked transparency in XR. Keep MSAA at the minimum acceptable level, reduce render scale, use foveated rendering, and limit full-screen/overlay particles.',
+    notes:
+      'Demonstrates multiplicative cost: GPU 4.36 ms → 8.75 ms when enabling overdraw stack under MSAA 4x.'
   }
 ];
