@@ -1,7 +1,7 @@
-import type { ResultRow } from '../types';
+import type { ExperimentResult } from '../data/performanceResults';
 
 type ResultsTableProps = {
-  rows: ResultRow[];
+  rows: ExperimentResult[];
 };
 
 export default function ResultsTable({ rows }: ResultsTableProps) {
@@ -11,8 +11,8 @@ export default function ResultsTable({ rows }: ResultsTableProps) {
         <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-600">
           <tr>
             <th className="px-4 py-3">Experiment</th>
-            <th className="px-4 py-3">Baseline CPU/GPU (ms)</th>
-            <th className="px-4 py-3">Stress CPU/GPU (ms)</th>
+            <th className="px-4 py-3">Baseline CPU/GPU</th>
+            <th className="px-4 py-3">Stress CPU/GPU</th>
             <th className="px-4 py-3">Bottleneck</th>
             <th className="px-4 py-3">Root Cause</th>
             <th className="px-4 py-3">Mitigation</th>
@@ -20,8 +20,8 @@ export default function ResultsTable({ rows }: ResultsTableProps) {
         </thead>
         <tbody className="divide-y divide-slate-100 text-slate-700">
           {rows.map((row) => (
-            <tr key={row.experiment}>
-              <td className="px-4 py-3 font-medium text-slate-900">{row.experiment}</td>
+            <tr key={row.name}>
+              <td className="px-4 py-3 font-medium text-slate-900">{row.name}</td>
               <td className="px-4 py-3">{row.baseline}</td>
               <td className="px-4 py-3">{row.stress}</td>
               <td className="px-4 py-3">{row.bottleneck}</td>

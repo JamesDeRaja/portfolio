@@ -2,12 +2,8 @@ import EvidenceCard from '../components/EvidenceCard';
 import ExperimentAccordion from '../components/ExperimentAccordion';
 import ResultsTable from '../components/ResultsTable';
 import SectionHeading from '../components/SectionHeading';
-import { xrExperiments, xrLabConfig, xrResultRows } from '../data/xrLab';
-
-const publishedResults = [
-  { experiment: 'Baseline Scene', cpu: '—', gpu: '—', bottleneck: '—', notes: 'Not measured yet' },
-  { experiment: 'Overdraw Stress Toggle', cpu: '—', gpu: '—', bottleneck: '—', notes: 'Not measured yet' }
-];
+import { performanceResults } from '../data/performanceResults';
+import { xrExperiments, xrLabConfig } from '../data/xrLab';
 
 const evidenceItems = [
   {
@@ -46,7 +42,7 @@ export default function XRLabSection() {
             Target: {xrLabConfig.target}
           </span>
         </div>
-        <p className="mt-3 text-xs text-slate-600">Baseline and first experiments publish as validated measurements land.</p>
+        <p className="mt-3 text-xs text-slate-600">Baseline and overdraw stress milestones are now published with validated measurements.</p>
       </div>
 
       <div className="space-y-10">
@@ -57,37 +53,16 @@ export default function XRLabSection() {
 
         <div>
           <h3 className="mb-2 text-xl font-semibold text-slate-900">Published Results</h3>
-          <p className="mb-3 text-xs text-slate-500">Last updated: {lastUpdated}</p>
-          <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
-            <table className="min-w-full divide-y divide-slate-200 text-left text-sm">
-              <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-600">
-                <tr>
-                  <th className="px-4 py-3">Experiment</th>
-                  <th className="px-4 py-3">CPU (ms)</th>
-                  <th className="px-4 py-3">GPU (ms)</th>
-                  <th className="px-4 py-3">Bottleneck</th>
-                  <th className="px-4 py-3">Notes</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100 text-slate-700">
-                {publishedResults.map((row) => (
-                  <tr key={row.experiment}>
-                    <td className="px-4 py-3 font-medium text-slate-900">{row.experiment}</td>
-                    <td className="px-4 py-3">{row.cpu}</td>
-                    <td className="px-4 py-3">{row.gpu}</td>
-                    <td className="px-4 py-3">{row.bottleneck}</td>
-                    <td className="px-4 py-3">{row.notes}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <p className="mb-4 text-xs text-slate-500">Last updated: {lastUpdated}</p>
+          <ResultsTable rows={performanceResults} />
+          <div className="mt-4 space-y-2 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-700">
+            <p className="font-semibold text-slate-900">Notes</p>
+            {performanceResults.map((result) => (
+              <p key={`${result.name}-notes`}>
+                <span className="font-medium text-slate-900">{result.name}:</span> {result.notes}
+              </p>
+            ))}
           </div>
-        </div>
-
-        <div>
-          <h3 className="mb-2 text-xl font-semibold text-slate-900">Results Table</h3>
-          <p className="mb-4 text-sm text-slate-600">This table is populated as experiments are profiled and validated.</p>
-          <ResultsTable rows={xrResultRows} />
         </div>
 
         <div>
