@@ -9,17 +9,17 @@ const evidenceItems = [
   {
     title: 'Unity Profiler (CPU / Main Thread)',
     description: 'Main-thread frame budget and scheduling behavior capture.',
-    imagePath: '/lab/profiler_cpu.png'
+    imagePath: '/lab/Overdraw_CPU_RenderThread_Comparison.png'
   },
   {
     title: 'Unity Profiler (GPU / Render Thread)',
     description: 'GPU frame cost and render-thread contribution snapshot.',
-    imagePath: '/lab/profiler_gpu.png'
+    imagePath: '/lab/Overdraw_FrameDebugger_TransparentPass.png'
   },
   {
     title: 'Frame Debugger / RenderDoc Capture',
     description: 'Pass-level evidence for overdraw and submission behavior.',
-    imagePath: '/lab/frame_debugger.png'
+    imagePath: '/lab/Overdraw_Experiment_Summary.png'
   }
 ];
 
