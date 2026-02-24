@@ -75,7 +75,7 @@ export default function XRLabSection() {
           <h3 className="mb-4 text-xl font-semibold text-slate-900">Evidence (Profiler + Captures)</h3>
           <div className="grid gap-4 md:grid-cols-3">
             {evidenceItems.map((item) => (
-              <EvidenceCard key={item.title} title={item.title} description={item.description} imagePath={item.imagePath} />
+              <EvidenceCard key={item.title} title={item.title} description={item.description} imagePath={item.imagePath} caption={item.caption} />
             ))}
           </div>
         </div>

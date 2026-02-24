@@ -4,9 +4,10 @@ type EvidenceCardProps = {
   title: string;
   description: string;
   imagePath: string;
+  caption?: string;
 };
 
-export default function EvidenceCard({ title, description, imagePath }: EvidenceCardProps) {
+export default function EvidenceCard({ title, description, imagePath, caption }: EvidenceCardProps) {
   const [imageMissing, setImageMissing] = useState(false);
 
   return (
@@ -28,7 +29,11 @@ export default function EvidenceCard({ title, description, imagePath }: Evidence
           />
         )}
       </div>
-      <p className="mt-2 text-[11px] text-slate-500">Drop screenshot into /public/lab/ to replace</p>
+      {caption && (
+        <p className="codex/replace-hardcoded-placeholder-with-dynamic-caption">
+          {caption}
+        </p>
+      )}
     </article>
   );
 }
