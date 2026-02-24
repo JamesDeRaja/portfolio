@@ -58,5 +58,17 @@ export const performanceResults: ExperimentResult[] = [
       'Avoid stacked transparency in XR. Keep MSAA at the minimum acceptable level, reduce render scale, use foveated rendering, and limit full-screen/overlay particles.',
     notes:
       'Demonstrates multiplicative cost: GPU 4.36 ms → 8.75 ms when enabling overdraw stack under MSAA 4x.'
+  },
+  {
+    name: 'Instancing vs Non-Instancing (10,000 cubes)',
+    baseline: '15.03 / 7.09 ms',
+    stress: '7.33 / 5.34 ms',
+    bottleneck: 'CPU-bound (draw submission) → near-balanced',
+    rootCause:
+      'High draw call/submission overhead from many identical renderers. Without GPU instancing, CPU becomes the limiter before GPU load is reached.',
+    mitigation:
+      'Enable GPU Instancing on the material and render many identical meshes with the same material; keep per-instance material properties off unless using MaterialPropertyBlock carefully.',
+    notes:
+      'No Instancing: ~66 FPS (frame ~15.04 ms). Instancing: ~136 FPS (frame ~7.34 ms). Massive CPU time reduction proves submission bottleneck.'
   }
 ];
