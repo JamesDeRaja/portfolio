@@ -30,7 +30,7 @@ export default function EvidenceCard({ title, description, imagePath, caption }:
         )}
       </div>
       {caption && (
-        <p className="codex/replace-hardcoded-placeholder-with-dynamic-caption">
+        <p className="mt-2 text-[11px] text-slate-500">
           {caption}
         </p>
       )}
