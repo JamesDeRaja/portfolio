@@ -3,6 +3,11 @@ import ProfilingToolkitCaseStudyPage from './caseStudies/pages/ProfilingToolkitC
 import PublishedMobileProjectsCaseStudyPage from './caseStudies/pages/PublishedMobileProjectsCaseStudyPage';
 import SoftMaskProCaseStudyPage from './caseStudies/pages/SoftMaskProCaseStudyPage';
 import XRStressLabCaseStudyPage from './caseStudies/pages/XRStressLabCaseStudyPage';
+import FramePacingLabPage from './lab/pages/FramePacingLabPage';
+import InstancingLabPage from './lab/pages/InstancingLabPage';
+import MSAALabPage from './lab/pages/MSAALabPage';
+import MSAAOverdrawLabPage from './lab/pages/MSAAOverdrawLabPage';
+import OverdrawLabPage from './lab/pages/OverdrawLabPage';
 import SiteLayout from './layouts/SiteLayout';
 import HomePage from './pages/HomePage';
 
@@ -15,6 +20,11 @@ function App() {
         <Route path="/case-studies/softmaskpro" element={<SoftMaskProCaseStudyPage />} />
         <Route path="/case-studies/profiling-toolkit" element={<ProfilingToolkitCaseStudyPage />} />
         <Route path="/case-studies/published-mobile-projects" element={<PublishedMobileProjectsCaseStudyPage />} />
+        <Route path="/lab/overdraw" element={<OverdrawLabPage />} />
+        <Route path="/lab/msaa" element={<MSAALabPage />} />
+        <Route path="/lab/msaa-overdraw" element={<MSAAOverdrawLabPage />} />
+        <Route path="/lab/instancing" element={<InstancingLabPage />} />
+        <Route path="/lab/frame-pacing" element={<FramePacingLabPage />} />
       </Route>
     </Routes>
   );
