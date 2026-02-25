@@ -1,4 +1,5 @@
 import type { WorkProject } from '../types';
+import { Link } from 'react-router-dom';
 
 type WorkCardProps = {
   project: WorkProject;
@@ -17,13 +18,18 @@ export default function WorkCard({ project }: WorkCardProps) {
           ))}
         </ul>
       </div>
-      <p className="mt-4 text-sm text-slate-700">
-        <span className="font-semibold text-slate-900">Impact:</span> {project.impact}
-      </p>
+      <div className="mt-4">
+        <p className="text-sm font-semibold text-slate-900">Impact:</p>
+        <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-700">
+          {project.impact.map((impactPoint) => (
+            <li key={impactPoint}>{impactPoint}</li>
+          ))}
+        </ul>
+      </div>
       <div className="mt-5 flex gap-3">
-        <a href={project.caseStudyUrl} className="rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-800 hover:border-cyan-600 hover:text-cyan-700">
+        <Link to={project.caseStudyUrl} className="rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-800 hover:border-cyan-600 hover:text-cyan-700">
           Case Study
-        </a>
+        </Link>
         <a href={project.repoUrl} className="rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-800 hover:border-cyan-600 hover:text-cyan-700">
           Repo
         </a>
