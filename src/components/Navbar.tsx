@@ -1,16 +1,16 @@
 const navItems = [
-  { label: 'Work', href: '#work' },
-  { label: 'XR Performance Lab', href: '#xr-performance-lab' },
-  { label: 'Writing', href: '#writing' },
-  { label: 'About', href: '#about' },
-  { label: 'Contact', href: '#contact' }
+  { label: 'Work', href: '/#work' },
+  { label: 'XR Performance Lab', href: '/lab' },
+  { label: 'Writing', href: '/#writing' },
+  { label: 'About', href: '/#about' },
+  { label: 'Contact', href: '/#contact' }
 ];
 
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur">
       <nav className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <a href="#work" className="text-sm font-semibold tracking-tight text-slate-900">
+        <a href="/#work" className="text-sm font-semibold tracking-tight text-slate-900">
           Real-Time Performance
         </a>
         <div className="hidden items-center gap-6 md:flex">
