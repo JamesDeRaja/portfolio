@@ -10,8 +10,12 @@ export const workProjects: WorkProject[] = [
       'Instrumented frame timing variance capture for spike analysis.',
       'Prepared mitigation matrix tied to bottleneck signatures.'
     ],
-    impact: 'Measured in profiler; data capture pipeline in active iteration.',
-    caseStudyUrl: '#xr-performance-lab',
+    impact: [
+      'Quantified overdraw fragment delta: 6.37 ms → 13.64 ms (Δ +7.27 ms, GPU-bound).',
+      'Measured MSAA amplification under XR bandwidth pressure.',
+      'Classified CPU vs GPU submission bottlenecks via controlled toggles.'
+    ],
+    caseStudyUrl: '/case-studies/xr-stress-lab',
     repoUrl: 'https://github.com/placeholder/xr-performance-lab',
     featured: true
   },
@@ -24,8 +28,12 @@ export const workProjects: WorkProject[] = [
       'Reduced unnecessary redraw paths through targeted update logic.',
       'Documented usage constraints for production teams.'
     ],
-    impact: 'Measured in profiler; optimization decisions validated with CPU/GPU frame cost checks.',
-    caseStudyUrl: '#work',
+    impact: [
+      'Profile-validated mask redraw cost under fill-rate heavy UI.',
+      'Reduced redundant redraw paths through targeted update logic.',
+      'Documented ZWrite / Blend tradeoffs for predictable GPU cost.'
+    ],
+    caseStudyUrl: '/case-studies/softmaskpro',
     repoUrl: 'https://github.com/placeholder/softmaskpro'
   },
   {
@@ -37,8 +45,12 @@ export const workProjects: WorkProject[] = [
       'Added scenario presets for A/B profiling sessions.',
       'Streamlined capture notes for engineering handoff.'
     ],
-    impact: 'Measured in profiler; improved debugging turnaround during performance investigations.',
-    caseStudyUrl: '#work',
+    impact: [
+      'Instrumented runtime frame-time variance capture.',
+      'Enabled draw-call and submission spike triage in development builds.',
+      'Reduced profiling turnaround through standardized capture snapshots.'
+    ],
+    caseStudyUrl: '/case-studies/profiling-toolkit',
     repoUrl: 'https://github.com/placeholder/unity-profiling-overlay'
   },
   {
@@ -50,8 +62,12 @@ export const workProjects: WorkProject[] = [
       'Collaborated with design/art on quality vs frame budget tradeoffs.',
       'Supported post-launch diagnostics and fixes.'
     ],
-    impact: 'Shipped mobile titles with sustained profiling-driven optimization support.',
-    caseStudyUrl: '#work',
+    impact: [
+      'Maintained stable 16ms/11ms frame budgets under device-tier constraints.',
+      'Diagnosed CPU-GPU sync stalls pre-release.',
+      'Applied profiling-driven mitigation pre- and post-launch.'
+    ],
+    caseStudyUrl: '/case-studies/published-mobile-projects',
     repoUrl: 'https://github.com/placeholder/mobile-projects'
   }
 ];

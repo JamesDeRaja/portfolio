@@ -1,0 +1,132 @@
+import { Link } from 'react-router-dom';
+
+export default function XRStressLabCaseStudyPage() {
+  return (
+    <div className="min-h-screen bg-site-pattern">
+      <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+        <div style={{ marginBottom: '16px' }}>
+          <Link to="/">← Back to Home</Link>
+        </div>
+
+      <h1 className="text-3xl font-semibold text-slate-900">XR Performance Stress Lab</h1>
+      <p className="mt-2 text-sm uppercase tracking-[0.08em] text-slate-500">Profiler-led XR Rendering Analysis</p>
+      <p className="mt-4 text-slate-700">
+        A controlled XR test harness built to isolate fragment overdraw, MSAA bandwidth amplification, submission
+        pressure, and frame pacing variance under repeatable runtime conditions. Each stress path is toggled in
+        isolation and measured with profiler captures and pass-level evidence.
+      </p>
+
+      <section className="mt-8 space-y-3">
+        <h2 className="text-xl font-semibold text-slate-900">Problem / Context</h2>
+        <p className="text-slate-700">
+          XR rendering budgets are deadline-driven: missed frames trigger reprojection and perceived judder even when
+          average FPS looks acceptable. The goal was to build a repeatable harness that produces clear bottleneck
+          signatures (GPU fragment, bandwidth, submission, or variance) and generates evidence that can be shared as a
+          mitigation playbook.
+        </p>
+      </section>
+
+      <section className="mt-8 space-y-3">
+        <h2 className="text-xl font-semibold text-slate-900">Engineering Approach</h2>
+        <p className="text-slate-700">
+          Implemented controlled A/B stress toggles with a locked baseline scene. For each stress path, captures are
+          taken in identical conditions (same camera, same scene state) and compared by delta. Profiling focuses on
+          frame time stability (variance/spikes), CPU main-thread scheduling, and GPU RenderLoop cost. Pass-level
+          validation uses Frame Debugger / capture tools to confirm draw counts, blend modes, and depth behavior.
+        </p>
+      </section>
+
+      <section className="mt-8 space-y-3">
+        <h2 className="text-xl font-semibold text-slate-900">Measured Results</h2>
+        <p className="text-slate-700">
+          Key measured deltas are tracked per stress path and classified by bottleneck signature: Overdraw Stress —
+          RenderLoop (GPU) 6.37 ms to 13.64 ms (Δ +7.27 ms), CPU stable around 0.5 ms, indicating GPU-bound fragment
+          cost. MSAA Scaling — measured as a GPU/bandwidth amplification stress path with results tracked per MSAA
+          step. Instancing vs Non-Instancing — measured as submission pressure across CPU and render thread
+          contribution with draw call deltas. Frame Pacing — measured as variance and spike behavior under controlled
+          workload changes.
+        </p>
+      </section>
+
+      <section className="mt-8 space-y-3">
+        <h2 className="text-xl font-semibold text-slate-900">Evidence</h2>
+        <p className="text-slate-700">
+          Evidence is captured as Unity Profiler comparisons (CPU main thread plus GPU RenderLoop) for baseline versus
+          stress deltas, Frame Debugger validation of pass composition and render state (including 201 transparent
+          draws with ZWrite Off and SrcAlpha/OneMinusSrcAlpha in overdraw stress), and annotated screenshots stored
+          under /public/lab and linked from each experiment page.
+        </p>
+      </section>
+
+      <section className="mt-8 space-y-3">
+        <h2 className="text-xl font-semibold text-slate-900">Mitigation Strategy</h2>
+        <p className="text-slate-700">
+          Mitigation is mapped to bottleneck signature: GPU fragment/overdraw — reduce transparent stacking, prefer
+          opaque or cutout where possible, limit full-screen transparent layers, and constrain UI layering. Bandwidth
+          amplification (MSAA) — step MSAA down, reduce resolution where appropriate, and avoid combining MSAA with
+          heavy transparency/post. Submission pressure — reduce unique materials and state changes, improve
+          batching/instancing strategy, and reduce per-frame renderer churn. Frame pacing variance — remove spikes
+          (GC, sync points, expensive intermittent work) and stabilize scheduling and workload cadence.
+        </p>
+      </section>
+
+      <section className="mt-8 space-y-3">
+        <h2 className="text-xl font-semibold text-slate-900">Experiments Conducted</h2>
+        <ul className="list-disc space-y-2 pl-5 text-slate-700">
+          <li>
+            <Link to="/lab/overdraw" className="hover:text-cyan-700 hover:underline">
+              Overdraw Stress (GPU-bound fragment)
+            </Link>
+          </li>
+          <li>
+            <Link to="/lab/msaa" className="hover:text-cyan-700 hover:underline">
+              MSAA Scaling (bandwidth amplification)
+            </Link>
+          </li>
+          <li>
+            <Link to="/lab/instancing" className="hover:text-cyan-700 hover:underline">
+              Instancing vs Non-Instancing (submission cost)
+            </Link>
+          </li>
+          <li>
+            <Link to="/lab/frame-pacing" className="hover:text-cyan-700 hover:underline">
+              Frame Pacing Variance Capture
+            </Link>
+          </li>
+        </ul>
+      </section>
+
+        <section className="mt-8 space-y-3">
+          <h2 className="text-xl font-semibold text-slate-900">Links</h2>
+          <ul className="list-disc space-y-2 pl-5 text-slate-700">
+            <li>
+              <a href="https://github.com/placeholder/xr-performance-lab" className="hover:text-cyan-700 hover:underline">
+                Repository
+              </a>
+            </li>
+            <li>
+              <Link to="/lab/overdraw" className="hover:text-cyan-700 hover:underline">
+                Overdraw Lab
+              </Link>
+            </li>
+            <li>
+              <Link to="/lab/msaa" className="hover:text-cyan-700 hover:underline">
+                MSAA Lab
+              </Link>
+            </li>
+            <li>
+              <Link to="/lab/instancing" className="hover:text-cyan-700 hover:underline">
+                Instancing Lab
+              </Link>
+            </li>
+            <li>
+              <Link to="/lab/frame-pacing" className="hover:text-cyan-700 hover:underline">
+                Frame Pacing Lab
+              </Link>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
+  );
+}
