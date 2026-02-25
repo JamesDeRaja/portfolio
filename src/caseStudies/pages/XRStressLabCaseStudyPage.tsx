@@ -2,10 +2,11 @@ import { Link } from 'react-router-dom';
 
 export default function XRStressLabCaseStudyPage() {
   return (
-    <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
-      <div style={{ marginBottom: '16px' }}>
-        <Link to="/">← Back to Home</Link>
-      </div>
+    <div className="min-h-screen bg-site-pattern">
+      <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+        <div style={{ marginBottom: '16px' }}>
+          <Link to="/">← Back to Home</Link>
+        </div>
 
       <h1 className="text-3xl font-semibold text-slate-900">XR Performance Stress Lab</h1>
       <p className="mt-2 text-sm uppercase tracking-[0.08em] text-slate-500">Profiler-led XR Rendering Analysis</p>
@@ -65,36 +66,37 @@ export default function XRStressLabCaseStudyPage() {
         </ul>
       </section>
 
-      <section className="mt-8 space-y-3">
-        <h2 className="text-xl font-semibold text-slate-900">Links</h2>
-        <ul className="list-disc space-y-2 pl-5 text-slate-700">
-          <li>
-            <a href="https://github.com/placeholder/xr-performance-lab" className="hover:text-cyan-700 hover:underline">
-              Repository
-            </a>
-          </li>
-          <li>
-            <Link to="/lab/overdraw" className="hover:text-cyan-700 hover:underline">
-              Overdraw Lab
-            </Link>
-          </li>
-          <li>
-            <Link to="/lab/msaa" className="hover:text-cyan-700 hover:underline">
-              MSAA Lab
-            </Link>
-          </li>
-          <li>
-            <Link to="/lab/instancing" className="hover:text-cyan-700 hover:underline">
-              Instancing Lab
-            </Link>
-          </li>
-          <li>
-            <Link to="/lab/frame-pacing" className="hover:text-cyan-700 hover:underline">
-              Frame Pacing Lab
-            </Link>
-          </li>
-        </ul>
-      </section>
-    </main>
+        <section className="mt-8 space-y-3">
+          <h2 className="text-xl font-semibold text-slate-900">Links</h2>
+          <ul className="list-disc space-y-2 pl-5 text-slate-700">
+            <li>
+              <a href="https://github.com/placeholder/xr-performance-lab" className="hover:text-cyan-700 hover:underline">
+                Repository
+              </a>
+            </li>
+            <li>
+              <Link to="/lab/overdraw" className="hover:text-cyan-700 hover:underline">
+                Overdraw Lab
+              </Link>
+            </li>
+            <li>
+              <Link to="/lab/msaa" className="hover:text-cyan-700 hover:underline">
+                MSAA Lab
+              </Link>
+            </li>
+            <li>
+              <Link to="/lab/instancing" className="hover:text-cyan-700 hover:underline">
+                Instancing Lab
+              </Link>
+            </li>
+            <li>
+              <Link to="/lab/frame-pacing" className="hover:text-cyan-700 hover:underline">
+                Frame Pacing Lab
+              </Link>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
   );
 }
