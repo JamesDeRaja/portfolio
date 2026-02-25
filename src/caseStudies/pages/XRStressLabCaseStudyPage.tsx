@@ -108,6 +108,14 @@ export default function XRStressLabCaseStudyPage() {
           <li>MSAA plus overdraw compounds bandwidth and fragment work, amplifying GPU delta.</li>
           <li>Instancing reduces submission overhead, with both CPU and GPU moving toward a near-balanced frame.</li>
         </ul>
+        <p className="text-slate-700">
+          Key measured deltas are tracked per stress path and classified by bottleneck signature: Overdraw Stress —
+          RenderLoop (GPU) 6.37 ms to 13.64 ms (Δ +7.27 ms), CPU stable around 0.5 ms, indicating GPU-bound fragment
+          cost. MSAA Scaling — measured as a GPU/bandwidth amplification stress path with results tracked per MSAA
+          step. Instancing vs Non-Instancing — measured as submission pressure across CPU and render thread
+          contribution with draw call deltas. Frame Pacing — measured as variance and spike behavior under controlled
+          workload changes.
+        </p>
       </section>
 
       <section className="mt-8 space-y-3">
@@ -116,6 +124,10 @@ export default function XRStressLabCaseStudyPage() {
           Evidence is captured via Unity Profiler comparisons (CPU Main Thread + GPU RenderLoop), Frame Debugger
           validation of pass composition and render state (including 201 transparent draws with ZWrite Off and
           SrcAlpha/OneMinusSrcAlpha in overdraw stress), and annotated experiment captures linked per test case.
+          Evidence is captured as Unity Profiler comparisons (CPU main thread plus GPU RenderLoop) for baseline versus
+          stress deltas, Frame Debugger validation of pass composition and render state (including 201 transparent
+          draws with ZWrite Off and SrcAlpha/OneMinusSrcAlpha in overdraw stress), and annotated screenshots stored
+          under /public/lab and linked from each experiment page.
         </p>
       </section>
 
