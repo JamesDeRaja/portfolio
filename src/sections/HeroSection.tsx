@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const proofChips = ['Frame Timing Discipline', 'GPU/CPU Bottleneck Isolation', 'XR Rendering Constraints'];
 
 export default function HeroSection() {
@@ -9,6 +11,13 @@ export default function HeroSection() {
         </h1>
         <p className="mt-5 text-lg text-slate-700">
           Unity rendering, frame pacing, and XR performance research with profiler-backed measurements.
+        </p>
+        <p className="mt-3 text-sm text-slate-600">
+          Profiler-validated GPU bottleneck isolation (<span className="font-semibold">Δ +7.27 ms</span>{' '}
+          <Link to="/lab/overdraw" className="text-cyan-700 hover:text-cyan-800">
+            overdraw case study
+          </Link>
+          ).
         </p>
         <div className="mt-6 flex flex-wrap gap-2">
           {proofChips.map((chip) => (
