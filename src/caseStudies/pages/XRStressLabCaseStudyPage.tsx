@@ -113,10 +113,9 @@ export default function XRStressLabCaseStudyPage() {
       <section className="mt-8 space-y-3">
         <h2 className="text-xl font-semibold text-slate-900">Evidence</h2>
         <p className="text-slate-700">
-          Evidence is captured as Unity Profiler comparisons (CPU main thread plus GPU RenderLoop) for baseline versus
-          stress deltas, Frame Debugger validation of pass composition and render state (including 201 transparent
-          draws with ZWrite Off and SrcAlpha/OneMinusSrcAlpha in overdraw stress), and annotated screenshots stored
-          under /public/lab and linked from each experiment page.
+          Evidence is captured via Unity Profiler comparisons (CPU Main Thread + GPU RenderLoop), Frame Debugger
+          validation of pass composition and render state (including 201 transparent draws with ZWrite Off and
+          SrcAlpha/OneMinusSrcAlpha in overdraw stress), and annotated experiment captures linked per test case.
         </p>
       </section>
 
