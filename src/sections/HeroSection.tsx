@@ -18,7 +18,7 @@ export default function HeroSection() {
           ))}
         </div>
         <div className="mt-8 flex flex-wrap gap-3">
-          <a href="#xr-performance-lab" className="rounded-xl bg-cyan-600 px-5 py-3 text-sm font-medium text-white hover:bg-cyan-700">
+          <a href="#xr-lab" className="rounded-xl bg-cyan-600 px-5 py-3 text-sm font-medium text-white hover:bg-cyan-700">
             View XR Lab
           </a>
           <a href="#writing" className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-medium text-slate-800 hover:border-cyan-600 hover:text-cyan-700">

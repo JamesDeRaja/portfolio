@@ -1,23 +1,25 @@
+import { Link } from 'react-router-dom';
+
 const navItems = [
-  { label: 'Work', href: '#work' },
-  { label: 'XR Performance Lab', href: '#xr-performance-lab' },
-  { label: 'Writing', href: '#writing' },
-  { label: 'About', href: '#about' },
-  { label: 'Contact', href: '#contact' }
+  { label: 'Work', to: '/?section=work' },
+  { label: 'XR Performance Lab', to: '/?section=xr-lab' },
+  { label: 'Writing', to: '/?section=writing' },
+  { label: 'About', to: '/?section=about' },
+  { label: 'Contact', to: '/?section=contact' }
 ];
 
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur">
       <nav className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <a href="#work" className="text-sm font-semibold tracking-tight text-slate-900">
+        <Link to="/" className="text-sm font-semibold tracking-tight text-slate-900">
           Real-Time Performance
-        </a>
+        </Link>
         <div className="hidden items-center gap-6 md:flex">
           {navItems.map((item) => (
-            <a key={item.label} href={item.href} className="text-sm text-slate-700 transition hover:text-cyan-700">
+            <Link key={item.label} to={item.to} className="text-sm text-slate-700 transition hover:text-cyan-700">
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
         <a

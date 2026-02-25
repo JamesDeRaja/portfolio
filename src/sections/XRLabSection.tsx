@@ -33,7 +33,7 @@ export default function XRLabSection() {
   const lastUpdated = new Date().toLocaleDateString();
 
   return (
-    <section id="xr-performance-lab" className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+    <section id="xr-lab" className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
       <SectionHeading
         eyebrow="Core Focus"
         title="XR Performance Stress Lab"
