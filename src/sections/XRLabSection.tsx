@@ -4,6 +4,7 @@ import ResultsTable from '../components/ResultsTable';
 import SectionHeading from '../components/SectionHeading';
 import { performanceResults } from '../data/performanceResults';
 import { xrExperiments, xrLabConfig } from '../data/xrLab';
+import { Link } from 'react-router-dom';
 
 const evidenceItems = [
   {
@@ -33,7 +34,7 @@ export default function XRLabSection() {
   const lastUpdated = new Date().toLocaleDateString();
 
   return (
-    <section id="xr-performance-lab" className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+    <section id="xr-lab" className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
       <SectionHeading
         eyebrow="Core Focus"
         title="XR Performance Stress Lab"
@@ -68,6 +69,11 @@ export default function XRLabSection() {
                 <span className="font-medium text-slate-900">{result.name}:</span> {result.notes}
               </p>
             ))}
+          </div>
+          <div className="mt-4">
+            <Link to="/case-studies/xr-stress-lab" className="text-sm font-medium text-cyan-700 hover:text-cyan-800">
+              View full XR case study →
+            </Link>
           </div>
         </div>
 
