@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import SectionHeading from '../components/SectionHeading';
 import { writingPosts } from '../data/writing';
 
@@ -7,10 +7,16 @@ function getPostHref(slug: string) {
     return '/lab/xr-frame-timing';
   }
 
+  if (slug === 'why-overdraw-kills-performance-in-stereo-rendering') {
+    return '/lab/overdraw-stereo';
+  }
+
   return `/writing/${slug}`;
 }
 
 export default function WritingSection() {
+  const navigate = useNavigate();
+
   return (
     <section id="writing" className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
       <SectionHeading
@@ -20,7 +26,26 @@ export default function WritingSection() {
       />
       <div className="grid gap-5 md:grid-cols-3">
         {writingPosts.map((post) => (
-          <article key={post.slug} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <article
+            key={post.slug}
+            className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+            onClick={() => {
+              if (post.slug === 'why-overdraw-kills-performance-in-stereo-rendering') {
+                navigate('/lab/overdraw-stereo');
+              }
+            }}
+            onKeyDown={(event) => {
+              if (
+                post.slug === 'why-overdraw-kills-performance-in-stereo-rendering' &&
+                (event.key === 'Enter' || event.key === ' ')
+              ) {
+                event.preventDefault();
+                navigate('/lab/overdraw-stereo');
+              }
+            }}
+            role={post.slug === 'why-overdraw-kills-performance-in-stereo-rendering' ? 'link' : undefined}
+            tabIndex={post.slug === 'why-overdraw-kills-performance-in-stereo-rendering' ? 0 : undefined}
+          >
             <h3 className="text-lg font-semibold text-slate-900">
               <Link to={getPostHref(post.slug)} className="hover:text-cyan-700">
                 {post.title}

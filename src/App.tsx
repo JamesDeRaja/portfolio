@@ -8,6 +8,7 @@ import InstancingLabPage from './lab/pages/InstancingLabPage';
 import MSAALabPage from './lab/pages/MSAALabPage';
 import MSAAOverdrawLabPage from './lab/pages/MSAAOverdrawLabPage';
 import OverdrawLabPage from './lab/pages/OverdrawLabPage';
+import OverdrawStereoLabPage from './lab/pages/OverdrawStereoLabPage';
 import XRFrameTimingLabPage from './lab/pages/XRFrameTimingLabPage';
 import SiteLayout from './layouts/SiteLayout';
 import HomePage from './pages/HomePage';
@@ -27,6 +28,7 @@ function App() {
         <Route path="/lab/instancing" element={<InstancingLabPage />} />
         <Route path="/lab/frame-pacing" element={<FramePacingLabPage />} />
         <Route path="/lab/xr-frame-timing" element={<XRFrameTimingLabPage />} />
+        <Route path="/lab/overdraw-stereo" element={<OverdrawStereoLabPage />} />
       </Route>
     </Routes>
   );
