@@ -102,6 +102,11 @@ export default function FramePacingVsFPSLabPage() {
             <span className="font-semibold text-slate-900">On target (72 FPS):</span> cadence still depends on variance and sync behavior. Markers like WaitForPresentOnGfxThread and WaitForSignal indicate present gating.
           </figcaption>
         </figure>
+        <div className="rounded-2xl border border-slate-200 bg-white p-4 text-sm text-slate-700">
+          Frame pacing screenshots are intentionally omitted for now to avoid binary upload constraints in this
+          environment. The article content remains focused on 72 Hz deadline behavior, variance interpretation, and
+          synchronization markers.
+        </div>
 
         <div className="rounded-2xl border border-slate-200 bg-white p-4 text-sm text-slate-700">
           <span className="font-semibold text-slate-900">Takeaway:</span> FPS indicates whether budget is reached;
