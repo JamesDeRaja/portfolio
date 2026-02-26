@@ -81,6 +81,27 @@ export default function FramePacingVsFPSLabPage() {
       <section className="mt-8 space-y-4">
         <h2 className="text-xl font-semibold text-slate-900">Evidence: under-target vs on-target pacing</h2>
 
+        <figure className="space-y-2">
+          <img
+            src="/lab/FramePacing_UnderTarget_LowFPS.png"
+            alt="Unity Profiler capture showing low FPS and frame times exceeding the 72 Hz budget"
+            className="rounded-xl border border-slate-200"
+          />
+          <figcaption className="text-sm text-slate-600">
+            <span className="font-semibold text-slate-900">Under target:</span> frequent overruns beyond {budgetMs.toFixed(2)} ms lead to unstable delivery.
+          </figcaption>
+        </figure>
+
+        <figure className="space-y-2">
+          <img
+            src="/lab/FramePacing_OnTarget_72FPS.png"
+            alt="Unity Profiler capture showing delivery near 72 FPS with present and sync markers in the timeline"
+            className="rounded-xl border border-slate-200"
+          />
+          <figcaption className="text-sm text-slate-600">
+            <span className="font-semibold text-slate-900">On target (72 FPS):</span> cadence still depends on variance and sync behavior. Markers like WaitForPresentOnGfxThread and WaitForSignal indicate present gating.
+          </figcaption>
+        </figure>
         <div className="rounded-2xl border border-slate-200 bg-white p-4 text-sm text-slate-700">
           Frame pacing screenshots are intentionally omitted for now to avoid binary upload constraints in this
           environment. The article content remains focused on 72 Hz deadline behavior, variance interpretation, and
