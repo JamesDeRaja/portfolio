@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const proofChips = ['Frame Timing Discipline', 'GPU/CPU Bottleneck Isolation', 'XR Rendering Constraints'];
 
 export default function HeroSection() {
@@ -10,6 +12,13 @@ export default function HeroSection() {
         <p className="mt-5 text-lg text-slate-700">
           Unity rendering, frame pacing, and XR performance research with profiler-backed measurements.
         </p>
+        <p className="mt-3 text-sm text-slate-600">
+          Profiler-validated GPU bottleneck isolation (<span className="font-semibold">Δ +7.27 ms</span>{' '}
+          <Link to="/lab/overdraw" className="text-cyan-700 hover:text-cyan-800">
+            overdraw case study
+          </Link>
+          ).
+        </p>
         <div className="mt-6 flex flex-wrap gap-2">
           {proofChips.map((chip) => (
             <span key={chip} className="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-700 shadow-sm">
@@ -18,7 +27,7 @@ export default function HeroSection() {
           ))}
         </div>
         <div className="mt-8 flex flex-wrap gap-3">
-          <a href="#xr-performance-lab" className="rounded-xl bg-cyan-600 px-5 py-3 text-sm font-medium text-white hover:bg-cyan-700">
+          <a href="#xr-lab" className="rounded-xl bg-cyan-600 px-5 py-3 text-sm font-medium text-white hover:bg-cyan-700">
             View XR Lab
           </a>
           <a href="#writing" className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-medium text-slate-800 hover:border-cyan-600 hover:text-cyan-700">

@@ -3,7 +3,7 @@ export type WorkProject = {
   title: string;
   summary: string;
   highlights: string[];
-  impact: string;
+  impact: string[];
   caseStudyUrl: string;
   repoUrl: string;
   featured?: boolean;
