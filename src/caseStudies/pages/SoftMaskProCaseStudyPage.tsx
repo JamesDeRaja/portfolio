@@ -64,7 +64,7 @@ export default function SoftMaskProCaseStudyPage() {
         <h2 className="text-xl font-semibold text-slate-900">Links</h2>
         <ul className="list-disc space-y-2 pl-5 text-slate-700">
           <li>
-            <a href="https://github.com/placeholder/softmaskpro" className="hover:text-cyan-700 hover:underline">
+            <a href="https://github.com/JamesDeRaja/XRPerformanceLab" className="hover:text-cyan-700 hover:underline">
               Repository
             </a>
           </li>

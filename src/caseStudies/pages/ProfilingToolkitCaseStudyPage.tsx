@@ -63,7 +63,7 @@ export default function ProfilingToolkitCaseStudyPage() {
         <ul className="list-disc space-y-2 pl-5 text-slate-700">
           <li>
             <a
-              href="https://github.com/placeholder/unity-profiling-overlay"
+              href="https://github.com/JamesDeRaja/XRPerformanceLab"
               className="hover:text-cyan-700 hover:underline"
             >
               Repository
