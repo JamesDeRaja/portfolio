@@ -16,7 +16,7 @@ export const workProjects: WorkProject[] = [
       'Classified CPU vs GPU submission bottlenecks via controlled toggles.'
     ],
     caseStudyUrl: '/case-studies/xr-stress-lab',
-    repoUrl: 'https://github.com/placeholder/xr-performance-lab',
+    repoUrl: 'https://github.com/JamesDeRaja/XRPerformanceLab',
     featured: true
   },
   {
@@ -34,7 +34,7 @@ export const workProjects: WorkProject[] = [
       'Documented ZWrite / Blend tradeoffs for predictable GPU cost.'
     ],
     caseStudyUrl: '/case-studies/softmaskpro',
-    repoUrl: 'https://github.com/placeholder/softmaskpro'
+    repoUrl: 'https://github.com/JamesDeRaja/XRPerformanceLab'
   },
   {
     id: 'perf-overlay',
@@ -51,7 +51,7 @@ export const workProjects: WorkProject[] = [
       'Reduced profiling turnaround through standardized capture snapshots.'
     ],
     caseStudyUrl: '/case-studies/profiling-toolkit',
-    repoUrl: 'https://github.com/placeholder/unity-profiling-overlay'
+    repoUrl: 'https://github.com/JamesDeRaja/XRPerformanceLab'
   },
   {
     id: 'mobile-projects',
@@ -68,6 +68,6 @@ export const workProjects: WorkProject[] = [
       'Applied profiling-driven mitigation pre- and post-launch.'
     ],
     caseStudyUrl: '/case-studies/published-mobile-projects',
-    repoUrl: 'https://github.com/placeholder/mobile-projects'
+    repoUrl: 'https://github.com/JamesDeRaja/XRPerformanceLab'
   }
 ];
