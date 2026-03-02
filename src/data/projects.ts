@@ -6,14 +6,12 @@ export const workProjects: WorkProject[] = [
     title: 'XR Performance Stress Lab',
     summary: 'Profiler-led test harness for isolating XR rendering and frame pacing constraints.',
     highlights: [
-      'Designed repeatable scene toggles for overdraw, MSAA, and CPU pressure.',
-      'Instrumented frame timing variance capture for spike analysis.',
-      'Prepared mitigation matrix tied to bottleneck signatures.'
+      'Reduced submission + skinning cost via dynamic skinned-mesh chunking.',
+      'Protected culling/occlusion behavior with spatially coherent grouping + visibility gating.'
     ],
     impact: [
-      'Quantified overdraw fragment delta: 6.37 ms → 13.64 ms (Δ +7.27 ms, GPU-bound).',
-      'Measured MSAA amplification under XR bandwidth pressure.',
-      'Classified CPU vs GPU submission bottlenecks via controlled toggles.'
+      'Maintained stable 16ms frame pacing during dense combat moments on mobile GPUs.',
+      'Prevented stutter spikes during ragdoll + projectile bursts via workload gating.'
     ],
     caseStudyUrl: '/case-studies/xr-stress-lab',
     repoUrl: 'https://github.com/JamesDeRaja/XRPerformanceLab',
@@ -56,18 +54,17 @@ export const workProjects: WorkProject[] = [
   {
     id: 'mobile-projects',
     title: 'Selected Published Mobile Projects',
-    summary: 'Representative shipped titles with emphasis on runtime stability and technical execution.',
+    summary:
+      'Production mobile performance work focused on stable frame pacing under extreme agent density (100+ skinned meshes, nav, ragdolls, projectiles).',
     highlights: [
-      'Owned performance tuning passes before release milestones.',
-      'Collaborated with design/art on quality vs frame budget tradeoffs.',
-      'Supported post-launch diagnostics and fixes.'
+      'Reduced submission + skinning cost via dynamic skinned-mesh chunking.',
+      'Protected culling/occlusion behavior with spatially coherent grouping + visibility gating.'
     ],
     impact: [
-      'Maintained stable 16ms/11ms frame budgets under device-tier constraints.',
-      'Diagnosed CPU-GPU sync stalls pre-release.',
-      'Applied profiling-driven mitigation pre- and post-launch.'
+      'Maintained stable 16ms frame pacing during dense combat moments on mobile GPUs.',
+      'Prevented stutter spikes during ragdoll + projectile bursts via workload gating.'
     ],
-    caseStudyUrl: '/case-studies/published-mobile-projects',
-    repoUrl: 'https://github.com/JamesDeRaja/XRPerformanceLab'
+    caseStudyUrl: '/case-studies/sneaky-warrior-3d',
+    repoUrl: 'https://apps.apple.com/us/app/sneaky-warriour-3d/id1626719884'
   }
 ];
