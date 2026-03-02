@@ -32,7 +32,7 @@ export const workProjects: WorkProject[] = [
       'Documented ZWrite / Blend tradeoffs for predictable GPU cost.'
     ],
     caseStudyUrl: '/case-studies/softmaskpro',
-    repoUrl: 'https://github.com/JamesDeRaja/XRPerformanceLab'
+    repoUrl: 'https://github.com/JamesDeRaja/SoftMaskPro-Performance-Study'
   },
   {
     id: 'perf-overlay',
