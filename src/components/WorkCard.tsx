@@ -34,6 +34,9 @@ export default function WorkCard({ project }: WorkCardProps) {
         <SmartLink href={project.repoUrl} className="rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-800 hover:border-cyan-600 hover:text-cyan-700">
           {project.id === 'mobile-projects' ? 'App Store' : 'Repo'}
         </SmartLink>
+        <a href={project.repoUrl} className="rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-800 hover:border-cyan-600 hover:text-cyan-700">
+          {project.id === 'mobile-projects' ? 'App Store' : 'Repo'}
+        </a>
       </div>
     </article>
   );

@@ -117,11 +117,13 @@ export default function PublishedMobileProjectsCaseStudyPage() {
         <ul className="list-disc space-y-2 pl-5 text-slate-700">
           <li>
             <SmartLink
+            <a
               href="https://apps.apple.com/us/app/sneaky-warriour-3d/id1626719884"
               className="hover:text-cyan-700 hover:underline"
             >
               App Store
             </SmartLink>
+            </a>
           </li>
         </ul>
       </section>
