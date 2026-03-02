@@ -1,5 +1,6 @@
 import { shippedTitles } from '../data/shippedTitles';
 import SectionHeading from '../components/SectionHeading';
+import SmartLink from '../components/SmartLink';
 
 export default function ShippedTitlesSection() {
   return (
@@ -16,14 +17,14 @@ export default function ShippedTitlesSection() {
             <p className="mt-2 text-sm text-slate-700">{title.technicalFocus}</p>
             <div className="mt-4 flex gap-3 text-xs">
               {title.googlePlay ? (
-                <a href={title.googlePlay} className="text-cyan-700 hover:text-cyan-800">
+                <SmartLink href={title.googlePlay} className="text-cyan-700 hover:text-cyan-800">
                   Google Play
-                </a>
+                </SmartLink>
               ) : null}
               {title.appStore ? (
-                <a href={title.appStore} className="text-cyan-700 hover:text-cyan-800">
+                <SmartLink href={title.appStore} className="text-cyan-700 hover:text-cyan-800">
                   App Store
-                </a>
+                </SmartLink>
               ) : null}
             </div>
           </article>

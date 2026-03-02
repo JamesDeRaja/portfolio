@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import SmartLink from '../../components/SmartLink';
 
 export default function PublishedMobileProjectsCaseStudyPage() {
   return (
@@ -115,11 +116,13 @@ export default function PublishedMobileProjectsCaseStudyPage() {
         <h2 className="text-xl font-semibold text-slate-900">Links</h2>
         <ul className="list-disc space-y-2 pl-5 text-slate-700">
           <li>
+            <SmartLink
             <a
               href="https://apps.apple.com/us/app/sneaky-warriour-3d/id1626719884"
               className="hover:text-cyan-700 hover:underline"
             >
               App Store
+            </SmartLink>
             </a>
           </li>
         </ul>

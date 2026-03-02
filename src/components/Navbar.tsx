@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import SmartLink from './SmartLink';
 
 const navItems = [
   { label: 'Work', to: '/?section=work' },
@@ -22,12 +23,12 @@ export default function Navbar() {
             </Link>
           ))}
         </div>
-        <a
-          href="/resume.pdf"
+        <SmartLink
+          href="/resume/JamesDeRaja_Resume.pdf"
           className="rounded-xl border border-cyan-700 bg-cyan-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-cyan-700"
         >
-          Download Resume
-        </a>
+          View Resume (PDF)
+        </SmartLink>
       </nav>
     </header>
   );
