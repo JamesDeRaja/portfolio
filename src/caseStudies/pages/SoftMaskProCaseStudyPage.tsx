@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import SmartLink from '../../components/SmartLink';
 
 export default function SoftMaskProCaseStudyPage() {
   return (
@@ -105,6 +106,18 @@ export default function SoftMaskProCaseStudyPage() {
           <li>
             Constrain redraw triggers: avoid unnecessary mask geometry animation, avoid per-frame SetVerticesDirty, and
             gate QueuePlayerLoopUpdate to resolution/view changes.
+          </li>
+        </ul>
+      </section>
+
+
+      <section className="mt-8 space-y-3">
+        <h2 className="text-xl font-semibold text-slate-900">Links</h2>
+        <ul className="list-disc space-y-2 pl-5 text-slate-700">
+          <li>
+            <SmartLink href="https://github.com/JamesDeRaja/SoftMaskPro-Performance-Study" className="hover:text-cyan-700 hover:underline">
+              Repository
+            </SmartLink>
           </li>
         </ul>
       </section>
