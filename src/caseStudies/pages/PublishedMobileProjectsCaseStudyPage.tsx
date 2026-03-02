@@ -10,108 +10,104 @@ export default function PublishedMobileProjectsCaseStudyPage() {
       <h1 className="text-3xl font-semibold text-slate-900">Sneaky Warrior 3D — Frame Budget Stabilization on Mobile</h1>
       <p className="mt-2 text-sm uppercase tracking-[0.08em] text-slate-500">FRAME BUDGET STABILITY ACROSS DEVICE TIERS</p>
       <p className="mt-4 text-slate-700">
-        This case study summarizes production performance work on Sneaky Warrior 3D focused on frame-time stability
-        under heavy runtime load: 100+ animated enemies, ragdolls, active navigation, and high projectile throughput.
-        The objective was stable pacing across device tiers (tile-based GPUs included), not peak FPS.
+        This case study documents production mobile performance work on Sneaky Warrior 3D focused on stable frame
+        pacing under heavy runtime load: 100+ animated enemies, ragdolls, active navigation, and high projectile
+        throughput. The target was consistent 16ms pacing across device tiers (including tile-based GPUs), prioritizing
+        stability and spike control over peak FPS.
       </p>
 
       <section className="mt-8 space-y-3">
         <h2 className="text-xl font-semibold text-slate-900">Problem / Context</h2>
-        <p className="text-slate-700">Combat moments could exceed typical mobile scene complexity:</p>
+        <p className="text-slate-700">At peak moments, combat scenes could include:</p>
         <ul className="list-disc space-y-2 pl-5 text-slate-700">
-          <li>100+ complex enemy skinned meshes active concurrently</li>
-          <li>Full city environment with navigation running</li>
+          <li>100+ complex enemy skinned mesh renderers active concurrently</li>
+          <li>Full city environment with active NavMesh agents</li>
           <li>Ragdoll activation on death events</li>
-          <li>Thousands of pooled projectiles in-flight during bursts</li>
+          <li>Thousands of pooled projectiles during bursts</li>
         </ul>
+        <p className="text-slate-700">Primary risks:</p>
+        <ul className="list-disc space-y-2 pl-5 text-slate-700">
+          <li>CPU overload from skinning/animation updates and render submission</li>
+          <li>GPU fill/tile pressure from poor occlusion behavior and large bounds</li>
+          <li>Frame-time variance (stutter) during burst moments (ragdolls + projectiles)</li>
+        </ul>
+        <p className="text-slate-700">Goal:</p>
         <p className="text-slate-700">
-          The core risk was variance: builds that look fine on a desk test but fail under real player density spikes,
-          camera angles, and thermal/device-tier constraints. The goal was to protect the 16ms frame-time target by
-          reducing submission pressure, minimizing tile-memory waste, and eliminating CPU-side animation work that
-          provided no on-screen value.
+          Keep frame time within budget by reducing per-frame work, preserving culling effectiveness, and eliminating
+          off-screen animation cost.
         </p>
       </section>
 
       <section className="mt-8 space-y-3">
         <h2 className="text-xl font-semibold text-slate-900">Engineering Approach</h2>
-        <p className="text-slate-700">1) Dynamic skinned-mesh chunking (runtime batching)</p>
+        <p className="text-slate-700">1) Dynamic skinned-mesh chunking</p>
         <p className="text-slate-700">
-          Enemies were grouped into dynamically sized chunks (5 / 10 / 25 / 25 / 50) based on scene density. This
-          reduced renderer overhead while avoiding the failure mode of over-large batches (poor culling, increased
-          overdraw, and large bounds).
+          Enemies were combined into runtime-calculated chunks sized by density (5 / 10 / 25 / 25 / 50). This reduced
+          renderer/submission pressure while avoiding over-large combined bounds that break culling and increase
+          overdraw.
         </p>
         <p className="text-slate-700">2) Spatially coherent grouping (occlusion-aware)</p>
         <p className="text-slate-700">
-          Chunks were constructed from spatially close enemies so that occlusion/culling remained effective. On
-          tile-based mobile GPUs, large bounding volumes can force unnecessary tile writes. Spatial coherence improved
-          cull effectiveness and reduced fill pressure during dense camera angles.
+          Chunk membership was based on spatial proximity so occlusion and frustum culling remained effective. This is
+          critical on tile-based mobile GPUs where large visible bounds can force unnecessary tile memory writes even
+          when most of the chunk is actually hidden.
         </p>
-        <p className="text-slate-700">3) Visibility-driven animation suppression</p>
+        <p className="text-slate-700">3) Visibility-driven animation suppression (combined-bounds edge case)</p>
         <p className="text-slate-700">
-          Combined meshes can keep a chunk’s bounding box intersecting the camera frustum even when many enemies
-          inside the chunk are off-screen. To avoid wasted CPU skinning/bone updates, animation updates were explicitly
-          stopped for enemies not contributing to the current view, even when their parent chunk remained technically
-          visible.
+          Combining meshes can keep a chunk’s bounds intersecting the camera frustum even when most members are
+          off-screen. To prevent wasted CPU skinning/bone updates, animation updates were explicitly disabled for
+          enemies not contributing to the current view, even if the parent chunk remained technically visible.
         </p>
-        <p className="text-slate-700">4) Spike containment during bursts</p>
+        <p className="text-slate-700">4) Burst stability validation</p>
         <p className="text-slate-700">
-          Ragdoll activation and projectile bursts were treated as spike sources. Systems were validated under
-          representative ‘worst moments’ to ensure frame-time cadence did not collapse during combat peaks.
+          Ragdoll activation and projectile bursts were treated as stutter sources. These moments were profiled
+          explicitly to ensure frame pacing stayed stable during the burst itself, not just in steady-state.
         </p>
       </section>
 
       <section className="mt-8 space-y-3">
         <h2 className="text-xl font-semibold text-slate-900">Measured Results</h2>
-        <p className="text-slate-700">
-          Outcomes were evaluated as frame-time stability under representative combat moments rather than a single
-          best-case FPS value:
-        </p>
+        <p className="text-slate-700">Results are reported as stability improvements under representative peak gameplay:</p>
         <ul className="list-disc space-y-2 pl-5 text-slate-700">
-          <li>Reduced render submission pressure by batching skinned meshes into density-appropriate chunks.</li>
-          <li>Improved culling/occlusion effectiveness by keeping chunk bounds tight and spatially coherent.</li>
-          <li>Removed wasted CPU skinning work by gating animation updates when enemies were off-screen.</li>
-          <li>
-            Maintained smooth frame pacing even during ragdoll + projectile burst events, keeping gameplay free of
-            visible stutter on mobile GPU targets.
-          </li>
+          <li>Reduced CPU pressure by lowering render submission overhead and suppressing off-screen animation work.</li>
+          <li>Improved culling/occlusion effectiveness by keeping combined bounds spatially tight.</li>
+          <li>Reduced GPU waste (fill/tile pressure) by preventing large-bounds visibility from forcing unnecessary work.</li>
+          <li>Maintained smooth pacing during ragdoll + projectile burst moments, reducing visible stutter.</li>
         </ul>
       </section>
 
       <section className="mt-8 space-y-3">
         <h2 className="text-xl font-semibold text-slate-900">Evidence</h2>
-        <p className="text-slate-700">Evidence was gathered through repeatable capture comparisons around dense combat scenarios:</p>
+        <p className="text-slate-700">Evidence was collected using repeatable capture scenarios:</p>
         <ul className="list-disc space-y-2 pl-5 text-slate-700">
-          <li>Unity Profiler captures focused on main thread timing, animation/skin update cost, and spike signatures.</li>
           <li>
-            Render/culling validation using representative camera angles to confirm chunk bounds improved occlusion
-            behavior.
+            Unity Profiler captures focusing on main thread cost (animation/skin updates, burst spikes) and render
+            submission behavior.
           </li>
-          <li>
-            Before/after comparisons for: submission behavior, animation update workload, and burst stability (ragdoll
-            + projectiles).
-          </li>
+          <li>Camera-angle validation passes to confirm chunk bounds improved occlusion/culling effectiveness.</li>
+          <li>Before/after capture bundles comparing spike signatures during dense combat and burst events.</li>
         </ul>
       </section>
 
       <section className="mt-8 space-y-3">
         <h2 className="text-xl font-semibold text-slate-900">Mitigation Strategy</h2>
-        <p className="text-slate-700">Device-tier playbook used during tuning:</p>
+        <p className="text-slate-700">Device-tier playbook:</p>
         <p className="text-slate-700">GPU-bound (fill / overdraw / tile pressure)</p>
         <ul className="list-disc space-y-2 pl-5 text-slate-700">
-          <li>Keep batch bounds tight; enforce spatial grouping so occlusion can actually work.</li>
-          <li>Avoid ‘giant bounds’ that force unnecessary tile writes.</li>
-          <li>Reduce alpha/overdraw sources during peak combat camera angles.</li>
+          <li>Keep bounds tight via spatial grouping so occlusion can actually cull work.</li>
+          <li>Avoid ‘giant bounds’ that remain visible and force tile writes.</li>
+          <li>Reduce overdraw sources during peak combat camera angles.</li>
         </ul>
         <p className="text-slate-700">CPU-bound (animation / submission / spikes)</p>
         <ul className="list-disc space-y-2 pl-5 text-slate-700">
           <li>Batch skinned meshes to reduce renderer overhead without destroying culling.</li>
-          <li>Explicitly gate animation/skin updates for enemies not contributing to the view.</li>
-          <li>Treat ragdoll and projectile bursts as spike events; validate stability during the burst, not outside it.</li>
+          <li>Gate animation/skin updates per enemy when not visible, even under combined bounds.</li>
+          <li>Treat ragdoll/projectile bursts as spike events and validate pacing under burst.</li>
         </ul>
         <p className="text-slate-700">Variance-bound (stutter / cadence)</p>
         <ul className="list-disc space-y-2 pl-5 text-slate-700">
-          <li>Focus on frame pacing and spike frequency reduction, not average FPS.</li>
-          <li>Validate across representative scenes and camera angles, not a single test lane.</li>
+          <li>Optimize for spike frequency and worst-case cadence, not average FPS.</li>
+          <li>Validate across representative scenes and camera paths, not a single lane.</li>
         </ul>
       </section>
 

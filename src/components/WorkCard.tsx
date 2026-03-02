@@ -13,7 +13,7 @@ export default function WorkCard({ project }: WorkCardProps) {
       <div className="mt-4">
         <p className="text-xs font-semibold uppercase tracking-[0.08em] text-slate-500">What I did</p>
         <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-700">
-          {project.highlights.map((highlight) => (
+          {project.highlights.slice(0, 3).map((highlight) => (
             <li key={highlight}>{highlight}</li>
           ))}
         </ul>

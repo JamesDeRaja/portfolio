@@ -6,14 +6,12 @@ export const workProjects: WorkProject[] = [
     title: 'XR Performance Stress Lab',
     summary: 'Profiler-led test harness for isolating XR rendering and frame pacing constraints.',
     highlights: [
-      'Designed repeatable scene toggles for overdraw, MSAA, and CPU pressure.',
-      'Instrumented frame timing variance capture for spike analysis.',
-      'Prepared mitigation matrix tied to bottleneck signatures.'
+      'Reduced submission + skinning cost via dynamic skinned-mesh chunking.',
+      'Protected culling/occlusion behavior with spatially coherent grouping + visibility gating.'
     ],
     impact: [
-      'Quantified overdraw fragment delta: 6.37 ms → 13.64 ms (Δ +7.27 ms, GPU-bound).',
-      'Measured MSAA amplification under XR bandwidth pressure.',
-      'Classified CPU vs GPU submission bottlenecks via controlled toggles.'
+      'Maintained stable 16ms frame pacing during dense combat moments on mobile GPUs.',
+      'Prevented stutter spikes during ragdoll + projectile bursts via workload gating.'
     ],
     caseStudyUrl: '/case-studies/xr-stress-lab',
     repoUrl: 'https://github.com/JamesDeRaja/XRPerformanceLab',
@@ -57,18 +55,14 @@ export const workProjects: WorkProject[] = [
     id: 'mobile-projects',
     title: 'Selected Published Mobile Projects',
     summary:
-      'Shipped mobile titles where frame-time stability was protected under heavy real-world runtime load (skinned meshes, navigation, physics, projectile systems). Focus: consistent frame pacing across device tiers, not peak FPS.',
+      'Production mobile performance work focused on stable frame pacing under extreme agent density (100+ skinned meshes, nav, ragdolls, projectiles).',
     highlights: [
-      'Built profiling-led mitigation plans around release milestones (CPU submission, GPU fill-rate, sync stalls).',
-      'Implemented runtime batching + visibility gating for high-agent-count combat scenes.',
-      'Stabilized frame pacing by removing spikes (animation/physics bursts, culling inefficiencies, sync points).',
-      'Supported post-launch investigations with capture bundles and before/after comparisons.'
+      'Reduced submission + skinning cost via dynamic skinned-mesh chunking.',
+      'Protected culling/occlusion behavior with spatially coherent grouping + visibility gating.'
     ],
     impact: [
-      'Sustained stable 16ms frame time targets during dense combat scenarios on mobile GPUs.',
-      'Reduced render submission pressure via dynamic skinned-mesh chunking and spatially coherent grouping.',
-      'Improved tile-based GPU efficiency by minimizing overdraw + preventing large-bounds culling failures.',
-      'Cut wasted CPU skinning/animation work by disabling off-screen animation updates even under combined bounds.'
+      'Maintained stable 16ms frame pacing during dense combat moments on mobile GPUs.',
+      'Prevented stutter spikes during ragdoll + projectile bursts via workload gating.'
     ],
     caseStudyUrl: '/case-studies/sneaky-warrior-3d',
     repoUrl: 'https://apps.apple.com/us/app/sneaky-warriour-3d/id1626719884'
