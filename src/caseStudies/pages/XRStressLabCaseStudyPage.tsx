@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import SmartLink from '../../components/SmartLink';
 import MiniBars from '../../components/charts/MiniBars';
 import { getResultDelta, xrStressLabResults } from '../../data/xrStressLabResults';
 
@@ -173,9 +174,9 @@ export default function XRStressLabCaseStudyPage() {
           <h2 className="text-xl font-semibold text-slate-900">Links</h2>
           <ul className="list-disc space-y-2 pl-5 text-slate-700">
             <li>
-              <a href="https://github.com/JamesDeRaja/XRPerformanceLab" className="hover:text-cyan-700 hover:underline">
+              <SmartLink href="https://github.com/JamesDeRaja/XRPerformanceLab" className="hover:text-cyan-700 hover:underline">
                 Repository
-              </a>
+              </SmartLink>
             </li>
             <li>
               <Link to="/lab/overdraw" className="hover:text-cyan-700 hover:underline">

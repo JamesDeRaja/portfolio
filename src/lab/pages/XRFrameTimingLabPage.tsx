@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import ResultsTable from '../../components/ResultsTable';
+import SmartLink from '../../components/SmartLink';
 import { performanceResults } from '../../data/performanceResults';
 
 export default function XRFrameTimingLabPage() {
@@ -119,14 +120,12 @@ export default function XRFrameTimingLabPage() {
           >
             Back to Lab
           </Link>
-          <a
+          <SmartLink
             href="https://github.com/JamesDeRaja/XRPerformanceLab"
-            target="_blank"
-            rel="noreferrer"
             className="rounded-xl bg-cyan-600 px-5 py-3 text-sm font-medium text-white hover:bg-cyan-700"
           >
             XR Stress Lab (GitHub)
-          </a>
+          </SmartLink>
         </div>
       </section>
     </main>

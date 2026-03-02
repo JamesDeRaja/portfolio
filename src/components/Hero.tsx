@@ -1,5 +1,6 @@
 import React from 'react';
 import { Download, Award, Calendar } from 'lucide-react';
+import SmartLink from './SmartLink';
 
 const Hero = () => {
   return (
@@ -58,14 +59,12 @@ const Hero = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delay-6">
-            <a
+            <SmartLink
               href="https://play.google.com/store/apps/dev?id=8149791665541446457"
-              target="_blank"
-              rel="noopener noreferrer"
               className="bg-white text-black px-8 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 hover-rotate"
             >
               View Our Games
-            </a>
+            </SmartLink>
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-black transition-all duration-300 hover-tilt"

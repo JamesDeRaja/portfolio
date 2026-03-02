@@ -1,5 +1,6 @@
 import React from 'react';
 import { ExternalLink } from 'lucide-react';
+import SmartLink from './SmartLink';
 
 const Games = () => {
   const games = [
@@ -62,30 +63,26 @@ const Games = () => {
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{game.title}</h3>
                 <p className="text-gray-600 mb-4">{game.description}</p>
                 
-                <a
+                <SmartLink
                   href={game.playStoreUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-flex items-center space-x-2 bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 hover-rotate"
                 >
                   <span>Play Now</span>
                   <ExternalLink className="w-4 h-4 hover-wiggle" />
-                </a>
+                </SmartLink>
               </div>
             </div>
           ))}
         </div>
 
         <div className="text-center mt-12">
-          <a
+          <SmartLink
             href="https://play.google.com/store/apps/dev?id=8149791665541446457"
-            target="_blank"
-            rel="noopener noreferrer"
             className="inline-flex items-center space-x-2 bg-black text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-all duration-300 hover-float"
           >
             <span>View All Games</span>
             <ExternalLink className="w-4 h-4 hover-spin-scale" />
-          </a>
+          </SmartLink>
         </div>
       </div>
     </section>

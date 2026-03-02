@@ -1,5 +1,6 @@
 import React from 'react';
 import { Gamepad2, ExternalLink } from 'lucide-react';
+import SmartLink from './SmartLink';
 
 const Footer = () => {
   return (
@@ -16,24 +17,20 @@ const Footer = () => {
               Creating engaging mobile games that captivate millions of players worldwide.
             </p>
             <div className="flex space-x-4">
-              <a
+              <SmartLink
                 href="https://play.google.com/store/apps/dev?id=8149791665541446457"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="flex items-center space-x-2 text-gray-400 hover:text-white transition-all duration-300 hover-float"
               >
                 <span>Google Play</span>
                 <ExternalLink className="w-4 h-4 hover-wiggle" />
-              </a>
-              <a
+              </SmartLink>
+              <SmartLink
                 href="https://play.google.com/store/apps/dev?id=8149791665541446457"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="flex items-center space-x-2 text-gray-400 hover:text-white transition-all duration-300 hover-float"
               >
                 <span>App Store</span>
                 <ExternalLink className="w-4 h-4 hover-wiggle" />
-              </a>
+              </SmartLink>
             </div>
           </div>
 
@@ -105,14 +102,12 @@ const Footer = () => {
           </p>
           <p className="text-gray-400 mt-4">
             Want to see more? 
-            <a 
+            <SmartLink 
               href="https://james.alphaden.club" 
-              target="_blank" 
-              rel="noopener noreferrer"
               className="text-white hover:text-gray-300 transition-all duration-300 ml-1 underline hover-rotate"
             >
               Visit my full portfolio here.
-            </a>
+            </SmartLink>
           </p>
         </div>
       </div>
