@@ -22,6 +22,7 @@ function App() {
         <Route path="/case-studies/xr-stress-lab" element={<XRStressLabCaseStudyPage />} />
         <Route path="/case-studies/softmaskpro" element={<SoftMaskProCaseStudyPage />} />
         <Route path="/case-studies/profiling-toolkit" element={<ProfilingToolkitCaseStudyPage />} />
+        <Route path="/case-studies/sneaky-warrior-3d" element={<PublishedMobileProjectsCaseStudyPage />} />
         <Route path="/case-studies/published-mobile-projects" element={<PublishedMobileProjectsCaseStudyPage />} />
         <Route path="/lab/overdraw" element={<OverdrawLabPage />} />
         <Route path="/lab/msaa" element={<MSAALabPage />} />

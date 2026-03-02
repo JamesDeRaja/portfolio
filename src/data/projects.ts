@@ -56,18 +56,21 @@ export const workProjects: WorkProject[] = [
   {
     id: 'mobile-projects',
     title: 'Selected Published Mobile Projects',
-    summary: 'Representative shipped titles with emphasis on runtime stability and technical execution.',
+    summary:
+      'Shipped mobile titles where frame-time stability was protected under heavy real-world runtime load (skinned meshes, navigation, physics, projectile systems). Focus: consistent frame pacing across device tiers, not peak FPS.',
     highlights: [
-      'Owned performance tuning passes before release milestones.',
-      'Collaborated with design/art on quality vs frame budget tradeoffs.',
-      'Supported post-launch diagnostics and fixes.'
+      'Built profiling-led mitigation plans around release milestones (CPU submission, GPU fill-rate, sync stalls).',
+      'Implemented runtime batching + visibility gating for high-agent-count combat scenes.',
+      'Stabilized frame pacing by removing spikes (animation/physics bursts, culling inefficiencies, sync points).',
+      'Supported post-launch investigations with capture bundles and before/after comparisons.'
     ],
     impact: [
-      'Maintained stable 16ms/11ms frame budgets under device-tier constraints.',
-      'Diagnosed CPU-GPU sync stalls pre-release.',
-      'Applied profiling-driven mitigation pre- and post-launch.'
+      'Sustained stable 16ms frame time targets during dense combat scenarios on mobile GPUs.',
+      'Reduced render submission pressure via dynamic skinned-mesh chunking and spatially coherent grouping.',
+      'Improved tile-based GPU efficiency by minimizing overdraw + preventing large-bounds culling failures.',
+      'Cut wasted CPU skinning/animation work by disabling off-screen animation updates even under combined bounds.'
     ],
-    caseStudyUrl: '/case-studies/published-mobile-projects',
-    repoUrl: 'https://github.com/JamesDeRaja/XRPerformanceLab'
+    caseStudyUrl: '/case-studies/sneaky-warrior-3d',
+    repoUrl: 'https://apps.apple.com/us/app/sneaky-warriour-3d/id1626719884'
   }
 ];
