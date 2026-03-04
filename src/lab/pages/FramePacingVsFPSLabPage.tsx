@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Seo } from '../../components/Seo';
 
 export default function FramePacingVsFPSLabPage() {
   const hz = 72;
@@ -7,6 +8,22 @@ export default function FramePacingVsFPSLabPage() {
 
   return (
     <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+      <Seo
+        title="Frame Pacing vs FPS Lab — James De Raja"
+        description="Lab article showing why stable frame pacing can outperform higher but inconsistent FPS in XR and real-time rendering workloads."
+        url="https://james.alphaden.club/lab/frame-pacing-vs-fps"
+        keywords="frame pacing vs FPS, XR performance, frame stability, Unity"
+        type="article"
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'CreativeWork',
+          headline: 'Frame Pacing vs FPS Lab',
+          description: 'Lab article showing why stable frame pacing can outperform higher but inconsistent FPS in XR and real-time rendering workloads.',
+          author: { '@type': 'Person', name: 'James De Raja' },
+          datePublished: '2025-01-01',
+          image: '/og-image.png',
+        }}
+      />
       <div style={{ marginBottom: '16px' }}>
         <Link to="/?section=writing">← Back to Writing</Link>
       </div>

@@ -1,9 +1,27 @@
 import { Link } from 'react-router-dom';
 import SmartLink from '../../components/SmartLink';
+import { Seo } from '../../components/Seo';
 
 export default function SoftMaskProCaseStudyPage() {
   return (
     <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+      <Seo
+        title="SoftMaskPro Optimization Case Study — James De Raja"
+        description="SoftMaskPro profiling and patching case study focused on UI mask draw calls, render pass overhead, and frame-time stabilization in Unity."
+        url="https://james.alphaden.club/case-studies/softmaskpro"
+        keywords="SoftMaskPro, Unity UI optimization, draw calls, frame timing, profiling"
+        type="article"
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: 'SoftMaskPro Optimization Case Study',
+          description:
+            'SoftMaskPro profiling and patching case study focused on UI mask draw calls, render pass overhead, and frame-time stabilization in Unity.',
+          author: { '@type': 'Person', name: 'James De Raja' },
+          datePublished: '2025-01-01',
+          image: '/og-image.png',
+        }}
+      />
       <div style={{ marginBottom: '16px' }}>
         <Link to="/">← Back to Home</Link>
       </div>
