@@ -1,9 +1,26 @@
 import { Link } from 'react-router-dom';
 import MetricsSummary from '../components/MetricsSummary';
+import { Seo } from '../../components/Seo';
 
 export default function MSAALabPage() {
   return (
     <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+      <Seo
+        title="MSAA Scaling Lab — James De Raja"
+        description="MSAA scaling lab measuring GPU bandwidth amplification and frame-time impact across anti-aliasing levels in controlled Unity scenes."
+        url="https://james.alphaden.club/lab/msaa"
+        keywords="MSAA scaling, Unity performance, GPU bandwidth, anti-aliasing"
+        type="article"
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'CreativeWork',
+          headline: 'MSAA Scaling Lab',
+          description: 'MSAA scaling lab measuring GPU bandwidth amplification and frame-time impact across anti-aliasing levels in controlled Unity scenes.',
+          author: { '@type': 'Person', name: 'James De Raja' },
+          datePublished: '2025-01-01',
+          image: '/og-image.png',
+        }}
+      />
       <div style={{ marginBottom: '16px' }}>
         <Link to="/case-studies/xr-stress-lab">← Back to XR Stress Lab Case Study</Link>
       </div>

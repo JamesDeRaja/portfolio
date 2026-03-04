@@ -1,9 +1,26 @@
 import { Link } from 'react-router-dom';
 import MetricsSummary from '../components/MetricsSummary';
+import { Seo } from '../../components/Seo';
 
 export default function InstancingLabPage() {
   return (
     <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+      <Seo
+        title="Instancing Lab — James De Raja"
+        description="Instancing lab comparing draw submission overhead and CPU render-thread savings between instanced and non-instanced scenes."
+        url="https://james.alphaden.club/lab/instancing"
+        keywords="instancing lab, draw calls, render thread, Unity optimization"
+        type="article"
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'CreativeWork',
+          headline: 'Instancing Lab',
+          description: 'Instancing lab comparing draw submission overhead and CPU render-thread savings between instanced and non-instanced scenes.',
+          author: { '@type': 'Person', name: 'James De Raja' },
+          datePublished: '2025-01-01',
+          image: '/og-image.png',
+        }}
+      />
       <div style={{ marginBottom: '16px' }}>
         <Link to="/case-studies/xr-stress-lab">← Back to XR Stress Lab Case Study</Link>
       </div>

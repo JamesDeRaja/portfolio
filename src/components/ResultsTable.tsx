@@ -18,7 +18,7 @@ function formatBottleneck(bottleneck: string) {
 export default function ResultsTable({ rows }: ResultsTableProps) {
   return (
     <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
-      <table className="min-w-full divide-y divide-slate-200 text-left text-sm">
+      <table className="min-w-full divide-y divide-slate-200 text-left text-sm" aria-label="XR performance experiment results">
         <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-600">
           <tr>
             <th className="px-4 py-3">Experiment</th>

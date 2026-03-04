@@ -1,9 +1,27 @@
 import { Link } from 'react-router-dom';
 import SmartLink from '../../components/SmartLink';
+import { Seo } from '../../components/Seo';
 
 export default function ProfilingToolkitCaseStudyPage() {
   return (
     <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+      <Seo
+        title="Profiling Toolkit Case Study — James De Raja"
+        description="Case study on a Unity runtime profiling overlay that shortens bottleneck triage from symptom capture to mitigation-ready evidence."
+        url="https://james.alphaden.club/case-studies/profiling-toolkit"
+        keywords="Unity profiler toolkit, runtime overlay, bottleneck triage, performance telemetry"
+        type="article"
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: 'Profiling Toolkit Case Study',
+          description:
+            'Case study on a Unity runtime profiling overlay that shortens bottleneck triage from symptom capture to mitigation-ready evidence.',
+          author: { '@type': 'Person', name: 'James De Raja' },
+          datePublished: '2025-01-01',
+          image: '/og-image.png',
+        }}
+      />
       <div style={{ marginBottom: '16px' }}>
         <Link to="/">← Back to Home</Link>
       </div>

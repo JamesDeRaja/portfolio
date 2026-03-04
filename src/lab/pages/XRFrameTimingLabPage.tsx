@@ -2,10 +2,27 @@ import { Link } from 'react-router-dom';
 import ResultsTable from '../../components/ResultsTable';
 import SmartLink from '../../components/SmartLink';
 import { performanceResults } from '../../data/performanceResults';
+import { Seo } from '../../components/Seo';
 
 export default function XRFrameTimingLabPage() {
   return (
     <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+      <Seo
+        title="XR Frame Timing Lab — James De Raja"
+        description="Lab article on XR frame deadlines, compositor sync points, and practical profiling signals for reducing reprojection risk."
+        url="https://james.alphaden.club/lab/xr-frame-timing"
+        keywords="XR frame timing, compositor deadlines, reprojection, Unity XR"
+        type="article"
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'CreativeWork',
+          headline: 'XR Frame Timing Lab',
+          description: 'Lab article on XR frame deadlines, compositor sync points, and practical profiling signals for reducing reprojection risk.',
+          author: { '@type': 'Person', name: 'James De Raja' },
+          datePublished: '2025-01-01',
+          image: '/og-image.png',
+        }}
+      />
       <div style={{ marginBottom: '16px' }}>
         <Link to="/?section=writing">← Back to Writing</Link>
       </div>
