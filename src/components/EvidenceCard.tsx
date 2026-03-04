@@ -22,7 +22,7 @@ export default function EvidenceCard({ title, description, imagePath, caption }:
         ) : (
           <img
             src={imagePath}
-            alt={title}
+            alt={`${title} evidence screenshot`}
             loading="lazy"
             onError={() => setImageMissing(true)}
             className="h-full w-full object-cover"

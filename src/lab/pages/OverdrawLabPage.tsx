@@ -1,9 +1,26 @@
 import { Link } from 'react-router-dom';
 import MetricsSummary from '../components/MetricsSummary';
+import { Seo } from '../../components/Seo';
 
 export default function OverdrawLabPage() {
   return (
     <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+      <Seo
+        title="Overdraw Lab — James De Raja"
+        description="Controlled overdraw stress test quantifying fragment pressure, transparent pass escalation, and GPU bottleneck behavior in Unity XR."
+        url="https://james.alphaden.club/lab/overdraw"
+        keywords="overdraw lab, GPU fragment pressure, Unity XR, transparent pass"
+        type="article"
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'CreativeWork',
+          headline: 'Overdraw Lab',
+          description: 'Controlled overdraw stress test quantifying fragment pressure, transparent pass escalation, and GPU bottleneck behavior in Unity XR.',
+          author: { '@type': 'Person', name: 'James De Raja' },
+          datePublished: '2025-01-01',
+          image: '/og-image.png',
+        }}
+      />
       <div style={{ marginBottom: '16px' }}>
         <Link to="/case-studies/xr-stress-lab">← Back to XR Stress Lab Case Study</Link>
       </div>

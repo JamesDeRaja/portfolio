@@ -27,7 +27,13 @@ export default function MiniBars({
   const delta = stressMs === undefined ? null : stressMs - baselineMs;
 
   return (
-    <article className="rounded-xl border border-slate-200 bg-white p-3">
+    <article
+      className="rounded-xl border border-slate-200 bg-white p-3"
+      role="img"
+      aria-label={`${title}: ${labelLeft} ${baselineMs.toFixed(2)} milliseconds${
+        stressMs === undefined ? '' : `, ${labelRight} ${stressMs.toFixed(2)} milliseconds`
+      }`}
+    >
       <p className="text-sm font-medium text-slate-900">{title}</p>
       <div className="mt-3 space-y-2">
         <div className="grid grid-cols-[68px_1fr_auto] items-center gap-2">
@@ -42,7 +48,10 @@ export default function MiniBars({
           <div className="grid grid-cols-[68px_1fr_auto] items-center gap-2">
             <span className="text-xs text-slate-600">{labelRight}</span>
             <div className="h-2.5 rounded-full bg-slate-100">
-              <div className={`h-2.5 rounded-full ${variant === 'gpu' ? 'bg-cyan-600' : 'bg-slate-600'}`} style={{ width: `${stressWidth}%` }} />
+              <div
+                className={`h-2.5 rounded-full ${variant === 'gpu' ? 'bg-cyan-600' : 'bg-slate-600'}`}
+                style={{ width: `${stressWidth}%` }}
+              />
             </div>
             <span className="text-xs text-slate-700">{stressMs.toFixed(2)} ms</span>
           </div>

@@ -1,10 +1,27 @@
 import { Link } from 'react-router-dom';
+import { Seo } from '../../components/Seo';
 
 export default function OverdrawStereoLabPage() {
   const budgetMs = 11.11;
 
   return (
     <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+      <Seo
+        title="Stereo Overdraw Lab — James De Raja"
+        description="Stereo overdraw lab evaluating double-eye transparency cost, fragment amplification, and GPU budget pressure in XR rendering."
+        url="https://james.alphaden.club/lab/overdraw-stereo"
+        keywords="stereo overdraw, XR rendering, fragment cost, Unity performance"
+        type="article"
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'CreativeWork',
+          headline: 'Stereo Overdraw Lab',
+          description: 'Stereo overdraw lab evaluating double-eye transparency cost, fragment amplification, and GPU budget pressure in XR rendering.',
+          author: { '@type': 'Person', name: 'James De Raja' },
+          datePublished: '2025-01-01',
+          image: '/og-image.png',
+        }}
+      />
       <div style={{ marginBottom: '16px' }}>
         <Link to="/?section=writing">← Back to Writing</Link>
       </div>

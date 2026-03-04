@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import SmartLink from '../../components/SmartLink';
 import MiniBars from '../../components/charts/MiniBars';
 import { getResultDelta, xrStressLabResults } from '../../data/xrStressLabResults';
+import { Seo } from '../../components/Seo';
 
 function formatDelta(value: number | null) {
   if (value === null) {
@@ -14,6 +15,23 @@ function formatDelta(value: number | null) {
 export default function XRStressLabCaseStudyPage() {
   return (
     <div className="min-h-screen bg-site-pattern">
+      <Seo
+        title="XR Stress Lab Case Study — James De Raja"
+        description="Controlled XR stress tests isolating overdraw, MSAA bandwidth, submission overhead, and frame pacing variance with profiler-backed evidence."
+        url="https://james.alphaden.club/case-studies/xr-stress-lab"
+        keywords="XR stress lab, overdraw, MSAA, instancing, frame pacing, Unity profiling"
+        type="article"
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: 'XR Stress Lab Case Study',
+          description:
+            'Controlled XR stress tests isolating overdraw, MSAA bandwidth, submission overhead, and frame pacing variance with profiler-backed evidence.',
+          author: { '@type': 'Person', name: 'James De Raja' },
+          datePublished: '2025-01-01',
+          image: '/og-image.png',
+        }}
+      />
       <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
         <div style={{ marginBottom: '16px' }}>
           <Link to="/">← Back to Home</Link>

@@ -1,9 +1,27 @@
 import { Link } from 'react-router-dom';
 import SmartLink from '../../components/SmartLink';
+import { Seo } from '../../components/Seo';
 
 export default function PublishedMobileProjectsCaseStudyPage() {
   return (
     <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+      <Seo
+        title="Sneaky Warrior 3D Case Study — James De Raja"
+        description="Mobile performance case study covering frame budget stabilization for Sneaky Warrior 3D under heavy AI, ragdoll, and projectile load."
+        url="https://james.alphaden.club/case-studies/published-mobile-projects"
+        keywords="mobile performance, Unity optimization, frame budget, Sneaky Warrior 3D, frame pacing"
+        type="article"
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: 'Sneaky Warrior 3D Frame Budget Stabilization',
+          description:
+            'Mobile performance case study covering frame budget stabilization for Sneaky Warrior 3D under heavy AI, ragdoll, and projectile load.',
+          author: { '@type': 'Person', name: 'James De Raja' },
+          datePublished: '2025-01-01',
+          image: '/og-image.png',
+        }}
+      />
       <div style={{ marginBottom: '16px' }}>
         <Link to="/">← Back to Home</Link>
       </div>

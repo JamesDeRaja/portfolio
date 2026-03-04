@@ -6,7 +6,7 @@ const IconContainer = () => {
     <div className="w-12 h-12 bg-white/30 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm">
       <img 
         src="/images/Icon_3.png" 
-        alt="Custom Icon" 
+        alt="Performance metrics icon" 
         className="w-12 h-12"
       />
     </div>
