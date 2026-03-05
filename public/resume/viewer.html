@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Viewer</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+
+      body {
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe id="resumeFrame" title="Resume PDF"></iframe>
+    <script>
+      const allowedFiles = new Set([
+        'JamesDeRaja_Resume.pdf',
+        'JamesDeRaja_Resume_Performance-Systems.pdf',
+        'JamesDeRaja_Resume_Unity-Rendering-Performance.pdf',
+        'JamesDeRaja_Resume_XR-Performance-Engineer.pdf'
+      ]);
+
+      const params = new URLSearchParams(window.location.search);
+      const file = params.get('file') || 'JamesDeRaja_Resume.pdf';
+      const selectedFile = allowedFiles.has(file) ? file : 'JamesDeRaja_Resume.pdf';
+
+      const resumeName = selectedFile.replace(/\.pdf$/i, '');
+      document.title = resumeName;
+
+      const frame = document.getElementById('resumeFrame');
+      frame.src = `/${'resume'}/${encodeURIComponent(selectedFile)}`;
+      frame.setAttribute('title', `${resumeName} PDF`);
+    </script>
+  </body>
+</html>
