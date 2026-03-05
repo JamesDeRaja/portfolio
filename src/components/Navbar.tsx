@@ -24,7 +24,7 @@ export default function Navbar() {
           ))}
         </div>
         <SmartLink
-          href="/resume/viewer.html?file=JamesDeRaja_Resume.pdf"
+          href="/resume/viewer.html?file=JamesDeRaja_Resume.pdf&title=James_De_Raja_Unity_XR_Performance_Engineer_Resume"
           className="rounded-xl border border-cyan-700 bg-cyan-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-cyan-700"
         >
           View Resume (PDF)
