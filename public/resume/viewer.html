@@ -36,8 +36,9 @@
       const file = params.get('file') || 'JamesDeRaja_Resume.pdf';
       const selectedFile = allowedFiles.has(file) ? file : 'JamesDeRaja_Resume.pdf';
 
+      const customTitle = params.get('title');
       const resumeName = selectedFile.replace(/\.pdf$/i, '');
-      document.title = resumeName;
+      document.title = customTitle || resumeName;
 
       const frame = document.getElementById('resumeFrame');
       frame.src = `/${'resume'}/${encodeURIComponent(selectedFile)}`;
