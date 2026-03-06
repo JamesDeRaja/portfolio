@@ -53,7 +53,7 @@ export const workProjects: WorkProject[] = [
   },
   {
     id: 'mobile-projects',
-    title: 'Selected Published Mobile Projects',
+    title: 'Selected Published Projects',
     summary:
       'Production mobile performance work focused on stable frame pacing under extreme agent density (100+ skinned meshes, nav, ragdolls, projectiles).',
     highlights: [

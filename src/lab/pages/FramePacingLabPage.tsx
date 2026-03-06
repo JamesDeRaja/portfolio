@@ -20,8 +20,8 @@ export default function FramePacingLabPage() {
           image: '/og-image.png',
         }}
       />
-      <div style={{ marginBottom: '16px' }}>
-        <Link to="/case-studies/xr-stress-lab">← Back to XR Stress Lab Case Study</Link>
+      <div className="mb-4">
+        <Link to="/case-studies/xr-stress-lab" className="text-sm text-slate-500 hover:text-cyan-700 transition-colors">← Back to XR Stress Lab Case Study</Link>
       </div>
 
       <h1 className="text-3xl font-semibold text-slate-900">Frame Pacing Variance Lab</h1>

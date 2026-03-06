@@ -9,6 +9,13 @@ export default function ContactSection() {
         title="Let's talk performance engineering"
         subtitle="Available for technical discussions around real-time optimization, profiling strategy, and XR performance architecture."
       />
+      <div className="mb-6 flex flex-wrap gap-2">
+        {['XR Rendering Optimization', 'Real-Time Performance Engineering', 'Graphics Systems & Profiling', 'Frame Pacing Research'].map((role) => (
+          <span key={role} className="rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1 text-xs font-medium text-cyan-800">
+            {role}
+          </span>
+        ))}
+      </div>
       <div className="flex flex-wrap gap-3">
         <SmartLink href="mailto:jamesderaja@gmail.com" className="rounded-xl bg-cyan-600 px-5 py-3 text-sm font-medium text-white hover:bg-cyan-700" aria-label="Send email to James De Raja">
           Email

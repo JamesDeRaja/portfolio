@@ -12,7 +12,10 @@ export default function ExperimentAccordion({ experiments }: ExperimentAccordion
         <details key={experiment.id} className="group rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
           <summary className="cursor-pointer list-none text-base font-medium text-slate-900">
             <div className="flex items-center justify-between gap-4">
-              <span>{experiment.title}</span>
+              <div>
+                <span>{experiment.title}</span>
+                <span className="ml-3 text-xs font-normal text-slate-500 group-open:hidden">{experiment.spec.hypothesis}</span>
+              </div>
               <span className="text-xs text-slate-500 transition group-open:rotate-180">⌄</span>
             </div>
           </summary>
