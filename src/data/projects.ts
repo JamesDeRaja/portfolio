@@ -53,7 +53,7 @@ export const workProjects: WorkProject[] = [
   },
   {
     id: 'mobile-projects',
-    title: 'Selected Published Mobile Projects',
+    title: 'Selected Published Projects',
     summary:
       'Production mobile performance work focused on stable frame pacing under extreme agent density (100+ skinned meshes, nav, ragdolls, projectiles).',
     highlights: [
@@ -65,12 +65,6 @@ export const workProjects: WorkProject[] = [
       'Reduced memory footprint allowing reliable play on 2GB RAM devices.'
     ],
     caseStudyUrl: '/case-studies/sneaky-warrior-3d',
-    repoUrl: 'https://apps.apple.com/us/app/sneaky-warriour-3d/id1626719884',
-    images: [
-      '/images/AquaSpin.png',
-      '/images/Bolt.png',
-      '/images/Flower.png',
-      '/images/News.png',
-    ]
+    repoUrl: 'https://apps.apple.com/us/app/sneaky-warriour-3d/id1626719884'
   }
 ];

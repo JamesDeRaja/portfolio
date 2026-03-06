@@ -33,8 +33,8 @@ export default function XRStressLabCaseStudyPage() {
         }}
       />
       <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
-        <div style={{ marginBottom: '16px' }}>
-          <Link to="/">← Back to Home</Link>
+        <div className="mb-4">
+          <Link to="/" className="text-sm text-slate-500 hover:text-cyan-700 transition-colors">← Back to Home</Link>
         </div>
 
       <h1 className="text-3xl font-semibold text-slate-900">XR Performance Stress Lab</h1>

@@ -39,11 +39,22 @@ export default function AboutSection() {
 
       {/* Career narrative */}
       <div className="mb-8 flex flex-col gap-6 sm:flex-row sm:items-start">
-        <img
-          src="/images/james.jpg"
-          alt="James De Raja"
-          className="h-32 w-32 flex-shrink-0 rounded-full object-cover shadow-md ring-2 ring-slate-200 sm:h-36 sm:w-36"
-        />
+        {/* Left column: photo + identity */}
+        <div className="flex flex-shrink-0 flex-col items-center gap-3 sm:w-40 sm:items-start">
+          <img
+            src="/images/james.jpg"
+            alt="James De Raja"
+            className="h-36 w-36 rounded-full object-cover shadow-md ring-2 ring-slate-200"
+          />
+          <div>
+            <p className="text-sm font-semibold text-slate-900">James De Raja</p>
+            <p className="text-xs text-slate-500 mt-0.5">Senior Performance Engineer</p>
+            <p className="text-xs text-slate-500 mt-0.5">Chennai · Open to relocation</p>
+            <span className="mt-2 inline-block rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-medium text-emerald-700 ring-1 ring-emerald-200">
+              Available
+            </span>
+          </div>
+        </div>
         <div className="space-y-4 text-sm text-slate-700 leading-relaxed">
         <p>
           I'm a Senior Real-Time Performance Engineer with 13+ years optimizing Unity rendering pipelines, frame pacing, and CPU/GPU bottleneck behaviour under strict <strong>11ms / 16ms frame budgets</strong>. My focus is reproducible measurement: baseline vs stress deltas, bottleneck classification (CPU-bound vs GPU-bound), and mitigation strategies teams can apply repeatedly.

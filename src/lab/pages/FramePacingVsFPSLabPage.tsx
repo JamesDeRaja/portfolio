@@ -24,8 +24,8 @@ export default function FramePacingVsFPSLabPage() {
           image: '/og-image.png',
         }}
       />
-      <div style={{ marginBottom: '16px' }}>
-        <Link to="/?section=writing">← Back to Writing</Link>
+      <div className="mb-4">
+        <Link to="/#writing" className="text-sm text-slate-500 hover:text-cyan-700 transition-colors">← Back to Writing</Link>
       </div>
 
       <header className="space-y-3">

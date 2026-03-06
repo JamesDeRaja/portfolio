@@ -22,8 +22,8 @@ export default function PublishedMobileProjectsCaseStudyPage() {
           image: '/og-image.png',
         }}
       />
-      <div style={{ marginBottom: '16px' }}>
-        <Link to="/">← Back to Home</Link>
+      <div className="mb-4">
+        <Link to="/" className="text-sm text-slate-500 hover:text-cyan-700 transition-colors">← Back to Home</Link>
       </div>
 
       <h1 className="text-3xl font-semibold text-slate-900">Sneaky Warrior 3D — Frame Budget Stabilization on Mobile</h1>
