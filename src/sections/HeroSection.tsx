@@ -1,50 +1,73 @@
 import { Link } from 'react-router-dom';
 
-const proofChips = ['Frame Timing Discipline', 'GPU/CPU Bottleneck Isolation', 'XR Rendering Constraints'];
+const metrics = [
+  { value: '+7.27 ms', label: 'GPU cost isolated via overdraw stress test' },
+  { value: '72 / 90 Hz', label: 'XR stereo frame budget targets (11ms / 16ms)' },
+  { value: '13+ yrs', label: 'Unity & real-time systems engineering' },
+];
+
+const chips = [
+  'XR Stereo Rendering',
+  'GPU/CPU Bottleneck Isolation',
+  'Frame Pacing Discipline',
+  'OpenXR · URP',
+  'Unity 6',
+];
 
 export default function HeroSection() {
   return (
     <section className="mx-auto max-w-6xl px-4 pb-16 pt-14 sm:px-6 lg:px-8 lg:pt-20">
       <div className="max-w-3xl">
         <span className="inline-block rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700">
-          Open to remote &amp; relocation roles
+          Open to remote &amp; relocation — XR / VR / MR performance roles
         </span>
+
         <h1 className="mt-4 text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
           James De Raja
         </h1>
         <p className="mt-2 text-xl font-medium text-slate-700">
           Senior Real-Time Performance Engineer
         </p>
-        <p className="mt-4 text-lg text-slate-600">
-          Unity rendering, frame pacing, and XR performance research with profiler-backed measurements.
+        <p className="mt-1 text-base text-slate-500">
+          XR Rendering &bull; GPU/CPU Bottleneck Analysis &bull; Frame Pacing
         </p>
-        <p className="mt-3 text-sm text-slate-600">
-          Profiler-validated GPU bottleneck isolation (<span className="font-semibold">+7.27 ms</span>{' '}
-          <Link to="/lab/overdraw" className="text-cyan-700 hover:text-cyan-800">
-            overdraw case study
-          </Link>
-          ). Chennai, India.
+
+        <p className="mt-5 text-base text-slate-700 leading-relaxed">
+          I design deterministic test frameworks to isolate rendering bottlenecks in real-time XR systems — profiling overdraw amplification, MSAA bandwidth, submission overhead, and frame pacing variance under controlled stereo workloads.
         </p>
-        <div className="mt-6 flex flex-wrap gap-2">
-          {proofChips.map((chip) => (
+
+        {/* Key metrics */}
+        <div className="mt-7 grid grid-cols-3 gap-4">
+          {metrics.map((m) => (
+            <div key={m.value} className="rounded-xl border border-slate-200 bg-white p-3 shadow-sm">
+              <p className="text-xl font-bold text-cyan-700">{m.value}</p>
+              <p className="mt-1 text-xs text-slate-600">{m.label}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-5 flex flex-wrap gap-2">
+          {chips.map((chip) => (
             <span key={chip} className="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-700 shadow-sm">
               {chip}
             </span>
           ))}
         </div>
-        <div className="mt-8 flex flex-wrap gap-3">
+
+        <div className="mt-7 flex flex-wrap gap-3">
           <a href="#contact" className="rounded-xl bg-cyan-600 px-5 py-3 text-sm font-medium text-white hover:bg-cyan-700">
             Contact Me
           </a>
           <a href="#xr-lab" className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-medium text-slate-800 hover:border-cyan-600 hover:text-cyan-700">
             View XR Lab
           </a>
-          <a href="#writing" className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-medium text-slate-800 hover:border-cyan-600 hover:text-cyan-700">
-            Read Writing
-          </a>
+          <Link to="/case-studies/xr-stress-lab" className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-medium text-slate-800 hover:border-cyan-600 hover:text-cyan-700">
+            Case Studies
+          </Link>
         </div>
-        <p className="mt-6 text-sm text-slate-500">
-          13+ years in interactive systems &bull; Unity 10+ years &bull; Shipped mobile titles &bull; Technical leadership at Zoho
+
+        <p className="mt-5 text-sm text-slate-500">
+          Validated via Unity Profiler &amp; Frame Debugger &bull; Unity 6 URP + OpenXR &bull; Chennai, India
         </p>
       </div>
     </section>

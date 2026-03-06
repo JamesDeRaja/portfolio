@@ -8,7 +8,7 @@ export default function WorkSection() {
       <SectionHeading
         eyebrow="Case Studies"
         title="Performance Engineering Case Studies"
-        subtitle="Profiler-backed case studies focused on frame timing, rendering cost, and XR constraints."
+        subtitle="Profiler-validated deep-dives into XR rendering bottlenecks, UI overdraw cost, runtime profiling tooling, and mobile frame budget stabilisation. Each study includes baseline measurements, stress deltas, and reproducible mitigation strategies."
       />
       <div className="grid gap-5 md:grid-cols-2">
         {workProjects.map((project) => (
