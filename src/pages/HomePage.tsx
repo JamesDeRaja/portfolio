@@ -13,18 +13,14 @@ export default function HomePage() {
   const location = useLocation();
 
   useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const section = params.get('section');
+    const hash = location.hash.replace('#', '');
+    if (!hash) return;
 
-    if (!section) {
-      return;
-    }
-
-    const target = document.getElementById(section);
+    const target = document.getElementById(hash);
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [location.search]);
+  }, [location.hash]);
 
   return (
     <div className="min-h-screen bg-site-pattern text-slate-900">

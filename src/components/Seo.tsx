@@ -26,8 +26,25 @@ export function Seo({
     '@type': 'Person',
     name: 'James De Raja',
     jobTitle: 'Senior Real-Time Performance Engineer',
-    url,
-    sameAs: ['https://github.com/JamesDeRaja'],
+    url: 'https://jamesderaja.com',
+    email: 'jamesderaja@gmail.com',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Chennai',
+      addressCountry: 'IN',
+    },
+    sameAs: [
+      'https://github.com/JamesDeRaja',
+      'https://www.linkedin.com/in/james-de-raja/',
+    ],
+    knowsAbout: [
+      'Unity Performance Optimization',
+      'XR Rendering',
+      'Frame Pacing',
+      'GPU Profiling',
+      'Mobile Game Development',
+      'Real-Time Rendering',
+    ],
   };
 
   const schemas = structuredData

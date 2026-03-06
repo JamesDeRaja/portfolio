@@ -91,9 +91,6 @@ export default function XRLabSection() {
           <SmartLink href="https://github.com/JamesDeRaja/XRPerformanceLab" className="rounded-xl bg-cyan-600 px-5 py-3 text-sm font-medium text-white hover:bg-cyan-700">
             GitHub Repo
           </SmartLink>
-          <SmartLink href="https://example.com/demo-video" className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-medium text-slate-800 hover:border-cyan-600 hover:text-cyan-700">
-            Demo Video
-          </SmartLink>
         </div>
       </div>
     </section>
