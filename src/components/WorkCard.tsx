@@ -8,7 +8,20 @@ type WorkCardProps = {
 
 export default function WorkCard({ project }: WorkCardProps) {
   return (
-    <article className={`rounded-2xl border border-slate-200 bg-white p-6 shadow-sm ${project.featured ? 'ring-1 ring-cyan-100' : ''}`}>
+    <article className={`rounded-2xl border border-slate-200 bg-white shadow-sm ${project.featured ? 'ring-1 ring-cyan-100' : ''}`}>
+      {project.images && project.images.length > 0 && (
+        <div className="flex gap-2 rounded-t-2xl bg-slate-50 p-4 border-b border-slate-200">
+          {project.images.map((src) => (
+            <img
+              key={src}
+              src={src}
+              alt=""
+              className="h-14 w-14 rounded-xl object-cover shadow-sm"
+            />
+          ))}
+        </div>
+      )}
+      <div className="p-6">
       <h3 className="text-lg font-semibold text-slate-900">{project.title}</h3>
       <p className="mt-2 text-sm text-slate-700">{project.summary}</p>
       <div className="mt-4">
@@ -34,6 +47,7 @@ export default function WorkCard({ project }: WorkCardProps) {
         <SmartLink href={project.repoUrl} className="rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-800 hover:border-cyan-600 hover:text-cyan-700">
           {project.id === 'mobile-projects' ? 'App Store' : 'Repo'}
         </SmartLink>
+      </div>
       </div>
     </article>
   );

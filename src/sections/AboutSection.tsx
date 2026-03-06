@@ -38,7 +38,13 @@ export default function AboutSection() {
       />
 
       {/* Career narrative */}
-      <div className="mb-8 max-w-3xl space-y-4 text-sm text-slate-700 leading-relaxed">
+      <div className="mb-8 flex flex-col gap-6 sm:flex-row sm:items-start">
+        <img
+          src="/images/james.jpg"
+          alt="James De Raja"
+          className="h-32 w-32 flex-shrink-0 rounded-full object-cover shadow-md ring-2 ring-slate-200 sm:h-36 sm:w-36"
+        />
+        <div className="space-y-4 text-sm text-slate-700 leading-relaxed">
         <p>
           I'm a Senior Real-Time Performance Engineer with 13+ years optimizing Unity rendering pipelines, frame pacing, and CPU/GPU bottleneck behaviour under strict <strong>11ms / 16ms frame budgets</strong>. My focus is reproducible measurement: baseline vs stress deltas, bottleneck classification (CPU-bound vs GPU-bound), and mitigation strategies teams can apply repeatedly.
         </p>
@@ -51,6 +57,7 @@ export default function AboutSection() {
         <p>
           Open to remote roles and international relocation. <span className="font-medium text-slate-900">B.E., Electrical &amp; Electronics — SSN College of Engineering, Chennai.</span>
         </p>
+        </div>
       </div>
 
       <div className="grid gap-4 md:grid-cols-2">

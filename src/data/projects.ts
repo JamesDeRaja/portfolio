@@ -65,6 +65,12 @@ export const workProjects: WorkProject[] = [
       'Reduced memory footprint allowing reliable play on 2GB RAM devices.'
     ],
     caseStudyUrl: '/case-studies/sneaky-warrior-3d',
-    repoUrl: 'https://apps.apple.com/us/app/sneaky-warriour-3d/id1626719884'
+    repoUrl: 'https://apps.apple.com/us/app/sneaky-warriour-3d/id1626719884',
+    images: [
+      '/images/AquaSpin.png',
+      '/images/Bolt.png',
+      '/images/Flower.png',
+      '/images/News.png',
+    ]
   }
 ];

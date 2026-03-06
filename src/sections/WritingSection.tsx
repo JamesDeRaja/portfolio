@@ -59,7 +59,7 @@ export default function WritingSection() {
               <p className="mt-3 text-sm text-slate-700">{post.excerpt}</p>
               <p className="mt-3 text-xs text-slate-500">Includes diagrams, profiler screenshots, and measured examples.</p>
               <div className="mt-4 flex items-center justify-between text-xs text-slate-500">
-                <span>{post.readTime}</span>
+                <span>{post.date} · {post.readTime}</span>
                 <Link className="font-medium text-cyan-700 hover:text-cyan-800" to={target}>
                   Read article →
                 </Link>

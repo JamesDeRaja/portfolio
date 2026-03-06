@@ -7,6 +7,7 @@ export type WorkProject = {
   caseStudyUrl: string;
   repoUrl: string;
   featured?: boolean;
+  images?: string[];
 };
 
 export type ExperimentSpecData = {
@@ -38,4 +39,5 @@ export type WritingPost = {
   excerpt: string;
   readTime: string;
   slug: string;
+  date: string;
 };
