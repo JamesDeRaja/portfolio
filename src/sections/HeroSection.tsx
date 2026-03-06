@@ -33,8 +33,14 @@ export default function HeroSection() {
         </p>
 
         <p className="mt-5 text-base text-slate-700 leading-relaxed">
-          I design deterministic test frameworks to isolate rendering bottlenecks in real-time XR systems — profiling overdraw amplification, MSAA bandwidth, submission overhead, and frame pacing variance under controlled stereo workloads.
+          I design deterministic frameworks to isolate rendering bottlenecks in real-time XR systems.
         </p>
+        <ul className="mt-3 space-y-1 text-sm text-slate-600">
+          <li className="flex items-center gap-2"><span className="text-cyan-600 font-bold">·</span> XR rendering performance &amp; stereo frame budget discipline</li>
+          <li className="flex items-center gap-2"><span className="text-cyan-600 font-bold">·</span> CPU/GPU bottleneck isolation via controlled A/B stress tests</li>
+          <li className="flex items-center gap-2"><span className="text-cyan-600 font-bold">·</span> Frame pacing stability — variance, spikes, compositor deadline adherence</li>
+          <li className="flex items-center gap-2"><span className="text-cyan-600 font-bold">·</span> Overdraw &amp; MSAA bandwidth quantification with profiler evidence</li>
+        </ul>
 
         {/* Key metrics */}
         <div className="mt-7 grid grid-cols-3 gap-4">

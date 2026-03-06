@@ -66,6 +66,9 @@ export default function AboutSection() {
           In parallel, as a Senior Systems Engineer at <strong>Zoho Corporation</strong> (2017–present), I architect enterprise API integrations and distributed systems across major SaaS platforms — a skill set directly transferable to enterprise XR backends that bridge spatial front-ends with live data sources.
         </p>
         <p>
+          Experience spans shipping mobile titles for iOS and Android, XR rendering performance research, and engineering diagnostic tooling for production real-time systems — research and production in equal measure.
+        </p>
+        <p>
           Open to remote roles and international relocation. <span className="font-medium text-slate-900">B.E., Electrical &amp; Electronics — SSN College of Engineering, Chennai.</span>
         </p>
         </div>
