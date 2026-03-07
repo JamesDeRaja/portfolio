@@ -28,6 +28,27 @@ const evidenceItems = [
     imagePath: '/lab/Overdraw_Experiment_Summary.png',
     caption:
       '201 sequential transparent draw calls (ZWrite Off). Fragment workload scales linearly with stacked layers.'
+  },
+  {
+    title: 'Baseline Scene (Transparent Stack)',
+    description: 'Controlled transparent-quad setup used to isolate fragment overdraw cost.',
+    imagePath: '/case-studies/xr-stress-lab/overdraw-normal.png',
+    caption:
+      'Simple visual composition, but stacked transparency repeatedly shades the same screen region and drives fragment cost.'
+  },
+  {
+    title: 'Overdraw Heatmap (Unity Debug View)',
+    description: 'Per-pixel fragment density view used to spot transparent overlap hotspots.',
+    imagePath: '/case-studies/xr-stress-lab/overdraw-heatmap.png',
+    caption:
+      'Blue is low overlap; yellow/red indicates heavy repeated shading from transparent layering.'
+  },
+  {
+    title: 'Frame Debugger (Transparent Draw Loop)',
+    description: 'Draw call evidence under DrawTransparentObjects for the overdraw test.',
+    imagePath: '/case-studies/xr-stress-lab/overdraw-frame-debugger.png',
+    caption:
+      'Repeated DrawTransparentObjects / Draw Mesh entries confirm each layer is submitted separately.'
   }
 ];
 
@@ -117,7 +138,7 @@ export default function XRLabSection() {
 
         <div>
           <h3 className="mb-4 text-xl font-semibold text-slate-900">Evidence (Profiler + Captures)</h3>
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {evidenceItems.map((item) => (
               <EvidenceCard key={item.title} title={item.title} description={item.description} imagePath={item.imagePath} caption={item.caption} />
             ))}
