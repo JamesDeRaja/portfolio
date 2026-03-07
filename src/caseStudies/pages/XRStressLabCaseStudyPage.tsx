@@ -13,6 +13,33 @@ function formatDelta(value: number | null) {
 }
 
 export default function XRStressLabCaseStudyPage() {
+  const overdrawEvidence = [
+    {
+      title: 'Scene Setup',
+      label: 'Baseline Scene',
+      imagePath: '/case-studies/xr-stress-lab/overdraw-normal.png',
+      alt: 'XR stress lab baseline scene with stacked transparent quads',
+      description:
+        'A controlled test scene using stacked transparent quads to create repeated fragment shading in the same screen region. Visually the scene appears simple, but transparent overlap increases fragment workload significantly.',
+    },
+    {
+      title: 'Overdraw Visualization',
+      label: 'Overdraw Heatmap',
+      imagePath: '/case-studies/xr-stress-lab/overdraw-heatmap.png',
+      alt: 'Unity overdraw heatmap showing fragment stacking in transparent layers',
+      description:
+        'Unity’s overdraw debug view shows fragment density per pixel. Blue indicates low overlap, while yellow/red highlights areas where the same pixels are shaded repeatedly across multiple transparent layers.',
+    },
+    {
+      title: 'Pipeline Evidence',
+      label: 'Frame Debugger',
+      imagePath: '/case-studies/xr-stress-lab/overdraw-frame-debugger.png',
+      alt: 'Unity Frame Debugger showing repeated DrawTransparentObjects calls for overdraw test',
+      description:
+        'The Frame Debugger confirms repeated transparent draw submission under DrawTransparentObjects, showing each overlapping layer being rendered separately. This is the core reason transparent overdraw becomes expensive.',
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-site-pattern">
       <Seo
@@ -63,6 +90,61 @@ export default function XRStressLabCaseStudyPage() {
           frame time stability (variance/spikes), CPU main-thread scheduling, and GPU RenderLoop cost. Pass-level
           validation uses Frame Debugger / capture tools to confirm draw counts, blend modes, and depth behavior.
         </p>
+      </section>
+
+      <section className="mt-8 space-y-4">
+        <h2 className="text-xl font-semibold text-slate-900">Overdraw Investigation</h2>
+        <p className="text-slate-700">
+          This controlled Unity URP experiment isolates fragment cost from stacked transparent geometry and validates the bottleneck using three views: the normal scene setup, the overdraw debug heatmap, and Frame Debugger draw evidence.
+        </p>
+
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {overdrawEvidence.map((item, index) => (
+            <article
+              key={item.label}
+              className={[
+                'rounded-2xl border border-slate-200 bg-white p-4 shadow-sm',
+                index === 2 ? 'md:col-span-2 xl:col-span-1' : '',
+              ]
+                .join(' ')
+                .trim()}
+            >
+              <h3 className="text-base font-semibold text-slate-900">{item.title}</h3>
+              <p className="mt-1 text-xs font-semibold uppercase tracking-[0.08em] text-cyan-700">{item.label}</p>
+              <a
+                href={item.imagePath}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 block overflow-hidden rounded-xl border border-slate-200 bg-slate-50 shadow-sm transition hover:shadow"
+              >
+                <img src={item.imagePath} alt={item.alt} loading="lazy" className="w-full object-cover" />
+              </a>
+              <p className="mt-3 text-sm text-slate-700">{item.description}</p>
+            </article>
+          ))}
+        </div>
+
+        <aside className="rounded-2xl border border-cyan-100 bg-cyan-50/70 p-4 shadow-sm">
+          <h3 className="text-base font-semibold text-slate-900">Why this matters in XR</h3>
+          <p className="mt-2 text-sm text-slate-700">
+            Transparent overdraw scales badly in XR because fragment work is amplified by stereo rendering, high eye-buffer resolutions, and optional MSAA. A scene that looks visually simple can still become fragment-bound if many transparent layers cover the same pixels.
+          </p>
+        </aside>
+
+        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+          <h3 className="text-sm font-semibold uppercase tracking-[0.08em] text-slate-600">Key observations</h3>
+          <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <p className="rounded-xl border border-slate-100 bg-slate-50 px-3 py-2 text-sm text-slate-700">
+              Transparent layers bypass efficient occlusion benefits available to opaque surfaces.
+            </p>
+            <p className="rounded-xl border border-slate-100 bg-slate-50 px-3 py-2 text-sm text-slate-700">
+              Overdraw is visible in the debug heatmap before it becomes obvious visually.
+            </p>
+            <p className="rounded-xl border border-slate-100 bg-slate-50 px-3 py-2 text-sm text-slate-700 sm:col-span-2 lg:col-span-1">
+              Frame Debugger validates that the hotspot corresponds to repeated transparent draws.
+            </p>
+          </div>
+        </div>
       </section>
 
       <section className="mt-8 space-y-3">
