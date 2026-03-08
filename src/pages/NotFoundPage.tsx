@@ -7,7 +7,7 @@ export default function NotFoundPage() {
       <Seo
         title="Page Not Found — James De Raja"
         description="The page you're looking for doesn't exist."
-        url="https://jamesderaja.com/404"
+        url="https://james.alphaden.club/404"
       />
       <div className="text-center">
         <p className="text-6xl font-bold text-slate-300">404</p>
