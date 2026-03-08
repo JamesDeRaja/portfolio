@@ -27,7 +27,7 @@ export default function HomePage() {
       <Seo
         title="James De Raja — XR Performance Engineer | Unity Rendering & Frame Pacing"
         description="Senior XR Performance Engineer with 13+ years isolating GPU/CPU bottlenecks in Unity. Specialised in stereo rendering (72/90Hz), frame pacing, overdraw, MSAA bandwidth, and OpenXR. Open to remote and relocation."
-        url="https://jamesderaja.com/"
+        url="https://james.alphaden.club/"
         keywords="XR performance engineer, Unity XR optimization, OpenXR performance, Meta Quest performance, stereo rendering optimization, GPU bottleneck analysis, frame pacing Unity, real-time rendering engineer, Unity 6 URP, XR frame timing, James De Raja"
       />
       <main>
