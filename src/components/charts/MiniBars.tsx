@@ -28,37 +28,37 @@ export default function MiniBars({
 
   return (
     <article
-      className="rounded-xl border border-slate-200 bg-white p-3"
+      className="glass-card rounded-xl p-3"
       role="img"
       aria-label={`${title}: ${labelLeft} ${baselineMs.toFixed(2)} milliseconds${
         stressMs === undefined ? '' : `, ${labelRight} ${stressMs.toFixed(2)} milliseconds`
       }`}
     >
-      <p className="text-sm font-medium text-slate-900">{title}</p>
+      <p className="text-sm font-medium text-white">{title}</p>
       <div className="mt-3 space-y-2">
         <div className="grid grid-cols-[68px_1fr_auto] items-center gap-2">
-          <span className="text-xs text-slate-600">{labelLeft}</span>
-          <div className="h-2.5 rounded-full bg-slate-100">
-            <div className="h-2.5 rounded-full bg-slate-400" style={{ width: `${baselineWidth}%` }} />
+          <span className="text-xs text-slate-400">{labelLeft}</span>
+          <div className="h-2.5 rounded-full bg-white/5">
+            <div className="h-2.5 rounded-full bg-slate-500" style={{ width: `${baselineWidth}%` }} />
           </div>
-          <span className="text-xs text-slate-700">{baselineMs.toFixed(2)} ms</span>
+          <span className="font-mono text-xs text-slate-300">{baselineMs.toFixed(2)} ms</span>
         </div>
 
         {stressWidth !== null && (
           <div className="grid grid-cols-[68px_1fr_auto] items-center gap-2">
-            <span className="text-xs text-slate-600">{labelRight}</span>
-            <div className="h-2.5 rounded-full bg-slate-100">
+            <span className="text-xs text-slate-400">{labelRight}</span>
+            <div className="h-2.5 rounded-full bg-white/5">
               <div
-                className={`h-2.5 rounded-full ${variant === 'gpu' ? 'bg-cyan-600' : 'bg-slate-600'}`}
+                className={`h-2.5 rounded-full ${variant === 'gpu' ? 'bg-neon/60' : 'bg-electric/60'}`}
                 style={{ width: `${stressWidth}%` }}
               />
             </div>
-            <span className="text-xs text-slate-700">{stressMs.toFixed(2)} ms</span>
+            <span className="font-mono text-xs text-slate-300">{stressMs.toFixed(2)} ms</span>
           </div>
         )}
       </div>
 
-      {delta !== null && <p className="mt-2 text-xs text-slate-600">Δ {formatSigned(delta)}</p>}
+      {delta !== null && <p className="mt-2 font-mono text-xs text-neon/70">&Delta; {formatSigned(delta)}</p>}
     </article>
   );
 }

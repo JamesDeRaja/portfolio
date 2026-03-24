@@ -4,11 +4,12 @@ import { Seo } from '../../components/Seo';
 
 export default function ProfilingToolkitCaseStudyPage() {
   return (
+    <div className="min-h-screen bg-void-950">
     <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
       <Seo
         title="Profiling Toolkit Case Study — James De Raja"
         description="Case study on a Unity runtime profiling overlay that shortens bottleneck triage from symptom capture to mitigation-ready evidence."
-        url="https://james.alphaden.club/case-studies/profiling-toolkit"
+        url="https://jamesderaja.com/case-studies/profiling-toolkit"
         keywords="Unity profiler toolkit, runtime overlay, bottleneck triage, performance telemetry"
         type="article"
         structuredData={{
@@ -23,19 +24,19 @@ export default function ProfilingToolkitCaseStudyPage() {
         }}
       />
       <div className="mb-4">
-        <Link to="/" className="text-sm text-slate-500 hover:text-cyan-700 transition-colors">← Back to Home</Link>
+        <Link to="/" className="text-sm text-slate-500 hover:text-neon transition-colors">← Back to Home</Link>
       </div>
 
-      <h1 className="text-3xl font-semibold text-slate-900">Unity Performance &amp; Profiling Toolkit / Overlay</h1>
+      <h1 className="text-3xl font-semibold text-white">Unity Performance &amp; Profiling Toolkit / Overlay</h1>
       <p className="mt-2 text-sm uppercase tracking-[0.08em] text-slate-500">Runtime Triage Instrumentation</p>
-      <p className="mt-4 text-slate-700">
+      <p className="mt-4 text-slate-300">
         A lightweight in-engine overlay and capture workflow to accelerate bottleneck triage during development
         builds. The focus is shortening the loop from symptom to classification to evidence to mitigation.
       </p>
 
       <section className="mt-8 space-y-3">
-        <h2 className="text-xl font-semibold text-slate-900">Problem / Context</h2>
-        <p className="text-slate-700">
+        <h2 className="text-xl font-semibold text-white">Problem / Context</h2>
+        <p className="text-slate-300">
           Performance investigation often fails because the right signals are not visible at the moment a spike occurs.
           Switching tools, reproducing conditions, and aligning captures wastes iteration time. The goal was to make
           key indicators visible in-build and standardize what gets captured for handoff.
@@ -43,8 +44,8 @@ export default function ProfilingToolkitCaseStudyPage() {
       </section>
 
       <section className="mt-8 space-y-3">
-        <h2 className="text-xl font-semibold text-slate-900">Engineering Approach</h2>
-        <p className="text-slate-700">
+        <h2 className="text-xl font-semibold text-white">Engineering Approach</h2>
+        <p className="text-slate-300">
           Built an overlay that surfaces frame timing signals and lightweight counters during runtime. Added scenario
           presets so investigations can run controlled A/B sessions. Standardized capture notes and snapshot
           conventions so profiler traces and evidence remain comparable across runs.
@@ -52,8 +53,8 @@ export default function ProfilingToolkitCaseStudyPage() {
       </section>
 
       <section className="mt-8 space-y-3">
-        <h2 className="text-xl font-semibold text-slate-900">Measured Results</h2>
-        <p className="text-slate-700">
+        <h2 className="text-xl font-semibold text-white">Measured Results</h2>
+        <p className="text-slate-300">
           Outcome focus: faster bottleneck classification during investigation sessions (CPU vs GPU vs variance), more
           consistent evidence quality via standardized capture protocol, and reduced ambiguity during engineering
           handoff by bundling timing context with captures.
@@ -61,16 +62,16 @@ export default function ProfilingToolkitCaseStudyPage() {
       </section>
 
       <section className="mt-8 space-y-3">
-        <h2 className="text-xl font-semibold text-slate-900">Evidence</h2>
-        <p className="text-slate-700">
+        <h2 className="text-xl font-semibold text-white">Evidence</h2>
+        <p className="text-slate-300">
           Representative outputs include overlay snapshots during spikes, profiler capture references tied to scenario
           presets, and annotated evidence bundles suitable for teammate handoff.
         </p>
       </section>
 
       <section className="mt-8 space-y-3">
-        <h2 className="text-xl font-semibold text-slate-900">Mitigation Strategy</h2>
-        <p className="text-slate-700">
+        <h2 className="text-xl font-semibold text-white">Mitigation Strategy</h2>
+        <p className="text-slate-300">
           The toolkit is designed to drive mitigation prioritization: classify bottleneck signature, confirm with
           capture, apply targeted fixes (submission, overdraw, bandwidth, scheduling), and re-measure under identical
           scenario preset.
@@ -78,12 +79,12 @@ export default function ProfilingToolkitCaseStudyPage() {
       </section>
 
       <section className="mt-8 space-y-3">
-        <h2 className="text-xl font-semibold text-slate-900">Links</h2>
-        <ul className="list-disc space-y-2 pl-5 text-slate-700">
+        <h2 className="text-xl font-semibold text-white">Links</h2>
+        <ul className="list-disc space-y-2 pl-5 text-slate-300">
           <li>
             <SmartLink
               href="https://github.com/JamesDeRaja/XRPerformanceLab"
-              className="hover:text-cyan-700 hover:underline"
+              className="hover:text-neon hover:underline"
             >
               Repository
             </SmartLink>
@@ -91,5 +92,6 @@ export default function ProfilingToolkitCaseStudyPage() {
         </ul>
       </section>
     </main>
+    </div>
   );
 }

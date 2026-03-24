@@ -4,11 +4,12 @@ import { Seo } from '../../components/Seo';
 
 export default function MSAALabPage() {
   return (
+    <div className="min-h-screen bg-void-950">
     <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
       <Seo
         title="MSAA Scaling Lab — James De Raja"
         description="MSAA scaling lab measuring GPU bandwidth amplification and frame-time impact across anti-aliasing levels in controlled Unity scenes."
-        url="https://james.alphaden.club/lab/msaa"
+        url="https://jamesderaja.com/lab/msaa"
         keywords="MSAA scaling, Unity performance, GPU bandwidth, anti-aliasing"
         type="article"
         structuredData={{
@@ -22,12 +23,12 @@ export default function MSAALabPage() {
         }}
       />
       <div className="mb-4">
-        <Link to="/case-studies/xr-stress-lab" className="text-sm text-slate-500 hover:text-cyan-700 transition-colors">← Back to XR Stress Lab Case Study</Link>
+        <Link to="/case-studies/xr-stress-lab" className="text-sm text-slate-500 hover:text-neon transition-colors">← Back to XR Stress Lab Case Study</Link>
       </div>
 
-      <h1 className="text-3xl font-semibold text-slate-900">MSAA Cost Lab</h1>
+      <h1 className="text-3xl font-semibold text-white">MSAA Cost Lab</h1>
       <p className="mt-2 text-sm uppercase tracking-[0.08em] text-slate-500">Edge Density Bandwidth Analysis</p>
-      <p className="mt-4 text-slate-700">
+      <p className="mt-4 text-slate-300">
         Measured anti-aliasing sampling cost in an edge-dense scene to isolate GPU increase while tracking overall
         pacing behavior.
       </p>
@@ -43,7 +44,7 @@ export default function MSAALabPage() {
       />
 
       <section id="msaa-overdraw" className="mt-8 space-y-3">
-        <h2 className="text-xl font-semibold text-slate-900">MSAA × Overdraw Interaction</h2>
+        <h2 className="text-xl font-semibold text-white">MSAA × Overdraw Interaction</h2>
         <MetricsSummary
           baselineCpu={15.26}
           baselineGpu={4.36}
@@ -56,9 +57,10 @@ export default function MSAALabPage() {
       </section>
 
       <section className="mt-8 space-y-3">
-        <h2 className="text-xl font-semibold text-slate-900">Evidence</h2>
-        <p className="text-slate-700">Profiler capture set pending publication for this experiment path.</p>
+        <h2 className="text-xl font-semibold text-white">Evidence</h2>
+        <p className="text-slate-300">Profiler capture set pending publication for this experiment path.</p>
       </section>
     </main>
+    </div>
   );
 }

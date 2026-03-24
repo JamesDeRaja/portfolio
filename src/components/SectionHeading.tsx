@@ -1,3 +1,5 @@
+import AnimatedSection from './AnimatedSection';
+
 type SectionHeadingProps = {
   eyebrow?: string;
   title: string;
@@ -6,10 +8,21 @@ type SectionHeadingProps = {
 
 export default function SectionHeading({ eyebrow, title, subtitle }: SectionHeadingProps) {
   return (
-    <div className="mb-8">
-      {eyebrow ? <p className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-700">{eyebrow}</p> : null}
-      <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">{title}</h2>
-      {subtitle ? <p className="mt-3 max-w-3xl text-sm text-slate-700 sm:text-base">{subtitle}</p> : null}
-    </div>
+    <AnimatedSection className="mb-12">
+      {eyebrow && (
+        <p className="mb-3 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-neon">
+          {'// '}{eyebrow}
+        </p>
+      )}
+      <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
+        {title}
+      </h2>
+      {subtitle && (
+        <p className="mt-4 max-w-3xl text-base text-slate-400 leading-relaxed">
+          {subtitle}
+        </p>
+      )}
+      <div className="divider-glow mt-6 w-24" />
+    </AnimatedSection>
   );
 }
