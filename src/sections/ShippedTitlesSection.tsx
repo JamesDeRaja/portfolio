@@ -9,9 +9,9 @@ export default function ShippedTitlesSection() {
   return (
     <section id="shipped-titles" className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
       <SectionHeading
-        eyebrow="Production Evidence"
-        title="Shipped Titles — Runtime Performance Results"
-        subtitle="Published mobile titles where profiling-driven optimisation produced measurable frame-budget improvements. Games as engineering evidence, not portfolio decoration."
+        eyebrow="Shipped Games"
+        title="Games I've Built &amp; Published"
+        subtitle="Real titles on real app stores — designed, developed, and optimized from start to finish. Each one a complete journey from blank project to live players."
       />
       <div className="grid gap-6 md:grid-cols-3">
         {shippedTitles.map((title, i) => (

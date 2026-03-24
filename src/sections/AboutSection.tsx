@@ -3,31 +3,31 @@ import SectionHeading from '../components/SectionHeading';
 import AnimatedSection from '../components/AnimatedSection';
 
 const strengths = [
-  'XR stereo frame timing (72 / 90 Hz) and compositor deadline discipline',
-  'GPU/CPU bottleneck isolation — tile-based mobile GPU & PC rasterization pipeline',
-  'Overdraw, fragment pressure & MSAA bandwidth cost quantification',
-  'Draw call / SetPass reduction via GPU Instancing and state batching',
-  'Skinned mesh cost optimization and LOD-aware spawning',
-  'Deterministic pooling systems, zero-runtime-allocation update loops',
-  'Enterprise API integration & distributed systems (Zoho — scalable to enterprise XR backends)',
+  'Full-cycle game development — concept, prototype, art, ship, and post-launch optimization',
+  'XR / VR / MR game experiences with 72–90 Hz stereo rendering',
+  'Graphic design & UI/UX — game interfaces, branding, marketing assets',
+  'GPU/CPU performance profiling & frame budget optimization',
+  'Real-time visual effects, shaders, and rendering pipeline customization',
+  'Mobile game optimization — iOS & Android shipping experience',
+  'Enterprise systems integration (Zoho Corporation — 7+ years)',
 ];
 
 const toolCategories = [
   {
-    label: 'Profiling & Debugging',
-    tools: ['Unity Profiler', 'Frame Debugger', 'RenderDoc', 'OVR Metrics Tool', 'Xcode Instruments', 'Android Profiler'],
+    label: 'Game Engines & Languages',
+    tools: ['Unity 6', 'URP', 'Built-in Render Pipeline', 'OpenXR', 'C#', 'ShaderLab / HLSL'],
   },
   {
-    label: 'Engines & Pipelines',
-    tools: ['Unity 6', 'URP', 'Built-in Render Pipeline', 'OpenXR', 'C#'],
+    label: 'Design & Creative',
+    tools: ['Photoshop', 'Figma', 'Illustrator', 'After Effects', 'UI/UX Design', 'Visual Prototyping'],
   },
   {
-    label: 'XR & Platforms',
-    tools: ['Meta Quest (Android/OpenXR)', 'PCVR', 'iOS', 'Android', 'XR Interaction Toolkit'],
+    label: 'Platforms',
+    tools: ['Meta Quest (VR/MR)', 'PCVR', 'iOS', 'Android', 'WebGL'],
   },
   {
-    label: 'Systems & Dev',
-    tools: ['Git', 'REST APIs', 'Distributed Systems', 'CI/CD'],
+    label: 'Profiling & Tools',
+    tools: ['Unity Profiler', 'Frame Debugger', 'RenderDoc', 'Git', 'CI/CD'],
   },
 ];
 
@@ -41,7 +41,7 @@ export default function AboutSection() {
 
       <SectionHeading
         eyebrow="About"
-        title="Deterministic performance engineering for XR systems"
+        title="Game developer, graphic designer, performance nerd"
       />
 
       {/* Career narrative */}
@@ -59,7 +59,7 @@ export default function AboutSection() {
             </div>
             <div className="text-center sm:text-left">
               <p className="text-sm font-semibold text-white">James De Raja</p>
-              <p className="mt-0.5 text-xs text-slate-400">Senior Performance Engineer</p>
+              <p className="mt-0.5 text-xs text-slate-400">Game Developer &amp; Graphic Designer</p>
               <p className="mt-0.5 text-xs text-slate-500">Chennai &bull; Open to relocation</p>
               <span className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-2 py-0.5 text-xs font-medium text-emerald-400">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -71,16 +71,16 @@ export default function AboutSection() {
           {/* Bio */}
           <div className="space-y-4 text-sm text-slate-300 leading-relaxed">
             <p>
-              I&apos;m a Senior Real-Time Performance Engineer with 13+ years optimizing Unity rendering pipelines, frame pacing, and CPU/GPU bottleneck behaviour under strict <span className="font-medium text-neon">11ms / 16ms frame budgets</span>. My focus is reproducible measurement: baseline vs stress deltas, bottleneck classification, and mitigation strategies teams can apply repeatedly.
+              I&apos;m a game developer and graphic designer with <span className="font-medium text-neon">13+ years</span> building games in Unity — from initial concept and visual design through to shipping and post-launch optimization. I love the intersection of art and engineering: making things that look great <em>and</em> run great.
             </p>
             <p>
-              Current work centres on the <span className="font-medium text-white">XR Performance Stress Lab</span> — a deterministic Unity 6 URP + OpenXR benchmark harness targeting Meta Quest / PCVR rendering constraints at <span className="font-medium text-neon">72Hz and 90Hz</span>.
+              My shipped titles span mobile games on iOS and Android, and my current focus is on <span className="font-medium text-white">XR / VR / MR experiences</span> — building immersive worlds that maintain buttery-smooth frame rates at <span className="font-medium text-neon">72Hz and 90Hz</span> on Meta Quest and PCVR.
             </p>
             <p>
-              In parallel, as a Senior Systems Engineer at <span className="font-medium text-white">Zoho Corporation</span> (2017–present), I architect enterprise API integrations and distributed systems across major SaaS platforms — directly transferable to enterprise XR backends bridging spatial front-ends with live data sources.
+              I also bring a strong graphic design background — crafting game UI/UX, brand identities, and marketing visuals. Design thinking informs every game I build, from menu flows to in-game HUDs to promotional art.
             </p>
             <p>
-              Experience spans shipping mobile titles for iOS and Android, XR rendering performance research, and engineering diagnostic tooling — research and production in equal measure.
+              In parallel, as a Senior Systems Engineer at <span className="font-medium text-white">Zoho Corporation</span> (2017–present), I architect enterprise integrations and distributed systems — experience that gives me a unique edge when building connected, data-driven game experiences.
             </p>
             <p className="text-slate-400">
               Open to remote roles and international relocation. <span className="font-medium text-white/80">B.E., Electrical &amp; Electronics — SSN College of Engineering, Chennai.</span>
