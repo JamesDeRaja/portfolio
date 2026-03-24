@@ -1,4 +1,6 @@
+import { motion } from 'framer-motion';
 import SectionHeading from '../components/SectionHeading';
+import AnimatedSection from '../components/AnimatedSection';
 
 const strengths = [
   'XR stereo frame timing (72 / 90 Hz) and compositor deadline discipline',
@@ -31,78 +33,102 @@ const toolCategories = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+    <section id="about" className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      {/* Background accent */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute right-0 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-electric/3 blur-[150px]" />
+      </div>
+
       <SectionHeading
         eyebrow="About"
         title="Deterministic performance engineering for XR systems"
       />
 
       {/* Career narrative */}
-      <div className="mb-8 flex flex-col gap-6 sm:flex-row sm:items-start">
-        {/* Left column: photo + identity */}
-        <div className="flex flex-shrink-0 flex-col items-center gap-3 sm:w-40 sm:items-start">
-          <img
-            src="/images/james.jpg"
-            alt="James De Raja"
-            className="h-36 w-36 rounded-full object-cover shadow-md ring-2 ring-slate-200"
-          />
-          <div>
-            <p className="text-sm font-semibold text-slate-900">James De Raja</p>
-            <p className="text-xs text-slate-500 mt-0.5">Senior Performance Engineer</p>
-            <p className="text-xs text-slate-500 mt-0.5">Chennai · Open to relocation</p>
-            <span className="mt-2 inline-block rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-medium text-emerald-700 ring-1 ring-emerald-200">
-              Available
-            </span>
+      <AnimatedSection>
+        <div className="mb-10 flex flex-col gap-8 sm:flex-row sm:items-start">
+          {/* Photo + identity */}
+          <div className="flex flex-shrink-0 flex-col items-center gap-4 sm:w-44 sm:items-start">
+            <div className="relative">
+              <img
+                src="/images/james.jpg"
+                alt="James De Raja"
+                className="h-36 w-36 rounded-2xl object-cover ring-2 ring-neon/20"
+              />
+              <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10" />
+            </div>
+            <div className="text-center sm:text-left">
+              <p className="text-sm font-semibold text-white">James De Raja</p>
+              <p className="mt-0.5 text-xs text-slate-400">Senior Performance Engineer</p>
+              <p className="mt-0.5 text-xs text-slate-500">Chennai &bull; Open to relocation</p>
+              <span className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-2 py-0.5 text-xs font-medium text-emerald-400">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                Available
+              </span>
+            </div>
+          </div>
+
+          {/* Bio */}
+          <div className="space-y-4 text-sm text-slate-300 leading-relaxed">
+            <p>
+              I&apos;m a Senior Real-Time Performance Engineer with 13+ years optimizing Unity rendering pipelines, frame pacing, and CPU/GPU bottleneck behaviour under strict <span className="font-medium text-neon">11ms / 16ms frame budgets</span>. My focus is reproducible measurement: baseline vs stress deltas, bottleneck classification, and mitigation strategies teams can apply repeatedly.
+            </p>
+            <p>
+              Current work centres on the <span className="font-medium text-white">XR Performance Stress Lab</span> — a deterministic Unity 6 URP + OpenXR benchmark harness targeting Meta Quest / PCVR rendering constraints at <span className="font-medium text-neon">72Hz and 90Hz</span>.
+            </p>
+            <p>
+              In parallel, as a Senior Systems Engineer at <span className="font-medium text-white">Zoho Corporation</span> (2017–present), I architect enterprise API integrations and distributed systems across major SaaS platforms — directly transferable to enterprise XR backends bridging spatial front-ends with live data sources.
+            </p>
+            <p>
+              Experience spans shipping mobile titles for iOS and Android, XR rendering performance research, and engineering diagnostic tooling — research and production in equal measure.
+            </p>
+            <p className="text-slate-400">
+              Open to remote roles and international relocation. <span className="font-medium text-white/80">B.E., Electrical &amp; Electronics — SSN College of Engineering, Chennai.</span>
+            </p>
           </div>
         </div>
-        <div className="space-y-4 text-sm text-slate-700 leading-relaxed">
-        <p>
-          I'm a Senior Real-Time Performance Engineer with 13+ years optimizing Unity rendering pipelines, frame pacing, and CPU/GPU bottleneck behaviour under strict <strong>11ms / 16ms frame budgets</strong>. My focus is reproducible measurement: baseline vs stress deltas, bottleneck classification (CPU-bound vs GPU-bound), and mitigation strategies teams can apply repeatedly.
-        </p>
-        <p>
-          Current work centres on the <strong>XR Performance Stress Lab</strong> — a deterministic Unity 6 URP + OpenXR benchmark harness targeting Meta Quest / PCVR rendering constraints at <strong>72 Hz and 90 Hz</strong>. I quantify overdraw fragment amplification, MSAA bandwidth tradeoffs, GPU instancing submission savings, and main-thread scheduling jitter with profiler-validated evidence.
-        </p>
-        <p>
-          In parallel, as a Senior Systems Engineer at <strong>Zoho Corporation</strong> (2017–present), I architect enterprise API integrations and distributed systems across major SaaS platforms — a skill set directly transferable to enterprise XR backends that bridge spatial front-ends with live data sources.
-        </p>
-        <p>
-          Experience spans shipping mobile titles for iOS and Android, XR rendering performance research, and engineering diagnostic tooling for production real-time systems — research and production in equal measure.
-        </p>
-        <p>
-          Open to remote roles and international relocation. <span className="font-medium text-slate-900">B.E., Electrical &amp; Electronics — SSN College of Engineering, Chennai.</span>
-        </p>
-        </div>
-      </div>
+      </AnimatedSection>
 
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid gap-6 md:grid-cols-2">
         {/* Core strengths */}
-        <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-          <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-500">Core strengths</h3>
-          <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-700">
-            {strengths.map((s) => (
-              <li key={s}>{s}</li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Tools by category */}
-        <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-          <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-500">Tools &amp; Technologies</h3>
-          <div className="mt-3 space-y-3">
-            {toolCategories.map((cat) => (
-              <div key={cat.label}>
-                <p className="mb-1 text-xs font-medium text-slate-500">{cat.label}</p>
-                <div className="flex flex-wrap gap-1">
-                  {cat.tools.map((tool) => (
-                    <span key={tool} className="rounded-full border border-slate-200 px-2 py-0.5 text-xs text-slate-700">
-                      {tool}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
+        <AnimatedSection delay={0.1}>
+          <div className="glass-card rounded-2xl p-6 h-full">
+            <h3 className="font-mono text-xs font-semibold uppercase tracking-wide text-neon/60">Core Strengths</h3>
+            <ul className="mt-4 space-y-3 text-sm text-slate-300">
+              {strengths.map((s) => (
+                <li key={s} className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-neon/50" />
+                  {s}
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
+        </AnimatedSection>
+
+        {/* Tools */}
+        <AnimatedSection delay={0.2}>
+          <div className="glass-card rounded-2xl p-6 h-full">
+            <h3 className="font-mono text-xs font-semibold uppercase tracking-wide text-neon/60">Tools &amp; Technologies</h3>
+            <div className="mt-4 space-y-5">
+              {toolCategories.map((cat) => (
+                <div key={cat.label}>
+                  <p className="mb-2 text-xs font-medium text-slate-500">{cat.label}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {cat.tools.map((tool) => (
+                      <motion.span
+                        key={tool}
+                        whileHover={{ scale: 1.05 }}
+                        className="chip-glow rounded-full px-3 py-1 font-mono text-[11px]"
+                      >
+                        {tool}
+                      </motion.span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   );

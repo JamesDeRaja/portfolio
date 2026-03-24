@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 type EvidenceCardProps = {
   title: string;
@@ -11,12 +12,16 @@ export default function EvidenceCard({ title, description, imagePath, caption }:
   const [imageMissing, setImageMissing] = useState(false);
 
   return (
-    <article className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-      <h4 className="text-sm font-semibold text-slate-900">{title}</h4>
-      <p className="mt-1 text-xs text-slate-600">{description}</p>
-      <div className="mt-3 h-44 overflow-hidden rounded-xl border border-slate-200 bg-slate-50">
+    <motion.article
+      whileHover={{ y: -3 }}
+      transition={{ duration: 0.3 }}
+      className="glass-card glass-card-hover rounded-2xl p-4 transition-all duration-300"
+    >
+      <h4 className="text-sm font-semibold text-white">{title}</h4>
+      <p className="mt-1 text-xs text-slate-400">{description}</p>
+      <div className="mt-3 h-44 overflow-hidden rounded-xl border border-white/5 bg-void-800">
         {imageMissing ? (
-          <div className="flex h-full items-center justify-center bg-slate-100 text-xs text-slate-500">
+          <div className="flex h-full items-center justify-center text-xs text-slate-600">
             Screenshot placeholder
           </div>
         ) : (
@@ -25,15 +30,15 @@ export default function EvidenceCard({ title, description, imagePath, caption }:
             alt={`${title} evidence screenshot`}
             loading="lazy"
             onError={() => setImageMissing(true)}
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover opacity-90 transition hover:opacity-100"
           />
         )}
       </div>
       {caption && (
-        <p className="mt-2 text-[11px] text-slate-500">
+        <p className="mt-2 text-[11px] text-slate-500 leading-relaxed">
           {caption}
         </p>
       )}
-    </article>
+    </motion.article>
   );
 }

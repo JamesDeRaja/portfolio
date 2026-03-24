@@ -4,11 +4,12 @@ import { Seo } from '../../components/Seo';
 
 export default function PublishedMobileProjectsCaseStudyPage() {
   return (
+    <div className="min-h-screen bg-void-950">
     <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
       <Seo
         title="Sneaky Warrior 3D Case Study — James De Raja"
         description="Mobile performance case study covering frame budget stabilization for Sneaky Warrior 3D under heavy AI, ragdoll, and projectile load."
-        url="https://james.alphaden.club/case-studies/published-mobile-projects"
+        url="https://jamesderaja.com/case-studies/published-mobile-projects"
         keywords="mobile performance, Unity optimization, frame budget, Sneaky Warrior 3D, frame pacing"
         type="article"
         structuredData={{
@@ -23,12 +24,12 @@ export default function PublishedMobileProjectsCaseStudyPage() {
         }}
       />
       <div className="mb-4">
-        <Link to="/" className="text-sm text-slate-500 hover:text-cyan-700 transition-colors">← Back to Home</Link>
+        <Link to="/" className="text-sm text-slate-500 hover:text-neon transition-colors">← Back to Home</Link>
       </div>
 
-      <h1 className="text-3xl font-semibold text-slate-900">Sneaky Warrior 3D — Frame Budget Stabilization on Mobile</h1>
+      <h1 className="text-3xl font-semibold text-white">Sneaky Warrior 3D — Frame Budget Stabilization on Mobile</h1>
       <p className="mt-2 text-sm uppercase tracking-[0.08em] text-slate-500">FRAME BUDGET STABILITY ACROSS DEVICE TIERS</p>
-      <p className="mt-4 text-slate-700">
+      <p className="mt-4 text-slate-300">
         This case study documents production mobile performance work on Sneaky Warrior 3D focused on stable frame
         pacing under heavy runtime load: 100+ animated enemies, ragdolls, active navigation, and high projectile
         throughput. The target was consistent 16ms pacing across device tiers (including tile-based GPUs), prioritizing
@@ -36,58 +37,58 @@ export default function PublishedMobileProjectsCaseStudyPage() {
       </p>
 
       <section className="mt-8 space-y-3">
-        <h2 className="text-xl font-semibold text-slate-900">Problem / Context</h2>
-        <p className="text-slate-700">At peak moments, combat scenes could include:</p>
-        <ul className="list-disc space-y-2 pl-5 text-slate-700">
+        <h2 className="text-xl font-semibold text-white">Problem / Context</h2>
+        <p className="text-slate-300">At peak moments, combat scenes could include:</p>
+        <ul className="list-disc space-y-2 pl-5 text-slate-300">
           <li>100+ complex enemy skinned mesh renderers active concurrently</li>
           <li>Full city environment with active NavMesh agents</li>
           <li>Ragdoll activation on death events</li>
           <li>Thousands of pooled projectiles during bursts</li>
         </ul>
-        <p className="text-slate-700">Primary risks:</p>
-        <ul className="list-disc space-y-2 pl-5 text-slate-700">
+        <p className="text-slate-300">Primary risks:</p>
+        <ul className="list-disc space-y-2 pl-5 text-slate-300">
           <li>CPU overload from skinning/animation updates and render submission</li>
           <li>GPU fill/tile pressure from poor occlusion behavior and large bounds</li>
           <li>Frame-time variance (stutter) during burst moments (ragdolls + projectiles)</li>
         </ul>
-        <p className="text-slate-700">Goal:</p>
-        <p className="text-slate-700">
+        <p className="text-slate-300">Goal:</p>
+        <p className="text-slate-300">
           Keep frame time within budget by reducing per-frame work, preserving culling effectiveness, and eliminating
           off-screen animation cost.
         </p>
       </section>
 
       <section className="mt-8 space-y-3">
-        <h2 className="text-xl font-semibold text-slate-900">Engineering Approach</h2>
-        <p className="text-slate-700">1) Dynamic skinned-mesh chunking</p>
-        <p className="text-slate-700">
+        <h2 className="text-xl font-semibold text-white">Engineering Approach</h2>
+        <p className="text-slate-300">1) Dynamic skinned-mesh chunking</p>
+        <p className="text-slate-300">
           Enemies were combined into runtime-calculated chunks sized by density (5 / 10 / 25 / 25 / 50). This reduced
           renderer/submission pressure while avoiding over-large combined bounds that break culling and increase
           overdraw.
         </p>
-        <p className="text-slate-700">2) Spatially coherent grouping (occlusion-aware)</p>
-        <p className="text-slate-700">
+        <p className="text-slate-300">2) Spatially coherent grouping (occlusion-aware)</p>
+        <p className="text-slate-300">
           Chunk membership was based on spatial proximity so occlusion and frustum culling remained effective. This is
           critical on tile-based mobile GPUs where large visible bounds can force unnecessary tile memory writes even
           when most of the chunk is actually hidden.
         </p>
-        <p className="text-slate-700">3) Visibility-driven animation suppression (combined-bounds edge case)</p>
-        <p className="text-slate-700">
-          Combining meshes can keep a chunk’s bounds intersecting the camera frustum even when most members are
+        <p className="text-slate-300">3) Visibility-driven animation suppression (combined-bounds edge case)</p>
+        <p className="text-slate-300">
+          Combining meshes can keep a chunk's bounds intersecting the camera frustum even when most members are
           off-screen. To prevent wasted CPU skinning/bone updates, animation updates were explicitly disabled for
           enemies not contributing to the current view, even if the parent chunk remained technically visible.
         </p>
-        <p className="text-slate-700">4) Burst stability validation</p>
-        <p className="text-slate-700">
+        <p className="text-slate-300">4) Burst stability validation</p>
+        <p className="text-slate-300">
           Ragdoll activation and projectile bursts were treated as stutter sources. These moments were profiled
           explicitly to ensure frame pacing stayed stable during the burst itself, not just in steady-state.
         </p>
       </section>
 
       <section className="mt-8 space-y-3">
-        <h2 className="text-xl font-semibold text-slate-900">Measured Results</h2>
-        <p className="text-slate-700">Results are reported as stability improvements under representative peak gameplay:</p>
-        <ul className="list-disc space-y-2 pl-5 text-slate-700">
+        <h2 className="text-xl font-semibold text-white">Measured Results</h2>
+        <p className="text-slate-300">Results are reported as stability improvements under representative peak gameplay:</p>
+        <ul className="list-disc space-y-2 pl-5 text-slate-300">
           <li>Reduced CPU pressure by lowering render submission overhead and suppressing off-screen animation work.</li>
           <li>Improved culling/occlusion effectiveness by keeping combined bounds spatially tight.</li>
           <li>Reduced GPU waste (fill/tile pressure) by preventing large-bounds visibility from forcing unnecessary work.</li>
@@ -96,9 +97,9 @@ export default function PublishedMobileProjectsCaseStudyPage() {
       </section>
 
       <section className="mt-8 space-y-3">
-        <h2 className="text-xl font-semibold text-slate-900">Evidence</h2>
-        <p className="text-slate-700">Evidence was collected using repeatable capture scenarios:</p>
-        <ul className="list-disc space-y-2 pl-5 text-slate-700">
+        <h2 className="text-xl font-semibold text-white">Evidence</h2>
+        <p className="text-slate-300">Evidence was collected using repeatable capture scenarios:</p>
+        <ul className="list-disc space-y-2 pl-5 text-slate-300">
           <li>
             Unity Profiler captures focusing on main thread cost (animation/skin updates, burst spikes) and render
             submission behavior.
@@ -109,34 +110,34 @@ export default function PublishedMobileProjectsCaseStudyPage() {
       </section>
 
       <section className="mt-8 space-y-3">
-        <h2 className="text-xl font-semibold text-slate-900">Mitigation Strategy</h2>
-        <p className="text-slate-700">Device-tier playbook:</p>
-        <p className="text-slate-700">GPU-bound (fill / overdraw / tile pressure)</p>
-        <ul className="list-disc space-y-2 pl-5 text-slate-700">
+        <h2 className="text-xl font-semibold text-white">Mitigation Strategy</h2>
+        <p className="text-slate-300">Device-tier playbook:</p>
+        <p className="text-slate-300">GPU-bound (fill / overdraw / tile pressure)</p>
+        <ul className="list-disc space-y-2 pl-5 text-slate-300">
           <li>Keep bounds tight via spatial grouping so occlusion can actually cull work.</li>
-          <li>Avoid ‘giant bounds’ that remain visible and force tile writes.</li>
+          <li>Avoid 'giant bounds' that remain visible and force tile writes.</li>
           <li>Reduce overdraw sources during peak combat camera angles.</li>
         </ul>
-        <p className="text-slate-700">CPU-bound (animation / submission / spikes)</p>
-        <ul className="list-disc space-y-2 pl-5 text-slate-700">
+        <p className="text-slate-300">CPU-bound (animation / submission / spikes)</p>
+        <ul className="list-disc space-y-2 pl-5 text-slate-300">
           <li>Batch skinned meshes to reduce renderer overhead without destroying culling.</li>
           <li>Gate animation/skin updates per enemy when not visible, even under combined bounds.</li>
           <li>Treat ragdoll/projectile bursts as spike events and validate pacing under burst.</li>
         </ul>
-        <p className="text-slate-700">Variance-bound (stutter / cadence)</p>
-        <ul className="list-disc space-y-2 pl-5 text-slate-700">
+        <p className="text-slate-300">Variance-bound (stutter / cadence)</p>
+        <ul className="list-disc space-y-2 pl-5 text-slate-300">
           <li>Optimize for spike frequency and worst-case cadence, not average FPS.</li>
           <li>Validate across representative scenes and camera paths, not a single lane.</li>
         </ul>
       </section>
 
       <section className="mt-8 space-y-3">
-        <h2 className="text-xl font-semibold text-slate-900">Links</h2>
-        <ul className="list-disc space-y-2 pl-5 text-slate-700">
+        <h2 className="text-xl font-semibold text-white">Links</h2>
+        <ul className="list-disc space-y-2 pl-5 text-slate-300">
           <li>
             <SmartLink
               href="https://apps.apple.com/us/app/sneaky-warriour-3d/id1626719884"
-              className="hover:text-cyan-700 hover:underline"
+              className="hover:text-neon hover:underline"
             >
               App Store
             </SmartLink>
@@ -144,5 +145,6 @@ export default function PublishedMobileProjectsCaseStudyPage() {
         </ul>
       </section>
     </main>
+    </div>
   );
 }

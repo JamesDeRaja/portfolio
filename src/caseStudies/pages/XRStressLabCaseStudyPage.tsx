@@ -28,7 +28,7 @@ export default function XRStressLabCaseStudyPage() {
       imagePath: '/case-studies/xr-stress-lab/overdraw-heatmap.png',
       alt: 'Unity overdraw heatmap showing fragment stacking in transparent layers',
       description:
-        'Unity’s overdraw debug view shows fragment density per pixel. Blue indicates low overlap, while yellow/red highlights areas where the same pixels are shaded repeatedly across multiple transparent layers.',
+        'Unity\'s overdraw debug view shows fragment density per pixel. Blue indicates low overlap, while yellow/red highlights areas where the same pixels are shaded repeatedly across multiple transparent layers.',
     },
     {
       title: 'Pipeline Evidence',
@@ -41,11 +41,11 @@ export default function XRStressLabCaseStudyPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-site-pattern">
+    <div className="min-h-screen bg-void-950">
       <Seo
         title="XR Stress Lab Case Study — James De Raja"
         description="Controlled XR stress tests isolating overdraw, MSAA bandwidth, submission overhead, and frame pacing variance with profiler-backed evidence."
-        url="https://james.alphaden.club/case-studies/xr-stress-lab"
+        url="https://jamesderaja.com/case-studies/xr-stress-lab"
         keywords="XR stress lab, overdraw, MSAA, instancing, frame pacing, Unity profiling"
         type="article"
         structuredData={{
@@ -61,20 +61,20 @@ export default function XRStressLabCaseStudyPage() {
       />
       <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="mb-4">
-          <Link to="/" className="text-sm text-slate-500 hover:text-cyan-700 transition-colors">← Back to Home</Link>
+          <Link to="/" className="text-sm text-slate-500 hover:text-neon transition-colors">← Back to Home</Link>
         </div>
 
-      <h1 className="text-3xl font-semibold text-slate-900">XR Performance Stress Lab</h1>
+      <h1 className="text-3xl font-semibold text-white">XR Performance Stress Lab</h1>
       <p className="mt-2 text-sm uppercase tracking-[0.08em] text-slate-500">Profiler-led XR Rendering Analysis</p>
-      <p className="mt-4 text-slate-700">
+      <p className="mt-4 text-slate-300">
         A controlled XR test harness built to isolate fragment overdraw, MSAA bandwidth amplification, submission
         pressure, and frame pacing variance under repeatable runtime conditions. Each stress path is toggled in
         isolation and measured with profiler captures and pass-level evidence.
       </p>
 
       <section className="mt-8 space-y-3">
-        <h2 className="text-xl font-semibold text-slate-900">Problem / Context</h2>
-        <p className="text-slate-700">
+        <h2 className="text-xl font-semibold text-white">Problem / Context</h2>
+        <p className="text-slate-300">
           XR rendering budgets are deadline-driven: missed frames trigger reprojection and perceived judder even when
           average FPS looks acceptable. The goal was to build a repeatable harness that produces clear bottleneck
           signatures (GPU fragment, bandwidth, submission, or variance) and generates evidence that can be shared as a
@@ -83,8 +83,8 @@ export default function XRStressLabCaseStudyPage() {
       </section>
 
       <section className="mt-8 space-y-3">
-        <h2 className="text-xl font-semibold text-slate-900">Engineering Approach</h2>
-        <p className="text-slate-700">
+        <h2 className="text-xl font-semibold text-white">Engineering Approach</h2>
+        <p className="text-slate-300">
           Implemented controlled A/B stress toggles with a locked baseline scene. For each stress path, captures are
           taken in identical conditions (same camera, same scene state) and compared by delta. Profiling focuses on
           frame time stability (variance/spikes), CPU main-thread scheduling, and GPU RenderLoop cost. Pass-level
@@ -93,8 +93,8 @@ export default function XRStressLabCaseStudyPage() {
       </section>
 
       <section className="mt-8 space-y-4">
-        <h2 className="text-xl font-semibold text-slate-900">Overdraw Investigation</h2>
-        <p className="text-slate-700">
+        <h2 className="text-xl font-semibold text-white">Overdraw Investigation</h2>
+        <p className="text-slate-300">
           This controlled Unity URP experiment isolates fragment cost from stacked transparent geometry and validates the bottleneck using three views: the normal scene setup, the overdraw debug heatmap, and Frame Debugger draw evidence.
         </p>
 
@@ -103,44 +103,44 @@ export default function XRStressLabCaseStudyPage() {
             <article
               key={item.label}
               className={[
-                'rounded-2xl border border-slate-200 bg-white p-4 shadow-sm',
+                'glass-card rounded-2xl p-4',
                 index === 2 ? 'md:col-span-2 xl:col-span-1' : '',
               ]
                 .join(' ')
                 .trim()}
             >
-              <h3 className="text-base font-semibold text-slate-900">{item.title}</h3>
-              <p className="mt-1 text-xs font-semibold uppercase tracking-[0.08em] text-cyan-700">{item.label}</p>
+              <h3 className="text-base font-semibold text-white">{item.title}</h3>
+              <p className="mt-1 font-mono text-xs font-semibold uppercase tracking-wide text-neon/60">{item.label}</p>
               <a
                 href={item.imagePath}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-3 block overflow-hidden rounded-xl border border-slate-200 bg-slate-50 shadow-sm transition hover:shadow"
+                className="mt-3 block overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] transition hover:border-white/20"
               >
                 <img src={item.imagePath} alt={item.alt} loading="lazy" className="w-full object-cover" />
               </a>
-              <p className="mt-3 text-sm text-slate-700">{item.description}</p>
+              <p className="mt-3 text-sm text-slate-300">{item.description}</p>
             </article>
           ))}
         </div>
 
-        <aside className="rounded-2xl border border-cyan-100 bg-cyan-50/70 p-4 shadow-sm">
-          <h3 className="text-base font-semibold text-slate-900">Why this matters in XR</h3>
-          <p className="mt-2 text-sm text-slate-700">
+        <aside className="rounded-2xl border border-neon/20 bg-neon/5 p-4">
+          <h3 className="text-base font-semibold text-white">Why this matters in XR</h3>
+          <p className="mt-2 text-sm text-slate-300">
             Transparent overdraw scales badly in XR because fragment work is amplified by stereo rendering, high eye-buffer resolutions, and optional MSAA. A scene that looks visually simple can still become fragment-bound if many transparent layers cover the same pixels.
           </p>
         </aside>
 
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-          <h3 className="text-sm font-semibold uppercase tracking-[0.08em] text-slate-600">Key observations</h3>
+        <div className="glass-card rounded-2xl p-4">
+          <h3 className="font-mono text-xs font-semibold uppercase tracking-wide text-neon/60">Key observations</h3>
           <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            <p className="rounded-xl border border-slate-100 bg-slate-50 px-3 py-2 text-sm text-slate-700">
+            <p className="rounded-xl border border-white/5 bg-white/[0.02] px-3 py-2 text-sm text-slate-300">
               Transparent layers bypass efficient occlusion benefits available to opaque surfaces.
             </p>
-            <p className="rounded-xl border border-slate-100 bg-slate-50 px-3 py-2 text-sm text-slate-700">
+            <p className="rounded-xl border border-white/5 bg-white/[0.02] px-3 py-2 text-sm text-slate-300">
               Overdraw is visible in the debug heatmap before it becomes obvious visually.
             </p>
-            <p className="rounded-xl border border-slate-100 bg-slate-50 px-3 py-2 text-sm text-slate-700 sm:col-span-2 lg:col-span-1">
+            <p className="rounded-xl border border-white/5 bg-white/[0.02] px-3 py-2 text-sm text-slate-300 sm:col-span-2 lg:col-span-1">
               Frame Debugger validates that the hotspot corresponds to repeated transparent draws.
             </p>
           </div>
@@ -148,10 +148,10 @@ export default function XRStressLabCaseStudyPage() {
       </section>
 
       <section className="mt-8 space-y-3">
-        <h2 className="text-xl font-semibold text-slate-900">Measured Results</h2>
-        <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
-          <table className="min-w-full divide-y divide-slate-200 text-left text-sm">
-            <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-600">
+        <h2 className="text-xl font-semibold text-white">Measured Results</h2>
+        <div className="overflow-x-auto rounded-2xl border border-white/10 bg-white/[0.02]">
+          <table className="min-w-full divide-y divide-white/10 text-left text-sm">
+            <thead className="bg-white/[0.03] text-xs uppercase tracking-wide text-slate-400">
               <tr>
                 <th className="px-4 py-3">Experiment</th>
                 <th className="px-4 py-3">Baseline CPU/GPU (ms)</th>
@@ -161,11 +161,11 @@ export default function XRStressLabCaseStudyPage() {
                 <th className="px-4 py-3">Bottleneck</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 text-slate-700">
+            <tbody className="divide-y divide-white/5 text-slate-300">
               {xrStressLabResults.map((result) => {
                 const { deltaCpu, deltaGpu } = getResultDelta(result);
                 const experimentLabel = result.labPath ? (
-                  <Link to={result.labPath} className="hover:text-cyan-700 hover:underline">
+                  <Link to={result.labPath} className="hover:text-neon hover:underline">
                     {result.experiment}
                   </Link>
                 ) : (
@@ -174,7 +174,7 @@ export default function XRStressLabCaseStudyPage() {
 
                 return (
                   <tr key={result.id}>
-                    <td className="px-4 py-3 font-medium text-slate-900">{experimentLabel}</td>
+                    <td className="px-4 py-3 font-medium text-white">{experimentLabel}</td>
                     <td className="px-4 py-3">
                       {result.baselineCpu.toFixed(2)} / {result.baselineGpu.toFixed(2)}
                     </td>
@@ -194,7 +194,7 @@ export default function XRStressLabCaseStudyPage() {
         </div>
 
         <div className="space-y-3">
-          <h3 className="text-base font-semibold text-slate-900">GPU Delta Visualization</h3>
+          <h3 className="text-base font-semibold text-white">GPU Delta Visualization</h3>
           <div className="space-y-2">
             <MiniBars title="Overdraw Stress Toggle" baselineMs={6.88} stressMs={12.03} maxMs={12.03} variant="gpu" />
             <MiniBars title="MSAA Cost (Edge Density)" baselineMs={3.5} stressMs={4.36} maxMs={12.03} variant="gpu" />
@@ -203,13 +203,13 @@ export default function XRStressLabCaseStudyPage() {
           </div>
         </div>
 
-        <ul className="list-disc space-y-1 pl-5 text-slate-700">
+        <ul className="list-disc space-y-1 pl-5 text-slate-300">
           <li>Overdraw doubles GPU time under stable CPU behavior, matching a fragment-bound signature.</li>
           <li>MSAA increases GPU cost, while this setup remains CPU/pacing-limited at frame level.</li>
           <li>MSAA plus overdraw compounds bandwidth and fragment work, amplifying GPU delta.</li>
           <li>Instancing reduces submission overhead, with both CPU and GPU moving toward a near-balanced frame.</li>
         </ul>
-        <p className="text-slate-700">
+        <p className="text-slate-300">
           Key measured deltas are tracked per stress path and classified by bottleneck signature: Overdraw Stress —
           RenderLoop (GPU) 6.37 ms to 13.64 ms (Δ +7.27 ms), CPU stable around 0.5 ms, indicating GPU-bound fragment
           cost. MSAA Scaling — measured as a GPU/bandwidth amplification stress path with results tracked per MSAA
@@ -220,8 +220,8 @@ export default function XRStressLabCaseStudyPage() {
       </section>
 
       <section className="mt-8 space-y-3">
-        <h2 className="text-xl font-semibold text-slate-900">Evidence</h2>
-        <p className="text-slate-700">
+        <h2 className="text-xl font-semibold text-white">Evidence</h2>
+        <p className="text-slate-300">
           Evidence is captured via Unity Profiler comparisons (CPU Main Thread + GPU RenderLoop), Frame Debugger
           validation of pass composition and render state (including 201 transparent draws with ZWrite Off and
           SrcAlpha/OneMinusSrcAlpha in overdraw stress), and annotated experiment captures linked per test case.
@@ -233,8 +233,8 @@ export default function XRStressLabCaseStudyPage() {
       </section>
 
       <section className="mt-8 space-y-3">
-        <h2 className="text-xl font-semibold text-slate-900">Mitigation Strategy</h2>
-        <p className="text-slate-700">
+        <h2 className="text-xl font-semibold text-white">Mitigation Strategy</h2>
+        <p className="text-slate-300">
           Mitigation is mapped to bottleneck signature: GPU fragment/overdraw — reduce transparent stacking, prefer
           opaque or cutout where possible, limit full-screen transparent layers, and constrain UI layering. Bandwidth
           amplification (MSAA) — step MSAA down, reduce resolution where appropriate, and avoid combining MSAA with
@@ -245,25 +245,25 @@ export default function XRStressLabCaseStudyPage() {
       </section>
 
       <section className="mt-8 space-y-3">
-        <h2 className="text-xl font-semibold text-slate-900">Experiments Conducted</h2>
-        <ul className="list-disc space-y-2 pl-5 text-slate-700">
+        <h2 className="text-xl font-semibold text-white">Experiments Conducted</h2>
+        <ul className="list-disc space-y-2 pl-5 text-slate-300">
           <li>
-            <Link to="/lab/overdraw" className="hover:text-cyan-700 hover:underline">
+            <Link to="/lab/overdraw" className="hover:text-neon hover:underline">
               Overdraw Stress (GPU-bound fragment)
             </Link>
           </li>
           <li>
-            <Link to="/lab/msaa" className="hover:text-cyan-700 hover:underline">
+            <Link to="/lab/msaa" className="hover:text-neon hover:underline">
               MSAA Scaling (bandwidth amplification)
             </Link>
           </li>
           <li>
-            <Link to="/lab/instancing" className="hover:text-cyan-700 hover:underline">
+            <Link to="/lab/instancing" className="hover:text-neon hover:underline">
               Instancing vs Non-Instancing (submission cost)
             </Link>
           </li>
           <li>
-            <Link to="/lab/frame-pacing" className="hover:text-cyan-700 hover:underline">
+            <Link to="/lab/frame-pacing" className="hover:text-neon hover:underline">
               Frame Pacing Variance Capture
             </Link>
           </li>
@@ -271,30 +271,30 @@ export default function XRStressLabCaseStudyPage() {
       </section>
 
         <section className="mt-8 space-y-3">
-          <h2 className="text-xl font-semibold text-slate-900">Links</h2>
-          <ul className="list-disc space-y-2 pl-5 text-slate-700">
+          <h2 className="text-xl font-semibold text-white">Links</h2>
+          <ul className="list-disc space-y-2 pl-5 text-slate-300">
             <li>
-              <SmartLink href="https://github.com/JamesDeRaja/XRPerformanceLab" className="hover:text-cyan-700 hover:underline">
+              <SmartLink href="https://github.com/JamesDeRaja/XRPerformanceLab" className="hover:text-neon hover:underline">
                 Repository
               </SmartLink>
             </li>
             <li>
-              <Link to="/lab/overdraw" className="hover:text-cyan-700 hover:underline">
+              <Link to="/lab/overdraw" className="hover:text-neon hover:underline">
                 Overdraw Lab
               </Link>
             </li>
             <li>
-              <Link to="/lab/msaa" className="hover:text-cyan-700 hover:underline">
+              <Link to="/lab/msaa" className="hover:text-neon hover:underline">
                 MSAA Lab
               </Link>
             </li>
             <li>
-              <Link to="/lab/instancing" className="hover:text-cyan-700 hover:underline">
+              <Link to="/lab/instancing" className="hover:text-neon hover:underline">
                 Instancing Lab
               </Link>
             </li>
             <li>
-              <Link to="/lab/frame-pacing" className="hover:text-cyan-700 hover:underline">
+              <Link to="/lab/frame-pacing" className="hover:text-neon hover:underline">
                 Frame Pacing Lab
               </Link>
             </li>

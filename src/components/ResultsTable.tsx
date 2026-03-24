@@ -9,7 +9,7 @@ function formatBottleneck(bottleneck: string) {
 
   return (
     <>
-      <strong className="font-semibold text-slate-900">{firstToken}</strong>
+      <strong className="font-semibold text-neon">{firstToken}</strong>
       {rest.length > 0 ? ` ${rest.join(' ')}` : ''}
     </>
   );
@@ -17,9 +17,9 @@ function formatBottleneck(bottleneck: string) {
 
 export default function ResultsTable({ rows }: ResultsTableProps) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
-      <table className="min-w-full divide-y divide-slate-200 text-left text-sm" aria-label="XR performance experiment results">
-        <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-600">
+    <div className="overflow-x-auto glass-card rounded-2xl">
+      <table className="min-w-full divide-y divide-white/5 text-left text-sm" aria-label="XR performance experiment results">
+        <thead className="bg-white/[0.02] font-mono text-[10px] uppercase tracking-wider text-slate-500">
           <tr>
             <th className="px-4 py-3">Experiment</th>
             <th className="px-4 py-3">Baseline CPU/GPU</th>
@@ -29,15 +29,15 @@ export default function ResultsTable({ rows }: ResultsTableProps) {
             <th className="px-4 py-3">Mitigation</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-slate-100 text-slate-700">
+        <tbody className="divide-y divide-white/5 text-slate-300">
           {rows.map((row) => (
-            <tr key={row.name}>
-              <td className="px-4 py-4 font-medium text-slate-900">{row.name}</td>
-              <td className="px-4 py-4">{row.baseline}</td>
-              <td className="px-4 py-4">{row.stress}</td>
+            <tr key={row.name} className="transition hover:bg-white/[0.02]">
+              <td className="px-4 py-4 font-medium text-white/90">{row.name}</td>
+              <td className="px-4 py-4 font-mono text-xs">{row.baseline}</td>
+              <td className="px-4 py-4 font-mono text-xs">{row.stress}</td>
               <td className="px-4 py-4">{formatBottleneck(row.bottleneck)}</td>
-              <td className="px-4 py-4">{row.rootCause}</td>
-              <td className="px-4 py-4">{row.mitigation}</td>
+              <td className="px-4 py-4 text-xs">{row.rootCause}</td>
+              <td className="px-4 py-4 text-xs">{row.mitigation}</td>
             </tr>
           ))}
         </tbody>

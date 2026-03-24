@@ -1,33 +1,74 @@
+import { motion } from 'framer-motion';
 import SectionHeading from '../components/SectionHeading';
+import AnimatedSection from '../components/AnimatedSection';
 import SmartLink from '../components/SmartLink';
+import { Mail, Linkedin, Github, MapPin, ArrowUpRight } from 'lucide-react';
+
+const topics = [
+  'XR Rendering Optimization',
+  'Real-Time Performance Engineering',
+  'Graphics Systems & Profiling',
+  'Frame Pacing Research',
+];
+
+const links = [
+  { href: 'mailto:jamesderaja@gmail.com', label: 'Email', icon: Mail, primary: true },
+  { href: 'https://www.linkedin.com/in/james-de-raja/', label: 'LinkedIn', icon: Linkedin, primary: false },
+  { href: 'https://github.com/JamesDeRaja', label: 'GitHub', icon: Github, primary: false },
+];
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="mx-auto max-w-6xl px-4 py-12 pb-20 sm:px-6 lg:px-8">
+    <section id="contact" className="relative mx-auto max-w-7xl px-4 py-20 pb-24 sm:px-6 lg:px-8">
+      {/* Background accent */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute bottom-0 left-1/2 h-[300px] w-[600px] -translate-x-1/2 rounded-full bg-neon/3 blur-[120px]" />
+      </div>
+
       <SectionHeading
         eyebrow="Contact"
         title="Let's talk performance engineering"
         subtitle="Available for technical discussions around real-time optimization, profiling strategy, and XR performance architecture."
       />
-      <div className="mb-6 flex flex-wrap gap-2">
-        {['XR Rendering Optimization', 'Real-Time Performance Engineering', 'Graphics Systems & Profiling', 'Frame Pacing Research'].map((role) => (
-          <span key={role} className="rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1 text-xs font-medium text-cyan-800">
-            {role}
-          </span>
-        ))}
-      </div>
-      <div className="flex flex-wrap gap-3">
-        <SmartLink href="mailto:jamesderaja@gmail.com" className="rounded-xl bg-cyan-600 px-5 py-3 text-sm font-medium text-white hover:bg-cyan-700" aria-label="Send email to James De Raja">
-          Email
-        </SmartLink>
-        <SmartLink href="https://www.linkedin.com/in/james-de-raja/" className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-medium text-slate-800 hover:border-cyan-600 hover:text-cyan-700" aria-label="James De Raja on LinkedIn">
-          LinkedIn
-        </SmartLink>
-        <SmartLink href="https://github.com/JamesDeRaja" className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-medium text-slate-800 hover:border-cyan-600 hover:text-cyan-700" aria-label="James De Raja on GitHub">
-          GitHub
-        </SmartLink>
-      </div>
-      <p className="mt-4 text-sm text-slate-600">Chennai, India</p>
+
+      <AnimatedSection>
+        <div className="glass-card gradient-border rounded-2xl p-8">
+          {/* Topics */}
+          <div className="mb-6 flex flex-wrap gap-2">
+            {topics.map((role) => (
+              <span key={role} className="chip-glow rounded-full px-3 py-1 font-mono text-xs">
+                {role}
+              </span>
+            ))}
+          </div>
+
+          {/* Links */}
+          <div className="flex flex-wrap gap-4">
+            {links.map((link) => (
+              <motion.div key={link.label} whileHover={{ y: -2 }}>
+                <SmartLink
+                  href={link.href}
+                  className={`inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-medium transition-all duration-300 ${
+                    link.primary
+                      ? 'btn-primary'
+                      : 'btn-secondary'
+                  }`}
+                  aria-label={`${link.label} - James De Raja`}
+                >
+                  <link.icon size={16} />
+                  {link.label}
+                  <ArrowUpRight size={12} className="opacity-50" />
+                </SmartLink>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="mt-6 flex items-center gap-2 text-sm text-slate-500">
+            <MapPin size={14} />
+            <span>Chennai, India</span>
+          </div>
+        </div>
+      </AnimatedSection>
     </section>
   );
 }

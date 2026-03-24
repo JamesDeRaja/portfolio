@@ -6,7 +6,7 @@ type SmartLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   children: ReactNode;
 };
 
-const INTERNAL_HOSTNAMES = new Set(['james.alphaden.club', 'www.james.alphaden.club']);
+const INTERNAL_HOSTNAMES = new Set(['jamesderaja.com', 'www.jamesderaja.com']);
 
 function isHttpUrl(href: string) {
   return href.startsWith('http://') || href.startsWith('https://');

@@ -1,20 +1,29 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Download } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import SmartLink from './SmartLink';
 
 const navItems = [
   { label: 'Work', hash: 'work' },
   { label: 'XR Lab', hash: 'xr-lab' },
+  { label: 'Shipped', hash: 'shipped-titles' },
   { label: 'Writing', hash: 'writing' },
   { label: 'About', hash: 'about' },
-  { label: 'Contact', hash: 'contact' }
+  { label: 'Contact', hash: 'contact' },
 ];
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   function handleNavClick(hash: string) {
     setMobileOpen(false);
@@ -29,42 +38,61 @@ export default function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur">
-      <nav aria-label="Main navigation" className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <Link to="/" className="text-sm font-semibold tracking-tight text-slate-900">
-          James De Raja
+    <header
+      className={`sticky top-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? 'border-b border-neon/10 bg-void-950/80 backdrop-blur-xl'
+          : 'bg-transparent'
+      }`}
+    >
+      <nav
+        aria-label="Main navigation"
+        className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8"
+      >
+        {/* Logo */}
+        <Link to="/" className="group flex items-center gap-2">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-neon/20 bg-neon/5">
+            <span className="font-mono text-sm font-bold text-neon">JD</span>
+          </div>
+          <span className="text-sm font-semibold tracking-tight text-white/90 transition group-hover:text-neon">
+            James De Raja
+          </span>
         </Link>
-        <div className="hidden items-center gap-6 md:flex">
+
+        {/* Desktop nav */}
+        <div className="hidden items-center gap-1 md:flex">
           {navItems.map((item) => (
             <button
               key={item.label}
               type="button"
               onClick={() => handleNavClick(item.hash)}
-              className="text-sm text-slate-700 transition hover:text-cyan-700"
+              className="rounded-lg px-3 py-2 text-sm text-slate-400 transition-colors hover:bg-white/5 hover:text-neon"
             >
               {item.label}
             </button>
           ))}
         </div>
+
+        {/* Actions */}
         <div className="flex items-center gap-2">
           <SmartLink
             href="/resume/viewer.html?file=JamesDeRaja_Resume.pdf"
-            className="hidden rounded-xl border border-cyan-700 bg-cyan-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-cyan-700 sm:inline-flex"
+            className="btn-primary hidden rounded-lg px-4 py-2 text-sm font-medium sm:inline-flex"
           >
             View Resume
           </SmartLink>
           <a
             href="/resume/JamesDeRaja_Resume.pdf"
             download
-            className="rounded-xl border border-slate-300 p-2 text-slate-700 transition hover:border-cyan-600 hover:text-cyan-700"
+            className="rounded-lg border border-white/10 p-2 text-slate-400 transition hover:border-neon/30 hover:text-neon"
             aria-label="Download resume PDF"
           >
-            <Download size={18} />
+            <Download size={16} />
           </a>
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="rounded-lg p-2 text-slate-700 hover:bg-slate-100 md:hidden"
+            className="rounded-lg p-2 text-slate-400 hover:bg-white/5 hover:text-neon md:hidden"
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileOpen}
           >
@@ -72,20 +100,31 @@ export default function Navbar() {
           </button>
         </div>
       </nav>
-      {mobileOpen && (
-        <div className="border-t border-slate-200 bg-white px-4 py-3 md:hidden">
-          {navItems.map((item) => (
-            <button
-              key={item.label}
-              type="button"
-              onClick={() => handleNavClick(item.hash)}
-              className="block w-full py-2 text-left text-sm text-slate-700 hover:text-cyan-700"
-            >
-              {item.label}
-            </button>
-          ))}
-        </div>
-      )}
+
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="overflow-hidden border-t border-white/5 bg-void-950/95 backdrop-blur-xl md:hidden"
+          >
+            <div className="px-4 py-4 space-y-1">
+              {navItems.map((item) => (
+                <button
+                  key={item.label}
+                  type="button"
+                  onClick={() => handleNavClick(item.hash)}
+                  className="block w-full rounded-lg px-3 py-3 text-left text-sm text-slate-300 transition hover:bg-white/5 hover:text-neon"
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
