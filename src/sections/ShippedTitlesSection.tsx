@@ -4,6 +4,7 @@ import SectionHeading from '../components/SectionHeading';
 import AnimatedSection from '../components/AnimatedSection';
 import SmartLink from '../components/SmartLink';
 import { ExternalLink, Smartphone, Zap, Users, Timer, TrendingUp } from 'lucide-react';
+import StoreMetricsCard from '../components/StoreMetricsCard';
 
 export default function ShippedTitlesSection() {
   return (
@@ -123,6 +124,16 @@ export default function ShippedTitlesSection() {
                   <div className="mt-5 rounded-xl border border-emerald-500/15 bg-emerald-500/5 px-4 py-3">
                     <p className="font-mono text-sm font-semibold text-emerald-400">{title.keyMetric}</p>
                   </div>
+
+                  {/* Store funnel metrics — only for titles with data */}
+                  {title.storeMetrics && (
+                    <StoreMetricsCard
+                      visitorsImg={title.storeMetrics.visitorsImg}
+                      acquisitionsImg={title.storeMetrics.acquisitionsImg}
+                      summary={title.storeMetrics.summary}
+                      metrics={title.storeMetrics.metrics}
+                    />
+                  )}
                 </div>
               </div>
             </motion.article>
