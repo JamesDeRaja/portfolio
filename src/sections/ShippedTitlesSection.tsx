@@ -3,7 +3,7 @@ import { shippedTitles } from '../data/shippedTitles';
 import SectionHeading from '../components/SectionHeading';
 import AnimatedSection from '../components/AnimatedSection';
 import SmartLink from '../components/SmartLink';
-import { ExternalLink, Smartphone, Zap, Users, Timer, BarChart3 } from 'lucide-react';
+import { ExternalLink, Smartphone, Zap, Users, Timer, TrendingUp } from 'lucide-react';
 
 export default function ShippedTitlesSection() {
   return (
@@ -33,12 +33,36 @@ export default function ShippedTitlesSection() {
               </div>
             </div>
           </div>
+          {/* Measurable impact row */}
+          <div className="border-b border-white/5 px-6 py-5 sm:px-8">
+            <p className="mb-3 font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500">Measurable Impact</p>
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+              <div>
+                <p className="font-mono text-lg font-bold text-emerald-400 sm:text-xl">25% → 38%</p>
+                <p className="mt-0.5 text-xs text-slate-400">D1 retention improvement</p>
+              </div>
+              <div>
+                <p className="font-mono text-lg font-bold text-emerald-400 sm:text-xl">2x</p>
+                <p className="mt-0.5 text-xs text-slate-400">D1 playtime (1500s → 3000s)</p>
+              </div>
+              <div>
+                <p className="font-mono text-lg font-bold text-neon sm:text-xl">$5k–$10k</p>
+                <p className="mt-0.5 text-xs text-slate-400">per prototype engagement</p>
+              </div>
+              <div>
+                <p className="font-mono text-lg font-bold text-neon sm:text-xl">60fps</p>
+                <p className="mt-0.5 text-xs text-slate-400">from first prototype build</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Capability pillars */}
           <div className="grid grid-cols-2 gap-0 sm:grid-cols-4">
             {[
               { icon: Users, label: 'Multi-publisher collaboration', sub: 'Global studios' },
               { icon: Timer, label: 'Rapid iteration cycles', sub: 'Days, not months' },
-              { icon: BarChart3, label: 'CPI & retention validation', sub: 'Market-tested builds' },
-              { icon: Zap, label: 'Performance-ready delivery', sub: '60fps from prototype' },
+              { icon: TrendingUp, label: 'Retention & engagement tuning', sub: 'Data-driven iteration' },
+              { icon: Zap, label: 'Performance-ready delivery', sub: 'Optimized from day one' },
             ].map((item, idx) => (
               <div key={item.label} className={`p-4 sm:p-5 ${idx < 3 ? 'border-r border-white/5' : ''}`}>
                 <item.icon size={16} className="text-neon/50" />
