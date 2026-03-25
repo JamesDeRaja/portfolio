@@ -72,9 +72,9 @@ export default function XRLabSection() {
       </div>
 
       <SectionHeading
-        eyebrow="Core Focus"
+        eyebrow="Research"
         title="XR Performance Stress Lab"
-        subtitle="Deterministic benchmarking lab to measure overdraw, MSAA cost, instancing vs batching, CPU stress, and frame pacing stability under controlled workloads."
+        subtitle="A deterministic Unity 6 URP + OpenXR benchmark harness. I run controlled experiments to isolate exactly what costs what — overdraw, MSAA, instancing, CPU stress, frame pacing — with profiler evidence for every claim."
       />
 
       {/* Status + Key Finding */}

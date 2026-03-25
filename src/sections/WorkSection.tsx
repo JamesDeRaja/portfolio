@@ -8,8 +8,8 @@ export default function WorkSection() {
     <section id="work" className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
       <SectionHeading
         eyebrow="Case Studies"
-        title="Deep dives into how I build &amp; optimize"
-        subtitle="Technical breakdowns of my XR rendering work, performance tooling, UI systems, and mobile game optimization — with profiler evidence."
+        title="Deep dives — rendering, tooling, optimization"
+        subtitle="Profiler-validated breakdowns of XR rendering bottlenecks, UI overdraw cost, runtime diagnostics, and mobile frame budget stabilisation."
       />
       <div className="grid gap-6 md:grid-cols-2">
         {workProjects.map((project, i) => (

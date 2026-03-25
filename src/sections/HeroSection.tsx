@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Gamepad2, Palette, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const containerVariants = {
   hidden: {},
@@ -34,7 +34,7 @@ export default function HeroSection() {
           <motion.div variants={itemVariants}>
             <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-4 py-1.5 text-xs font-medium text-emerald-400">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              Open to remote &amp; relocation — Game Development &amp; XR roles
+              Open to remote &amp; relocation — rendering, XR performance, engine optimization
             </span>
           </motion.div>
 
@@ -47,97 +47,72 @@ export default function HeroSection() {
             <span className="gradient-text">De Raja</span>
           </motion.h1>
 
-          {/* Title — large and clear */}
+          {/* Specialist title — this is what hiring managers anchor on */}
           <motion.p
             variants={itemVariants}
-            className="mt-4 text-2xl font-semibold text-neon/90 sm:text-3xl"
+            className="mt-4 text-xl font-semibold text-neon/90 sm:text-2xl lg:text-3xl"
           >
-            Game Developer &amp; Graphic Designer
+            Real-Time Performance Engineer
+          </motion.p>
+          <motion.p
+            variants={itemVariants}
+            className="mt-1 text-base text-slate-400 sm:text-lg"
+          >
+            Unity Rendering &bull; Frame Stability &bull; XR / Mobile / Shipped Titles
           </motion.p>
 
-          {/* Value headline — what you deliver */}
-          <motion.div
+          {/* Value prop — one punchy line */}
+          <motion.p
             variants={itemVariants}
-            className="mt-8 max-w-2xl"
+            className="mt-8 max-w-2xl text-lg text-slate-200 leading-relaxed sm:text-xl"
           >
-            <p className="text-xl text-slate-200 leading-relaxed sm:text-2xl">
-              I take games from{' '}
-              <span className="text-neon font-semibold">concept to app store</span> —
-              designing the art, building the systems, and shipping at{' '}
-              <span className="text-neon font-semibold">rock-solid frame rates</span>.
-            </p>
-          </motion.div>
+            13+ years shipping optimized games across mobile and XR.
+            I find the bottleneck, prove it with a profiler, fix it, and{' '}
+            <span className="text-neon font-semibold">ship it at 60fps</span>.
+          </motion.p>
 
-          {/* Impact numbers — big, scannable */}
+          {/* Impact stats — big, scannable, with accent colors */}
           <motion.div
             variants={itemVariants}
-            className="mt-10 grid grid-cols-3 gap-6"
+            className="mt-12 grid grid-cols-3 gap-8"
           >
             <div>
-              <p className="font-mono text-4xl font-bold text-neon text-glow-cyan sm:text-5xl">13+</p>
-              <p className="mt-1 text-sm text-slate-400">years in Unity</p>
+              <p className="font-mono text-4xl font-bold text-neon text-glow-cyan sm:text-6xl">13+</p>
+              <p className="mt-2 text-sm text-slate-400">years in Unity</p>
             </div>
             <div>
-              <p className="font-mono text-4xl font-bold text-white sm:text-5xl">3</p>
-              <p className="mt-1 text-sm text-slate-400">shipped titles on app stores</p>
+              <p className="font-mono text-4xl font-bold text-white sm:text-6xl">3</p>
+              <p className="mt-2 text-sm text-slate-400">shipped titles on app stores</p>
             </div>
             <div>
-              <p className="font-mono text-4xl font-bold text-electric sm:text-5xl">60fps</p>
-              <p className="mt-1 text-sm text-slate-400">locked on low-end devices</p>
-            </div>
-          </motion.div>
-
-          {/* Three pillars — what makes you different */}
-          <motion.div
-            variants={itemVariants}
-            className="mt-10 grid gap-4 sm:grid-cols-3"
-          >
-            <div className="glass-card glass-card-hover rounded-xl p-5">
-              <Gamepad2 size={20} className="text-neon" />
-              <p className="mt-3 text-sm font-semibold text-white">Game Development</p>
-              <p className="mt-1 text-xs text-slate-400">
-                Full-cycle Unity dev — gameplay, AI, physics, optimization. Mobile &amp; XR.
-              </p>
-            </div>
-            <div className="glass-card glass-card-hover rounded-xl p-5">
-              <Palette size={20} className="text-electric" />
-              <p className="mt-3 text-sm font-semibold text-white">Graphic Design</p>
-              <p className="mt-1 text-xs text-slate-400">
-                Game UI/UX, brand identity, marketing art, visual prototyping in Photoshop &amp; Figma.
-              </p>
-            </div>
-            <div className="glass-card glass-card-hover rounded-xl p-5">
-              <Sparkles size={20} className="text-amber-400" />
-              <p className="mt-3 text-sm font-semibold text-white">Performance Engineering</p>
-              <p className="mt-1 text-xs text-slate-400">
-                GPU/CPU profiling, frame budget discipline, XR stereo rendering at 72–90 Hz.
-              </p>
+              <p className="font-mono text-4xl font-bold text-electric sm:text-6xl">60<span className="text-2xl sm:text-4xl">fps</span></p>
+              <p className="mt-2 text-sm text-slate-400">locked on low-end devices</p>
             </div>
           </motion.div>
 
           {/* CTAs */}
           <motion.div
             variants={itemVariants}
-            className="mt-10 flex flex-wrap gap-4"
+            className="mt-12 flex flex-wrap gap-4"
           >
             <a
-              href="#shipped-titles"
+              href="#problems-solved"
               className="btn-primary group inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-medium"
             >
-              View My Games
+              See Problems I Fixed
               <ArrowRight size={14} className="transition group-hover:translate-x-1" />
             </a>
             <a
-              href="#work"
+              href="#shipped-titles"
               className="btn-secondary rounded-xl px-6 py-3 text-sm font-medium"
             >
-              Case Studies
+              Shipped Games
             </a>
             <a
-              href="#contact"
+              href="#xr-lab"
               className="btn-secondary rounded-xl px-6 py-3 text-sm font-medium"
             >
-              Get in Touch
+              XR Lab
             </a>
           </motion.div>
         </motion.div>

@@ -6,6 +6,7 @@ import { AlertTriangle, Search, Wrench, TrendingUp } from 'lucide-react';
 const problems = [
   {
     title: 'Sneaky Warrior 3D — Sub-60 FPS During Combat',
+    resultHighlight: '45 → 60+ FPS',
     problem: 'Game dropped to ~45 FPS when 50+ skinned enemies spawned simultaneously. Players experienced visible stuttering during peak combat.',
     diagnosis: 'Unity Profiler revealed skeleton updates and draw calls scaling linearly with enemy count. Every off-screen enemy was still being animated and submitted.',
     fix: 'Built a tiered skinned-mesh chunking system — groups of 5–50 enemies with LOD-aware spawning and visibility gating. Off-screen units skip animation and draw submission entirely.',
@@ -13,6 +14,7 @@ const problems = [
   },
   {
     title: 'Snake Hole Puzzle — GC Spikes During Destruction',
+    resultHighlight: '50ms spikes → 0',
     problem: 'Random frame hitches (50ms+ spikes) every few seconds during block destruction sequences with 100+ projectiles.',
     diagnosis: 'Profiler showed garbage collection spikes from projectile instantiation/destruction. Each bullet was Instantiate/Destroy every frame.',
     fix: 'Replaced with deterministic bullet pooling — zero runtime allocations. Pre-warmed pool handles 100+ concurrent projectiles without any GC pressure.',
@@ -20,18 +22,12 @@ const problems = [
   },
   {
     title: 'XR Overdraw — Stereo Rendering Budget Blown',
+    resultHighlight: '+7.27ms isolated',
     problem: 'Transparent UI layers in VR were causing the frame to exceed the 11ms budget at 90Hz, triggering reprojection artifacts.',
     diagnosis: 'Frame Debugger revealed 201 sequential transparent draw calls with ZWrite Off. Each layer re-shaded the same pixels, doubling fragment workload in stereo.',
     fix: 'Documented the +7.27ms GPU cost delta. Mitigation: reduce transparent layer count, use opaque approximations where possible, batch transparent geometry.',
     result: 'Published as a reproducible benchmark in the XR Performance Stress Lab with profiler evidence.',
   },
-];
-
-const stepIcons = [
-  { icon: AlertTriangle, label: 'Problem', color: 'text-red-400' },
-  { icon: Search, label: 'Diagnosis', color: 'text-amber-400' },
-  { icon: Wrench, label: 'Fix', color: 'text-neon' },
-  { icon: TrendingUp, label: 'Result', color: 'text-emerald-400' },
 ];
 
 export default function ProblemsSolvedSection() {
@@ -44,65 +40,54 @@ export default function ProblemsSolvedSection() {
       <SectionHeading
         eyebrow="War Stories"
         title="Performance problems I diagnosed &amp; fixed"
-        subtitle="Real bugs from real projects. Each one follows the same discipline: measure, isolate, fix, verify."
+        subtitle="The bugs nobody else wanted to touch. Each one follows the same discipline: measure, isolate, fix, verify."
       />
 
-      {/* Step legend */}
-      <AnimatedSection>
-        <div className="mb-10 flex flex-wrap gap-6">
-          {stepIcons.map((s) => (
-            <div key={s.label} className="flex items-center gap-2 text-xs text-slate-400">
-              <s.icon size={14} className={s.color} />
-              <span>{s.label}</span>
-            </div>
-          ))}
-        </div>
-      </AnimatedSection>
-
-      <div className="space-y-6">
+      <div className="space-y-8">
         {problems.map((p, i) => (
           <AnimatedSection key={p.title} delay={i * 0.1}>
             <motion.div
               whileHover={{ y: -2 }}
-              className="glass-card glass-card-hover rounded-2xl p-6 sm:p-8 transition-all duration-300"
+              className="glass-card glass-card-hover rounded-2xl overflow-hidden transition-all duration-300"
             >
-              <h3 className="text-lg font-semibold text-white">{p.title}</h3>
+              {/* Header with prominent result metric */}
+              <div className="flex flex-col gap-4 border-b border-white/5 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
+                <h3 className="text-lg font-semibold text-white">{p.title}</h3>
+                <div className="flex-shrink-0 rounded-xl border border-emerald-500/20 bg-emerald-500/5 px-5 py-2.5">
+                  <p className="font-mono text-xl font-bold text-emerald-400 sm:text-2xl">{p.resultHighlight}</p>
+                </div>
+              </div>
 
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                {/* Problem */}
-                <div className="rounded-xl border border-red-500/10 bg-red-500/5 p-4">
+              {/* Two-column: Problem → Solution */}
+              <div className="grid gap-0 sm:grid-cols-2">
+                {/* Left: Problem + Diagnosis */}
+                <div className="border-b border-white/5 p-6 sm:border-b-0 sm:border-r sm:p-8">
                   <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-red-400">
                     <AlertTriangle size={12} />
                     Problem
                   </div>
-                  <p className="mt-2 text-sm text-slate-300">{p.problem}</p>
-                </div>
+                  <p className="mt-3 text-sm text-slate-300 leading-relaxed">{p.problem}</p>
 
-                {/* Diagnosis */}
-                <div className="rounded-xl border border-amber-500/10 bg-amber-500/5 p-4">
-                  <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-amber-400">
+                  <div className="mt-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-amber-400">
                     <Search size={12} />
                     Diagnosis
                   </div>
-                  <p className="mt-2 text-sm text-slate-300">{p.diagnosis}</p>
+                  <p className="mt-3 text-sm text-slate-300 leading-relaxed">{p.diagnosis}</p>
                 </div>
 
-                {/* Fix */}
-                <div className="rounded-xl border border-neon/10 bg-neon/5 p-4">
+                {/* Right: Fix + Result */}
+                <div className="p-6 sm:p-8">
                   <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-neon">
                     <Wrench size={12} />
                     Fix
                   </div>
-                  <p className="mt-2 text-sm text-slate-300">{p.fix}</p>
-                </div>
+                  <p className="mt-3 text-sm text-slate-300 leading-relaxed">{p.fix}</p>
 
-                {/* Result */}
-                <div className="rounded-xl border border-emerald-500/10 bg-emerald-500/5 p-4">
-                  <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-emerald-400">
+                  <div className="mt-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-emerald-400">
                     <TrendingUp size={12} />
                     Result
                   </div>
-                  <p className="mt-2 text-sm font-medium text-emerald-300">{p.result}</p>
+                  <p className="mt-3 text-sm font-medium text-emerald-300 leading-relaxed">{p.result}</p>
                 </div>
               </div>
             </motion.div>

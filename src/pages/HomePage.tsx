@@ -27,10 +27,10 @@ export default function HomePage() {
   return (
     <div className="relative min-h-screen bg-void-950 text-slate-200">
       <Seo
-        title="James De Raja — Game Developer & Graphic Designer | Unity, XR, Mobile Games"
-        description="Game developer and graphic designer with 13+ years in Unity. Shipped mobile titles, XR/VR experiences, and performance-optimized real-time graphics. Strong visual design background with expertise in UI/UX, branding, and game art."
+        title="James De Raja — Real-Time Performance Engineer | Unity Rendering & Frame Stability"
+        description="Real-time performance engineer with 13+ years in Unity. Shipped mobile titles, XR/VR optimization, GPU/CPU bottleneck isolation, and frame pacing research. Profiler-validated measurements backing every claim."
         url="https://jamesderaja.com/"
-        keywords="game developer, graphic designer, Unity game developer, XR game development, mobile game developer, VR developer, game designer, UI UX design, real-time graphics, shipped games, James De Raja"
+        keywords="real-time performance engineer, Unity rendering, XR optimization, frame pacing, GPU bottleneck, mobile game optimization, Unity profiler, shipped games, James De Raja"
       />
 
       {/* Particle background */}
@@ -39,7 +39,7 @@ export default function HomePage() {
       {/* Grid overlay */}
       <div className="pointer-events-none fixed inset-0 z-0 bg-grid-overlay" aria-hidden="true" />
 
-      {/* Content — ordered for storytelling: who → games → how I think → deep dives → lab → writing → me → contact */}
+      {/* Content flow: who you are → what you shipped → what you fixed → how you think → frontier research → writing → bio → contact */}
       <main className="relative z-10">
         <HeroSection />
         <div className="divider-glow mx-auto max-w-7xl" />
