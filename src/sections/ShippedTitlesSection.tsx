@@ -4,6 +4,7 @@ import SectionHeading from '../components/SectionHeading';
 import AnimatedSection from '../components/AnimatedSection';
 import SmartLink from '../components/SmartLink';
 import { ExternalLink, Smartphone, Zap, Users, Timer, TrendingUp } from 'lucide-react';
+import StoreMetricsCard from '../components/StoreMetricsCard';
 
 export default function ShippedTitlesSection() {
   return (
@@ -57,7 +58,7 @@ export default function ShippedTitlesSection() {
           </div>
 
           {/* Capability pillars */}
-          <div className="grid grid-cols-2 gap-0 sm:grid-cols-4">
+          <div className="grid grid-cols-2 gap-0 border-b border-white/5 sm:grid-cols-4">
             {[
               { icon: Users, label: 'Multi-publisher collaboration', sub: 'Global studios' },
               { icon: Timer, label: 'Rapid iteration cycles', sub: 'Days, not months' },
@@ -70,6 +71,20 @@ export default function ShippedTitlesSection() {
                 <p className="mt-0.5 text-[11px] text-slate-500">{item.sub}</p>
               </div>
             ))}
+          </div>
+
+          {/* Best improvement — store funnel proof */}
+          <div className="p-6 sm:p-8">
+            <StoreMetricsCard
+              visitorsImg="/metrics/best_improvement_visitors.png"
+              acquisitionsImg="/metrics/best_improvement_acquisitions.png"
+              summary="Gameplay optimization and retention tuning across rapid prototype iterations led to a measurable store funnel improvement. Listing engagement peaked at ~70K visitors with ~16K acquisitions during the optimization window, demonstrating how runtime performance work directly translates to better install economics."
+              metrics={[
+                { label: 'peak visitors', value: '~70K' },
+                { label: 'peak acquisitions', value: '~16K' },
+                { label: 'conversion stabilized during optimization window', value: '\u2713' },
+              ]}
+            />
           </div>
         </div>
       </AnimatedSection>
