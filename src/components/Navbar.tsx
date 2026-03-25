@@ -7,7 +7,7 @@ import SmartLink from './SmartLink';
 const navItems = [
   { label: 'Work', hash: 'work' },
   { label: 'XR Lab', hash: 'xr-lab' },
-  { label: 'Shipped', hash: 'shipped-titles' },
+  { label: 'Games', hash: 'shipped-titles' },
   { label: 'Writing', hash: 'writing' },
   { label: 'About', hash: 'about' },
   { label: 'Contact', hash: 'contact' },

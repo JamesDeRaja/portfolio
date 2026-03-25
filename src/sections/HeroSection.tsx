@@ -1,22 +1,24 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Activity, Monitor, Clock } from 'lucide-react';
+import { ArrowRight, Gamepad2, Palette, Clock } from 'lucide-react';
 
 const metrics = [
-  { value: '+7.27ms', label: 'GPU cost isolated via overdraw stress', icon: Activity },
-  { value: '72/90Hz', label: 'XR stereo frame budget targets', icon: Monitor },
-  { value: '13+ yrs', label: 'Unity & real-time systems', icon: Clock },
+  { value: '10+', label: 'Shipped mobile & XR game titles', icon: Gamepad2 },
+  { value: '13+ yrs', label: 'Unity game development & real-time graphics', icon: Clock },
+  { value: '72/90Hz', label: 'XR performance targets hit consistently', icon: Palette },
 ];
 
 const chips = [
-  'XR Stereo Rendering',
-  'GPU/CPU Bottleneck Isolation',
-  'Frame Pacing',
-  'OpenXR',
-  'URP',
-  'Unity 6',
-  'RenderDoc',
-  'Frame Debugger',
+  'Unity Game Development',
+  'XR / VR / MR',
+  'Real-Time Graphics',
+  'UI/UX Design',
+  'Visual Effects',
+  'Performance Optimization',
+  'C# / Shaders',
+  'Mobile Games',
+  'Photoshop',
+  'Figma',
 ];
 
 const containerVariants = {
@@ -52,7 +54,7 @@ export default function HeroSection() {
           <motion.div variants={itemVariants}>
             <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-4 py-1.5 text-xs font-medium text-emerald-400">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              Open to remote &amp; relocation — XR / VR / MR performance roles
+              Open to remote &amp; relocation — Game Development &amp; XR roles
             </span>
           </motion.div>
 
@@ -70,7 +72,7 @@ export default function HeroSection() {
             variants={itemVariants}
             className="mt-4 font-mono text-lg text-neon/80 sm:text-xl"
           >
-            Senior Real-Time Performance Engineer
+            Game Developer &amp; Graphic Designer
           </motion.p>
 
           {/* Subtitle */}
@@ -78,7 +80,7 @@ export default function HeroSection() {
             variants={itemVariants}
             className="mt-2 text-base text-slate-400"
           >
-            XR Rendering &bull; GPU/CPU Bottleneck Analysis &bull; Frame Pacing Discipline
+            Unity &bull; XR / VR / MR &bull; Mobile Games &bull; Real-Time Graphics &bull; Visual Design
           </motion.p>
 
           {/* Mission statement */}
@@ -87,9 +89,11 @@ export default function HeroSection() {
             className="mt-8 max-w-2xl"
           >
             <p className="text-lg text-slate-300 leading-relaxed">
-              I design deterministic frameworks to isolate rendering bottlenecks in real-time XR systems.
-              Every claim is backed by{' '}
-              <span className="text-neon font-medium">profiler-validated measurements</span>.
+              I build immersive games and craft compelling visuals — from concept art to shipped titles.
+              With 13+ years in Unity, I combine{' '}
+              <span className="text-neon font-medium">creative design instincts</span> with{' '}
+              <span className="text-neon font-medium">deep technical expertise</span> to deliver
+              polished, high-performance experiences across mobile, XR, and desktop.
             </p>
           </motion.div>
 
@@ -99,10 +103,10 @@ export default function HeroSection() {
             className="mt-6 space-y-2 text-sm text-slate-400"
           >
             {[
-              'XR rendering performance & stereo frame budget discipline',
-              'CPU/GPU bottleneck isolation via controlled A/B stress tests',
-              'Frame pacing stability — variance, spikes, compositor deadline adherence',
-              'Overdraw & MSAA bandwidth quantification with profiler evidence',
+              'End-to-end game development — design, prototype, build, ship, and optimize',
+              'XR / VR / MR experiences with buttery-smooth 72–90 Hz rendering',
+              'Graphic design & UI/UX — from game interfaces to brand identity',
+              'Performance engineering — profiling, GPU/CPU optimization, frame budget discipline',
             ].map((item) => (
               <li key={item} className="flex items-start gap-3">
                 <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-neon" />
@@ -148,32 +152,32 @@ export default function HeroSection() {
             className="mt-10 flex flex-wrap gap-4"
           >
             <a
-              href="#contact"
+              href="#shipped-titles"
               className="btn-primary group inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-medium"
             >
-              Contact Me
+              View My Games
               <ArrowRight size={14} className="transition group-hover:translate-x-1" />
             </a>
             <a
-              href="#xr-lab"
-              className="btn-secondary rounded-xl px-6 py-3 text-sm font-medium"
-            >
-              View XR Lab
-            </a>
-            <Link
-              to="/case-studies/xr-stress-lab"
+              href="#work"
               className="btn-secondary rounded-xl px-6 py-3 text-sm font-medium"
             >
               Case Studies
-            </Link>
+            </a>
+            <a
+              href="#contact"
+              className="btn-secondary rounded-xl px-6 py-3 text-sm font-medium"
+            >
+              Get in Touch
+            </a>
           </motion.div>
 
-          {/* Validation footer */}
+          {/* Footer */}
           <motion.p
             variants={itemVariants}
             className="mt-8 font-mono text-xs text-slate-600"
           >
-            Validated via Unity Profiler &amp; Frame Debugger &bull; Unity 6 URP + OpenXR &bull; Chennai, India
+            Unity 6 &bull; C# &bull; URP + OpenXR &bull; Photoshop &bull; Figma &bull; Chennai, India
           </motion.p>
         </motion.div>
       </div>
