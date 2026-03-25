@@ -1,25 +1,5 @@
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Gamepad2, Palette, Clock } from 'lucide-react';
-
-const metrics = [
-  { value: '10+', label: 'Shipped mobile & XR game titles', icon: Gamepad2 },
-  { value: '13+ yrs', label: 'Unity game development & real-time graphics', icon: Clock },
-  { value: '72/90Hz', label: 'XR performance targets hit consistently', icon: Palette },
-];
-
-const chips = [
-  'Unity Game Development',
-  'XR / VR / MR',
-  'Real-Time Graphics',
-  'UI/UX Design',
-  'Visual Effects',
-  'Performance Optimization',
-  'C# / Shaders',
-  'Mobile Games',
-  'Photoshop',
-  'Figma',
-];
+import { ArrowRight, Gamepad2, Palette, Sparkles } from 'lucide-react';
 
 const containerVariants = {
   hidden: {},
@@ -61,89 +41,78 @@ export default function HeroSection() {
           {/* Name */}
           <motion.h1
             variants={itemVariants}
-            className="mt-8 text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl"
+            className="mt-8 text-5xl font-bold tracking-tight text-white sm:text-7xl lg:text-8xl"
           >
             James{' '}
             <span className="gradient-text">De Raja</span>
           </motion.h1>
 
-          {/* Title */}
+          {/* Title — large and clear */}
           <motion.p
             variants={itemVariants}
-            className="mt-4 font-mono text-lg text-neon/80 sm:text-xl"
+            className="mt-4 text-2xl font-semibold text-neon/90 sm:text-3xl"
           >
             Game Developer &amp; Graphic Designer
           </motion.p>
 
-          {/* Subtitle */}
-          <motion.p
-            variants={itemVariants}
-            className="mt-2 text-base text-slate-400"
-          >
-            Unity &bull; XR / VR / MR &bull; Mobile Games &bull; Real-Time Graphics &bull; Visual Design
-          </motion.p>
-
-          {/* Mission statement */}
+          {/* Value headline — what you deliver */}
           <motion.div
             variants={itemVariants}
             className="mt-8 max-w-2xl"
           >
-            <p className="text-lg text-slate-300 leading-relaxed">
-              I build immersive games and craft compelling visuals — from concept art to shipped titles.
-              With 13+ years in Unity, I combine{' '}
-              <span className="text-neon font-medium">creative design instincts</span> with{' '}
-              <span className="text-neon font-medium">deep technical expertise</span> to deliver
-              polished, high-performance experiences across mobile, XR, and desktop.
+            <p className="text-xl text-slate-200 leading-relaxed sm:text-2xl">
+              I take games from{' '}
+              <span className="text-neon font-semibold">concept to app store</span> —
+              designing the art, building the systems, and shipping at{' '}
+              <span className="text-neon font-semibold">rock-solid frame rates</span>.
             </p>
           </motion.div>
 
-          {/* Key capabilities */}
-          <motion.ul
-            variants={itemVariants}
-            className="mt-6 space-y-2 text-sm text-slate-400"
-          >
-            {[
-              'End-to-end game development — design, prototype, build, ship, and optimize',
-              'XR / VR / MR experiences with buttery-smooth 72–90 Hz rendering',
-              'Graphic design & UI/UX — from game interfaces to brand identity',
-              'Performance engineering — profiling, GPU/CPU optimization, frame budget discipline',
-            ].map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-neon" />
-                {item}
-              </li>
-            ))}
-          </motion.ul>
-
-          {/* Metrics */}
+          {/* Impact numbers — big, scannable */}
           <motion.div
             variants={itemVariants}
-            className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3"
+            className="mt-10 grid grid-cols-3 gap-6"
           >
-            {metrics.map((m) => (
-              <div
-                key={m.value}
-                className="glass-card glass-card-hover metric-ring rounded-xl p-4 transition-all duration-300"
-              >
-                <div className="flex items-center gap-3">
-                  <m.icon size={18} className="text-neon/60" />
-                  <p className="font-mono text-2xl font-bold text-neon text-glow-cyan">{m.value}</p>
-                </div>
-                <p className="mt-2 text-xs text-slate-400">{m.label}</p>
-              </div>
-            ))}
+            <div>
+              <p className="font-mono text-4xl font-bold text-neon text-glow-cyan sm:text-5xl">13+</p>
+              <p className="mt-1 text-sm text-slate-400">years in Unity</p>
+            </div>
+            <div>
+              <p className="font-mono text-4xl font-bold text-white sm:text-5xl">3</p>
+              <p className="mt-1 text-sm text-slate-400">shipped titles on app stores</p>
+            </div>
+            <div>
+              <p className="font-mono text-4xl font-bold text-electric sm:text-5xl">60fps</p>
+              <p className="mt-1 text-sm text-slate-400">locked on low-end devices</p>
+            </div>
           </motion.div>
 
-          {/* Skill chips */}
+          {/* Three pillars — what makes you different */}
           <motion.div
             variants={itemVariants}
-            className="mt-8 flex flex-wrap gap-2"
+            className="mt-10 grid gap-4 sm:grid-cols-3"
           >
-            {chips.map((chip) => (
-              <span key={chip} className="chip-glow rounded-full px-3 py-1 font-mono text-xs">
-                {chip}
-              </span>
-            ))}
+            <div className="glass-card glass-card-hover rounded-xl p-5">
+              <Gamepad2 size={20} className="text-neon" />
+              <p className="mt-3 text-sm font-semibold text-white">Game Development</p>
+              <p className="mt-1 text-xs text-slate-400">
+                Full-cycle Unity dev — gameplay, AI, physics, optimization. Mobile &amp; XR.
+              </p>
+            </div>
+            <div className="glass-card glass-card-hover rounded-xl p-5">
+              <Palette size={20} className="text-electric" />
+              <p className="mt-3 text-sm font-semibold text-white">Graphic Design</p>
+              <p className="mt-1 text-xs text-slate-400">
+                Game UI/UX, brand identity, marketing art, visual prototyping in Photoshop &amp; Figma.
+              </p>
+            </div>
+            <div className="glass-card glass-card-hover rounded-xl p-5">
+              <Sparkles size={20} className="text-amber-400" />
+              <p className="mt-3 text-sm font-semibold text-white">Performance Engineering</p>
+              <p className="mt-1 text-xs text-slate-400">
+                GPU/CPU profiling, frame budget discipline, XR stereo rendering at 72–90 Hz.
+              </p>
+            </div>
           </motion.div>
 
           {/* CTAs */}
@@ -171,14 +140,6 @@ export default function HeroSection() {
               Get in Touch
             </a>
           </motion.div>
-
-          {/* Footer */}
-          <motion.p
-            variants={itemVariants}
-            className="mt-8 font-mono text-xs text-slate-600"
-          >
-            Unity 6 &bull; C# &bull; URP + OpenXR &bull; Photoshop &bull; Figma &bull; Chennai, India
-          </motion.p>
         </motion.div>
       </div>
     </section>

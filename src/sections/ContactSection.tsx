@@ -5,10 +5,10 @@ import SmartLink from '../components/SmartLink';
 import { Mail, Linkedin, Github, MapPin, ArrowUpRight } from 'lucide-react';
 
 const topics = [
-  'XR Rendering Optimization',
-  'Real-Time Performance Engineering',
-  'Graphics Systems & Profiling',
-  'Frame Pacing Research',
+  'Game Development',
+  'Graphic Design',
+  'XR / VR Experiences',
+  'Performance Optimization',
 ];
 
 const links = [
@@ -27,8 +27,8 @@ export default function ContactSection() {
 
       <SectionHeading
         eyebrow="Contact"
-        title="Let's talk performance engineering"
-        subtitle="Available for technical discussions around real-time optimization, profiling strategy, and XR performance architecture."
+        title="Let's build something together"
+        subtitle="Looking for a game developer who can design and ship? Let's talk about your next project."
       />
 
       <AnimatedSection>

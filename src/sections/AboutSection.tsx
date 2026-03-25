@@ -44,7 +44,19 @@ export default function AboutSection() {
         title="Game developer, graphic designer, performance nerd"
       />
 
-      {/* Career narrative */}
+      {/* Personal narrative — the "why" */}
+      <AnimatedSection>
+        <div className="mb-10 glass-card rounded-2xl p-6 sm:p-8 border-l-2 border-neon/30">
+          <p className="text-base text-slate-200 leading-relaxed italic">
+            &ldquo;I started making games at 14 because I wanted to build the worlds I saw in my head. Thirteen years later, I still get the same rush — but now I also obsess over whether the frame time is under 16ms.&rdquo;
+          </p>
+          <p className="mt-4 text-sm text-slate-400 leading-relaxed">
+            That combination — <span className="text-white font-medium">creative vision + engineering discipline</span> — is what defines me. I don&apos;t just want games to look good. I want them to <em>feel</em> good at 60fps on a cheap phone. I design the art, I write the shaders, I profile the frame, I ship it.
+          </p>
+        </div>
+      </AnimatedSection>
+
+      {/* Career details */}
       <AnimatedSection>
         <div className="mb-10 flex flex-col gap-8 sm:flex-row sm:items-start">
           {/* Photo + identity */}

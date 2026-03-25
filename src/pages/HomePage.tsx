@@ -7,6 +7,7 @@ import WorkSection from '../sections/WorkSection';
 import WritingSection from '../sections/WritingSection';
 import XRLabSection from '../sections/XRLabSection';
 import ShippedTitlesSection from '../sections/ShippedTitlesSection';
+import ProblemsSolvedSection from '../sections/ProblemsSolvedSection';
 import ParticleField from '../components/ParticleField';
 import { Seo } from '../components/Seo';
 
@@ -38,15 +39,17 @@ export default function HomePage() {
       {/* Grid overlay */}
       <div className="pointer-events-none fixed inset-0 z-0 bg-grid-overlay" aria-hidden="true" />
 
-      {/* Content */}
+      {/* Content — ordered for storytelling: who → games → how I think → deep dives → lab → writing → me → contact */}
       <main className="relative z-10">
         <HeroSection />
+        <div className="divider-glow mx-auto max-w-7xl" />
+        <ShippedTitlesSection />
+        <div className="divider-glow mx-auto max-w-7xl" />
+        <ProblemsSolvedSection />
         <div className="divider-glow mx-auto max-w-7xl" />
         <WorkSection />
         <div className="divider-glow mx-auto max-w-7xl" />
         <XRLabSection />
-        <div className="divider-glow mx-auto max-w-7xl" />
-        <ShippedTitlesSection />
         <div className="divider-glow mx-auto max-w-7xl" />
         <WritingSection />
         <div className="divider-glow mx-auto max-w-7xl" />
