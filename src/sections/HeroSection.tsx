@@ -66,7 +66,7 @@ export default function HeroSection() {
             variants={itemVariants}
             className="mt-8 max-w-2xl text-lg text-slate-200 leading-relaxed sm:text-xl"
           >
-            13+ years shipping optimized games across mobile and XR.
+            100+ shipped titles across 13+ years in Unity.
             I find the bottleneck, prove it with a profiler, fix it, and{' '}
             <span className="text-neon font-semibold">ship it at 60fps</span>.
           </motion.p>
@@ -81,8 +81,8 @@ export default function HeroSection() {
               <p className="mt-2 text-sm text-slate-400">years in Unity</p>
             </div>
             <div>
-              <p className="font-mono text-4xl font-bold text-white sm:text-6xl">3</p>
-              <p className="mt-2 text-sm text-slate-400">shipped titles on app stores</p>
+              <p className="font-mono text-4xl font-bold text-white sm:text-6xl">100+</p>
+              <p className="mt-2 text-sm text-slate-400">shipped titles</p>
             </div>
             <div>
               <p className="font-mono text-4xl font-bold text-electric sm:text-6xl">60<span className="text-2xl sm:text-4xl">fps</span></p>
