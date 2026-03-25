@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { useCountUp } from '../hooks/useCountUp';
 
 const containerVariants = {
   hidden: {},
@@ -12,6 +13,36 @@ const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
 };
+
+function HeroStats() {
+  const years = useCountUp({ end: 13, duration: 1.2, delay: 0 });
+  const titles = useCountUp({ end: 100, duration: 1.6, delay: 0.1 });
+  const fps = useCountUp({ end: 60, duration: 1.0, delay: 0.2 });
+
+  return (
+    <div className="mt-12 grid grid-cols-3 gap-8">
+      <div>
+        <p ref={years.ref as React.RefObject<HTMLParagraphElement>} className="font-mono text-4xl font-bold text-neon text-glow-cyan sm:text-6xl">
+          {years.count}+
+        </p>
+        <p className="mt-2 text-sm text-slate-400">years in Unity</p>
+      </div>
+      <div>
+        <p ref={titles.ref as React.RefObject<HTMLParagraphElement>} className="font-mono text-4xl font-bold text-white sm:text-6xl">
+          {titles.count}+
+        </p>
+        <p className="mt-2 text-sm text-slate-400">shipped titles</p>
+        <p className="mt-0.5 text-xs text-slate-500">incl. multi-publisher PPP programs</p>
+      </div>
+      <div>
+        <p ref={fps.ref as React.RefObject<HTMLParagraphElement>} className="font-mono text-4xl font-bold text-electric sm:text-6xl">
+          {fps.count}<span className="text-2xl sm:text-4xl">fps</span>
+        </p>
+        <p className="mt-2 text-sm text-slate-400">locked on low-end devices</p>
+      </div>
+    </div>
+  );
+}
 
 export default function HeroSection() {
   return (
@@ -47,7 +78,7 @@ export default function HeroSection() {
             <span className="gradient-text">De Raja</span>
           </motion.h1>
 
-          {/* Specialist title — this is what hiring managers anchor on */}
+          {/* Specialist title */}
           <motion.p
             variants={itemVariants}
             className="mt-4 text-xl font-semibold text-neon/90 sm:text-2xl lg:text-3xl"
@@ -61,7 +92,7 @@ export default function HeroSection() {
             Unity Rendering &bull; Frame Stability &bull; XR / Mobile / Shipped Titles
           </motion.p>
 
-          {/* Value prop — one punchy line */}
+          {/* Value prop */}
           <motion.p
             variants={itemVariants}
             className="mt-8 max-w-2xl text-lg text-slate-200 leading-relaxed sm:text-xl"
@@ -71,7 +102,7 @@ export default function HeroSection() {
             <span className="text-neon font-semibold">ship it at 60fps</span>.
           </motion.p>
 
-          {/* Impact proof — concrete outcomes that make hiring managers lean in */}
+          {/* Impact proof */}
           <motion.div
             variants={itemVariants}
             className="mt-4 flex flex-wrap gap-x-6 gap-y-1 text-sm text-slate-400"
@@ -81,24 +112,9 @@ export default function HeroSection() {
             <span><span className="font-semibold text-emerald-400">D1 retention 25% → 38%</span> through rapid iteration</span>
           </motion.div>
 
-          {/* Impact stats — big, scannable, with accent colors */}
-          <motion.div
-            variants={itemVariants}
-            className="mt-12 grid grid-cols-3 gap-8"
-          >
-            <div>
-              <p className="font-mono text-4xl font-bold text-neon text-glow-cyan sm:text-6xl">13+</p>
-              <p className="mt-2 text-sm text-slate-400">years in Unity</p>
-            </div>
-            <div>
-              <p className="font-mono text-4xl font-bold text-white sm:text-6xl">100+</p>
-              <p className="mt-2 text-sm text-slate-400">shipped titles</p>
-              <p className="mt-0.5 text-xs text-slate-500">incl. multi-publisher PPP programs</p>
-            </div>
-            <div>
-              <p className="font-mono text-4xl font-bold text-electric sm:text-6xl">60<span className="text-2xl sm:text-4xl">fps</span></p>
-              <p className="mt-2 text-sm text-slate-400">locked on low-end devices</p>
-            </div>
+          {/* Animated stats */}
+          <motion.div variants={itemVariants}>
+            <HeroStats />
           </motion.div>
 
           {/* CTAs */}
