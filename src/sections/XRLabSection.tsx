@@ -72,12 +72,25 @@ export default function XRLabSection() {
       </div>
 
       <SectionHeading
-        eyebrow="Core Focus"
+        eyebrow="Research"
         title="XR Performance Stress Lab"
-        subtitle="Deterministic benchmarking lab to measure overdraw, MSAA cost, instancing vs batching, CPU stress, and frame pacing stability under controlled workloads."
+        subtitle="A deterministic Unity 6 URP + OpenXR benchmark harness. I run controlled experiments to isolate exactly what costs what — overdraw, MSAA, instancing, CPU stress, frame pacing — with profiler evidence for every claim."
       />
 
-      {/* Status + Key Finding */}
+      {/* Top-level insight — scannable before diving into data */}
+      <AnimatedSection>
+        <div className="mb-8 rounded-2xl border border-neon/15 bg-neon/5 p-6 sm:p-8">
+          <p className="text-base text-slate-200 leading-relaxed sm:text-lg">
+            <span className="font-mono font-bold text-neon text-glow-cyan">Key insight:</span>{' '}
+            Transparent overdraw in XR stereo rendering increased GPU frame cost by{' '}
+            <span className="font-mono font-bold text-neon">+7.27ms</span> —
+            enough to break the 11ms budget at 90Hz and trigger reprojection artifacts.
+            Identified via controlled A/B stress test with profiler evidence.
+          </p>
+        </div>
+      </AnimatedSection>
+
+      {/* Detailed lab data */}
       <AnimatedSection>
         <div className="glass-card rounded-2xl p-6">
           <div className="flex flex-wrap items-center gap-3">
@@ -89,19 +102,20 @@ export default function XRLabSection() {
             </span>
           </div>
 
-          {/* Key Finding */}
-          <div className="mt-5 rounded-xl border border-neon/10 bg-neon/5 p-5">
-            <p className="font-mono text-xs font-semibold uppercase tracking-wide text-neon/70">Key Finding</p>
-            <p className="mt-2 font-mono text-2xl font-bold text-neon text-glow-cyan sm:text-3xl">
-              +7.27ms GPU cost
-            </p>
-            <p className="mt-1 text-sm text-white/80">isolated under overdraw stress</p>
-            <p className="mt-2 text-xs text-slate-400">
-              201 sequential transparent draw calls &bull; ZWrite Off &bull; Render-thread dominated &bull; Unity 6 URP + OpenXR
-            </p>
-            <p className="mt-2 text-xs text-slate-500 italic">
-              Stereo transparency stacking doubles fragment workload — crosses the 11ms budget boundary at 90Hz.
-            </p>
+          {/* Detailed findings */}
+          <div className="mt-5 grid gap-4 sm:grid-cols-3">
+            <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4">
+              <p className="font-mono text-2xl font-bold text-neon text-glow-cyan">+7.27ms</p>
+              <p className="mt-1 text-xs text-slate-400">GPU cost from overdraw stress</p>
+            </div>
+            <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4">
+              <p className="font-mono text-2xl font-bold text-white">201</p>
+              <p className="mt-1 text-xs text-slate-400">sequential transparent draw calls</p>
+            </div>
+            <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4">
+              <p className="font-mono text-2xl font-bold text-electric">11ms</p>
+              <p className="mt-1 text-xs text-slate-400">90Hz budget boundary crossed</p>
+            </div>
           </div>
 
           {/* Pipeline */}

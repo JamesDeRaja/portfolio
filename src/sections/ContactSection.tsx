@@ -4,11 +4,12 @@ import AnimatedSection from '../components/AnimatedSection';
 import SmartLink from '../components/SmartLink';
 import { Mail, Linkedin, Github, MapPin, ArrowUpRight } from 'lucide-react';
 
-const topics = [
-  'XR Rendering Optimization',
-  'Real-Time Performance Engineering',
-  'Graphics Systems & Profiling',
-  'Frame Pacing Research',
+const targetRoles = [
+  'Rendering Engineer',
+  'XR Performance Engineer',
+  'Unity Engine Optimization',
+  'Technical Artist (Performance)',
+  'Graphics Programmer',
 ];
 
 const links = [
@@ -27,15 +28,22 @@ export default function ContactSection() {
 
       <SectionHeading
         eyebrow="Contact"
-        title="Let's talk performance engineering"
-        subtitle="Available for technical discussions around real-time optimization, profiling strategy, and XR performance architecture."
+        title="Looking for someone who debugs frame pipelines for breakfast?"
       />
 
       <AnimatedSection>
         <div className="glass-card gradient-border rounded-2xl p-8">
-          {/* Topics */}
-          <div className="mb-6 flex flex-wrap gap-2">
-            {topics.map((role) => (
+          {/* Positioning statement */}
+          <p className="text-base text-slate-300 leading-relaxed">
+            I&apos;m targeting rendering, XR performance, and engine optimization roles —
+            teams where profiler evidence matters more than marketing slides.
+            Open to <span className="font-medium text-white">remote work worldwide</span> and{' '}
+            <span className="font-medium text-white">international relocation</span>.
+          </p>
+
+          {/* Target roles */}
+          <div className="mt-6 flex flex-wrap gap-2">
+            {targetRoles.map((role) => (
               <span key={role} className="chip-glow rounded-full px-3 py-1 font-mono text-xs">
                 {role}
               </span>
@@ -43,7 +51,7 @@ export default function ContactSection() {
           </div>
 
           {/* Links */}
-          <div className="flex flex-wrap gap-4">
+          <div className="mt-6 flex flex-wrap gap-4">
             {links.map((link) => (
               <motion.div key={link.label} whileHover={{ y: -2 }}>
                 <SmartLink
@@ -65,7 +73,7 @@ export default function ContactSection() {
 
           <div className="mt-6 flex items-center gap-2 text-sm text-slate-500">
             <MapPin size={14} />
-            <span>Chennai, India</span>
+            <span>Chennai, India &bull; Ready to relocate</span>
           </div>
         </div>
       </AnimatedSection>

@@ -5,10 +5,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import SmartLink from './SmartLink';
 
 const navItems = [
-  { label: 'Work', hash: 'work' },
-  { label: 'XR Lab', hash: 'xr-lab' },
   { label: 'Games', hash: 'shipped-titles' },
-  { label: 'Writing', hash: 'writing' },
+  { label: 'War Stories', hash: 'problems-solved' },
+  { label: 'Case Studies', hash: 'work' },
+  { label: 'XR Lab', hash: 'xr-lab' },
   { label: 'About', hash: 'about' },
   { label: 'Contact', hash: 'contact' },
 ];
