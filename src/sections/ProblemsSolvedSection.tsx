@@ -42,9 +42,9 @@ export default function ProblemsSolvedSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
       <SectionHeading
-        eyebrow="War Stories"
-        title="Performance problems I diagnosed &amp; fixed"
-        subtitle="The bugs nobody else wanted to touch. Each one follows the same discipline: measure, isolate, fix, verify."
+        eyebrow="Performance Wins"
+        title="Problems I diagnosed &amp; fixed"
+        subtitle="Real production bottlenecks, real profiler evidence. Each one follows the same discipline: measure, isolate, fix, verify."
       />
 
       <div className="space-y-8">
