@@ -71,6 +71,16 @@ export default function HeroSection() {
             <span className="text-neon font-semibold">ship it at 60fps</span>.
           </motion.p>
 
+          {/* Impact proof — concrete outcomes that make hiring managers lean in */}
+          <motion.div
+            variants={itemVariants}
+            className="mt-4 flex flex-wrap gap-x-6 gap-y-1 text-sm text-slate-400"
+          >
+            <span><span className="font-semibold text-emerald-400">45 → 60+ FPS</span> recovered in shipped combat scenes</span>
+            <span><span className="font-semibold text-emerald-400">+7.27ms</span> GPU cost isolated in XR stereo overdraw</span>
+            <span><span className="font-semibold text-emerald-400">D1 retention 25% → 38%</span> through rapid iteration</span>
+          </motion.div>
+
           {/* Impact stats — big, scannable, with accent colors */}
           <motion.div
             variants={itemVariants}

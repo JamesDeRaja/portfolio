@@ -32,10 +32,14 @@ const problems = [
 
 export default function ProblemsSolvedSection() {
   return (
-    <section id="problems-solved" className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+    <section id="problems-solved" className="relative py-20">
+      {/* Distinct background zone — separates this from uniform sections */}
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-white/[0.015]" />
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute left-0 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-electric/3 blur-[150px]" />
+        <div className="absolute right-0 bottom-0 h-[300px] w-[300px] rounded-full bg-red-500/3 blur-[120px]" />
       </div>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
       <SectionHeading
         eyebrow="War Stories"
@@ -93,6 +97,7 @@ export default function ProblemsSolvedSection() {
             </motion.div>
           </AnimatedSection>
         ))}
+      </div>
       </div>
     </section>
   );
