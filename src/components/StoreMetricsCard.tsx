@@ -24,24 +24,28 @@ export default function StoreMetricsCard({ visitorsImg, acquisitionsImg, summary
       {/* Summary */}
       <p className="mt-4 text-sm text-slate-300 leading-relaxed">{summary}</p>
 
-      {/* Graph images */}
+      {/* Graph images — inverted to match dark theme */}
       <div className="mt-4 grid gap-4 md:grid-cols-2">
         <div>
-          <img
-            src={visitorsImg}
-            alt="Store listing visitors graph"
-            className="rounded-lg border border-white/5"
-            loading="lazy"
-          />
+          <div className="overflow-hidden rounded-lg border border-white/5 bg-[#0a0a1a]">
+            <img
+              src={visitorsImg}
+              alt="Store listing visitors graph"
+              className="w-full invert brightness-90 hue-rotate-180"
+              loading="lazy"
+            />
+          </div>
           <p className="mt-1.5 text-[10px] text-slate-500">Store listing visitors</p>
         </div>
         <div>
-          <img
-            src={acquisitionsImg}
-            alt="Store listing acquisitions graph"
-            className="rounded-lg border border-white/5"
-            loading="lazy"
-          />
+          <div className="overflow-hidden rounded-lg border border-white/5 bg-[#0a0a1a]">
+            <img
+              src={acquisitionsImg}
+              alt="Store listing acquisitions graph"
+              className="w-full invert brightness-90 hue-rotate-180"
+              loading="lazy"
+            />
+          </div>
           <p className="mt-1.5 text-[10px] text-slate-500">Store listing acquisitions</p>
         </div>
       </div>
