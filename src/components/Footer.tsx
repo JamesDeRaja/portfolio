@@ -1,16 +1,9 @@
-import SmartLink from './SmartLink';
-
 export default function Footer() {
   return (
-    <footer role="contentinfo" className="border-t border-white/5 bg-void-950">
-      <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 px-4 py-8 text-sm text-slate-500 sm:flex-row sm:justify-between sm:px-6 lg:px-8">
-        <p className="font-mono text-xs">&copy; {new Date().getFullYear()} James De Raja</p>
-        <div className="flex items-center gap-6">
-          <SmartLink href="mailto:jamesderaja@gmail.com" className="transition hover:text-neon">Email</SmartLink>
-          <SmartLink href="https://www.linkedin.com/in/james-de-raja/" className="transition hover:text-neon">LinkedIn</SmartLink>
-          <SmartLink href="https://github.com/JamesDeRaja" className="transition hover:text-neon">GitHub</SmartLink>
-          <SmartLink href="/resume/viewer.html?file=JamesDeRaja_Resume.pdf" className="transition hover:text-neon">Resume</SmartLink>
-        </div>
+    <footer className="border-t border-[var(--color-border)] bg-[var(--color-bg)]">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-6 text-xs text-[var(--color-text-muted)]">
+        <p className="font-mono">© {new Date().getFullYear()} James De Raja</p>
+        <p>Built for performance-focused roles.</p>
       </div>
     </footer>
   );
