@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 type MetricsSummaryProps = {
   baselineCpu: number;
   baselineGpu: number;
@@ -8,9 +10,16 @@ type MetricsSummaryProps = {
   stressLabel?: string;
 };
 
-function delta(current: number, baseline: number) {
-  const value = current - baseline;
-  return `${value >= 0 ? '+' : ''}${value.toFixed(2)}`;
+function fmtDelta(current: number, baseline: number): string {
+  const v = current - baseline;
+  return `${v >= 0 ? '+' : ''}${v.toFixed(2)}`;
+}
+
+function deltaColor(current: number, baseline: number): string {
+  const v = current - baseline;
+  if (v > 0.5) return 'text-red-400';
+  if (v < -0.5) return 'text-emerald-400';
+  return 'text-slate-300';
 }
 
 export default function MetricsSummary({
@@ -19,35 +28,91 @@ export default function MetricsSummary({
   stressCpu,
   stressGpu,
   bottleneck,
-  baselineLabel = 'Baseline CPU/GPU (ms)',
-  stressLabel = 'Stress CPU/GPU (ms)'
+  baselineLabel = 'Baseline',
+  stressLabel = 'Under Stress',
 }: MetricsSummaryProps) {
+  const cpuDeltaStr = fmtDelta(stressCpu, baselineCpu);
+  const gpuDeltaStr = fmtDelta(stressGpu, baselineGpu);
+  const cpuDeltaColor = deltaColor(stressCpu, baselineCpu);
+  const gpuDeltaColor = deltaColor(stressGpu, baselineGpu);
+
   return (
-    <section className="mt-6 space-y-3">
-      <h2 className="text-xl font-semibold text-white">Metrics Summary</h2>
-      <div className="grid gap-3 md:grid-cols-3">
-        <div className="glass-card rounded-xl p-4 text-sm text-slate-300">
-          <p className="text-xs uppercase tracking-[0.08em] text-slate-500">{baselineLabel}</p>
-          <p className="mt-1 font-medium text-white">
-            {baselineCpu.toFixed(2)} / {baselineGpu.toFixed(2)}
+    <motion.div
+      initial={{ opacity: 0, y: 14 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.45 }}
+      viewport={{ once: true }}
+      className="mt-6 rounded-2xl border border-white/[0.08] bg-void-900/60 overflow-hidden shadow-[0_0_0_1px_rgba(255,255,255,0.03),0_4px_16px_rgba(0,0,0,0.3)]"
+    >
+      {/* Header */}
+      <div className="border-b border-white/[0.06] px-5 py-3 flex items-center justify-between">
+        <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500">
+          Metrics Summary
+        </p>
+        <span className="font-mono text-[10px] text-slate-600">CPU / GPU (ms)</span>
+      </div>
+
+      {/* 3-column grid */}
+      <div className="grid grid-cols-3 divide-x divide-white/[0.05]">
+        {/* Baseline */}
+        <div className="p-4 sm:p-5">
+          <p className="font-mono text-[10px] uppercase tracking-wider text-slate-600 mb-3">
+            {baselineLabel}
           </p>
+          <div className="space-y-1.5">
+            <div>
+              <p className="font-mono text-xl font-bold text-white">{baselineCpu.toFixed(2)}</p>
+              <p className="font-mono text-[10px] text-slate-600">CPU ms</p>
+            </div>
+            <div>
+              <p className="font-mono text-xl font-bold text-white">{baselineGpu.toFixed(2)}</p>
+              <p className="font-mono text-[10px] text-slate-600">GPU ms</p>
+            </div>
+          </div>
         </div>
-        <div className="glass-card rounded-xl p-4 text-sm text-slate-300">
-          <p className="text-xs uppercase tracking-[0.08em] text-slate-500">{stressLabel}</p>
-          <p className="mt-1 font-medium text-white">
-            {stressCpu.toFixed(2)} / {stressGpu.toFixed(2)}
+
+        {/* Under stress */}
+        <div className="p-4 sm:p-5">
+          <p className="font-mono text-[10px] uppercase tracking-wider text-slate-600 mb-3">
+            {stressLabel}
           </p>
+          <div className="space-y-1.5">
+            <div>
+              <p className="font-mono text-xl font-bold text-amber-400">{stressCpu.toFixed(2)}</p>
+              <p className="font-mono text-[10px] text-slate-600">CPU ms</p>
+            </div>
+            <div>
+              <p className="font-mono text-xl font-bold text-amber-400">{stressGpu.toFixed(2)}</p>
+              <p className="font-mono text-[10px] text-slate-600">GPU ms</p>
+            </div>
+          </div>
         </div>
-        <div className="glass-card rounded-xl p-4 text-sm text-slate-300">
-          <p className="text-xs uppercase tracking-[0.08em] text-slate-500">Delta CPU/GPU (ms)</p>
-          <p className="mt-1 font-medium text-white">
-            {delta(stressCpu, baselineCpu)} / {delta(stressGpu, baselineGpu)}
+
+        {/* Delta */}
+        <div className="p-4 sm:p-5">
+          <p className="font-mono text-[10px] uppercase tracking-wider text-slate-600 mb-3">
+            Delta
           </p>
+          <div className="space-y-1.5">
+            <div>
+              <p className={`font-mono text-xl font-bold ${cpuDeltaColor}`}>{cpuDeltaStr}</p>
+              <p className="font-mono text-[10px] text-slate-600">CPU ms</p>
+            </div>
+            <div>
+              <p className={`font-mono text-xl font-bold ${gpuDeltaColor}`}>{gpuDeltaStr}</p>
+              <p className="font-mono text-[10px] text-slate-600">GPU ms</p>
+            </div>
+          </div>
         </div>
       </div>
-      <p className="text-sm text-slate-300">
-        <span className="font-semibold text-white">Bottleneck:</span> {bottleneck}
-      </p>
-    </section>
+
+      {/* Bottleneck classification */}
+      <div className="border-t border-white/[0.06] px-5 py-3 flex items-center gap-2.5">
+        <span className="h-1.5 w-1.5 rounded-full bg-amber-400 flex-shrink-0" />
+        <p className="text-sm text-slate-300">
+          <span className="font-semibold text-white">Bottleneck:</span> {bottleneck}
+        </p>
+      </div>
+    </motion.div>
   );
 }

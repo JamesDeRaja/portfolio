@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import PageHero from '../../components/PageHero';
 import { Seo } from '../../components/Seo';
 
 export default function FramePacingLabPage() {
@@ -21,16 +21,15 @@ export default function FramePacingLabPage() {
           image: '/og-image.png',
         }}
       />
-      <div className="mb-4">
-        <Link to="/case-studies/xr-stress-lab" className="text-sm text-slate-500 hover:text-neon transition-colors">← Back to XR Stress Lab Case Study</Link>
-      </div>
-
-      <h1 className="text-3xl font-semibold text-white">Frame Pacing Variance Lab</h1>
-      <p className="mt-2 text-sm uppercase tracking-[0.08em] text-slate-500">Variance and Spike Characterization</p>
-      <p className="mt-4 text-slate-300">
-        This experiment track captures variance signatures under controlled workload modulation. Quantified results are
-        published alongside the other stress paths once capture normalization is complete.
-      </p>
+      <PageHero
+        backHref="/case-studies/xr-stress-lab"
+        backLabel="Back to XR Stress Lab"
+        category="Lab Experiment"
+        title="Frame Pacing Variance Lab"
+        subtitle="Variance and Spike Characterization"
+        description="This experiment track captures variance signatures under controlled workload modulation. Quantified results are published alongside the other stress paths once capture normalization is complete."
+        chips={['Frame Pacing', 'Variance', 'Spike Analysis', 'Unity XR']}
+      />
     </main>
     </div>
   );

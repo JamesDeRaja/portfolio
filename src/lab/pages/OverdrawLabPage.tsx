@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import MetricsSummary from '../components/MetricsSummary';
+import PageHero from '../../components/PageHero';
 import { Seo } from '../../components/Seo';
 
 export default function OverdrawLabPage() {
@@ -22,16 +22,17 @@ export default function OverdrawLabPage() {
           image: '/og-image.png',
         }}
       />
-      <div className="mb-4">
-        <Link to="/case-studies/xr-stress-lab" className="text-sm text-slate-500 hover:text-neon transition-colors">← Back to XR Stress Lab Case Study</Link>
-      </div>
-
-      <h1 className="text-3xl font-semibold text-white">Overdraw Stress Lab</h1>
-      <p className="mt-2 text-sm uppercase tracking-[0.08em] text-slate-500">GPU Fragment Pressure</p>
-      <p className="mt-4 text-slate-300">
-        Controlled transparency stacking test used to classify fragment bottlenecks with CPU/GPU timing and pass-level
-        evidence.
-      </p>
+      <PageHero
+        backHref="/case-studies/xr-stress-lab"
+        backLabel="Back to XR Stress Lab"
+        category="Lab Experiment"
+        title="Overdraw Stress Lab"
+        subtitle="GPU Fragment Pressure"
+        description="Controlled transparency stacking test used to classify fragment bottlenecks with CPU/GPU timing and pass-level evidence."
+        chips={['GPU Bound', 'Fragment Pressure', 'Transparent Pass', 'Unity XR']}
+        metric="+7.27 ms"
+        metricLabel="GPU delta under overdraw stress"
+      />
 
       <MetricsSummary
         baselineCpu={8.53}

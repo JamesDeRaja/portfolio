@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import PageHero from '../../components/PageHero';
 import { Seo } from '../../components/Seo';
 
 export default function OverdrawStereoLabPage() {
@@ -23,41 +24,34 @@ export default function OverdrawStereoLabPage() {
           image: '/og-image.png',
         }}
       />
-      <div className="mb-4">
-        <Link to="/#writing" className="text-sm text-slate-500 hover:text-neon transition-colors">← Back to Writing</Link>
-      </div>
+      <PageHero
+        backHref="/#writing"
+        backLabel="Back to Writing"
+        category="Lab Article"
+        title="Why Overdraw Kills Performance in Stereo Rendering"
+        description="Stereo rendering amplifies fragment cost and exposes overdraw hotspots quickly. We break down practical ways to inspect transparent layers, UI composition, and material behavior to keep fill-rate healthy."
+        chips={['Lab Article', '7 min read', 'XR', 'Unity', 'Fill-rate']}
+      />
 
-      <header className="space-y-3">
-        <h1 className="text-3xl font-semibold text-white">Why Overdraw Kills Performance in Stereo Rendering</h1>
-        <p className="text-slate-300">
-          Stereo rendering amplifies fragment cost and exposes overdraw hotspots quickly. We break down practical ways
-          to inspect transparent layers, UI composition, and material behavior to keep fill-rate healthy.
-        </p>
-        <div className="flex flex-wrap gap-2 text-xs text-slate-400">
-          <span className="rounded-full border border-white/10 bg-white/[0.02] px-3 py-1">Lab Article</span>
-          <span className="rounded-full border border-white/10 bg-white/[0.02] px-3 py-1">7 min read</span>
-          <span className="rounded-full border border-white/10 bg-white/[0.02] px-3 py-1">XR • Unity • Fill-rate</span>
-        </div>
-        <div className="glass-card rounded-2xl p-4 text-sm text-slate-300">
-          <p className="font-semibold text-white">Test Setup</p>
-          <ul className="mt-2 list-disc space-y-1 pl-5">
-            <li>
-              Target refresh: <span className="font-semibold text-white">90 Hz</span> (budget {budgetMs.toFixed(2)}
-              {' '}ms)
-            </li>
-            <li>
-              Render scale: <span className="font-semibold text-white">1.0</span>
-            </li>
-            <li>
-              MSAA: <span className="font-semibold text-white">Disabled</span>
-            </li>
-            <li>
-              Stress source:{' '}
-              <span className="font-semibold text-white">40 stacked transparent quads + full-screen particles</span>
-            </li>
-          </ul>
-        </div>
-      </header>
+      <div className="glass-card rounded-2xl p-4 text-sm text-slate-300 mt-6">
+        <p className="font-semibold text-white">Test Setup</p>
+        <ul className="mt-2 list-disc space-y-1 pl-5">
+          <li>
+            Target refresh: <span className="font-semibold text-white">90 Hz</span> (budget {budgetMs.toFixed(2)}
+            {' '}ms)
+          </li>
+          <li>
+            Render scale: <span className="font-semibold text-white">1.0</span>
+          </li>
+          <li>
+            MSAA: <span className="font-semibold text-white">Disabled</span>
+          </li>
+          <li>
+            Stress source:{' '}
+            <span className="font-semibold text-white">40 stacked transparent quads + full-screen particles</span>
+          </li>
+        </ul>
+      </div>
 
       <section className="mt-8 space-y-3">
         <h2 className="text-xl font-semibold text-white">Why Overdraw Is Brutal in XR</h2>

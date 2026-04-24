@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import PageHero from '../../components/PageHero';
 import ResultsTable from '../../components/ResultsTable';
 import SmartLink from '../../components/SmartLink';
 import { performanceResults } from '../../data/performanceResults';
@@ -24,22 +25,14 @@ export default function XRFrameTimingLabPage() {
           image: '/og-image.png',
         }}
       />
-      <div className="mb-4">
-        <Link to="/#writing" className="text-sm text-slate-500 hover:text-neon transition-colors">← Back to Writing</Link>
-      </div>
-
-      <header className="space-y-3">
-        <h1 className="text-3xl font-semibold text-white">Understanding XR Frame Timing and Performance Constraints</h1>
-        <p className="text-slate-300">
-          XR frame timing is less forgiving than traditional display loops. This article explains how prediction windows,
-          compositor deadlines, and synchronization points constrain engineering decisions when tuning Unity scenes.
-        </p>
-        <div className="flex flex-wrap gap-2 text-xs text-slate-400">
-          <span className="rounded-full border border-white/10 bg-white/[0.02] px-3 py-1">Lab Article</span>
-          <span className="rounded-full border border-white/10 bg-white/[0.02] px-3 py-1">9 min read</span>
-          <span className="rounded-full border border-white/10 bg-white/[0.02] px-3 py-1">Unity • XR • Frame Pacing</span>
-        </div>
-      </header>
+      <PageHero
+        backHref="/#writing"
+        backLabel="Back to Writing"
+        category="Lab Article"
+        title="Understanding XR Frame Timing and Performance Constraints"
+        description="XR frame timing is less forgiving than traditional display loops. This article explains how prediction windows, compositor deadlines, and synchronization points constrain engineering decisions when tuning Unity scenes."
+        chips={['Lab Article', '9 min read', 'Unity', 'XR', 'Frame Pacing']}
+      />
 
       <section className="mt-8 space-y-3">
         <h2 className="text-xl font-semibold text-white">Why XR timing is less forgiving</h2>

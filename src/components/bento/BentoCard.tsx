@@ -11,6 +11,7 @@ interface BentoCardProps {
   hover?: boolean;
   glow?: BentoGlow;
   padding?: BentoPadding;
+  elevated?: boolean;
 }
 
 const variantMap: Record<BentoVariant, string> = {
@@ -42,13 +43,14 @@ export default function BentoCard({
   hover = true,
   glow = 'cyan',
   padding = 'md',
+  elevated = false,
 }: BentoCardProps) {
   return (
     <div
       className={[
         'rounded-2xl border',
         variantMap[variant],
-        hover ? glowMap[glow] : '',
+        elevated ? 'bento-elevated' : hover ? glowMap[glow] : '',
         paddingMap[padding],
         className,
       ]

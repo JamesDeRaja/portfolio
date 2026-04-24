@@ -3,6 +3,7 @@ import SmartLink from '../../components/SmartLink';
 import MiniBars from '../../components/charts/MiniBars';
 import { getResultDelta, xrStressLabResults } from '../../data/xrStressLabResults';
 import { Seo } from '../../components/Seo';
+import PageHero from '../../components/PageHero';
 
 function formatDelta(value: number | null) {
   if (value === null) {
@@ -60,17 +61,17 @@ export default function XRStressLabCaseStudyPage() {
         }}
       />
       <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="mb-4">
-          <Link to="/" className="text-sm text-slate-500 hover:text-neon transition-colors">← Back to Home</Link>
-        </div>
-
-      <h1 className="text-3xl font-semibold text-white">XR Performance Stress Lab</h1>
-      <p className="mt-2 text-sm uppercase tracking-[0.08em] text-slate-500">Profiler-led XR Rendering Analysis</p>
-      <p className="mt-4 text-slate-300">
-        A controlled XR test harness built to isolate fragment overdraw, MSAA bandwidth amplification, submission
-        pressure, and frame pacing variance under repeatable runtime conditions. Each stress path is toggled in
-        isolation and measured with profiler captures and pass-level evidence.
-      </p>
+        <PageHero
+          backHref="/"
+          backLabel="Back to Portfolio"
+          category="Case Study"
+          title="XR Performance Stress Lab"
+          subtitle="Profiler-led XR Rendering Analysis"
+          description="A controlled XR test harness built to isolate fragment overdraw, MSAA bandwidth amplification, submission pressure, and frame pacing variance under repeatable runtime conditions. Each stress path is toggled in isolation and measured with profiler captures and pass-level evidence."
+          chips={['Unity 6', 'URP', 'OpenXR', 'GPU Profiling', 'Frame Budget']}
+          metric="+7.27 ms"
+          metricLabel="GPU delta under overdraw stress"
+        />
 
       <section className="mt-8 space-y-3">
         <h2 className="text-xl font-semibold text-white">Problem / Context</h2>
