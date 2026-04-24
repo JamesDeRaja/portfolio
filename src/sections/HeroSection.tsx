@@ -20,25 +20,25 @@ function HeroStats() {
   const fps = useCountUp({ end: 60, duration: 1.0, delay: 0.2 });
 
   return (
-    <div className="mt-12 grid grid-cols-3 gap-8">
-      <div>
-        <p ref={years.ref as React.RefObject<HTMLParagraphElement>} className="font-mono text-4xl font-bold text-neon text-glow-cyan sm:text-6xl">
+    <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-12 sm:grid-cols-3 sm:gap-8">
+      <div className="soft-panel rounded-2xl p-4 sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none">
+        <p ref={years.ref as React.RefObject<HTMLParagraphElement>} className="font-mono text-4xl font-bold text-neon sm:text-6xl">
           {years.count}+
         </p>
-        <p className="mt-2 text-sm text-slate-400">years in Unity</p>
+        <p className="mt-2 text-sm text-slate-300">years in Unity</p>
       </div>
-      <div>
+      <div className="soft-panel rounded-2xl p-4 sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none">
         <p ref={titles.ref as React.RefObject<HTMLParagraphElement>} className="font-mono text-4xl font-bold text-white sm:text-6xl">
           {titles.count}+
         </p>
-        <p className="mt-2 text-sm text-slate-400">shipped titles</p>
-        <p className="mt-0.5 text-xs text-slate-500">incl. multi-publisher PPP programs</p>
+        <p className="mt-2 text-sm text-slate-300">shipped titles</p>
+        <p className="mt-0.5 text-xs text-slate-400">incl. multi-publisher PPP programs</p>
       </div>
-      <div>
+      <div className="soft-panel rounded-2xl p-4 sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none">
         <p ref={fps.ref as React.RefObject<HTMLParagraphElement>} className="font-mono text-4xl font-bold text-electric sm:text-6xl">
           {fps.count}<span className="text-2xl sm:text-4xl">fps</span>
         </p>
-        <p className="mt-2 text-sm text-slate-400">locked on low-end devices</p>
+        <p className="mt-2 text-sm text-slate-300">locked on low-end devices</p>
       </div>
     </div>
   );
@@ -63,8 +63,8 @@ export default function HeroSection() {
         >
           {/* Status badge */}
           <motion.div variants={itemVariants}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-4 py-1.5 text-xs font-medium text-emerald-400">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-300/10 px-4 py-1.5 text-xs font-medium text-emerald-200">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-300 animate-pulse" />
               Open to remote &amp; relocation — rendering, XR performance, engine optimization
             </span>
           </motion.div>
@@ -81,13 +81,13 @@ export default function HeroSection() {
           {/* Specialist title */}
           <motion.p
             variants={itemVariants}
-            className="mt-4 text-xl font-semibold text-neon/90 sm:text-2xl lg:text-3xl"
+            className="mt-4 text-xl font-semibold text-blue-100 sm:text-2xl lg:text-3xl"
           >
             Real-Time Performance Engineer
           </motion.p>
           <motion.p
             variants={itemVariants}
-            className="mt-1 text-base text-slate-400 sm:text-lg"
+            className="mt-1 text-base text-slate-300 sm:text-lg"
           >
             Unity Rendering &bull; Frame Stability &bull; XR / Mobile / Shipped Titles
           </motion.p>
@@ -95,7 +95,7 @@ export default function HeroSection() {
           {/* Value prop */}
           <motion.p
             variants={itemVariants}
-            className="mt-8 max-w-2xl text-lg text-slate-200 leading-relaxed sm:text-xl"
+            className="mt-8 max-w-2xl text-lg leading-relaxed text-slate-100 sm:text-xl"
           >
             Delivered 100+ rapid prototypes and production titles for global publishers across 13+ years in Unity.
             I find the bottleneck, prove it with a profiler, fix it, and{' '}
@@ -105,7 +105,7 @@ export default function HeroSection() {
           {/* Impact proof */}
           <motion.div
             variants={itemVariants}
-            className="mt-4 flex flex-wrap gap-x-6 gap-y-1 text-sm text-slate-400"
+            className="mt-4 flex flex-wrap gap-x-6 gap-y-1 text-sm text-slate-300"
           >
             <span><span className="font-semibold text-emerald-400">45 → 60+ FPS</span> recovered in shipped combat scenes</span>
             <span><span className="font-semibold text-emerald-400">+7.27ms</span> GPU cost isolated in XR stereo overdraw</span>

@@ -10,7 +10,7 @@ export default function SectionHeading({ eyebrow, title, subtitle }: SectionHead
   return (
     <AnimatedSection className="mb-12">
       {eyebrow && (
-        <p className="mb-3 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-neon">
+        <p className="mb-3 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-blue-200">
           {'// '}{eyebrow}
         </p>
       )}
@@ -18,7 +18,7 @@ export default function SectionHeading({ eyebrow, title, subtitle }: SectionHead
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-4 max-w-3xl text-base text-slate-400 leading-relaxed">
+        <p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-300">
           {subtitle}
         </p>
       )}
