@@ -11,26 +11,26 @@ export default {
           800: '#0a0a1a',
           700: '#111127',
         },
-        // Neon cyan accent (XR / holographic)
+        // Indigo primary accent (refined engineering)
         neon: {
-          DEFAULT: '#00f0ff',
-          50: '#e0feff',
-          100: '#b3fcff',
-          200: '#80faff',
-          300: '#4df7ff',
-          400: '#1af5ff',
-          500: '#00f0ff',
-          600: '#00c4d4',
-          700: '#0098a8',
-          800: '#006d7d',
-          900: '#004151',
+          DEFAULT: '#818cf8',
+          50: '#eef2ff',
+          100: '#e0e7ff',
+          200: '#c7d2fe',
+          300: '#a5b4fc',
+          400: '#818cf8',
+          500: '#6366f1',
+          600: '#4f46e5',
+          700: '#4338ca',
+          800: '#3730a3',
+          900: '#312e81',
         },
-        // Electric purple secondary
+        // Violet secondary accent
         electric: {
-          DEFAULT: '#a855f7',
-          400: '#c084fc',
-          500: '#a855f7',
-          600: '#9333ea',
+          DEFAULT: '#a78bfa',
+          400: '#c4b5fd',
+          500: '#a78bfa',
+          600: '#8b5cf6',
         },
       },
       fontFamily: {
