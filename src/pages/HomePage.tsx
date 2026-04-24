@@ -1,15 +1,14 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import AboutSection from '../sections/AboutSection';
-import ContactSection from '../sections/ContactSection';
-import HeroSection from '../sections/HeroSection';
-import WorkSection from '../sections/WorkSection';
-import WritingSection from '../sections/WritingSection';
-import XRLabSection from '../sections/XRLabSection';
-import ShippedTitlesSection from '../sections/ShippedTitlesSection';
-import ProblemsSolvedSection from '../sections/ProblemsSolvedSection';
 import ParticleField from '../components/ParticleField';
 import { Seo } from '../components/Seo';
+import HeroBentoSection from '../sections/HeroBentoSection';
+import TechFocusBentoSection from '../sections/TechFocusBentoSection';
+import CaseStudiesBentoSection from '../sections/CaseStudiesBentoSection';
+import EvidenceBentoSection from '../sections/EvidenceBentoSection';
+import ExperienceBentoSection from '../sections/ExperienceBentoSection';
+import SkillsBentoSection from '../sections/SkillsBentoSection';
+import ContactBentoSection from '../sections/ContactBentoSection';
 
 export default function HomePage() {
   const location = useLocation();
@@ -17,7 +16,6 @@ export default function HomePage() {
   useEffect(() => {
     const hash = location.hash.replace('#', '');
     if (!hash) return;
-
     const target = document.getElementById(hash);
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
@@ -27,10 +25,10 @@ export default function HomePage() {
   return (
     <div className="relative min-h-screen bg-void-950 text-slate-200">
       <Seo
-        title="James De Raja — Real-Time Performance Engineer | Unity Rendering & Frame Stability"
-        description="Real-time performance engineer with 13+ years in Unity and 100+ shipped titles. XR/VR optimization, GPU/CPU bottleneck isolation, and frame pacing research. Profiler-validated measurements backing every claim."
+        title="James De Raja — Senior Real-Time Performance Engineer | Unity Rendering & XR Performance"
+        description="Senior Unity and real-time performance engineer focused on XR frame budgets, rendering optimisation, CPU/GPU bottleneck isolation, and profiler-validated case studies."
         url="https://jamesderaja.com/"
-        keywords="real-time performance engineer, Unity rendering, XR optimization, frame pacing, GPU bottleneck, mobile game optimization, Unity profiler, shipped games, James De Raja"
+        keywords="senior unity engineer, real-time performance engineer, Unity rendering, XR optimization, frame pacing, GPU bottleneck, CPU bottleneck isolation, mobile game optimization, Unity profiler, XR performance, James De Raja"
       />
 
       {/* Particle background */}
@@ -39,23 +37,20 @@ export default function HomePage() {
       {/* Grid overlay */}
       <div className="pointer-events-none fixed inset-0 z-0 bg-grid-overlay" aria-hidden="true" />
 
-      {/* Content flow: who you are → what you shipped → what you fixed → how you think → frontier research → writing → bio → contact */}
       <main className="relative z-10">
-        <HeroSection />
+        <HeroBentoSection />
         <div className="divider-glow mx-auto max-w-7xl" />
-        <ShippedTitlesSection />
+        <TechFocusBentoSection />
         <div className="divider-glow mx-auto max-w-7xl" />
-        <ProblemsSolvedSection />
+        <CaseStudiesBentoSection />
         <div className="divider-glow mx-auto max-w-7xl" />
-        <WorkSection />
+        <EvidenceBentoSection />
         <div className="divider-glow mx-auto max-w-7xl" />
-        <XRLabSection />
+        <ExperienceBentoSection />
         <div className="divider-glow mx-auto max-w-7xl" />
-        <WritingSection />
+        <SkillsBentoSection />
         <div className="divider-glow mx-auto max-w-7xl" />
-        <AboutSection />
-        <div className="divider-glow mx-auto max-w-7xl" />
-        <ContactSection />
+        <ContactBentoSection />
       </main>
     </div>
   );
