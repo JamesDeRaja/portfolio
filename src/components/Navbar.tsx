@@ -41,7 +41,7 @@ export default function Navbar() {
     <header
       className={`sticky top-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'border-b border-neon/10 bg-void-950/80 backdrop-blur-xl'
+          ? 'border-b border-blue-200/10 bg-void-950/80 backdrop-blur-xl'
           : 'bg-transparent'
       }`}
     >
@@ -51,10 +51,10 @@ export default function Navbar() {
       >
         {/* Logo */}
         <Link to="/" className="group flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-neon/20 bg-neon/5">
-            <span className="font-mono text-sm font-bold text-neon">JD</span>
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-blue-200/20 bg-blue-200/10">
+            <span className="font-mono text-sm font-bold text-blue-100">JD</span>
           </div>
-          <span className="text-sm font-semibold tracking-tight text-white/90 transition group-hover:text-neon">
+          <span className="text-sm font-semibold tracking-tight text-white/90 transition group-hover:text-blue-100">
             James De Raja
           </span>
         </Link>
@@ -66,7 +66,7 @@ export default function Navbar() {
               key={item.label}
               type="button"
               onClick={() => handleNavClick(item.hash)}
-              className="rounded-lg px-3 py-2 text-sm text-slate-400 transition-colors hover:bg-white/5 hover:text-neon"
+              className="rounded-lg px-3 py-2 text-sm text-slate-300 transition-colors hover:bg-white/5 hover:text-blue-100"
             >
               {item.label}
             </button>
@@ -84,7 +84,7 @@ export default function Navbar() {
           <a
             href="/resume/JamesDeRaja_Resume.pdf"
             download
-            className="rounded-lg border border-white/10 p-2 text-slate-400 transition hover:border-neon/30 hover:text-neon"
+            className="rounded-lg border border-white/10 p-2 text-slate-300 transition hover:border-blue-200/40 hover:text-blue-100"
             aria-label="Download resume PDF"
           >
             <Download size={16} />
@@ -92,7 +92,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="rounded-lg p-2 text-slate-400 hover:bg-white/5 hover:text-neon md:hidden"
+            className="rounded-lg p-2 text-slate-300 hover:bg-white/5 hover:text-blue-100 md:hidden"
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileOpen}
           >
@@ -116,7 +116,7 @@ export default function Navbar() {
                   key={item.label}
                   type="button"
                   onClick={() => handleNavClick(item.hash)}
-                  className="block w-full rounded-lg px-3 py-3 text-left text-sm text-slate-300 transition hover:bg-white/5 hover:text-neon"
+                  className="block w-full rounded-lg px-3 py-3 text-left text-sm text-slate-200 transition hover:bg-white/5 hover:text-blue-100"
                 >
                   {item.label}
                 </button>

@@ -34,7 +34,7 @@ export default function ProblemsSolvedSection() {
   return (
     <section id="problems-solved" className="relative py-20">
       {/* Distinct background zone — separates this from uniform sections */}
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-white/[0.015]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-white/[0.02]" />
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute left-0 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-electric/3 blur-[150px]" />
         <div className="absolute right-0 bottom-0 h-[300px] w-[300px] rounded-full bg-red-500/3 blur-[120px]" />
@@ -51,14 +51,14 @@ export default function ProblemsSolvedSection() {
         {problems.map((p, i) => (
           <AnimatedSection key={p.title} delay={i * 0.1}>
             <motion.div
-              whileHover={{ y: -2 }}
+              whileHover={{ y: -4, scale: 1.005 }}
               className="glass-card glass-card-hover rounded-2xl overflow-hidden transition-all duration-300"
             >
               {/* Header with prominent result metric */}
               <div className="flex flex-col gap-4 border-b border-white/5 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
                 <h3 className="text-lg font-semibold text-white">{p.title}</h3>
                 <div className="flex-shrink-0 rounded-xl border border-emerald-500/20 bg-emerald-500/5 px-5 py-2.5">
-                  <p className="font-mono text-xl font-bold text-emerald-400 sm:text-2xl">{p.resultHighlight}</p>
+                  <p className="font-mono text-xl font-bold text-emerald-300 sm:text-2xl">{p.resultHighlight}</p>
                 </div>
               </div>
 
@@ -70,13 +70,13 @@ export default function ProblemsSolvedSection() {
                     <AlertTriangle size={12} />
                     Problem
                   </div>
-                  <p className="mt-3 text-sm text-slate-300 leading-relaxed">{p.problem}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-200">{p.problem}</p>
 
                   <div className="mt-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-amber-400">
                     <Search size={12} />
                     Diagnosis
                   </div>
-                  <p className="mt-3 text-sm text-slate-300 leading-relaxed">{p.diagnosis}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-200">{p.diagnosis}</p>
                 </div>
 
                 {/* Right: Fix + Result */}
@@ -85,7 +85,7 @@ export default function ProblemsSolvedSection() {
                     <Wrench size={12} />
                     Fix
                   </div>
-                  <p className="mt-3 text-sm text-slate-300 leading-relaxed">{p.fix}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-200">{p.fix}</p>
 
                   <div className="mt-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-emerald-400">
                     <TrendingUp size={12} />

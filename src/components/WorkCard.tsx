@@ -11,8 +11,8 @@ type WorkCardProps = {
 export default function WorkCard({ project }: WorkCardProps) {
   return (
     <motion.article
-      whileHover={{ y: -4 }}
-      transition={{ duration: 0.3 }}
+      whileHover={{ y: -6, scale: 1.01 }}
+      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
       className={`glass-card glass-card-hover rounded-2xl p-6 transition-all duration-300 ${
         project.featured ? 'gradient-border' : ''
       }`}
@@ -26,7 +26,7 @@ export default function WorkCard({ project }: WorkCardProps) {
           </span>
         )}
       </div>
-      <p className="mt-2 text-sm text-slate-400 leading-relaxed">{project.summary}</p>
+      <p className="mt-2 text-sm leading-relaxed text-slate-300">{project.summary}</p>
 
       {/* What I did */}
       <div className="mt-5">
