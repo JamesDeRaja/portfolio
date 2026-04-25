@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 type MiniBarsProps = {
   title: string;
   baselineMs: number;
@@ -38,8 +40,14 @@ export default function MiniBars({
       <div className="mt-3 space-y-2">
         <div className="grid grid-cols-[68px_1fr_auto] items-center gap-2">
           <span className="text-xs text-slate-400">{labelLeft}</span>
-          <div className="h-2.5 rounded-full bg-white/5">
-            <div className="h-2.5 rounded-full bg-slate-500" style={{ width: `${baselineWidth}%` }} />
+          <div className="h-2.5 rounded-full bg-white/5 overflow-hidden">
+            <motion.div
+              className="h-2.5 rounded-full bg-slate-500"
+              initial={{ width: 0 }}
+              whileInView={{ width: `${baselineWidth}%` }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.85, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            />
           </div>
           <span className="font-mono text-xs text-slate-300">{baselineMs.toFixed(2)} ms</span>
         </div>
@@ -47,13 +55,16 @@ export default function MiniBars({
         {stressWidth !== null && (
           <div className="grid grid-cols-[68px_1fr_auto] items-center gap-2">
             <span className="text-xs text-slate-400">{labelRight}</span>
-            <div className="h-2.5 rounded-full bg-white/5">
-              <div
+            <div className="h-2.5 rounded-full bg-white/5 overflow-hidden">
+              <motion.div
                 className={`h-2.5 rounded-full ${variant === 'gpu' ? 'bg-neon/60' : 'bg-electric/60'}`}
-                style={{ width: `${stressWidth}%` }}
+                initial={{ width: 0 }}
+                whileInView={{ width: `${stressWidth}%` }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.85, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
               />
             </div>
-            <span className="font-mono text-xs text-slate-300">{stressMs.toFixed(2)} ms</span>
+            <span className="font-mono text-xs text-slate-300">{stressMs!.toFixed(2)} ms</span>
           </div>
         )}
       </div>

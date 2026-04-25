@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import CountUp from '../../components/CountUp';
 
 type MetricsSummaryProps = {
   baselineCpu: number;
@@ -9,11 +10,6 @@ type MetricsSummaryProps = {
   baselineLabel?: string;
   stressLabel?: string;
 };
-
-function fmtDelta(current: number, baseline: number): string {
-  const v = current - baseline;
-  return `${v >= 0 ? '+' : ''}${v.toFixed(2)}`;
-}
 
 function deltaColor(current: number, baseline: number): string {
   const v = current - baseline;
@@ -31,8 +27,8 @@ export default function MetricsSummary({
   baselineLabel = 'Baseline',
   stressLabel = 'Under Stress',
 }: MetricsSummaryProps) {
-  const cpuDeltaStr = fmtDelta(stressCpu, baselineCpu);
-  const gpuDeltaStr = fmtDelta(stressGpu, baselineGpu);
+  const cpuDelta = stressCpu - baselineCpu;
+  const gpuDelta = stressGpu - baselineGpu;
   const cpuDeltaColor = deltaColor(stressCpu, baselineCpu);
   const gpuDeltaColor = deltaColor(stressGpu, baselineGpu);
 
@@ -61,11 +57,11 @@ export default function MetricsSummary({
           </p>
           <div className="space-y-1.5">
             <div>
-              <p className="font-mono text-xl font-bold text-white">{baselineCpu.toFixed(2)}</p>
+              <CountUp to={baselineCpu} decimals={2} duration={1.1} className="font-mono text-xl font-bold text-white" />
               <p className="font-mono text-[10px] text-slate-600">CPU ms</p>
             </div>
             <div>
-              <p className="font-mono text-xl font-bold text-white">{baselineGpu.toFixed(2)}</p>
+              <CountUp to={baselineGpu} decimals={2} duration={1.1} className="font-mono text-xl font-bold text-white" />
               <p className="font-mono text-[10px] text-slate-600">GPU ms</p>
             </div>
           </div>
@@ -78,11 +74,11 @@ export default function MetricsSummary({
           </p>
           <div className="space-y-1.5">
             <div>
-              <p className="font-mono text-xl font-bold text-amber-400">{stressCpu.toFixed(2)}</p>
+              <CountUp to={stressCpu} decimals={2} duration={1.1} className="font-mono text-xl font-bold text-amber-400" />
               <p className="font-mono text-[10px] text-slate-600">CPU ms</p>
             </div>
             <div>
-              <p className="font-mono text-xl font-bold text-amber-400">{stressGpu.toFixed(2)}</p>
+              <CountUp to={stressGpu} decimals={2} duration={1.1} className="font-mono text-xl font-bold text-amber-400" />
               <p className="font-mono text-[10px] text-slate-600">GPU ms</p>
             </div>
           </div>
@@ -95,11 +91,25 @@ export default function MetricsSummary({
           </p>
           <div className="space-y-1.5">
             <div>
-              <p className={`font-mono text-xl font-bold ${cpuDeltaColor}`}>{cpuDeltaStr}</p>
+              <CountUp
+                to={cpuDelta}
+                from={0}
+                decimals={2}
+                prefix={cpuDelta >= 0 ? '+' : ''}
+                duration={1.1}
+                className={`font-mono text-xl font-bold ${cpuDeltaColor}`}
+              />
               <p className="font-mono text-[10px] text-slate-600">CPU ms</p>
             </div>
             <div>
-              <p className={`font-mono text-xl font-bold ${gpuDeltaColor}`}>{gpuDeltaStr}</p>
+              <CountUp
+                to={gpuDelta}
+                from={0}
+                decimals={2}
+                prefix={gpuDelta >= 0 ? '+' : ''}
+                duration={1.1}
+                className={`font-mono text-xl font-bold ${gpuDeltaColor}`}
+              />
               <p className="font-mono text-[10px] text-slate-600">GPU ms</p>
             </div>
           </div>

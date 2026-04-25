@@ -177,8 +177,8 @@ body {
 }
 
 .light .gradient-text {
-  background: linear-gradient(135deg, #6366f1, #7c3aed, #6366f1);
-  background-size: 200% 200%;
+  /* Use background-image (not shorthand) to preserve background-clip: text from base rule */
+  background-image: linear-gradient(135deg, #6366f1, #7c3aed, #6366f1);
 }
 
 @keyframes gradient-shift {

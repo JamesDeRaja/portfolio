@@ -3,6 +3,7 @@ import { ArrowRight, Mail, FileText, ExternalLink } from 'lucide-react';
 import BentoGrid from '../components/bento/BentoGrid';
 import BentoCard from '../components/bento/BentoCard';
 import SmartLink from '../components/SmartLink';
+import CountUp from '../components/CountUp';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 18 },
@@ -14,9 +15,9 @@ const fadeUp = {
 };
 
 const frameBudgets = [
-  { hz: 90, ms: '11.11', pct: 67, bar: 'bg-emerald-400', text: 'text-emerald-400' },
-  { hz: 72, ms: '13.88', pct: 83, bar: 'bg-neon', text: 'text-neon' },
-  { hz: 60, ms: '16.67', pct: 100, bar: 'bg-electric', text: 'text-electric' },
+  { hz: 90, ms: 11.11, pct: 67, bar: 'bg-emerald-400', text: 'text-emerald-400' },
+  { hz: 72, ms: 13.88, pct: 83, bar: 'bg-neon', text: 'text-neon' },
+  { hz: 60, ms: 16.67, pct: 100, bar: 'bg-electric', text: 'text-electric' },
 ];
 
 const profilerRows = [
@@ -153,16 +154,25 @@ export default function HeroBentoSection() {
                 </span>
               </div>
               <div className="space-y-4">
-                {frameBudgets.map((b) => (
+                {frameBudgets.map((b, i) => (
                   <div key={b.hz}>
                     <div className="flex items-end justify-between mb-1.5">
                       <span className={`font-mono text-xs font-semibold ${b.text}`}>{b.hz} Hz</span>
-                      <span className="font-mono text-base font-bold text-white">{b.ms} ms</span>
+                      <CountUp
+                        to={b.ms}
+                        decimals={2}
+                        suffix=" ms"
+                        duration={1.0}
+                        className="font-mono text-base font-bold text-white"
+                      />
                     </div>
                     <div className="h-2 rounded-full bg-white/[0.06]">
-                      <div
+                      <motion.div
                         className={`h-full rounded-full ${b.bar} opacity-75`}
-                        style={{ width: `${b.pct}%` }}
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${b.pct}%` }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1.0, delay: 0.2 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
                       />
                     </div>
                   </div>
@@ -221,11 +231,15 @@ export default function HeroBentoSection() {
             </p>
             <div className="space-y-4">
               <div>
-                <p className="font-mono text-3xl font-bold text-emerald-400">~1M</p>
+                <p className="font-mono text-3xl font-bold text-emerald-400">
+                  ~<CountUp to={1} suffix="M" duration={1.6} />
+                </p>
                 <p className="text-xs text-slate-400 mt-0.5">game installs</p>
               </div>
               <div>
-                <p className="font-mono text-xl font-bold text-white">100+</p>
+                <p className="font-mono text-xl font-bold text-white">
+                  <CountUp to={100} suffix="+" duration={1.4} />
+                </p>
                 <p className="text-xs text-slate-400 mt-0.5">publisher-tested prototypes</p>
               </div>
               <div className="flex flex-wrap gap-1.5">
