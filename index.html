@@ -35,6 +35,16 @@
     <meta name="twitter:image" content="/og-image.png" />
   </head>
   <body>
+    <!-- Prevent flash of wrong theme before React hydrates -->
+    <script>
+      (function () {
+        var stored = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var isLight = stored === 'light' || (!stored && !prefersDark);
+        if (isLight) document.documentElement.classList.add('light');
+        else document.documentElement.classList.add('dark');
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

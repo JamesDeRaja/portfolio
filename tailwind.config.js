@@ -1,19 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        // Core dark palette
+        // CSS-variable-driven backgrounds (theme-aware)
         void: {
-          950: '#030308',
-          900: '#06060f',
-          800: '#0a0a1a',
-          700: '#111127',
+          950: 'rgb(var(--void-950) / <alpha-value>)',
+          900: 'rgb(var(--void-900) / <alpha-value>)',
+          800: 'rgb(var(--void-800) / <alpha-value>)',
+          700: 'rgb(var(--void-700) / <alpha-value>)',
         },
-        // Indigo primary accent (refined engineering)
+        // CSS-variable-driven accent (darker in light mode for contrast)
         neon: {
-          DEFAULT: '#818cf8',
+          DEFAULT: 'rgb(var(--neon) / <alpha-value>)',
           50: '#eef2ff',
           100: '#e0e7ff',
           200: '#c7d2fe',
@@ -25,9 +26,8 @@ export default {
           800: '#3730a3',
           900: '#312e81',
         },
-        // Violet secondary accent
         electric: {
-          DEFAULT: '#a78bfa',
+          DEFAULT: 'rgb(var(--electric) / <alpha-value>)',
           400: '#c4b5fd',
           500: '#a78bfa',
           600: '#8b5cf6',
