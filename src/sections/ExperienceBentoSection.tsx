@@ -45,7 +45,7 @@ export default function ExperienceBentoSection() {
           Real-time performance across enterprise systems and XR rendering
         </h2>
         <p className="mt-2 max-w-2xl text-sm text-slate-400 leading-relaxed">
-          13+ years building production systems under strict performance constraints — from enterprise
+          14+ years building production systems under strict performance constraints — from enterprise
           API infrastructure to XR frame budgets. The discipline is the same: measure, isolate, fix,
           verify.
         </p>
@@ -70,10 +70,10 @@ export default function ExperienceBentoSection() {
                   </p>
                   <h3 className="mt-1.5 text-lg font-bold text-white">Zoho Corporation</h3>
                   <p className="mt-0.5 text-sm text-neon/80">Senior Systems Engineer</p>
-                  <p className="mt-0.5 font-mono text-xs text-slate-500">2017 – Present · 7+ years</p>
+                  <p className="mt-0.5 font-mono text-xs text-slate-500">2017 – Present · 9+ years</p>
                 </div>
                 <div className="flex-shrink-0 rounded-xl border border-neon/15 bg-neon/[0.05] px-3 py-2 text-center">
-                  <p className="font-mono text-lg font-bold text-neon">7+</p>
+                  <p className="font-mono text-lg font-bold text-neon">9+</p>
                   <p className="text-[11px] text-slate-500">years</p>
                 </div>
               </div>
@@ -128,10 +128,10 @@ export default function ExperienceBentoSection() {
                   </p>
                   <h3 className="mt-1.5 text-lg font-bold text-white">AlphaDen</h3>
                   <p className="mt-0.5 text-sm text-electric/80">Founder · Performance Engineer</p>
-                  <p className="mt-0.5 font-mono text-xs text-slate-500">2012 – Present · 13+ years</p>
+                  <p className="mt-0.5 font-mono text-xs text-slate-500">2012 – Present · 14+ years</p>
                 </div>
                 <div className="flex-shrink-0 rounded-xl border border-electric/20 bg-electric/[0.07] px-3 py-2 text-center">
-                  <p className="font-mono text-lg font-bold text-electric">13+</p>
+                  <p className="font-mono text-lg font-bold text-electric">14+</p>
                   <p className="text-[11px] text-slate-500">years</p>
                 </div>
               </div>

@@ -29,7 +29,7 @@ const profilerRows = [
 ];
 
 const proofBadges = [
-  '13+ years Unity',
+  '14+ years Unity',
   'C# / Unity 6',
   'URP / OpenXR',
   'XR Interaction Toolkit',
