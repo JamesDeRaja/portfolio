@@ -1,36 +1,36 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        // Core dark palette
+        // CSS-variable-driven backgrounds (theme-aware)
         void: {
-          950: '#030308',
-          900: '#06060f',
-          800: '#0a0a1a',
-          700: '#111127',
+          950: 'rgb(var(--void-950) / <alpha-value>)',
+          900: 'rgb(var(--void-900) / <alpha-value>)',
+          800: 'rgb(var(--void-800) / <alpha-value>)',
+          700: 'rgb(var(--void-700) / <alpha-value>)',
         },
-        // Neon cyan accent (XR / holographic)
+        // CSS-variable-driven accent (darker in light mode for contrast)
         neon: {
-          DEFAULT: '#00f0ff',
-          50: '#e0feff',
-          100: '#b3fcff',
-          200: '#80faff',
-          300: '#4df7ff',
-          400: '#1af5ff',
-          500: '#00f0ff',
-          600: '#00c4d4',
-          700: '#0098a8',
-          800: '#006d7d',
-          900: '#004151',
+          DEFAULT: 'rgb(var(--neon) / <alpha-value>)',
+          50: '#eef2ff',
+          100: '#e0e7ff',
+          200: '#c7d2fe',
+          300: '#a5b4fc',
+          400: '#818cf8',
+          500: '#6366f1',
+          600: '#4f46e5',
+          700: '#4338ca',
+          800: '#3730a3',
+          900: '#312e81',
         },
-        // Electric purple secondary
         electric: {
-          DEFAULT: '#a855f7',
-          400: '#c084fc',
-          500: '#a855f7',
-          600: '#9333ea',
+          DEFAULT: 'rgb(var(--electric) / <alpha-value>)',
+          400: '#c4b5fd',
+          500: '#a78bfa',
+          600: '#8b5cf6',
         },
       },
       fontFamily: {

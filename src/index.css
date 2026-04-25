@@ -4,10 +4,33 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Theme CSS variables ── */
 :root {
+  /* Dark mode (default) */
+  --void-950: 3 3 8;
+  --void-900: 6 6 15;
+  --void-800: 10 10 26;
+  --void-700: 17 17 39;
+  --neon: 129 140 248;
+  --electric: 167 139 250;
+
   color: #e2e8f0;
-  background-color: #030308;
+  background-color: rgb(var(--void-950));
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+  color-scheme: dark;
+}
+
+.light {
+  /* Light mode */
+  --void-950: 248 247 255;   /* #f8f7ff — barely-perceptible violet white, page bg */
+  --void-900: 241 240 253;   /* #f1f0fd — slightly deeper for section contrast */
+  --void-800: 255 255 255;   /* pure white card surfaces */
+  --void-700: 220 219 240;   /* #dcdbe0 — subtle border/divider */
+  --neon: 99 102 241;
+  --electric: 109 40 217;
+
+  color: #18181f;            /* near-black with the faintest blue — premium charcoal */
+  color-scheme: light;
 }
 
 html {
@@ -17,13 +40,13 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background-color: #030308;
+  background-color: rgb(var(--void-950));
   overflow-x: hidden;
 }
 
 /* ── Selection color ── */
 ::selection {
-  background-color: rgba(0, 240, 255, 0.2);
+  background-color: rgba(var(--neon), 0.2);
   color: #fff;
 }
 
@@ -32,52 +55,98 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #06060f;
+  background: rgb(var(--void-900));
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 240, 255, 0.2);
+  background: rgba(var(--neon), 0.25);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 240, 255, 0.4);
+  background: rgba(var(--neon), 0.45);
 }
 
 /* ── Grid overlay background ── */
 .bg-grid-overlay {
   background-image:
-    linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(var(--neon), 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--neon), 0.025) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
 /* ── Glow effects ── */
 .glow-cyan {
-  box-shadow: 0 0 20px rgba(0, 240, 255, 0.15), 0 0 60px rgba(0, 240, 255, 0.05);
+  box-shadow: 0 0 20px rgba(var(--neon), 0.15), 0 0 60px rgba(var(--neon), 0.05);
 }
 
 .glow-cyan-strong {
-  box-shadow: 0 0 30px rgba(0, 240, 255, 0.25), 0 0 80px rgba(0, 240, 255, 0.1);
+  box-shadow: 0 0 30px rgba(var(--neon), 0.25), 0 0 80px rgba(var(--neon), 0.1);
 }
 
 .text-glow-cyan {
-  text-shadow: 0 0 20px rgba(0, 240, 255, 0.5), 0 0 40px rgba(0, 240, 255, 0.2);
+  text-shadow: 0 0 20px rgba(var(--neon), 0.5), 0 0 40px rgba(var(--neon), 0.2);
 }
 
 .text-glow-cyan-strong {
-  text-shadow: 0 0 30px rgba(0, 240, 255, 0.7), 0 0 60px rgba(0, 240, 255, 0.3);
+  text-shadow: 0 0 30px rgba(var(--neon), 0.7), 0 0 60px rgba(var(--neon), 0.3);
 }
 
 /* ── Glassmorphism card ── */
 .glass-card {
-  background: rgba(10, 10, 26, 0.6);
+  background: rgba(var(--void-800), 0.6);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 240, 255, 0.08);
+  border: 1px solid rgba(var(--neon), 0.08);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.03), 0 4px 16px rgba(0,0,0,0.3);
+}
+
+.light .glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(0, 0, 0, 0.07);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.05);
 }
 
 .glass-card-hover:hover {
-  border-color: rgba(0, 240, 255, 0.2);
-  box-shadow: 0 0 30px rgba(0, 240, 255, 0.08);
+  border-color: rgba(var(--neon), 0.2);
+  box-shadow: 0 0 30px rgba(var(--neon), 0.08);
+}
+
+/* ── Premium bento card elevation ── */
+.bento-elevated {
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.04),
+    0 4px 24px rgba(0,0,0,0.4),
+    0 1px 2px rgba(0,0,0,0.3);
+  transition: transform 0.25s cubic-bezier(0.22,1,0.36,1),
+              box-shadow 0.25s cubic-bezier(0.22,1,0.36,1),
+              border-color 0.25s ease;
+}
+
+.bento-elevated:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 0 1px rgba(var(--neon), 0.18),
+    0 8px 40px rgba(0,0,0,0.5),
+    0 0 28px rgba(var(--neon), 0.08);
+}
+
+.light .bento-elevated {
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.06),
+    0 2px 8px rgba(0, 0, 0, 0.04),
+    0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.light .bento-elevated:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 0 1px rgba(99, 102, 241, 0.2),
+    0 4px 16px rgba(0, 0, 0, 0.07),
+    0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* ── Page hero ambient background ── */
+.page-hero-glow {
+  background: radial-gradient(ellipse 70% 40% at 50% 0%, rgba(var(--neon), 0.06), transparent);
 }
 
 /* ── Gradient border effect ── */
@@ -90,7 +159,7 @@ body {
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(0, 240, 255, 0.3), rgba(168, 85, 247, 0.3), rgba(0, 240, 255, 0.1));
+  background: linear-gradient(135deg, rgba(var(--neon), 0.3), rgba(var(--electric), 0.3), rgba(var(--neon), 0.1));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
@@ -100,12 +169,17 @@ body {
 
 /* ── Animated gradient text ── */
 .gradient-text {
-  background: linear-gradient(135deg, #00f0ff, #a855f7, #00f0ff);
+  background: linear-gradient(135deg, #818cf8, #a78bfa, #818cf8);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradient-shift 4s ease-in-out infinite;
+}
+
+.light .gradient-text {
+  /* Use background-image (not shorthand) to preserve background-clip: text from base rule */
+  background-image: linear-gradient(135deg, #6366f1, #7c3aed, #6366f1);
 }
 
 @keyframes gradient-shift {
@@ -122,8 +196,8 @@ body {
     0deg,
     transparent,
     transparent 2px,
-    rgba(0, 240, 255, 0.01) 2px,
-    rgba(0, 240, 255, 0.01) 4px
+    rgba(var(--neon), 0.008) 2px,
+    rgba(var(--neon), 0.008) 4px
   );
   pointer-events: none;
 }
@@ -137,7 +211,7 @@ body {
   position: absolute;
   inset: -2px;
   border-radius: inherit;
-  border: 1px solid rgba(0, 240, 255, 0.2);
+  border: 1px solid rgba(var(--neon), 0.2);
   animation: pulse-glow 3s ease-in-out infinite;
 }
 
@@ -149,14 +223,14 @@ body {
 /* ── Horizontal rule with glow ── */
 .divider-glow {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(var(--neon), 0.3), transparent);
 }
 
 /* ── Terminal cursor blink ── */
 .cursor-blink::after {
   content: '|';
   animation: blink 1s step-end infinite;
-  color: #00f0ff;
+  color: rgb(var(--neon));
 }
 
 @keyframes blink {
@@ -166,28 +240,28 @@ body {
 
 /* ── Chip / tag styles ── */
 .chip-glow {
-  background: rgba(0, 240, 255, 0.06);
-  border: 1px solid rgba(0, 240, 255, 0.15);
-  color: #00f0ff;
+  background: rgba(var(--neon), 0.07);
+  border: 1px solid rgba(var(--neon), 0.18);
+  color: rgb(var(--neon));
   transition: all 0.3s ease;
 }
 .chip-glow:hover {
-  background: rgba(0, 240, 255, 0.12);
-  border-color: rgba(0, 240, 255, 0.3);
-  box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
+  background: rgba(var(--neon), 0.13);
+  border-color: rgba(var(--neon), 0.32);
+  box-shadow: 0 0 15px rgba(var(--neon), 0.1);
 }
 
 /* ── Button styles ── */
 .btn-primary {
-  background: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(0, 240, 255, 0.05));
-  border: 1px solid rgba(0, 240, 255, 0.3);
-  color: #00f0ff;
+  background: linear-gradient(135deg, rgba(var(--neon), 0.15), rgba(var(--neon), 0.05));
+  border: 1px solid rgba(var(--neon), 0.3);
+  color: rgb(var(--neon));
   transition: all 0.3s ease;
 }
 .btn-primary:hover {
-  background: linear-gradient(135deg, rgba(0, 240, 255, 0.25), rgba(0, 240, 255, 0.1));
-  border-color: rgba(0, 240, 255, 0.5);
-  box-shadow: 0 0 25px rgba(0, 240, 255, 0.15);
+  background: linear-gradient(135deg, rgba(var(--neon), 0.25), rgba(var(--neon), 0.1));
+  border-color: rgba(var(--neon), 0.5);
+  box-shadow: 0 0 25px rgba(var(--neon), 0.15);
   transform: translateY(-1px);
 }
 
@@ -198,9 +272,79 @@ body {
   transition: all 0.3s ease;
 }
 .btn-secondary:hover {
-  border-color: rgba(0, 240, 255, 0.3);
-  color: #00f0ff;
+  border-color: rgba(var(--neon), 0.3);
+  color: rgb(var(--neon));
   transform: translateY(-1px);
+}
+
+/* ── Light mode: text overrides ── */
+/* Rule: indigo is accent-only. Text uses a neutral cool-gray hierarchy. */
+.light .text-white {
+  color: #18181f;                    /* near-black heading */
+}
+.light .text-white\/90 {
+  color: rgba(24, 24, 31, 0.9);
+}
+.light .text-white\/70 {
+  color: rgba(24, 24, 31, 0.7);
+}
+.light .text-slate-300 {
+  color: #3a3a4e;                    /* dark neutral — readable body text */
+}
+.light .text-slate-400 {
+  color: #66667e;                    /* medium neutral — secondary labels */
+}
+.light .text-slate-500 {
+  color: #8f8fa5;                    /* soft muted — tertiary info */
+}
+.light .text-slate-600 {
+  color: #b4b4c8;                    /* faint — decorative / barely-there */
+}
+
+/* ── Light mode: metric/delta color contrast fixes ── */
+.light .text-emerald-400 {
+  color: #059669;
+}
+.light .text-red-400 {
+  color: #dc2626;
+}
+.light .text-amber-400 {
+  color: #d97706;
+}
+
+/* ── Light mode: border overrides ── */
+.light [class*="border-white"] {
+  border-color: rgba(0, 0, 0, 0.07);
+}
+
+/* ── Light mode: divide-y / divide-x overrides ── */
+.light [class*="divide-white"] > :not([hidden]) ~ :not([hidden]) {
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+/* ── Light mode: chip / keyword text contrast overrides ── */
+/* neon and electric opacity variants: bump to full opacity so indigo/violet stays legible */
+.light .text-neon\/50,
+.light .text-neon\/60,
+.light .text-neon\/70,
+.light .text-neon\/80,
+.light .text-neon\/90 { color: rgb(var(--neon)); }
+.light .text-electric\/60,
+.light .text-electric\/70,
+.light .text-electric\/80 { color: rgb(var(--electric)); }
+/* amber-400 and emerald-400 at partial opacity are near-invisible on white */
+.light .text-amber-400\/70 { color: #b45309; }  /* amber-700 — AA contrast on white */
+.light .text-emerald-400\/70 { color: #047857; } /* emerald-700 — AA contrast on white */
+
+/* ── Light mode: btn-secondary ── */
+.light .btn-secondary {
+  background: rgba(99, 102, 241, 0.04);
+  border-color: rgba(99, 102, 241, 0.18);
+  color: #6366f1;
+}
+.light .btn-secondary:hover {
+  border-color: rgba(99, 102, 241, 0.35);
+  color: #4f46e5;
 }
 
 /* ── Flicker mitigation + motion safety ── */

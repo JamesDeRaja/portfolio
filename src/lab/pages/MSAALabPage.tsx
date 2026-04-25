@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import MetricsSummary from '../components/MetricsSummary';
+import PageHero from '../../components/PageHero';
 import { Seo } from '../../components/Seo';
 
 export default function MSAALabPage() {
@@ -22,16 +22,17 @@ export default function MSAALabPage() {
           image: '/og-image.png',
         }}
       />
-      <div className="mb-4">
-        <Link to="/case-studies/xr-stress-lab" className="text-sm text-slate-500 hover:text-neon transition-colors">← Back to XR Stress Lab Case Study</Link>
-      </div>
-
-      <h1 className="text-3xl font-semibold text-white">MSAA Cost Lab</h1>
-      <p className="mt-2 text-sm uppercase tracking-[0.08em] text-slate-500">Edge Density Bandwidth Analysis</p>
-      <p className="mt-4 text-slate-300">
-        Measured anti-aliasing sampling cost in an edge-dense scene to isolate GPU increase while tracking overall
-        pacing behavior.
-      </p>
+      <PageHero
+        backHref="/case-studies/xr-stress-lab"
+        backLabel="Back to XR Stress Lab"
+        category="Lab Experiment"
+        title="MSAA Cost Lab"
+        subtitle="Edge Density Bandwidth Analysis"
+        description="Measured anti-aliasing sampling cost in an edge-dense scene to isolate GPU increase while tracking overall pacing behavior."
+        chips={['MSAA', 'GPU Bandwidth', 'Bandwidth Amplification', 'Unity XR']}
+        metric="+0.86 ms"
+        metricLabel="GPU delta from MSAA 0x → 4x"
+      />
 
       <MetricsSummary
         baselineCpu={14.23}

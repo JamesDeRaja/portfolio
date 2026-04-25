@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
 import SmartLink from '../../components/SmartLink';
 import { Seo } from '../../components/Seo';
+import PageHero from '../../components/PageHero';
 
 export default function SoftMaskProCaseStudyPage() {
   return (
@@ -23,17 +23,15 @@ export default function SoftMaskProCaseStudyPage() {
           image: '/og-image.png',
         }}
       />
-      <div className="mb-4">
-        <Link to="/" className="text-sm text-slate-500 hover:text-neon transition-colors">← Back to Home</Link>
-      </div>
-
-      <h1 className="text-3xl font-semibold text-white">SoftMaskPro (Unity UI Rendering Tooling)</h1>
-      <p className="mt-2 text-sm uppercase tracking-[0.08em] text-slate-500">UI Masking Cost Predictability</p>
-      <p className="mt-4 text-slate-300">
-        UI masking is often treated as a UI problem, but its cost is rendering-adjacent: it can amplify fill-rate,
-        introduce extra passes, and increase redraw frequency. This case study documents measured scaling behavior and
-        the patch strategy used to stabilize steady-state UI performance.
-      </p>
+      <PageHero
+        backHref="/"
+        backLabel="Back to Portfolio"
+        category="Case Study"
+        title="SoftMaskPro — Unity UI Rendering Cost"
+        subtitle="UI Masking Cost Predictability"
+        description="UI masking is rendering-adjacent: it amplifies fill-rate, introduces extra passes, and increases redraw frequency. This case study documents measured scaling behaviour and the patch strategy used to stabilise steady-state UI performance."
+        chips={['Unity URP', 'UI Rendering', 'Canvas Rebuild', 'Draw Calls', 'GPU Profiling']}
+      />
 
       <section className="mt-8 space-y-3">
         <h2 className="text-xl font-semibold text-white">Setup</h2>

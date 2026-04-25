@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
 import SmartLink from '../../components/SmartLink';
 import { Seo } from '../../components/Seo';
+import PageHero from '../../components/PageHero';
 
 export default function PublishedMobileProjectsCaseStudyPage() {
   return (
@@ -23,18 +23,17 @@ export default function PublishedMobileProjectsCaseStudyPage() {
           image: '/og-image.png',
         }}
       />
-      <div className="mb-4">
-        <Link to="/" className="text-sm text-slate-500 hover:text-neon transition-colors">← Back to Home</Link>
-      </div>
-
-      <h1 className="text-3xl font-semibold text-white">Sneaky Warrior 3D — Frame Budget Stabilization on Mobile</h1>
-      <p className="mt-2 text-sm uppercase tracking-[0.08em] text-slate-500">FRAME BUDGET STABILITY ACROSS DEVICE TIERS</p>
-      <p className="mt-4 text-slate-300">
-        This case study documents production mobile performance work on Sneaky Warrior 3D focused on stable frame
-        pacing under heavy runtime load: 100+ animated enemies, ragdolls, active navigation, and high projectile
-        throughput. The target was consistent 16ms pacing across device tiers (including tile-based GPUs), prioritizing
-        stability and spike control over peak FPS.
-      </p>
+      <PageHero
+        backHref="/"
+        backLabel="Back to Portfolio"
+        category="Case Study"
+        title="Sneaky Warrior 3D — Frame Budget Stabilization"
+        subtitle="Frame Budget Stability Across Device Tiers"
+        description="Production mobile performance work focused on stable frame pacing under heavy runtime load: 100+ animated enemies, ragdolls, active navigation, and high projectile throughput. Target: consistent 16 ms pacing across device tiers including tile-based GPUs."
+        chips={['iOS / Android', '60 FPS shipped', 'Mobile GPU', 'GC Discipline', 'LOD Optimisation']}
+        metric="45 → 60+ FPS"
+        metricLabel="frame recovery under peak combat load"
+      />
 
       <section className="mt-8 space-y-3">
         <h2 className="text-xl font-semibold text-white">Problem / Context</h2>

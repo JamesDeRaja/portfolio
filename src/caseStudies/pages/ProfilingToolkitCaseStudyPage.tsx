@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
 import SmartLink from '../../components/SmartLink';
 import { Seo } from '../../components/Seo';
+import PageHero from '../../components/PageHero';
 
 export default function ProfilingToolkitCaseStudyPage() {
   return (
@@ -23,16 +23,15 @@ export default function ProfilingToolkitCaseStudyPage() {
           image: '/og-image.png',
         }}
       />
-      <div className="mb-4">
-        <Link to="/" className="text-sm text-slate-500 hover:text-neon transition-colors">← Back to Home</Link>
-      </div>
-
-      <h1 className="text-3xl font-semibold text-white">Unity Performance &amp; Profiling Toolkit / Overlay</h1>
-      <p className="mt-2 text-sm uppercase tracking-[0.08em] text-slate-500">Runtime Triage Instrumentation</p>
-      <p className="mt-4 text-slate-300">
-        A lightweight in-engine overlay and capture workflow to accelerate bottleneck triage during development
-        builds. The focus is shortening the loop from symptom to classification to evidence to mitigation.
-      </p>
+      <PageHero
+        backHref="/"
+        backLabel="Back to Portfolio"
+        category="Case Study"
+        title="Unity Performance & Profiling Toolkit"
+        subtitle="Runtime Triage Instrumentation"
+        description="A lightweight in-engine overlay and capture workflow to accelerate bottleneck triage during development builds. Shortens the loop from symptom to classification to evidence to mitigation."
+        chips={['Unity Profiler', 'Runtime HUD', 'Frame Timing', 'Draw Calls', 'A/B Profiling']}
+      />
 
       <section className="mt-8 space-y-3">
         <h2 className="text-xl font-semibold text-white">Problem / Context</h2>

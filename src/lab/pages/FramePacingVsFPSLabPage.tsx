@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import PageHero from '../../components/PageHero';
 import { Seo } from '../../components/Seo';
 
 export default function FramePacingVsFPSLabPage() {
@@ -25,39 +26,30 @@ export default function FramePacingVsFPSLabPage() {
           image: '/og-image.png',
         }}
       />
-      <div className="mb-4">
-        <Link to="/#writing" className="text-sm text-slate-500 hover:text-neon transition-colors">← Back to Writing</Link>
+      <PageHero
+        backHref="/#writing"
+        backLabel="Back to Writing"
+        category="Lab Article"
+        title="Frame Pacing vs FPS: What Engineers Get Wrong"
+        description="Stable pacing matters more than a single peak FPS number. Learn how to interpret variance, spike patterns, and pacing discipline so delivered experiences feel consistently smooth under real workload."
+        chips={['Lab Article', '8 min read', 'Performance', 'XR', 'Frame Timing']}
+      />
+
+      <div className="glass-card rounded-2xl p-4 text-sm text-slate-300 mt-6">
+        <p className="font-semibold text-white">Test setup</p>
+        <ul className="mt-2 list-disc space-y-1 pl-5">
+          <li>
+            Target refresh: <span className="font-semibold text-white">{hz} Hz</span> → budget{' '}
+            <span className="font-semibold text-white">{budgetMs.toFixed(2)} ms</span> per frame
+          </li>
+          <li>
+            Platform: <span className="font-semibold text-white">{platform}</span>
+          </li>
+          <li>
+            Focus: <span className="font-semibold text-white">variance + sync-bound pacing</span> (not just average FPS)
+          </li>
+        </ul>
       </div>
-
-      <header className="space-y-3">
-        <h1 className="text-3xl font-semibold text-white">Frame Pacing vs FPS: What Engineers Get Wrong</h1>
-        <p className="text-slate-300">
-          Stable pacing matters more than a single peak FPS number. Learn how to interpret variance, spike patterns, and
-          pacing discipline so delivered experiences feel consistently smooth under real workload.
-        </p>
-
-        <div className="flex flex-wrap gap-2 text-xs text-slate-400">
-          <span className="rounded-full border border-white/10 bg-white/[0.02] px-3 py-1">Lab Article</span>
-          <span className="rounded-full border border-white/10 bg-white/[0.02] px-3 py-1">8 min read</span>
-          <span className="rounded-full border border-white/10 bg-white/[0.02] px-3 py-1">Performance • XR • Frame Timing</span>
-        </div>
-
-        <div className="glass-card rounded-2xl p-4 text-sm text-slate-300">
-          <p className="font-semibold text-white">Test setup</p>
-          <ul className="mt-2 list-disc space-y-1 pl-5">
-            <li>
-              Target refresh: <span className="font-semibold text-white">{hz} Hz</span> → budget{' '}
-              <span className="font-semibold text-white">{budgetMs.toFixed(2)} ms</span> per frame
-            </li>
-            <li>
-              Platform: <span className="font-semibold text-white">{platform}</span>
-            </li>
-            <li>
-              Focus: <span className="font-semibold text-white">variance + sync-bound pacing</span> (not just average FPS)
-            </li>
-          </ul>
-        </div>
-      </header>
 
       <section className="mt-8 space-y-3">
         <h2 className="text-xl font-semibold text-white">The common mistake: optimizing for a number</h2>

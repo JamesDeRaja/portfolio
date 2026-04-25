@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, Download } from 'lucide-react';
+import { Menu, X, Download, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import SmartLink from './SmartLink';
+import { useTheme } from '../contexts/ThemeContext';
 
 const navItems = [
-  { label: 'Games', hash: 'shipped-titles' },
-  { label: 'Performance Wins', hash: 'problems-solved' },
-  { label: 'Case Studies', hash: 'work' },
-  { label: 'XR Lab', hash: 'xr-lab' },
-  { label: 'About', hash: 'about' },
+  { label: 'Case Studies', hash: 'case-studies' },
+  { label: 'Evidence', hash: 'evidence' },
+  { label: 'Tech Focus', hash: 'tech-focus' },
+  { label: 'Experience', hash: 'experience' },
+  { label: 'Skills', hash: 'skills' },
   { label: 'Contact', hash: 'contact' },
 ];
 
@@ -18,6 +19,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const { theme, toggle } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -89,6 +91,14 @@ export default function Navbar() {
           >
             <Download size={16} />
           </a>
+          <button
+            type="button"
+            onClick={toggle}
+            className="rounded-lg border border-white/10 p-2 text-slate-400 transition hover:border-neon/30 hover:text-neon"
+            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
+          </button>
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
