@@ -35,9 +35,9 @@ const variants: Variant[] = [
     description:
       'Baseline using minimal Update usage. Enemies are passive — only bullets update. Establishes the scene render floor without scripting pressure.',
     screenshots: [
-      { label: 'HUD', src: `${BASE}/A/A_10000_HighFire_HUD.png`, alt: 'Variant A HUD showing runtime stats at high fire rate' },
-      { label: 'CPU Timeline', src: `${BASE}/A/A_10000_HighFire_ProfilerTimeline.png`, alt: 'Variant A Profiler CPU timeline' },
-      { label: 'CPU Hierarchy', src: `${BASE}/A/A_10000_HighFire_ProfilerHierarchy.png`, alt: 'Variant A Profiler CPU hierarchy' },
+      { label: 'HUD', src: `${BASE}/A/A_Lifecycle_10000_HighFire_HUD.png`, alt: 'Variant A HUD showing runtime stats at high fire rate' },
+      { label: 'CPU Timeline', src: `${BASE}/A/A_Lifecycle_10000_HighFire_ProfilerTimeline.png`, alt: 'Variant A Profiler CPU timeline' },
+      { label: 'CPU Hierarchy', src: `${BASE}/A/A_Lifecycle_10000_HighFire_ProfilerHierarchy.png`, alt: 'Variant A Profiler CPU hierarchy' },
     ],
     metrics: [
       { label: 'Frame Time', value: '~22–30 ms' },
@@ -106,7 +106,6 @@ const variants: Variant[] = [
       { label: 'HUD', src: `${BASE}/D/D_ECSUpdate_10000_HighFire_HUD.png`, alt: 'Variant D HUD showing ECS frame time at scale' },
       { label: 'CPU Timeline', src: `${BASE}/D/D_ECSUpdate_10000_HighFire_ProfilerTimeline.png`, alt: 'Variant D Profiler CPU timeline under ECS' },
       { label: 'CPU Hierarchy', src: `${BASE}/D/D_ECSUpdate_10000_HighFire_ProfilerHierarchy.png`, alt: 'Variant D Profiler CPU hierarchy under ECS' },
-      { label: 'ECS Systems', src: `${BASE}/D/D_ECSUpdate_10000_HighFire_ECSSystemsHierarchy.png`, alt: 'ECS Systems hierarchy showing enemy and bullet system costs' },
     ],
     metrics: [
       { label: 'Frame Time', value: '~9.4 ms', highlight: true },
@@ -356,6 +355,29 @@ export default function UpdateStrategiesCaseStudyPage() {
               ECS removes that ceiling entirely.
             </p>
           </div>
+        </section>
+
+        {/* Repository */}
+        <section className="mt-8">
+          <a
+            href="https://github.com/JamesDeRaja/ECS-Performance-Improvement"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center justify-between gap-4 rounded-2xl border border-white/[0.08] bg-white/[0.02] px-5 py-4 transition hover:border-neon/25 hover:bg-neon/[0.03]"
+          >
+            <div className="flex items-center gap-3">
+              <svg viewBox="0 0 24 24" className="h-5 w-5 flex-shrink-0 fill-slate-400 group-hover:fill-neon transition-colors" aria-hidden="true">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+              <div>
+                <p className="text-sm font-medium text-white group-hover:text-neon transition-colors">ECS-Performance-Improvement</p>
+                <p className="text-xs text-slate-500">github.com/JamesDeRaja</p>
+              </div>
+            </div>
+            <svg viewBox="0 0 24 24" className="h-4 w-4 flex-shrink-0 stroke-slate-600 group-hover:stroke-neon transition-colors fill-none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M7 17L17 7M17 7H7M17 7v10" />
+            </svg>
+          </a>
         </section>
       </main>
     </div>
