@@ -1,0 +1,18 @@
+:root {
+  --color-primary: #0F172A;
+  --color-bg: #F8FAFC;
+  --color-border: #CBD5E1;
+  --hero-bg: #0F172A;
+  --hero-fg: #FFFFFF;
+}
+* { box-sizing: border-box; }
+body { margin: 0; padding: 24px; background: var(--color-bg); color: var(--color-primary); font-family: Inter, system-ui, sans-serif; }
+.resume { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); gap: 16px; }
+.card { background: #fff; border: 1px solid var(--color-border); border-radius: 16px; padding: 18px; }
+.hero { background: var(--hero-bg); color: var(--hero-fg); }
+.span-4 { grid-column: span 4; } .span-6 { grid-column: span 6; } .span-8 { grid-column: span 8; }
+.cta-strip { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.btn { border-radius: 999px; padding: 10px 14px; text-decoration: none; }
+.btn-primary { background: white; color: #0F172A; }
+.btn-secondary,.btn-ghost { border: 1px solid rgba(255,255,255,0.4); color: white; }
+@media (max-width:960px){ .resume{grid-template-columns:1fr;} .span-4,.span-6,.span-8{grid-column:auto;} }

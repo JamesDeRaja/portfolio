@@ -83,13 +83,13 @@ export default function HeroSection() {
             variants={itemVariants}
             className="mt-4 text-xl font-semibold text-neon/90 sm:text-2xl lg:text-3xl"
           >
-            Real-Time Performance Engineer
+            Senior Unity Developer — Performance Optimization, AR/VR/XR, Rendering, Frame Stability
           </motion.p>
           <motion.p
             variants={itemVariants}
             className="mt-1 text-base text-slate-400 sm:text-lg"
           >
-            Unity Rendering &bull; Frame Stability &bull; XR / Mobile / Shipped Titles
+            13+ years optimizing Unity rendering pipelines, frame pacing, and CPU/GPU bottlenecks for mobile and XR under strict 11 ms / 72–90 Hz budgets.
           </motion.p>
 
           {/* Value prop */}
@@ -97,9 +97,8 @@ export default function HeroSection() {
             variants={itemVariants}
             className="mt-8 max-w-2xl text-lg text-slate-200 leading-relaxed sm:text-xl"
           >
-            Delivered 100+ rapid prototypes and production titles for global publishers across 13+ years in Unity.
-            I find the bottleneck, prove it with a profiler, fix it, and{' '}
-            <span className="text-neon font-semibold">ship it at 60fps</span>.
+            Senior Unity performance engineer focused on proof-first optimization: isolate bottlenecks with profiler evidence,
+            stabilize frame pacing, and ship rendering improvements that hold under XR and mobile budgets.
           </motion.p>
 
           {/* Impact proof */}
@@ -123,23 +122,23 @@ export default function HeroSection() {
             className="mt-12 flex flex-wrap gap-4"
           >
             <a
-              href="#problems-solved"
+              href="/resume/JamesDeRaja_Resume_XR-Performance-Engineer.pdf"
               className="btn-primary group inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-medium"
             >
-              See Problems I Fixed
+              Download Resume PDF
               <ArrowRight size={14} className="transition group-hover:translate-x-1" />
             </a>
             <a
-              href="#shipped-titles"
+              href="#work"
               className="btn-secondary rounded-xl px-6 py-3 text-sm font-medium"
             >
-              Shipped Games
+              View Case Studies
             </a>
             <a
               href="#xr-lab"
               className="btn-secondary rounded-xl px-6 py-3 text-sm font-medium"
             >
-              XR Lab
+              View XR Case Studies
             </a>
           </motion.div>
         </motion.div>

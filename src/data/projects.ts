@@ -4,7 +4,7 @@ export const workProjects: WorkProject[] = [
   {
     id: 'xr-stress-lab',
     title: 'XR Performance Stress Lab',
-    summary: 'Profiler-led test harness for isolating XR rendering and frame pacing constraints.',
+    summary: 'Profiler-led XR frame-budget isolation and frame pacing analysis.',
     highlights: [
       'Reduced submission + skinning cost via dynamic skinned-mesh chunking.',
       'Protected culling/occlusion behavior with spatially coherent grouping + visibility gating.'
@@ -19,8 +19,8 @@ export const workProjects: WorkProject[] = [
   },
   {
     id: 'softmaskpro',
-    title: 'SoftMaskPro (Unity UI Rendering Tooling)',
-    summary: 'Rendering-adjacent UI masking toolkit focused on predictable cost under load.',
+    title: 'SoftMaskPro',
+    summary: 'UI masking cost isolation, fill-rate profiling, and redraw-path reduction.',
     highlights: [
       'Profiled mask passes against fill-rate heavy UI scenes.',
       'Reduced unnecessary redraw paths through targeted update logic.',

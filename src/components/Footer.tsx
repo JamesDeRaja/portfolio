@@ -9,7 +9,8 @@ export default function Footer() {
           <SmartLink href="mailto:jamesderaja@gmail.com" className="transition hover:text-neon">Email</SmartLink>
           <SmartLink href="https://www.linkedin.com/in/james-de-raja/" className="transition hover:text-neon">LinkedIn</SmartLink>
           <SmartLink href="https://github.com/JamesDeRaja" className="transition hover:text-neon">GitHub</SmartLink>
-          <SmartLink href="/resume/viewer.html?file=JamesDeRaja_Resume.pdf" className="transition hover:text-neon">Resume</SmartLink>
+          <SmartLink href="/resume/viewer.html?file=JamesDeRaja_Resume.pdf" className="transition hover:text-neon">Resume PDF</SmartLink>
+          <SmartLink href="/#work" className="transition hover:text-neon">Case Studies</SmartLink>
         </div>
       </div>
     </footer>
