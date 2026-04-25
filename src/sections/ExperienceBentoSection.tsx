@@ -153,7 +153,7 @@ export default function ExperienceBentoSection() {
       <BentoGrid className="mb-4">
         {/* ── Zoho card ── */}
         <motion.div
-          className="lg:col-span-6 md:col-span-3"
+          className="lg:col-span-5 md:col-span-3"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -227,7 +227,7 @@ export default function ExperienceBentoSection() {
 
         {/* ── AlphaDen card ── */}
         <motion.div
-          className="lg:col-span-6 md:col-span-3"
+          className="lg:col-span-7 md:col-span-3"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.08 }}
