@@ -51,41 +51,41 @@ export default function MetricsSummary({
       {/* 3-column grid */}
       <div className="grid grid-cols-3 divide-x divide-white/[0.05]">
         {/* Baseline */}
-        <div className="p-4 sm:p-5">
+        <div className="p-3 sm:p-5">
           <p className="font-mono text-[10px] uppercase tracking-wider text-slate-600 mb-3">
             {baselineLabel}
           </p>
           <div className="space-y-1.5">
             <div>
-              <CountUp to={baselineCpu} decimals={2} duration={1.1} className="font-mono text-xl font-bold text-white" />
+              <CountUp to={baselineCpu} decimals={2} duration={1.1} className="font-mono text-base sm:text-xl font-bold text-white" />
               <p className="font-mono text-[10px] text-slate-600">CPU ms</p>
             </div>
             <div>
-              <CountUp to={baselineGpu} decimals={2} duration={1.1} className="font-mono text-xl font-bold text-white" />
+              <CountUp to={baselineGpu} decimals={2} duration={1.1} className="font-mono text-base sm:text-xl font-bold text-white" />
               <p className="font-mono text-[10px] text-slate-600">GPU ms</p>
             </div>
           </div>
         </div>
 
         {/* Under stress */}
-        <div className="p-4 sm:p-5">
+        <div className="p-3 sm:p-5">
           <p className="font-mono text-[10px] uppercase tracking-wider text-slate-600 mb-3">
             {stressLabel}
           </p>
           <div className="space-y-1.5">
             <div>
-              <CountUp to={stressCpu} decimals={2} duration={1.1} className="font-mono text-xl font-bold text-amber-400" />
+              <CountUp to={stressCpu} decimals={2} duration={1.1} className="font-mono text-base sm:text-xl font-bold text-amber-400" />
               <p className="font-mono text-[10px] text-slate-600">CPU ms</p>
             </div>
             <div>
-              <CountUp to={stressGpu} decimals={2} duration={1.1} className="font-mono text-xl font-bold text-amber-400" />
+              <CountUp to={stressGpu} decimals={2} duration={1.1} className="font-mono text-base sm:text-xl font-bold text-amber-400" />
               <p className="font-mono text-[10px] text-slate-600">GPU ms</p>
             </div>
           </div>
         </div>
 
         {/* Delta */}
-        <div className="p-4 sm:p-5">
+        <div className="p-3 sm:p-5">
           <p className="font-mono text-[10px] uppercase tracking-wider text-slate-600 mb-3">
             Delta
           </p>
@@ -97,7 +97,7 @@ export default function MetricsSummary({
                 decimals={2}
                 prefix={cpuDelta >= 0 ? '+' : ''}
                 duration={1.1}
-                className={`font-mono text-xl font-bold ${cpuDeltaColor}`}
+                className={`font-mono text-base sm:text-xl font-bold ${cpuDeltaColor}`}
               />
               <p className="font-mono text-[10px] text-slate-600">CPU ms</p>
             </div>
@@ -108,7 +108,7 @@ export default function MetricsSummary({
                 decimals={2}
                 prefix={gpuDelta >= 0 ? '+' : ''}
                 duration={1.1}
-                className={`font-mono text-xl font-bold ${gpuDeltaColor}`}
+                className={`font-mono text-base sm:text-xl font-bold ${gpuDeltaColor}`}
               />
               <p className="font-mono text-[10px] text-slate-600">GPU ms</p>
             </div>

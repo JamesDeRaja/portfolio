@@ -108,7 +108,7 @@ export default function EvidenceBentoSection() {
                 className="w-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-void-950/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
                 <div>
                   <p className="text-xs font-semibold text-white">
@@ -140,7 +140,7 @@ export default function EvidenceBentoSection() {
                 className="w-full h-40 object-cover md:h-full"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-void-950/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
               <div className="absolute bottom-3 left-3 right-3">
                 <p className="text-xs font-semibold text-white">Overdraw Heatmap</p>
                 <p className="mt-0.5 text-[11px] text-slate-400">Fragment pressure hotspots — scene view</p>
@@ -165,7 +165,7 @@ export default function EvidenceBentoSection() {
                 className="w-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-void-950/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
               <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between gap-2">
                 <div>
                   <p className="text-xs font-semibold text-white">Frame Debugger</p>
@@ -193,7 +193,7 @@ export default function EvidenceBentoSection() {
                 className="w-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-void-950/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
               <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between gap-2">
                 <div>
                   <p className="text-xs font-semibold text-white">WaitForPresent Spike</p>
@@ -221,7 +221,7 @@ export default function EvidenceBentoSection() {
                 className="w-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-void-950/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
               <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between gap-2">
                 <div>
                   <p className="text-xs font-semibold text-white">Frame Pacing — On Target @ 72 Hz</p>
@@ -253,7 +253,7 @@ export default function EvidenceBentoSection() {
                   className="w-full object-cover max-h-40"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-void-950/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
                 <div className="absolute bottom-2 left-3 right-3 flex items-end justify-between gap-2">
                   <p className="text-[11px] font-medium text-white/90">{img.label}</p>
                   {img.badge && (

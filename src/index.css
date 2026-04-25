@@ -322,6 +322,20 @@ body {
   border-color: rgba(0, 0, 0, 0.06);
 }
 
+/* ── Light mode: chip / keyword text contrast overrides ── */
+/* neon and electric opacity variants: bump to full opacity so indigo/violet stays legible */
+.light .text-neon\/50,
+.light .text-neon\/60,
+.light .text-neon\/70,
+.light .text-neon\/80,
+.light .text-neon\/90 { color: rgb(var(--neon)); }
+.light .text-electric\/60,
+.light .text-electric\/70,
+.light .text-electric\/80 { color: rgb(var(--electric)); }
+/* amber-400 and emerald-400 at partial opacity are near-invisible on white */
+.light .text-amber-400\/70 { color: #b45309; }  /* amber-700 — AA contrast on white */
+.light .text-emerald-400\/70 { color: #047857; } /* emerald-700 — AA contrast on white */
+
 /* ── Light mode: btn-secondary ── */
 .light .btn-secondary {
   background: rgba(99, 102, 241, 0.04);

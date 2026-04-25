@@ -38,7 +38,7 @@ export default function MiniBars({
     >
       <p className="text-sm font-medium text-white">{title}</p>
       <div className="mt-3 space-y-2">
-        <div className="grid grid-cols-[68px_1fr_auto] items-center gap-2">
+        <div className="grid grid-cols-[56px_1fr_auto] sm:grid-cols-[68px_1fr_auto] items-center gap-2">
           <span className="text-xs text-slate-400">{labelLeft}</span>
           <div className="h-2.5 rounded-full bg-white/5 overflow-hidden">
             <motion.div
@@ -53,7 +53,7 @@ export default function MiniBars({
         </div>
 
         {stressWidth !== null && (
-          <div className="grid grid-cols-[68px_1fr_auto] items-center gap-2">
+          <div className="grid grid-cols-[56px_1fr_auto] sm:grid-cols-[68px_1fr_auto] items-center gap-2">
             <span className="text-xs text-slate-400">{labelRight}</span>
             <div className="h-2.5 rounded-full bg-white/5 overflow-hidden">
               <motion.div
