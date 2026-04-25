@@ -43,6 +43,15 @@ const secondaryCards: SecondaryCard[] = [
     metricColor: 'purple',
   },
   {
+    title: 'Update Strategies at Scale',
+    summary:
+      'Profiler-driven comparison of 4 Unity update architectures under 10,000 entities: per-object MonoBehaviour, central manager, and ECS. Frame time reduced from ~40 ms to ~9.4 ms.',
+    tags: ['ECS / DOTS', 'MonoBehaviour', 'Burst', '10K entities', 'CPU profiling'],
+    href: '/case-studies/update-strategies-scale',
+    metric: '~40 ms → ~9.4 ms',
+    metricColor: 'cyan',
+  },
+  {
     title: 'Published Mobile Games',
     summary:
       'Production game development with publisher feedback loops — CPI and D1 retention iteration under real audience data. Shipped Sneaky Warrior 3D on iOS at stable 60 FPS.',
