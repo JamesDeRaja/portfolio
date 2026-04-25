@@ -22,14 +22,14 @@
 
 .light {
   /* Light mode */
-  --void-950: 247 247 251;
-  --void-900: 240 239 250;
-  --void-800: 255 255 255;
-  --void-700: 229 228 242;
+  --void-950: 248 247 255;   /* #f8f7ff — barely-perceptible violet white, page bg */
+  --void-900: 241 240 253;   /* #f1f0fd — slightly deeper for section contrast */
+  --void-800: 255 255 255;   /* pure white card surfaces */
+  --void-700: 220 219 240;   /* #dcdbe0 — subtle border/divider */
   --neon: 99 102 241;
   --electric: 109 40 217;
 
-  color: #1e1b4b;
+  color: #18181f;            /* near-black with the faintest blue — premium charcoal */
   color-scheme: light;
 }
 
@@ -100,9 +100,9 @@ body {
 }
 
 .light .glass-card {
-  background: rgba(255, 255, 255, 0.85);
-  border-color: rgba(var(--neon), 0.14);
-  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.06), 0 4px 20px rgba(99, 102, 241, 0.08);
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(0, 0, 0, 0.07);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.05);
 }
 
 .glass-card-hover:hover {
@@ -131,16 +131,17 @@ body {
 
 .light .bento-elevated {
   box-shadow:
-    0 0 0 1px rgba(99, 102, 241, 0.1),
-    0 4px 24px rgba(99, 102, 241, 0.07),
-    0 1px 2px rgba(99, 102, 241, 0.05);
+    0 0 0 1px rgba(0, 0, 0, 0.06),
+    0 2px 8px rgba(0, 0, 0, 0.04),
+    0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
 .light .bento-elevated:hover {
+  transform: translateY(-2px);
   box-shadow:
-    0 0 0 1px rgba(99, 102, 241, 0.22),
-    0 8px 40px rgba(99, 102, 241, 0.12),
-    0 0 28px rgba(99, 102, 241, 0.08);
+    0 0 0 1px rgba(99, 102, 241, 0.2),
+    0 4px 16px rgba(0, 0, 0, 0.07),
+    0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 /* ── Page hero ambient background ── */
@@ -277,26 +278,27 @@ body {
 }
 
 /* ── Light mode: text overrides ── */
+/* Rule: indigo is accent-only. Text uses a neutral cool-gray hierarchy. */
 .light .text-white {
-  color: #1e1b4b;
+  color: #18181f;                    /* near-black heading */
 }
 .light .text-white\/90 {
-  color: rgba(30, 27, 75, 0.9);
+  color: rgba(24, 24, 31, 0.9);
 }
 .light .text-white\/70 {
-  color: rgba(30, 27, 75, 0.7);
+  color: rgba(24, 24, 31, 0.7);
 }
 .light .text-slate-300 {
-  color: #3730a3;
+  color: #3a3a4e;                    /* dark neutral — readable body text */
 }
 .light .text-slate-400 {
-  color: #6366f1;
+  color: #66667e;                    /* medium neutral — secondary labels */
 }
 .light .text-slate-500 {
-  color: #818cf8;
+  color: #8f8fa5;                    /* soft muted — tertiary info */
 }
 .light .text-slate-600 {
-  color: #a5b4fc;
+  color: #b4b4c8;                    /* faint — decorative / barely-there */
 }
 
 /* ── Light mode: metric/delta color contrast fixes ── */
@@ -312,12 +314,12 @@ body {
 
 /* ── Light mode: border overrides ── */
 .light [class*="border-white"] {
-  border-color: rgba(99, 102, 241, 0.14);
+  border-color: rgba(0, 0, 0, 0.07);
 }
 
 /* ── Light mode: divide-y / divide-x overrides ── */
 .light [class*="divide-white"] > :not([hidden]) ~ :not([hidden]) {
-  border-color: rgba(99, 102, 241, 0.1);
+  border-color: rgba(0, 0, 0, 0.06);
 }
 
 /* ── Light mode: btn-secondary ── */
