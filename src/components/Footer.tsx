@@ -3,7 +3,7 @@ import SmartLink from './SmartLink';
 export default function Footer() {
   return (
     <footer role="contentinfo" className="border-t border-white/5 bg-void-950">
-      <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 px-4 py-8 text-sm text-slate-500 sm:flex-row sm:justify-between sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-screen-2xl flex-col items-center gap-4 px-4 py-8 text-sm text-slate-500 sm:flex-row sm:justify-between sm:px-6 lg:px-8">
         <p className="font-mono text-xs">&copy; {new Date().getFullYear()} James De Raja</p>
         <div className="flex items-center gap-6">
           <SmartLink href="mailto:jamesderaja@gmail.com" className="transition hover:text-neon">Email</SmartLink>

@@ -39,17 +39,17 @@ export default function HomePage() {
 
       <main className="relative z-10">
         <HeroBentoSection />
-        <div className="divider-glow mx-auto max-w-7xl" />
+        <div className="divider-glow mx-auto max-w-screen-2xl" />
         <TechFocusBentoSection />
-        <div className="divider-glow mx-auto max-w-7xl" />
+        <div className="divider-glow mx-auto max-w-screen-2xl" />
         <CaseStudiesBentoSection />
-        <div className="divider-glow mx-auto max-w-7xl" />
+        <div className="divider-glow mx-auto max-w-screen-2xl" />
         <EvidenceBentoSection />
-        <div className="divider-glow mx-auto max-w-7xl" />
+        <div className="divider-glow mx-auto max-w-screen-2xl" />
         <ExperienceBentoSection />
-        <div className="divider-glow mx-auto max-w-7xl" />
+        <div className="divider-glow mx-auto max-w-screen-2xl" />
         <SkillsBentoSection />
-        <div className="divider-glow mx-auto max-w-7xl" />
+        <div className="divider-glow mx-auto max-w-screen-2xl" />
         <ContactBentoSection />
       </main>
     </div>

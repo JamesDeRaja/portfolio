@@ -5,7 +5,18 @@ import BentoCard from '../components/bento/BentoCard';
 import MetricBadge from '../components/bento/MetricBadge';
 import SmartLink from '../components/SmartLink';
 
-interface SecondaryCard {
+const labLinks = [
+  { label: 'Overdraw — stereo vs mono', href: '/lab/overdraw-stereo', badge: 'XR' },
+  { label: 'MSAA cost study', href: '/lab/msaa', badge: 'GPU' },
+  { label: 'MSAA + Overdraw combined', href: '/lab/msaa-overdraw', badge: 'GPU' },
+  { label: 'GPU Instancing analysis', href: '/lab/instancing', badge: 'CPU' },
+  { label: 'Frame pacing methodology', href: '/lab/frame-pacing', badge: 'Timing' },
+  { label: 'Frame pacing vs FPS', href: '/lab/frame-pacing-vs-fps', badge: 'Timing' },
+  { label: 'XR frame timing', href: '/lab/xr-frame-timing', badge: 'XR' },
+  { label: 'Overdraw baseline', href: '/lab/overdraw', badge: 'GPU' },
+];
+
+interface SupportCard {
   title: string;
   summary: string;
   tags: string[];
@@ -14,48 +25,30 @@ interface SecondaryCard {
   metricColor?: 'cyan' | 'green' | 'purple' | 'amber';
 }
 
-const secondaryCards: SecondaryCard[] = [
+const supportCards: SupportCard[] = [
   {
-    title: 'Overdraw / Transparency Stress',
+    title: 'Overdraw & Transparency Cost',
     summary:
-      'Isolated stereo rendering cost amplification from transparent draw calls with ZWrite Off. Documented +7.27 ms GPU delta under 201 sequential transparent passes.',
-    tags: ['ZWrite Off', 'alpha blending', 'transparent draw order', 'stereo cost', 'GPU-bound'],
+      'Measured the real GPU cost of transparent draw calls in XR stereo — 201 draws, ZWrite Off, stereo 90 Hz. Documented a +7.27 ms GPU delta against a clean baseline.',
+    tags: ['ZWrite Off', 'alpha blending', 'stereo cost', 'GPU-bound'],
     href: '/lab/overdraw-stereo',
     metric: '+7.27 ms GPU',
     metricColor: 'amber',
   },
   {
-    title: 'CPU / Manager Update / ECS Study',
-    summary:
-      'Benchmarked 10,000 simultaneous agent updates across three architectures: MonoBehaviour Update, centralised manager tick, and ECS job system. Quantified per-architecture overhead and instantiation cost.',
-    tags: ['10K agents', 'MonoBehaviour', 'ECS comparison', 'Update overhead', 'job system'],
-    href: '/lab/instancing',
-    metric: 'ECS vs classic',
-    metricColor: 'cyan',
-  },
-  {
     title: 'SoftMaskPro UI Rendering Cost',
     summary:
-      'Profiled UI masking cost across three scenarios — 1, 3, and 40 masked elements — under URP with XR stereo. Documented canvas rebuild frequency, GPU pass cost, and WaitForPresent spikes.',
-    tags: ['UI masking', 'canvas rebuild', 'XR stereo amplification', 'GPU pass cost', 'transparency'],
+      'Profiled Unity UI masking overhead at 1, 3, and 40 masked elements under XR stereo. Found WaitForPresent spikes and GPU pass cost that are invisible without a profiler.',
+    tags: ['UI masking', 'canvas rebuild', 'XR stereo', 'GPU pass cost'],
     href: '/case-studies/softmaskpro',
     metric: '40 masks profiled',
     metricColor: 'purple',
   },
   {
-    title: 'Update Strategies at Scale',
+    title: 'Shipped Mobile Games',
     summary:
-      'Profiler-driven comparison of 4 Unity update architectures under 10,000 entities: per-object MonoBehaviour, central manager, and ECS. Frame time reduced from ~40 ms to ~9.4 ms.',
-    tags: ['ECS / DOTS', 'MonoBehaviour', 'Burst', '10K entities', 'CPU profiling'],
-    href: '/case-studies/update-strategies-scale',
-    metric: '~40 ms → ~9.4 ms',
-    metricColor: 'cyan',
-  },
-  {
-    title: 'Published Mobile Games',
-    summary:
-      'Production game development with publisher feedback loops — CPI and D1 retention iteration under real audience data. Shipped Sneaky Warrior 3D on iOS at stable 60 FPS.',
-    tags: ['iOS/Android', 'publisher PPP', 'CPI optimisation', 'D1 retention', '60 FPS shipped'],
+      'Production titles published on iOS and Google Play. Went through publisher feedback loops with Voodoo, Lion Studios, and Supersonic — iterating on CPI and Day-1 retention.',
+    tags: ['iOS / Android', 'publisher PPP', 'CPI', 'D1 retention', '60 FPS shipped'],
     href: '/case-studies/published-mobile-projects',
     metric: '~1M installs',
     metricColor: 'green',
@@ -64,7 +57,7 @@ const secondaryCards: SecondaryCard[] = [
 
 export default function CaseStudiesBentoSection() {
   return (
-    <section id="case-studies" className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+    <section id="case-studies" className="relative mx-auto max-w-screen-2xl px-4 py-20 sm:px-6 lg:px-8">
       {/* Background accent */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute right-0 top-1/3 h-[400px] w-[400px] rounded-full bg-neon/3 blur-[150px]" />
@@ -82,32 +75,33 @@ export default function CaseStudiesBentoSection() {
           Case Studies
         </p>
         <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
-          Deep dives with profiler evidence
+          Real problems. Measured results. Profiler evidence.
         </h2>
         <p className="mt-2 max-w-2xl text-sm text-slate-400 leading-relaxed">
-          Profiler-validated breakdowns of XR rendering bottlenecks, UI overdraw cost, runtime diagnostics,
-          and frame budget stabilisation. Evidence included.
+          Every case study here starts with a profiler screenshot, not a hypothesis. XR rendering bottlenecks,
+          CPU update architecture at scale, UI masking cost — documented with numbers you can reproduce.
         </p>
       </motion.div>
 
+      {/* ── Two primary featured cards ── */}
       <BentoGrid className="mb-4">
-        {/* Primary large card — XR Stress Lab */}
+
+        {/* Primary 1 — XR Performance Stress Lab */}
         <motion.div
-          className="lg:col-span-8 md:col-span-6"
+          className="lg:col-span-6 md:col-span-6"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <BentoCard variant="featured" padding="none" className="h-full overflow-hidden">
-            {/* Header band */}
-            <div className="border-b border-neon/10 p-6">
-              <div className="flex items-start justify-between gap-4">
+          <BentoCard variant="featured" padding="none" className="h-full overflow-hidden flex flex-col">
+            <div className="border-b border-neon/10 px-6 py-5">
+              <div className="flex items-start justify-between gap-3">
                 <div>
-                  <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-neon/60 mb-2">
-                    Primary Case Study
+                  <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-neon/60 mb-1.5">
+                    XR Rendering · GPU Profiling
                   </p>
-                  <h3 className="text-xl font-bold text-white sm:text-2xl">
+                  <h3 className="text-lg font-bold text-white sm:text-xl">
                     XR Performance Stress Lab
                   </h3>
                 </div>
@@ -115,48 +109,39 @@ export default function CaseStudiesBentoSection() {
               </div>
             </div>
 
-            {/* Body */}
-            <div className="p-6 space-y-5">
+            <div className="flex flex-col flex-1 gap-4 p-6">
               <p className="text-sm text-slate-300 leading-relaxed">
-                Deterministic Unity 6 URP + OpenXR benchmarking framework for isolating GPU fragment
-                bottlenecks, stereo rendering cost, overdraw, and frame timing pressure on Meta Quest
-                hardware. Every experiment is reproducible: a single toggle introduces the variable;
-                all other scene parameters remain fixed.
+                A controlled Unity 6 / URP / OpenXR benchmarking framework. One toggle introduces
+                the variable — everything else stays locked. Built to prove bottleneck type (GPU fragment,
+                bandwidth, or submission) with profiler captures, not guesses.
               </p>
 
-              {/* Key metric */}
               <div className="rounded-xl border border-amber-500/20 bg-amber-500/[0.06] px-4 py-3">
                 <p className="font-mono text-xs font-semibold text-amber-400">
-                  Measured result: +7.27 ms GPU cost under heavy transparent overdraw stress
+                  +7.27 ms GPU — overdraw stress at stereo 90 Hz
                 </p>
                 <p className="mt-1 text-xs text-slate-500">
-                  201 transparent draw calls with ZWrite Off at stereo 90 Hz — GPU frame time delta
-                  measured against clean baseline scene.
+                  201 transparent draws, ZWrite Off. Measured delta against a clean baseline.
                 </p>
               </div>
 
-              {/* Experiment highlights */}
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+              <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
                 {[
                   { label: 'Overdraw stereo cost', val: '+7.27 ms' },
-                  { label: 'MSAA 2x vs 4x delta', val: 'measured' },
+                  { label: 'MSAA 2× vs 4×', val: 'measured' },
                   { label: 'Frame pacing @ 72 Hz', val: 'validated' },
-                  { label: 'Instancing vs draw', val: 'compared' },
+                  { label: 'Instancing vs draws', val: 'compared' },
                   { label: 'UI mask GPU cost', val: '3 scenarios' },
                   { label: 'Baseline vs stress', val: 'reproducible' },
                 ].map((item) => (
-                  <div
-                    key={item.label}
-                    className="rounded-lg border border-white/[0.06] bg-white/[0.02] px-3 py-2"
-                  >
+                  <div key={item.label} className="rounded-lg border border-white/[0.06] bg-white/[0.02] px-3 py-2">
                     <p className="font-mono text-xs font-semibold text-neon">{item.val}</p>
                     <p className="mt-0.5 text-[11px] text-slate-500">{item.label}</p>
                   </div>
                 ))}
               </div>
 
-              {/* CTAs */}
-              <div className="flex flex-wrap gap-3 pt-1">
+              <div className="mt-auto pt-1">
                 <SmartLink
                   href="/case-studies/xr-stress-lab"
                   className="btn-primary group inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium"
@@ -164,64 +149,85 @@ export default function CaseStudiesBentoSection() {
                   Open Case Study
                   <ArrowRight size={14} className="transition group-hover:translate-x-1" />
                 </SmartLink>
-                <a
-                  href="#evidence"
-                  className="btn-secondary inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium"
-                >
-                  View Evidence
-                </a>
               </div>
             </div>
           </BentoCard>
         </motion.div>
 
-        {/* Quick-stats sidebar */}
+        {/* Primary 2 — Update Strategies at Scale */}
         <motion.div
-          className="lg:col-span-4 md:col-span-6"
+          className="lg:col-span-6 md:col-span-6"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.08 }}
           viewport={{ once: true }}
         >
-          <BentoCard variant="metric" padding="md" className="h-full flex flex-col gap-5">
-            <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500">
-              Lab Experiments
-            </p>
-
-            {[
-              { label: 'Overdraw — stereo vs mono', href: '/lab/overdraw-stereo', badge: 'XR' },
-              { label: 'MSAA cost study', href: '/lab/msaa', badge: 'GPU' },
-              { label: 'MSAA + Overdraw combined', href: '/lab/msaa-overdraw', badge: 'GPU' },
-              { label: 'GPU Instancing analysis', href: '/lab/instancing', badge: 'CPU' },
-              { label: 'Frame pacing methodology', href: '/lab/frame-pacing', badge: 'Timing' },
-              { label: 'Frame pacing vs FPS', href: '/lab/frame-pacing-vs-fps', badge: 'Timing' },
-              { label: 'XR frame timing', href: '/lab/xr-frame-timing', badge: 'XR' },
-              { label: 'Overdraw baseline', href: '/lab/overdraw', badge: 'GPU' },
-            ].map((exp) => (
-              <SmartLink
-                key={exp.href}
-                href={exp.href}
-                className="group flex items-center justify-between gap-3 rounded-lg border border-white/[0.05] bg-white/[0.02] px-3 py-2.5 hover:border-neon/20 hover:bg-neon/[0.03] transition-all duration-200"
-              >
-                <span className="text-xs text-slate-300 group-hover:text-white transition-colors">
-                  {exp.label}
-                </span>
-                <div className="flex items-center gap-2 flex-shrink-0">
-                  <span className="font-mono text-[10px] text-slate-600">{exp.badge}</span>
-                  <ExternalLink size={10} className="text-slate-600 group-hover:text-neon transition-colors" />
+          <BentoCard variant="highlight" padding="none" className="h-full overflow-hidden flex flex-col">
+            <div className="border-b border-electric/10 px-6 py-5">
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-electric/60 mb-1.5">
+                    CPU Architecture · ECS / DOTS
+                  </p>
+                  <h3 className="text-lg font-bold text-white sm:text-xl">
+                    Update Strategies at Scale
+                  </h3>
                 </div>
-              </SmartLink>
-            ))}
+                <MetricBadge value="Featured" color="purple" />
+              </div>
+            </div>
+
+            <div className="flex flex-col flex-1 gap-4 p-6">
+              <p className="text-sm text-slate-300 leading-relaxed">
+                Four Unity update architectures stress-tested at 10,000 simultaneous entities —
+                same scene, same workload, only the update model changes. Shows exactly why
+                MonoBehaviour Update doesn't scale and what ECS actually delivers in numbers.
+              </p>
+
+              <div className="rounded-xl border border-electric/20 bg-electric/[0.05] px-4 py-3">
+                <p className="font-mono text-xs font-semibold text-electric">
+                  ~40 ms → ~9.4 ms — per-object Update to ECS
+                </p>
+                <p className="mt-1 text-xs text-slate-500">
+                  Same 10,000 entities. ScriptRunBehaviourUpdate went from ~8.6 ms to ~0.01 ms.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+                {[
+                  { label: 'Lifecycle Control', val: '~25 ms' },
+                  { label: 'Per-Object Update', val: '~40 ms' },
+                  { label: 'Central Manager', val: '~32 ms' },
+                  { label: 'ECS (DOTS)', val: '~9.4 ms' },
+                ].map((item) => (
+                  <div key={item.label} className="rounded-lg border border-white/[0.06] bg-white/[0.02] px-3 py-2">
+                    <p className="font-mono text-xs font-semibold text-electric">{item.val}</p>
+                    <p className="mt-0.5 text-[11px] text-slate-500">{item.label}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-auto pt-1">
+                <SmartLink
+                  href="/case-studies/update-strategies-scale"
+                  className="btn-primary group inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium"
+                >
+                  Open Case Study
+                  <ArrowRight size={14} className="transition group-hover:translate-x-1" />
+                </SmartLink>
+              </div>
+            </div>
           </BentoCard>
         </motion.div>
       </BentoGrid>
 
-      {/* Secondary case study cards */}
-      <BentoGrid>
-        {secondaryCards.map((card, i) => (
+      {/* ── Supporting cards + Lab list ── */}
+      <BentoGrid className="mb-4">
+        {/* Support case study cards */}
+        {supportCards.map((card, i) => (
           <motion.div
             key={card.title}
-            className="lg:col-span-3 md:col-span-3"
+            className="lg:col-span-3 md:col-span-2"
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, delay: i * 0.07 }}
@@ -229,11 +235,7 @@ export default function CaseStudiesBentoSection() {
           >
             <BentoCard variant="default" padding="md" className="h-full flex flex-col gap-3">
               {card.metric && (
-                <MetricBadge
-                  value={card.metric}
-                  color={card.metricColor ?? 'cyan'}
-                  size="sm"
-                />
+                <MetricBadge value={card.metric} color={card.metricColor ?? 'cyan'} size="sm" />
               )}
               <h3 className="text-sm font-semibold text-white">{card.title}</h3>
               <p className="text-xs text-slate-400 leading-relaxed flex-1">{card.summary}</p>
@@ -251,11 +253,43 @@ export default function CaseStudiesBentoSection() {
                 href={card.href}
                 className="mt-1 inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-neon transition-colors"
               >
-                Open case study <ArrowRight size={10} />
+                Open <ArrowRight size={10} />
               </SmartLink>
             </BentoCard>
           </motion.div>
         ))}
+
+        {/* Lab experiments compact list */}
+        <motion.div
+          className="lg:col-span-3 md:col-span-2"
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45, delay: 0.21 }}
+          viewport={{ once: true, margin: '-30px' }}
+        >
+          <BentoCard variant="dim" padding="md" className="h-full flex flex-col">
+            <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-3">
+              Lab Experiments
+            </p>
+            <div className="space-y-1.5 flex-1">
+              {labLinks.map((exp) => (
+                <SmartLink
+                  key={exp.href}
+                  href={exp.href}
+                  className="group flex items-center justify-between gap-2 rounded-lg px-2.5 py-2 hover:bg-white/[0.04] transition-colors"
+                >
+                  <span className="text-xs text-slate-400 group-hover:text-white transition-colors leading-snug">
+                    {exp.label}
+                  </span>
+                  <div className="flex items-center gap-1.5 flex-shrink-0">
+                    <span className="font-mono text-[10px] text-slate-600">{exp.badge}</span>
+                    <ExternalLink size={9} className="text-slate-700 group-hover:text-neon/60 transition-colors" />
+                  </div>
+                </SmartLink>
+              ))}
+            </div>
+          </BentoCard>
+        </motion.div>
       </BentoGrid>
     </section>
   );

@@ -33,7 +33,7 @@ const toolCategories = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+    <section id="about" className="relative mx-auto max-w-screen-2xl px-4 py-20 sm:px-6 lg:px-8">
       {/* Background accent */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute right-0 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-electric/3 blur-[150px]" />

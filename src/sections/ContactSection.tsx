@@ -20,7 +20,7 @@ const links = [
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="relative mx-auto max-w-7xl px-4 py-20 pb-24 sm:px-6 lg:px-8">
+    <section id="contact" className="relative mx-auto max-w-screen-2xl px-4 py-20 pb-24 sm:px-6 lg:px-8">
       {/* Background accent */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute bottom-0 left-1/2 h-[300px] w-[600px] -translate-x-1/2 rounded-full bg-neon/3 blur-[120px]" />
