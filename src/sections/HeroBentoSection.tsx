@@ -48,15 +48,15 @@ const bestFitRoles = [
 
 export default function HeroBentoSection() {
   return (
-    <section id="hero" className="relative mx-auto max-w-screen-2xl px-4 py-12 sm:px-6 lg:px-8">
+    <section id="hero" className="relative mx-auto max-w-screen-2xl px-4 pt-10 pb-4 sm:px-6 lg:px-8 min-h-screen flex flex-col gap-4">
       {/* Ambient glows */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute -left-32 top-0 h-[500px] w-[500px] rounded-full bg-neon/5 blur-[130px]" />
         <div className="absolute -right-32 bottom-0 h-[400px] w-[400px] rounded-full bg-electric/4 blur-[120px]" />
       </div>
 
-      {/* ── Row 1: Main hero (8 cols) + side stack (4 cols) ── */}
-      <BentoGrid>
+      {/* ── Row 1: Main hero (8 cols) + side stack (4 cols) — fills available viewport ── */}
+      <BentoGrid className="flex-1 auto-rows-fr">
         {/* Main hero card */}
         <motion.div
           className="lg:col-span-8 md:col-span-6"
@@ -215,7 +215,10 @@ export default function HeroBentoSection() {
           </motion.div>
         </div>
 
-        {/* ── Row 2: Four bottom cards ── */}
+      </BentoGrid>
+
+      {/* ── Row 2: Four bottom cards — pinned to bottom of viewport ── */}
+      <BentoGrid>
 
         {/* Published Results */}
         <motion.div
