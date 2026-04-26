@@ -374,6 +374,34 @@ export default function UpdateStrategiesCaseStudyPage() {
           </div>
         </section>
 
+        {/* Variant subpage links */}
+        <section className="mt-10 space-y-3">
+          <h2 className="text-xl font-semibold text-white">Explore Each Variant</h2>
+          <p className="text-sm text-slate-400">Each variant has a dedicated deep-dive page covering the scene setup, architecture, annotated profiler screenshots, and what it proves.</p>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {variants.map((v) => (
+              <Link
+                key={v.id}
+                to={v.deepDiveHref}
+                className={`group flex items-center justify-between gap-3 rounded-2xl border ${v.accentBorder} ${v.accentBg} px-4 py-3.5 transition hover:opacity-90`}
+              >
+                <div className="flex items-center gap-3 min-w-0">
+                  <div className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg border ${v.accentBorder} ${v.accentBg}`}>
+                    <span className={`font-mono text-sm font-bold ${v.accent}`}>{v.letter}</span>
+                  </div>
+                  <div className="min-w-0">
+                    <p className={`text-sm font-semibold ${v.accent}`}>{v.title}</p>
+                    <p className="text-xs text-slate-500 truncate">{v.description.split('.')[0]}.</p>
+                  </div>
+                </div>
+                <svg viewBox="0 0 24 24" className={`h-4 w-4 flex-shrink-0 fill-none stroke-current ${v.accent} opacity-60 group-hover:opacity-100 transition-opacity`} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         {/* Repository */}
         <section className="mt-8">
           <a
