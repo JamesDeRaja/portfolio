@@ -80,7 +80,7 @@ function LabTicker() {
 
     let rafId = 0;
     let previousTs = performance.now();
-    const pixelsPerSecond = 26;
+    const pixelsPerSecond = 34;
 
     const wrapScrollPosition = () => {
       const loopHeight = viewport.scrollHeight / 3;
@@ -453,10 +453,10 @@ export default function CaseStudiesBentoSection() {
         >
           <BentoCard variant="dim" padding="md" className="h-full flex flex-col overflow-hidden">
             <div className="flex items-center justify-between mb-3">
-              <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-white/85">
+              <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-neon/90">
                 Lab Experiments
               </p>
-              <p className="font-mono text-[9px] text-slate-700 italic">hover to pause</p>
+              <p className="font-mono text-[9px] text-neon/55 italic">hover to pause</p>
             </div>
             <LabTicker />
           </BentoCard>
