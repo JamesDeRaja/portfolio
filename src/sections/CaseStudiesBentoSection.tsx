@@ -456,7 +456,7 @@ export default function CaseStudiesBentoSection() {
               <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-neon/90">
                 Lab Experiments
               </p>
-              <p className="font-mono text-[9px] text-neon/55 italic">hover to pause</p>
+              <p className="font-mono text-[9px] text-electric/80 italic">hover to pause</p>
             </div>
             <LabTicker />
           </BentoCard>
