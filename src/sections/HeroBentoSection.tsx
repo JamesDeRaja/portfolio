@@ -48,7 +48,7 @@ const bestFitRoles = [
 
 export default function HeroBentoSection() {
   return (
-    <section id="hero" className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <section id="hero" className="relative mx-auto max-w-screen-2xl px-4 py-12 sm:px-6 lg:px-8">
       {/* Ambient glows */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute -left-32 top-0 h-[500px] w-[500px] rounded-full bg-neon/5 blur-[130px]" />

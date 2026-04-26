@@ -49,7 +49,7 @@ export default function Navbar() {
     >
       <nav
         aria-label="Main navigation"
-        className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8"
+        className="mx-auto flex w-full max-w-screen-2xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8"
       >
         {/* Logo */}
         <Link to="/" className="group flex items-center gap-2">

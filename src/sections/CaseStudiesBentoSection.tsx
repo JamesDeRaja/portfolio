@@ -57,7 +57,7 @@ const supportCards: SupportCard[] = [
 
 export default function CaseStudiesBentoSection() {
   return (
-    <section id="case-studies" className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+    <section id="case-studies" className="relative mx-auto max-w-screen-2xl px-4 py-20 sm:px-6 lg:px-8">
       {/* Background accent */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute right-0 top-1/3 h-[400px] w-[400px] rounded-full bg-neon/3 blur-[150px]" />

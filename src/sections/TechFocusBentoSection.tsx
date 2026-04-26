@@ -105,7 +105,7 @@ const techCards: TechCard[] = [
 
 export default function TechFocusBentoSection() {
   return (
-    <section id="tech-focus" className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+    <section id="tech-focus" className="relative mx-auto max-w-screen-2xl px-4 py-20 sm:px-6 lg:px-8">
       {/* Section header */}
       <motion.div
         initial={{ opacity: 0, y: 12 }}

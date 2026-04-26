@@ -112,6 +112,13 @@ const alphadenAchievements: Achievement[] = [
   },
 ];
 
+const scaleContext = [
+  'Multi-tenant SaaS architecture — OAuth 2.0, webhook delivery, async trigger pipelines at 5M+ calls/day',
+  'Backwards-compatible deprecation strategy for 8,000+ active organizations with zero forced migrations',
+  'API versioning and migration path design under live production traffic — no downtime, no API breaks',
+  'Cross-product advisory on integration design for Zoho systems running 10M+ daily executions',
+];
+
 const foundations = [
   'Data structures & algorithms in C#',
   'Game Programming Patterns — Sequencing, Behavioral, Decoupling, Optimization',
@@ -128,7 +135,7 @@ const sharedStrengths = [
 
 export default function ExperienceBentoSection() {
   return (
-    <section id="experience" className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+    <section id="experience" className="relative mx-auto max-w-screen-2xl px-4 py-20 sm:px-6 lg:px-8">
       {/* Section header */}
       <motion.div
         initial={{ opacity: 0, y: 12 }}
@@ -193,7 +200,7 @@ export default function ExperienceBentoSection() {
             </div>
 
             {/* Achievements */}
-            <div className="divide-y divide-white/[0.04] flex-1">
+            <div className="divide-y divide-white/[0.04]">
               {zohoAchievements.map((item) => (
                 <div key={item.title} className="px-6 py-4">
                   <div className="flex items-start justify-between gap-3">
@@ -207,6 +214,21 @@ export default function ExperienceBentoSection() {
                   <p className="mt-1 text-xs text-slate-400 leading-relaxed">{item.detail}</p>
                 </div>
               ))}
+            </div>
+
+            {/* Scale & Systems Context */}
+            <div className="border-t border-white/[0.07] px-6 py-4">
+              <p className="mb-2.5 font-mono text-[10px] font-semibold uppercase tracking-widest text-neon/60">
+                Scale & Systems Context
+              </p>
+              <ul className="space-y-1.5">
+                {scaleContext.map((f) => (
+                  <li key={f} className="flex items-start gap-2">
+                    <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-neon/40" />
+                    <span className="text-xs text-slate-400 leading-relaxed">{f}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
             {/* Tags */}

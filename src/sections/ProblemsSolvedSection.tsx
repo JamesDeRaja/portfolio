@@ -39,7 +39,7 @@ export default function ProblemsSolvedSection() {
         <div className="absolute left-0 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-electric/3 blur-[150px]" />
         <div className="absolute right-0 bottom-0 h-[300px] w-[300px] rounded-full bg-red-500/3 blur-[120px]" />
       </div>
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
 
       <SectionHeading
         eyebrow="Performance Wins"

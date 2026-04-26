@@ -8,7 +8,7 @@ import StoreMetricsCard from '../components/StoreMetricsCard';
 
 export default function ShippedTitlesSection() {
   return (
-    <section id="shipped-titles" className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+    <section id="shipped-titles" className="relative mx-auto max-w-screen-2xl px-4 py-20 sm:px-6 lg:px-8">
       <SectionHeading
         eyebrow="Shipped Games"
         title="Production titles, live on app stores"
