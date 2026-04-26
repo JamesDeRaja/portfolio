@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState, type WheelEvent } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ExternalLink, Github } from 'lucide-react';
 import BentoGrid from '../components/bento/BentoGrid';
@@ -64,24 +64,113 @@ const supportCards: SupportCard[] = [
 ];
 
 function LabTicker() {
-  const [paused, setPaused] = useState(false);
-  const doubled = [...labLinks, ...labLinks];
+  const [isHovered, setIsHovered] = useState(false);
+  const [isWheelInteracting, setIsWheelInteracting] = useState(false);
+  const viewportRef = useRef<HTMLDivElement | null>(null);
+  const wheelTimeoutRef = useRef<number | null>(null);
+  const hasSetInitialPositionRef = useRef(false);
+  const tripled = [...labLinks, ...labLinks, ...labLinks];
+
+  useEffect(() => {
+    const viewport = viewportRef.current;
+
+    if (!viewport) {
+      return;
+    }
+
+    let rafId = 0;
+    let previousTs = performance.now();
+    const pixelsPerSecond = 34;
+
+    const wrapScrollPosition = () => {
+      const loopHeight = viewport.scrollHeight / 3;
+
+      if (loopHeight <= 0) {
+        return;
+      }
+
+      if (viewport.scrollTop >= loopHeight * 2) {
+        viewport.scrollTop -= loopHeight;
+      } else if (viewport.scrollTop <= 0) {
+        viewport.scrollTop += loopHeight;
+      }
+    };
+
+    if (!hasSetInitialPositionRef.current) {
+      viewport.scrollTop = viewport.scrollHeight / 3;
+      hasSetInitialPositionRef.current = true;
+    }
+
+    const tick = (timestamp: number) => {
+      const delta = Math.max(0, timestamp - previousTs);
+      previousTs = timestamp;
+
+      if (!isHovered && !isWheelInteracting) {
+        viewport.scrollTop += (pixelsPerSecond * delta) / 1000;
+        wrapScrollPosition();
+      }
+
+      rafId = requestAnimationFrame(tick);
+    };
+
+    rafId = requestAnimationFrame(tick);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+    };
+  }, [isHovered, isWheelInteracting]);
+
+  useEffect(() => {
+    return () => {
+      if (wheelTimeoutRef.current) {
+        window.clearTimeout(wheelTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  const handleWheel = (event: WheelEvent<HTMLDivElement>) => {
+    const viewport = viewportRef.current;
+
+    if (!viewport) {
+      return;
+    }
+
+    event.preventDefault();
+    event.stopPropagation();
+    setIsWheelInteracting(true);
+    viewport.scrollTop += event.deltaY;
+
+    const loopHeight = viewport.scrollHeight / 3;
+
+    if (viewport.scrollTop >= loopHeight * 2) {
+      viewport.scrollTop -= loopHeight;
+    } else if (viewport.scrollTop <= 0) {
+      viewport.scrollTop += loopHeight;
+    }
+
+    if (wheelTimeoutRef.current) {
+      window.clearTimeout(wheelTimeoutRef.current);
+    }
+
+    wheelTimeoutRef.current = window.setTimeout(() => {
+      setIsWheelInteracting(false);
+      wheelTimeoutRef.current = null;
+    }, 900);
+  };
 
   return (
     <div
-      className="flex-1 min-h-0 overflow-hidden relative cursor-default"
+      ref={viewportRef}
+      className="h-[220px] overflow-hidden relative cursor-default"
       style={{
-        maskImage: 'linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%)',
-        WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%)',
+        overscrollBehavior: 'contain',
       }}
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onWheel={handleWheel}
     >
-      <div
-        className="animate-ticker"
-        style={{ animationPlayState: paused ? 'paused' : 'running' }}
-      >
-        {doubled.map((exp, i) => (
+      <div className="py-1">
+        {tripled.map((exp, i) => (
           <SmartLink
             key={`${exp.href}-${i}`}
             href={exp.href}
@@ -364,10 +453,10 @@ export default function CaseStudiesBentoSection() {
         >
           <BentoCard variant="dim" padding="md" className="h-full flex flex-col overflow-hidden">
             <div className="flex items-center justify-between mb-3">
-              <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500">
+              <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-neon/90">
                 Lab Experiments
               </p>
-              <p className="font-mono text-[9px] text-slate-700 italic">hover to pause</p>
+              <p className="font-mono text-[9px] text-electric/80 italic">hover to pause</p>
             </div>
             <LabTicker />
           </BentoCard>
