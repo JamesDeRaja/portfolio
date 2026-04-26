@@ -79,7 +79,7 @@ function LabTicker() {
 
     let rafId = 0;
     let previousTs = performance.now();
-    const pixelsPerSecond = 34;
+    const pixelsPerSecond = 20;
 
     const wrapScrollPosition = () => {
       const loopHeight = viewport.scrollHeight / 2;
@@ -155,7 +155,7 @@ function LabTicker() {
   return (
     <div
       ref={viewportRef}
-      className="h-[156px] overflow-hidden relative cursor-default"
+      className="h-[220px] overflow-hidden relative cursor-default"
       style={{
         overscrollBehavior: 'contain',
       }}
