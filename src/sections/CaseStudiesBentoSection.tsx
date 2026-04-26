@@ -68,6 +68,7 @@ function LabTicker() {
   const [isWheelInteracting, setIsWheelInteracting] = useState(false);
   const viewportRef = useRef<HTMLDivElement | null>(null);
   const wheelTimeoutRef = useRef<number | null>(null);
+  const hasSetInitialPositionRef = useRef(false);
   const tripled = [...labLinks, ...labLinks, ...labLinks];
 
   useEffect(() => {
@@ -95,7 +96,10 @@ function LabTicker() {
       }
     };
 
-    viewport.scrollTop = viewport.scrollHeight / 3;
+    if (!hasSetInitialPositionRef.current) {
+      viewport.scrollTop = viewport.scrollHeight / 3;
+      hasSetInitialPositionRef.current = true;
+    }
 
     const tick = (timestamp: number) => {
       const delta = Math.max(0, timestamp - previousTs);
