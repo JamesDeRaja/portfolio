@@ -417,7 +417,7 @@ export default function CaseStudiesBentoSection() {
             transition={{ duration: 0.45, delay: i * 0.07 }}
             viewport={{ once: true, margin: '-30px' }}
           >
-            <BentoCard variant="default" padding="md" className="h-full flex flex-col gap-3">
+            <BentoCard variant="default" rounded="xl" padding="md" className="h-full flex flex-col gap-3">
               {card.metric && (
                 <MetricBadge value={card.metric} color={card.metricColor ?? 'cyan'} size="sm" />
               )}
@@ -451,7 +451,7 @@ export default function CaseStudiesBentoSection() {
           transition={{ duration: 0.45, delay: 0.21 }}
           viewport={{ once: true, margin: '-30px' }}
         >
-          <BentoCard variant="dim" padding="md" className="h-full flex flex-col overflow-hidden">
+          <BentoCard variant="dim" rounded="lg" padding="md" className="h-full flex flex-col overflow-hidden">
             <div className="flex items-center justify-between mb-3">
               <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-neon/90">
                 Lab Experiments

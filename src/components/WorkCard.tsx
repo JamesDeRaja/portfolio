@@ -11,11 +11,17 @@ type WorkCardProps = {
 export default function WorkCard({ project }: WorkCardProps) {
   return (
     <motion.article
-      whileHover={{ y: -4 }}
-      transition={{ duration: 0.3 }}
-      className={`glass-card glass-card-hover rounded-2xl p-6 transition-all duration-300 ${
-        project.featured ? 'gradient-border' : ''
-      }`}
+      whileHover={project.featured ? { y: -7 } : { y: -4 }}
+      transition={
+        project.featured
+          ? { type: 'spring', stiffness: 300, damping: 20 }
+          : { duration: 0.3 }
+      }
+      className={
+        project.featured
+          ? 'card-priority rounded-2xl p-6'
+          : 'glass-card glass-card-hover rounded-xl p-6 transition-all duration-300'
+      }
     >
       {/* Header */}
       <div className="flex items-start justify-between gap-3">

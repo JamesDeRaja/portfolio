@@ -79,7 +79,7 @@ export default function XRLabSection() {
 
       {/* Top-level insight — scannable before diving into data */}
       <AnimatedSection>
-        <div className="mb-8 rounded-2xl border border-neon/15 bg-neon/5 p-6 sm:p-8">
+        <div className="mb-8 card-priority rounded-2xl p-6 sm:p-8">
           <p className="text-base text-slate-200 leading-relaxed sm:text-lg">
             <span className="font-mono font-bold text-neon text-glow-cyan">Key insight:</span>{' '}
             Transparent overdraw in XR stereo rendering increased GPU frame cost by{' '}
@@ -92,7 +92,7 @@ export default function XRLabSection() {
 
       {/* Detailed lab data */}
       <AnimatedSection>
-        <div className="glass-card rounded-2xl p-6">
+        <div className="glass-card glass-card-hover rounded-2xl p-6 transition-[border-color,box-shadow] duration-300">
           <div className="flex flex-wrap items-center gap-3">
             <span className="rounded-full border border-neon/20 bg-neon/5 px-3 py-1 font-mono text-xs font-semibold uppercase tracking-wide text-neon">
               {xrLabConfig.status}
@@ -104,15 +104,15 @@ export default function XRLabSection() {
 
           {/* Detailed findings */}
           <div className="mt-5 grid gap-4 sm:grid-cols-3">
-            <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4">
+            <div className="card-secondary rounded-lg p-4">
               <p className="font-mono text-2xl font-bold text-neon text-glow-cyan">+7.27ms</p>
               <p className="mt-1 text-xs text-slate-400">GPU cost from overdraw stress</p>
             </div>
-            <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4">
+            <div className="card-secondary rounded-lg p-4">
               <p className="font-mono text-2xl font-bold text-white">201</p>
               <p className="mt-1 text-xs text-slate-400">sequential transparent draw calls</p>
             </div>
-            <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4">
+            <div className="card-secondary rounded-lg p-4">
               <p className="font-mono text-2xl font-bold text-electric">11ms</p>
               <p className="mt-1 text-xs text-slate-400">90Hz budget boundary crossed</p>
             </div>
@@ -127,8 +127,9 @@ export default function XRLabSection() {
               {pipelineSteps.map((node) => (
                 <motion.div
                   key={node.step}
-                  whileHover={{ scale: 1.02 }}
-                  className="glass-card glass-card-hover rounded-lg p-3 text-center"
+                  whileHover={{ y: -3, scale: 1.03 }}
+                  transition={{ type: 'spring', stiffness: 350, damping: 22 }}
+                  className="card-secondary rounded-lg p-3 text-center"
                 >
                   <node.icon size={16} className="mx-auto text-neon/50" />
                   <span className="mt-1 block font-mono text-xs font-bold text-neon/70">{node.step}</span>
@@ -157,7 +158,7 @@ export default function XRLabSection() {
           </h3>
           <p className="mb-4 font-mono text-xs text-slate-500">Last updated: {new Date().toLocaleDateString()}</p>
           <ResultsTable rows={performanceResults} />
-          <div className="mt-4 glass-card rounded-2xl p-5 text-sm text-slate-400">
+          <div className="mt-4 card-secondary rounded-xl p-5 text-sm text-slate-400">
             <p className="font-mono text-xs font-semibold uppercase tracking-wide text-white/60">Notes</p>
             {performanceResults.map((result) => (
               <p key={`${result.name}-notes`} className="mt-2">

@@ -136,7 +136,7 @@ export default function SkillsBentoSection() {
             transition={{ duration: 0.45, delay: i * 0.07 }}
             viewport={{ once: true, margin: '-30px' }}
           >
-            <BentoCard variant="default" padding="md" className="h-full">
+            <BentoCard variant="default" rounded="xl" padding="md" className="h-full">
               {/* Cluster header */}
               <div className="flex items-center gap-2 mb-4">
                 <span className={`h-2 w-2 rounded-full ${cluster.dotColor}`} />
