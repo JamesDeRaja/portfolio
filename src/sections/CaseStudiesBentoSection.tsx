@@ -68,7 +68,7 @@ function LabTicker() {
   const [isWheelInteracting, setIsWheelInteracting] = useState(false);
   const viewportRef = useRef<HTMLDivElement | null>(null);
   const wheelTimeoutRef = useRef<number | null>(null);
-  const doubled = [...labLinks, ...labLinks];
+  const tripled = [...labLinks, ...labLinks, ...labLinks];
 
   useEffect(() => {
     const viewport = viewportRef.current;
@@ -79,21 +79,23 @@ function LabTicker() {
 
     let rafId = 0;
     let previousTs = performance.now();
-    const pixelsPerSecond = 20;
+    const pixelsPerSecond = 26;
 
     const wrapScrollPosition = () => {
-      const loopHeight = viewport.scrollHeight / 2;
+      const loopHeight = viewport.scrollHeight / 3;
 
       if (loopHeight <= 0) {
         return;
       }
 
-      if (viewport.scrollTop >= loopHeight) {
+      if (viewport.scrollTop >= loopHeight * 2) {
         viewport.scrollTop -= loopHeight;
-      } else if (viewport.scrollTop < 0) {
+      } else if (viewport.scrollTop <= 0) {
         viewport.scrollTop += loopHeight;
       }
     };
+
+    viewport.scrollTop = viewport.scrollHeight / 3;
 
     const tick = (timestamp: number) => {
       const delta = Math.max(0, timestamp - previousTs);
@@ -134,11 +136,11 @@ function LabTicker() {
     setIsWheelInteracting(true);
     viewport.scrollTop += event.deltaY;
 
-    const loopHeight = viewport.scrollHeight / 2;
+    const loopHeight = viewport.scrollHeight / 3;
 
-    if (viewport.scrollTop >= loopHeight) {
+    if (viewport.scrollTop >= loopHeight * 2) {
       viewport.scrollTop -= loopHeight;
-    } else if (viewport.scrollTop < 0) {
+    } else if (viewport.scrollTop <= 0) {
       viewport.scrollTop += loopHeight;
     }
 
@@ -164,7 +166,7 @@ function LabTicker() {
       onWheel={handleWheel}
     >
       <div className="py-1">
-        {doubled.map((exp, i) => (
+        {tripled.map((exp, i) => (
           <SmartLink
             key={`${exp.href}-${i}`}
             href={exp.href}
@@ -447,7 +449,7 @@ export default function CaseStudiesBentoSection() {
         >
           <BentoCard variant="dim" padding="md" className="h-full flex flex-col overflow-hidden">
             <div className="flex items-center justify-between mb-3">
-              <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500">
+              <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-white/85">
                 Lab Experiments
               </p>
               <p className="font-mono text-[9px] text-slate-700 italic">hover to pause</p>
