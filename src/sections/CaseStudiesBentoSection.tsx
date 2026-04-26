@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, ExternalLink } from 'lucide-react';
+import { ArrowRight, ExternalLink, Github } from 'lucide-react';
 import BentoGrid from '../components/bento/BentoGrid';
 import BentoCard from '../components/bento/BentoCard';
 import MetricBadge from '../components/bento/MetricBadge';
@@ -141,7 +141,7 @@ export default function CaseStudiesBentoSection() {
                 ))}
               </div>
 
-              <div className="mt-auto pt-1">
+              <div className="mt-auto pt-1 flex flex-wrap items-center gap-3">
                 <SmartLink
                   href="/case-studies/xr-stress-lab"
                   className="btn-primary group inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium"
@@ -149,6 +149,15 @@ export default function CaseStudiesBentoSection() {
                   Open Case Study
                   <ArrowRight size={14} className="transition group-hover:translate-x-1" />
                 </SmartLink>
+                <a
+                  href="https://github.com/JamesDeRaja/XRPerformanceLab"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary group inline-flex items-center gap-1.5 rounded-xl px-4 py-2.5 text-sm font-medium"
+                >
+                  <Github size={13} />
+                  Source
+                </a>
               </div>
             </div>
           </BentoCard>
@@ -193,6 +202,7 @@ export default function CaseStudiesBentoSection() {
                 </p>
               </div>
 
+              {/* Architecture frame times */}
               <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
                 {[
                   { label: 'Lifecycle Control', val: '~25 ms' },
@@ -207,7 +217,20 @@ export default function CaseStudiesBentoSection() {
                 ))}
               </div>
 
-              <div className="mt-auto pt-1">
+              {/* Scale & methodology stats */}
+              <div className="grid grid-cols-2 gap-2">
+                {[
+                  { label: 'entities — same scene, same load', val: '10,000' },
+                  { label: 'architectures — isolated A / B / C / D', val: '4 variants' },
+                ].map((item) => (
+                  <div key={item.label} className="rounded-lg border border-electric/[0.10] bg-electric/[0.03] px-3 py-2">
+                    <p className="font-mono text-xs font-semibold text-electric/80">{item.val}</p>
+                    <p className="mt-0.5 text-[11px] text-slate-500">{item.label}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-auto pt-1 flex flex-wrap items-center gap-3">
                 <SmartLink
                   href="/case-studies/update-strategies-scale"
                   className="btn-primary group inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium"
@@ -215,6 +238,15 @@ export default function CaseStudiesBentoSection() {
                   Open Case Study
                   <ArrowRight size={14} className="transition group-hover:translate-x-1" />
                 </SmartLink>
+                <a
+                  href="https://github.com/JamesDeRaja/ECS-Performance-Improvement"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary group inline-flex items-center gap-1.5 rounded-xl px-4 py-2.5 text-sm font-medium"
+                >
+                  <Github size={13} />
+                  Source
+                </a>
               </div>
             </div>
           </BentoCard>
