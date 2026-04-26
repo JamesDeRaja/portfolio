@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ExternalLink, Github } from 'lucide-react';
 import BentoGrid from '../components/bento/BentoGrid';
@@ -14,6 +15,13 @@ const labLinks = [
   { label: 'Frame pacing vs FPS', href: '/lab/frame-pacing-vs-fps', badge: 'Timing' },
   { label: 'XR frame timing', href: '/lab/xr-frame-timing', badge: 'XR' },
   { label: 'Overdraw baseline', href: '/lab/overdraw', badge: 'GPU' },
+];
+
+const variantLinks = [
+  { letter: 'A', label: 'Lifecycle', href: '/case-studies/update-strategies-scale/variant-a', accent: 'text-emerald-400', border: 'border-emerald-500/20', bg: 'bg-emerald-500/[0.06]' },
+  { letter: 'B', label: 'Per-Object', href: '/case-studies/update-strategies-scale/variant-b', accent: 'text-red-400', border: 'border-red-500/20', bg: 'bg-red-500/[0.06]' },
+  { letter: 'C', label: 'Manager', href: '/case-studies/update-strategies-scale/variant-c', accent: 'text-amber-400', border: 'border-amber-500/20', bg: 'bg-amber-500/[0.06]' },
+  { letter: 'D', label: 'ECS', href: '/case-studies/update-strategies-scale/variant-d', accent: 'text-neon', border: 'border-neon/20', bg: 'bg-neon/[0.06]' },
 ];
 
 interface SupportCard {
@@ -54,6 +62,44 @@ const supportCards: SupportCard[] = [
     metricColor: 'green',
   },
 ];
+
+function LabTicker() {
+  const [paused, setPaused] = useState(false);
+  const doubled = [...labLinks, ...labLinks];
+
+  return (
+    <div
+      className="flex-1 min-h-0 overflow-hidden relative cursor-default"
+      style={{
+        maskImage: 'linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%)',
+        WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%)',
+      }}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      <div
+        className="animate-ticker"
+        style={{ animationPlayState: paused ? 'paused' : 'running' }}
+      >
+        {doubled.map((exp, i) => (
+          <SmartLink
+            key={`${exp.href}-${i}`}
+            href={exp.href}
+            className="group flex items-center justify-between gap-2 rounded-lg px-2.5 py-2 hover:bg-white/[0.04] transition-colors"
+          >
+            <span className="text-xs text-slate-400 group-hover:text-white transition-colors leading-snug">
+              {exp.label}
+            </span>
+            <div className="flex items-center gap-1.5 flex-shrink-0">
+              <span className="font-mono text-[10px] text-slate-600">{exp.badge}</span>
+              <ExternalLink size={9} className="text-slate-700 group-hover:text-neon/60 transition-colors" />
+            </div>
+          </SmartLink>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function CaseStudiesBentoSection() {
   return (
@@ -230,6 +276,23 @@ export default function CaseStudiesBentoSection() {
                 ))}
               </div>
 
+              {/* Variant deep-dive quick links */}
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-600">
+                  Variants
+                </span>
+                {variantLinks.map((v) => (
+                  <SmartLink
+                    key={v.letter}
+                    href={v.href}
+                    className={`inline-flex items-center gap-1.5 rounded-lg border ${v.border} ${v.bg} px-2.5 py-1 transition hover:opacity-80`}
+                  >
+                    <span className={`font-mono text-xs font-bold ${v.accent}`}>{v.letter}</span>
+                    <span className={`text-xs ${v.accent} opacity-80`}>{v.label}</span>
+                  </SmartLink>
+                ))}
+              </div>
+
               <div className="mt-auto pt-1 flex flex-wrap items-center gap-3">
                 <SmartLink
                   href="/case-studies/update-strategies-scale"
@@ -291,7 +354,7 @@ export default function CaseStudiesBentoSection() {
           </motion.div>
         ))}
 
-        {/* Lab experiments compact list */}
+        {/* Lab experiments — auto-scrolling ticker */}
         <motion.div
           className="lg:col-span-3 md:col-span-2"
           initial={{ opacity: 0, y: 14 }}
@@ -299,27 +362,14 @@ export default function CaseStudiesBentoSection() {
           transition={{ duration: 0.45, delay: 0.21 }}
           viewport={{ once: true, margin: '-30px' }}
         >
-          <BentoCard variant="dim" padding="md" className="h-full flex flex-col">
-            <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-3">
-              Lab Experiments
-            </p>
-            <div className="space-y-1.5 flex-1">
-              {labLinks.map((exp) => (
-                <SmartLink
-                  key={exp.href}
-                  href={exp.href}
-                  className="group flex items-center justify-between gap-2 rounded-lg px-2.5 py-2 hover:bg-white/[0.04] transition-colors"
-                >
-                  <span className="text-xs text-slate-400 group-hover:text-white transition-colors leading-snug">
-                    {exp.label}
-                  </span>
-                  <div className="flex items-center gap-1.5 flex-shrink-0">
-                    <span className="font-mono text-[10px] text-slate-600">{exp.badge}</span>
-                    <ExternalLink size={9} className="text-slate-700 group-hover:text-neon/60 transition-colors" />
-                  </div>
-                </SmartLink>
-              ))}
+          <BentoCard variant="dim" padding="md" className="h-full flex flex-col overflow-hidden">
+            <div className="flex items-center justify-between mb-3">
+              <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500">
+                Lab Experiments
+              </p>
+              <p className="font-mono text-[9px] text-slate-700 italic">hover to pause</p>
             </div>
+            <LabTicker />
           </BentoCard>
         </motion.div>
       </BentoGrid>
