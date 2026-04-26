@@ -215,53 +215,58 @@ export default function HeroBentoSection() {
           </motion.div>
         </div>
 
-        {/* ── Row 2: Three bottom cards ── */}
+        {/* ── Row 2: Four bottom cards ── */}
 
         {/* Published Results */}
         <motion.div
-          className="lg:col-span-4 md:col-span-2"
+          className="lg:col-span-3 md:col-span-3"
           custom={3}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
         >
-          <BentoCard variant="default" padding="md" elevated glow="green" className="h-full">
-            <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-4">
-              Published Results
-            </p>
-            <div className="space-y-4">
+          <a href="#shipped-titles" className="block h-full group">
+            <BentoCard variant="default" padding="md" elevated glow="green" className="h-full flex flex-col justify-between transition-all group-hover:border-emerald-500/30">
               <div>
-                <p className="font-mono text-3xl font-bold text-emerald-400">
-                  ~<CountUp to={1} suffix="M" duration={1.6} />
+                <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-4">
+                  Published Results
                 </p>
-                <p className="text-xs text-slate-400 mt-0.5">game installs</p>
+                <div className="space-y-3">
+                  <div>
+                    <p className="font-mono text-3xl font-bold text-emerald-400">
+                      ~<CountUp to={1} suffix="M" duration={1.6} />
+                    </p>
+                    <p className="text-xs text-slate-400 mt-0.5">game installs</p>
+                  </div>
+                  <div>
+                    <p className="font-mono text-xl font-bold text-white">
+                      <CountUp to={100} suffix="+" duration={1.4} />
+                    </p>
+                    <p className="text-xs text-slate-400 mt-0.5">publisher-tested prototypes</p>
+                  </div>
+                  <div className="flex flex-wrap gap-1.5">
+                    {['Voodoo', 'Lion Studios', 'Supersonic'].map((p) => (
+                      <span
+                        key={p}
+                        className="rounded-md border border-white/10 bg-white/[0.04] px-2 py-0.5 font-mono text-[11px] text-slate-400"
+                      >
+                        {p}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
-              <div>
-                <p className="font-mono text-xl font-bold text-white">
-                  <CountUp to={100} suffix="+" duration={1.4} />
-                </p>
-                <p className="text-xs text-slate-400 mt-0.5">publisher-tested prototypes</p>
+              <div className="mt-4 pt-3 border-t border-white/[0.05] flex items-center justify-between">
+                <p className="text-[11px] text-slate-500">CPI & D1 retention across rapid iteration</p>
+                <ExternalLink size={10} className="text-slate-600 group-hover:text-emerald-400 transition-colors" />
               </div>
-              <div className="flex flex-wrap gap-1.5">
-                {['Voodoo', 'Lion Studios', 'Supersonic'].map((p) => (
-                  <span
-                    key={p}
-                    className="rounded-md border border-white/10 bg-white/[0.04] px-2 py-0.5 font-mono text-[11px] text-slate-400"
-                  >
-                    {p}
-                  </span>
-                ))}
-              </div>
-              <p className="text-[11px] text-slate-500">
-                CPI and D1 retention improvement across rapid prototype iteration.
-              </p>
-            </div>
-          </BentoCard>
+            </BentoCard>
+          </a>
         </motion.div>
 
         {/* Best Fit Roles */}
         <motion.div
-          className="lg:col-span-4 md:col-span-2"
+          className="lg:col-span-3 md:col-span-3"
           custom={4}
           variants={fadeUp}
           initial="hidden"
@@ -284,45 +289,75 @@ export default function HeroBentoSection() {
 
         {/* Engineering posture */}
         <motion.div
-          className="lg:col-span-4 md:col-span-2"
+          className="lg:col-span-3 md:col-span-3"
           custom={5}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
         >
-          <BentoCard variant="dim" padding="md" elevated className="h-full flex flex-col justify-between">
-            <div>
-              <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-4">
-                Engineering posture
-              </p>
-              <p className="text-sm text-slate-300 leading-relaxed">
-                Not just gameplay implementation — performance diagnosis, measurable optimisation,
-                and engineering evidence that ships.
-              </p>
-              <div className="mt-4 flex flex-wrap gap-1.5">
-                {[
-                  'Profiler-validated',
-                  'Frame-budget aware',
-                  'Deterministic benchmarks',
-                  'Baseline vs stress',
-                ].map((tag) => (
-                  <span
-                    key={tag}
-                    className="inline-block rounded border border-electric/15 bg-electric/[0.05] px-2 py-0.5 font-mono text-[11px] text-electric/80"
-                  >
-                    {tag}
-                  </span>
-                ))}
+          <a href="#evidence" className="block h-full group">
+            <BentoCard variant="dim" padding="md" elevated className="h-full flex flex-col justify-between transition-all group-hover:border-electric/20">
+              <div>
+                <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-4">
+                  Engineering Posture
+                </p>
+                <p className="text-sm text-slate-300 leading-relaxed">
+                  Not just gameplay implementation — performance diagnosis, measurable optimisation,
+                  and engineering evidence that ships.
+                </p>
+                <div className="mt-4 flex flex-wrap gap-1.5">
+                  {['Profiler-validated', 'Frame-budget aware', 'Deterministic benchmarks', 'Baseline vs stress'].map((tag) => (
+                    <span
+                      key={tag}
+                      className="inline-block rounded border border-electric/15 bg-electric/[0.05] px-2 py-0.5 font-mono text-[11px] text-electric/80"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
-            <div className="mt-4 pt-3 border-t border-white/[0.05]">
-              <a
-                href="#evidence"
-                className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-neon transition-colors"
-              >
-                View evidence <ExternalLink size={10} />
-              </a>
-            </div>
+              <div className="mt-4 pt-3 border-t border-white/[0.05] flex items-center justify-between">
+                <span className="text-xs text-slate-500 group-hover:text-neon transition-colors">View evidence</span>
+                <ExternalLink size={10} className="text-slate-600 group-hover:text-neon transition-colors" />
+              </div>
+            </BentoCard>
+          </a>
+        </motion.div>
+
+        {/* Explore the Portfolio — site nav card */}
+        <motion.div
+          className="lg:col-span-3 md:col-span-3"
+          custom={6}
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+        >
+          <BentoCard variant="metric" padding="md" elevated className="h-full flex flex-col">
+            <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-4">
+              Explore the Portfolio
+            </p>
+            <ul className="space-y-1.5 flex-1">
+              {[
+                { label: 'Case Studies', href: '#case-studies', accent: 'text-neon' },
+                { label: 'Profiler Evidence', href: '#evidence', accent: 'text-amber-400' },
+                { label: 'Tech Focus', href: '#tech-focus', accent: 'text-electric' },
+                { label: 'Experience', href: '#experience', accent: 'text-neon' },
+                { label: 'Skills', href: '#skills', accent: 'text-emerald-400' },
+                { label: 'Contact', href: '#contact', accent: 'text-slate-400' },
+              ].map((item) => (
+                <li key={item.label}>
+                  <a
+                    href={item.href}
+                    className={`group flex items-center justify-between rounded-lg px-3 py-2 hover:bg-white/[0.04] transition-colors`}
+                  >
+                    <span className={`text-xs font-medium text-slate-300 group-hover:${item.accent} transition-colors`}>
+                      {item.label}
+                    </span>
+                    <ArrowRight size={11} className={`text-slate-600 group-hover:${item.accent} group-hover:translate-x-0.5 transition-all`} />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </BentoCard>
         </motion.div>
       </BentoGrid>

@@ -25,22 +25,52 @@ const alphadenMetrics = [
   { value: 'Round 1', label: 'Supersonic winner', sub: '$2M prize pool' },
 ];
 
-const zohoWins = [
-  { title: 'Own the CRM integration for Zoho Flow', scale: '5M / day · 8,000+ orgs' },
-  { title: '5 of top 10 most-used Flow integrations', scale: '100+ total built' },
-  { title: 'Zero-downtime env var system — zero incidents', scale: '1M+ / day · 1,500+ orgs' },
-  { title: 'Fixed live production server crash', scale: '70–85% load reduction' },
-  { title: 'AI docs pipeline → 13+ tickets/day → 1–2', scale: 'backlog eliminated' },
-  { title: '20+ engineers mentored · cross-team API advisory', scale: '6 active mentees' },
+interface Achievement {
+  title: string;
+  detail: string;
+  scale: string;
+}
+
+const zohoAchievements: Achievement[] = [
+  {
+    title: 'Own the Zoho CRM integration for Flow',
+    detail: 'Actions and triggers I wrote run ~5M times per day across 8,000+ organizations. Leading a backwards-incompatible deprecation designed with a migration path that requires zero action from customers.',
+    scale: '5M / day · 8,000+ orgs',
+  },
+  {
+    title: 'Built 5 of the top 10 most-used integrations on Zoho Flow',
+    detail: '100+ integrations shipped total on the platform. Five of the ten most-used integrations platform-wide were designed and built by me.',
+    scale: '100+ integrations built',
+  },
+  {
+    title: 'Zero-downtime environment variable system — Zoho Creator',
+    detail: 'Full design, implementation, test, and release. Went live without a single incident. No customer-reported issues post-release.',
+    scale: '1M+ / day · zero incidents',
+  },
+  {
+    title: 'Fixed a live production server crash',
+    detail: 'A data overload was crashing servers in production. Diagnosed root cause, reduced system load by 70–85% without changing the customer-facing API contract. 2,500+ orgs stayed unaffected.',
+    scale: '70–85% load reduction',
+  },
+  {
+    title: 'Mentoring 6+ engineers · advising cross-team on API design',
+    detail: '6 active mentees (2 direct reports). Total mentorship footprint of 20+ engineers. Also advise other Zoho product teams on integration design for systems at tens of millions of calls per day.',
+    scale: '20+ engineers',
+  },
+  {
+    title: 'Built an AI-powered documentation pipeline',
+    detail: "Reduced personal developer support ticket load from 13+ important tickets per day to 1–2. Nearly eliminated the content team's app review backlog by auto-generating structured implementation docs.",
+    scale: '13+ → 1–2 tickets/day',
+  },
 ];
 
-const zohoContext = [
-  'Multi-tenant SaaS — OAuth 2.0, webhook delivery, async event pipelines',
-  'Backwards-compatible deprecation strategy across 8,000+ live orgs',
-  'API versioning under live production traffic — no forced migrations',
-];
+interface PerformanceStudy {
+  title: string;
+  result: string;
+  href: string;
+}
 
-const performanceStudies = [
+const performanceStudies: PerformanceStudy[] = [
   {
     title: 'XR Performance Stress Lab',
     result: '+7.27 ms GPU isolated under overdraw stress',
@@ -58,16 +88,32 @@ const performanceStudies = [
   },
 ];
 
-const alphadenWins = [
-  { title: '100+ titles shipped — iOS, Android, itch.io', scale: '500K+ downloads' },
-  { title: 'Supersonic Hypercasual Competition — Round 1 winner', scale: '$2M prize pool' },
-  { title: 'Real-time multiplayer netcode — 8 concurrent players', scale: '60 FPS held' },
-  { title: 'Mesh-combining pipeline for static geometry', scale: '~80% draw call reduction' },
+const alphadenAchievements: Achievement[] = [
+  {
+    title: '100+ titles shipped across iOS, Android, and itch.io',
+    detail: 'Production titles including Sneaky Warrior 3D, Snake Hole Puzzle, and Bolt Pop 3D. Held stable 60 FPS on low-end Android via tiered skinned-mesh spawning, deterministic bullet pooling, and runtime voxelisation pipelines.',
+    scale: '500K+ downloads',
+  },
+  {
+    title: 'Supersonic Hypercasual Competition — Round 1 Winner',
+    detail: 'Selected from a global submission pool judged on CPI, D1 retention, and first-time-user experience. Built 50+ commissioned prototypes for hypercasual publishers (Voodoo, Lion Studios, Supersonic).',
+    scale: '$2M prize pool',
+  },
+  {
+    title: 'Real-time multiplayer netcode — 8 concurrent players',
+    detail: 'Designed client-side prediction and state reconciliation from scratch in Unity / C#. Held stable 60 FPS on target devices under worst-case input churn.',
+    scale: '60 FPS held',
+  },
+  {
+    title: 'Mesh-combining pipeline for static environment geometry',
+    detail: 'Reduced draw calls dramatically while keeping interactable objects separate. Object pooling and allocation-free update loops eliminated frame-time spikes on 2 GB RAM devices.',
+    scale: '~80% draw call reduction',
+  },
 ];
 
 const foundations = [
   'Data structures & algorithms in C#',
-  'Game Programming Patterns — Sequencing, Behavioral, Decoupling',
+  'Game Programming Patterns — Sequencing, Behavioral, Decoupling, Optimization',
   'ECS / DOTS — active production projects',
   'Burst compiler & Job System for cache-friendly hot paths',
 ];
@@ -78,6 +124,34 @@ const sharedStrengths = [
   'Engineering discipline under production pressure — live traffic, no downtime',
   'Systems thinking: API contracts, migration paths, and customer impact built in from day one',
 ];
+
+function AchievementRow({
+  item,
+  accentColor,
+}: {
+  item: Achievement;
+  accentColor: 'neon' | 'electric';
+}) {
+  const scaleClass = accentColor === 'neon' ? 'text-neon/70 border-neon/15 bg-neon/[0.05]' : 'text-electric/70 border-electric/15 bg-electric/[0.05]';
+  const dotClass = accentColor === 'neon' ? 'bg-neon/50' : 'bg-electric/50';
+
+  return (
+    <div className="px-6 py-4 group">
+      <div className="flex items-start gap-3">
+        <span className={`mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full ${dotClass}`} />
+        <div className="flex-1 min-w-0">
+          <div className="flex flex-wrap items-start justify-between gap-x-3 gap-y-1">
+            <p className="text-sm font-semibold text-white leading-snug">{item.title}</p>
+            <span className={`flex-shrink-0 rounded-full border font-mono text-[10px] px-2 py-0.5 ${scaleClass}`}>
+              {item.scale}
+            </span>
+          </div>
+          <p className="mt-1.5 text-xs text-slate-400 leading-relaxed">{item.detail}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function ExperienceBentoSection() {
   return (
@@ -153,43 +227,15 @@ export default function ExperienceBentoSection() {
               </div>
             </div>
 
-            {/* Key wins */}
-            <div className="px-6 py-5 border-b border-white/[0.06]">
-              <p className="mb-3.5 font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500">
-                Key Impact
-              </p>
-              <ul className="space-y-2.5">
-                {zohoWins.map((w) => (
-                  <li key={w.title} className="flex items-start justify-between gap-3">
-                    <div className="flex items-start gap-2 min-w-0">
-                      <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-neon/40" />
-                      <span className="text-xs text-slate-300 leading-snug">{w.title}</span>
-                    </div>
-                    <span className="flex-shrink-0 font-mono text-[10px] text-neon/60 text-right leading-snug pt-0.5">
-                      {w.scale}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Scale context */}
-            <div className="px-6 py-5 flex-1">
-              <p className="mb-3 font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500">
-                Scale & Systems Context
-              </p>
-              <ul className="space-y-2">
-                {zohoContext.map((c) => (
-                  <li key={c} className="flex items-start gap-2">
-                    <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-neon/30" />
-                    <span className="text-xs text-slate-400 leading-relaxed">{c}</span>
-                  </li>
-                ))}
-              </ul>
+            {/* Achievements */}
+            <div className="divide-y divide-white/[0.04] flex-1">
+              {zohoAchievements.map((item) => (
+                <AchievementRow key={item.title} item={item} accentColor="neon" />
+              ))}
             </div>
 
             {/* Tags */}
-            <div className="border-t border-white/[0.05] px-6 py-3.5">
+            <div className="border-t border-white/[0.06] px-6 py-3.5">
               <div className="flex flex-wrap gap-1.5">
                 {['REST APIs', 'distributed systems', 'zero-downtime', 'AI tooling', 'async workflows', 'mentorship'].map((tag) => (
                   <span
@@ -256,7 +302,7 @@ export default function ExperienceBentoSection() {
                   <SmartLink
                     key={s.href}
                     href={s.href}
-                    className="group flex items-start justify-between gap-3 rounded-lg border border-electric/10 bg-electric/[0.03] px-3 py-2.5 hover:border-electric/30 hover:bg-electric/[0.07] transition-all"
+                    className="group flex items-start justify-between gap-3 rounded-lg border border-electric/10 bg-electric/[0.03] px-3.5 py-3 hover:border-electric/30 hover:bg-electric/[0.07] transition-all"
                   >
                     <div className="min-w-0 flex-1">
                       <p className="text-xs font-semibold text-white group-hover:text-electric transition-colors leading-snug">
@@ -270,32 +316,19 @@ export default function ExperienceBentoSection() {
               </div>
             </div>
 
-            {/* Shipped & Built */}
-            <div className="px-6 py-5 border-b border-electric/[0.06]">
-              <p className="mb-3.5 font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500">
-                Shipped & Built
-              </p>
-              <ul className="space-y-2.5">
-                {alphadenWins.map((w) => (
-                  <li key={w.title} className="flex items-start justify-between gap-3">
-                    <div className="flex items-start gap-2 min-w-0">
-                      <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-electric/50" />
-                      <span className="text-xs text-slate-300 leading-snug">{w.title}</span>
-                    </div>
-                    <span className="flex-shrink-0 font-mono text-[10px] text-electric/60 text-right leading-snug pt-0.5">
-                      {w.scale}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+            {/* Achievements */}
+            <div className="divide-y divide-white/[0.04] flex-1">
+              {alphadenAchievements.map((item) => (
+                <AchievementRow key={item.title} item={item} accentColor="electric" />
+              ))}
             </div>
 
             {/* Foundations */}
-            <div className="px-6 py-5 flex-1">
+            <div className="border-t border-electric/[0.08] px-6 py-4">
               <p className="mb-3 font-mono text-[10px] font-semibold uppercase tracking-widest text-electric/60">
                 Foundations · Always Studying
               </p>
-              <ul className="space-y-2">
+              <ul className="space-y-1.5">
                 {foundations.map((f) => (
                   <li key={f} className="flex items-start gap-2">
                     <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-electric/40" />
