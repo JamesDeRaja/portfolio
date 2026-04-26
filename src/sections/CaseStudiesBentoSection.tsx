@@ -248,7 +248,7 @@ export default function CaseStudiesBentoSection() {
               <p className="text-sm text-slate-300 leading-relaxed">
                 A controlled Unity 6 / URP / OpenXR benchmarking framework. One toggle introduces
                 the variable — everything else stays locked. Built to prove bottleneck type (GPU fragment,
-                bandwidth, or submission) with profiler captures, not guesses.
+                bandwidth, or submission) with profiler captures, not guesswork.
               </p>
 
               <div className="rounded-xl border border-amber-500/20 bg-amber-500/[0.06] px-4 py-3">

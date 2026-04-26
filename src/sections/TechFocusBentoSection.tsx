@@ -95,7 +95,7 @@ const techCards: TechCard[] = [
   },
   {
     title: 'ECS / DOTS Direction',
-    body: 'Data-oriented design applied to game object management — structure-of-arrays memory layout, job system parallelism, and Burst-compiled hot paths for agent-dense scenarios where MonoBehaviour update budgets collapse.',
+    body: 'Data-oriented design applied to game object management — structure-of-arrays memory layout, job system parallelism, and Burst-compiled hot paths for agent-dense scenarios where MonoBehaviour update budgets become inadequate.',
     keywords: ['ECS', 'DOTS', 'Burst compiler', 'Job System', 'data-oriented'],
     accent: 'green',
     icon: GitMerge,
