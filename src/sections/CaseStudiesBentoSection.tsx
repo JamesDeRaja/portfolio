@@ -130,6 +130,7 @@ function LabTicker() {
     }
 
     event.preventDefault();
+    event.stopPropagation();
     setIsWheelInteracting(true);
     viewport.scrollTop += event.deltaY;
 
@@ -154,10 +155,9 @@ function LabTicker() {
   return (
     <div
       ref={viewportRef}
-      className="h-[360px] overflow-hidden relative cursor-default"
+      className="h-[156px] overflow-hidden relative cursor-default"
       style={{
-        maskImage: 'linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%)',
-        WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%)',
+        overscrollBehavior: 'contain',
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
