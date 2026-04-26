@@ -201,7 +201,7 @@ export default function UpdateStrategiesCaseStudyPage() {
               'Same bullet system — up to ~1,300 bullets',
               'No logic differences except update model',
             ].map((point) => (
-              <div key={point} className="flex items-start gap-2.5 rounded-xl border border-white/[0.06] bg-white/[0.02] px-3 py-2.5">
+              <div key={point} className="flex items-start gap-2.5 page-card-sm rounded-xl px-3 py-2.5">
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-neon/50" />
                 <span className="text-sm text-slate-300">{point}</span>
               </div>
@@ -239,7 +239,7 @@ export default function UpdateStrategiesCaseStudyPage() {
                     href={shot.src}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block overflow-hidden rounded-xl border border-white/10 bg-black/40 transition hover:border-white/20"
+                    className="block overflow-hidden page-card-sm rounded-lg bg-black/40 transition"
                   >
                     <img
                       src={shot.src}
@@ -255,7 +255,7 @@ export default function UpdateStrategiesCaseStudyPage() {
             {/* Metrics + Observation */}
             <div className="grid gap-4 sm:grid-cols-2">
               {/* Metrics */}
-              <div className={`rounded-2xl border ${v.accentBorder} ${v.accentBg} p-4 space-y-2`}>
+              <div className={`page-card-accent rounded-2xl border-2 ${v.accentBorder} ${v.accentBg} p-4 space-y-2`}>
                 <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500">Key Metrics</p>
                 <div className="space-y-1.5">
                   {v.metrics.map((m) => (
@@ -270,7 +270,7 @@ export default function UpdateStrategiesCaseStudyPage() {
               </div>
 
               {/* Observation */}
-              <div className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-4 flex flex-col justify-between gap-3">
+              <div className="page-card rounded-2xl p-4 flex flex-col justify-between gap-3">
                 <div>
                   <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-2">Observation</p>
                   <p className="text-sm text-slate-300 leading-relaxed">{v.observation}</p>
@@ -292,7 +292,7 @@ export default function UpdateStrategiesCaseStudyPage() {
         {/* Frame time bar visualization */}
         <section className="mt-12 space-y-4">
           <h2 className="text-xl font-semibold text-white">Frame Time Comparison</h2>
-          <div className="glass-card rounded-2xl p-4 space-y-2">
+          <div className="glass-card glass-card-hover rounded-xl p-4 space-y-2 transition-[border-color,box-shadow] duration-300">
             <MiniBars title="Variant A — Lifecycle Control" baselineMs={25} maxMs={40} labelLeft="Frame" variant="cpu" />
             <MiniBars title="Variant B — Per-Object Update" baselineMs={40} maxMs={40} labelLeft="Frame" variant="cpu" />
             <MiniBars title="Variant C — Central Manager"   baselineMs={32} maxMs={40} labelLeft="Frame" variant="cpu" />
@@ -303,7 +303,7 @@ export default function UpdateStrategiesCaseStudyPage() {
         {/* Comparison table */}
         <section className="mt-12 space-y-4">
           <h2 className="text-xl font-semibold text-white">Head-to-Head Comparison</h2>
-          <div className="overflow-x-auto rounded-2xl border border-white/10 bg-white/[0.02]">
+          <div className="overflow-x-auto page-card rounded-2xl">
             <table className="min-w-full divide-y divide-white/10 text-left text-sm">
               <thead className="bg-white/[0.03] text-xs uppercase tracking-wide text-slate-400">
                 <tr>
@@ -343,7 +343,7 @@ export default function UpdateStrategiesCaseStudyPage() {
             {insights.map((insight, i) => (
               <motion.div
                 key={insight.title}
-                className="rounded-2xl border border-neon/10 bg-neon/[0.03] p-4"
+                className="page-card-accent rounded-2xl border-2 border-neon/[0.18] bg-neon/[0.04] p-4"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -361,7 +361,7 @@ export default function UpdateStrategiesCaseStudyPage() {
 
         {/* Conclusion */}
         <section className="mt-10">
-          <div className="rounded-2xl border border-neon/15 bg-neon/[0.04] p-6">
+          <div className="page-card-accent rounded-2xl border-2 border-neon/[0.24] bg-neon/[0.05] p-6">
             <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-neon/60 mb-3">Conclusion</p>
             <p className="text-base text-slate-200 leading-relaxed">
               At scale, the primary cost is not individual logic complexity — it is{' '}
@@ -383,7 +383,7 @@ export default function UpdateStrategiesCaseStudyPage() {
               <Link
                 key={v.id}
                 to={v.deepDiveHref}
-                className={`group flex items-center justify-between gap-3 rounded-2xl border ${v.accentBorder} ${v.accentBg} px-4 py-3.5 transition hover:opacity-90`}
+                className={`group page-card-accent flex items-center justify-between gap-3 rounded-2xl border-2 ${v.accentBorder} ${v.accentBg} px-4 py-3.5 transition`}
               >
                 <div className="flex items-center gap-3 min-w-0">
                   <div className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg border ${v.accentBorder} ${v.accentBg}`}>

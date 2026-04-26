@@ -20,7 +20,7 @@ const card = {
   whileInView: { opacity: 1, y: 0 },
   transition: { duration: 0.5 },
   viewport: { once: true },
-  className: 'rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6 sm:p-8',
+  className: 'page-card rounded-2xl p-6 sm:p-8',
 };
 
 export default function XRStressLabCaseStudyPage() {
@@ -129,7 +129,7 @@ export default function XRStressLabCaseStudyPage() {
                 <article
                   key={item.label}
                   className={[
-                    'rounded-xl border border-white/[0.07] bg-white/[0.02] p-4',
+                    'page-card rounded-xl p-4',
                     index === 2 ? 'md:col-span-2 xl:col-span-1' : '',
                   ]
                     .join(' ')
@@ -141,7 +141,7 @@ export default function XRStressLabCaseStudyPage() {
                     href={item.imagePath}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block overflow-hidden rounded-xl border border-white/[0.08] transition hover:border-white/20"
+                    className="block overflow-hidden rounded-lg border border-dashed border-white/[0.09] transition hover:border-neon/20"
                   >
                     <img src={item.imagePath} alt={item.alt} loading="lazy" className="w-full object-cover" />
                   </a>
@@ -151,7 +151,7 @@ export default function XRStressLabCaseStudyPage() {
             </div>
 
             {/* Why this matters callout */}
-            <div className="mt-4 rounded-xl border border-neon/20 bg-neon/[0.03] p-4">
+            <div className="mt-4 page-card-accent rounded-xl border-2 border-neon/[0.28] bg-neon/[0.04] p-4">
               <h3 className="text-sm font-semibold text-white/90 mb-2">Why this matters in XR</h3>
               <p className="text-sm text-slate-400 leading-relaxed">
                 Transparent overdraw scales badly in XR because fragment work is amplified by stereo rendering, high eye-buffer resolutions, and optional MSAA. A scene that looks visually simple can still become fragment-bound if many transparent layers cover the same pixels.
@@ -167,7 +167,7 @@ export default function XRStressLabCaseStudyPage() {
                   'Overdraw is visible in the debug heatmap before it becomes obvious visually.',
                   'Frame Debugger validates that the hotspot corresponds to repeated transparent draws.',
                 ].map((obs) => (
-                  <p key={obs} className="rounded-xl border border-white/[0.07] bg-white/[0.02] px-3 py-2 text-xs text-slate-400 leading-relaxed">
+                  <p key={obs} className="page-card-sm rounded-xl px-3 py-2 text-xs text-slate-400 leading-relaxed">
                     {obs}
                   </p>
                 ))}
@@ -180,7 +180,7 @@ export default function XRStressLabCaseStudyPage() {
             <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-neon/60 mb-1">Measured Results</p>
             <h2 className="text-lg font-bold text-white mb-4">Per-Stress-Path Delta Table</h2>
 
-            <div className="overflow-x-auto rounded-xl border border-white/[0.08] bg-white/[0.02]">
+            <div className="overflow-x-auto page-card rounded-xl">
               <table className="min-w-full divide-y divide-white/[0.06] text-left text-sm">
                 <thead className="bg-white/[0.03] text-xs uppercase tracking-wide text-slate-400">
                   <tr>

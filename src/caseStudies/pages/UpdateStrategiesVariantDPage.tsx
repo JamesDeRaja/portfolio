@@ -140,7 +140,7 @@ export default function UpdateStrategiesVariantDPage() {
           </div>
 
           {/* Headline metric */}
-          <div className="rounded-2xl border border-neon/20 bg-neon/[0.04] px-5 py-4">
+          <div className="page-card-accent rounded-2xl border-2 border-neon/[0.28] bg-neon/[0.04] px-5 py-4">
             <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-neon/60 mb-1">Result</p>
             <p className="text-2xl font-bold text-white">
               ~40 ms <span className="text-neon">→</span> ~9.4 ms
@@ -166,7 +166,7 @@ export default function UpdateStrategiesVariantDPage() {
         {/* Purpose */}
         <section className="mt-10 space-y-3">
           <h2 className="text-lg font-semibold text-white">Study Purpose</h2>
-          <div className="rounded-2xl border border-neon/15 bg-neon/[0.04] p-5">
+          <div className="page-card-accent rounded-2xl border-2 border-neon/[0.22] bg-neon/[0.04] p-5">
             <p className="text-sm text-slate-300 leading-relaxed">
               Scene D answers:{' '}
               <span className="font-medium text-white">what is left when you remove both MonoBehaviour dispatch overhead and GameObject Transform iteration?</span>{' '}
@@ -205,7 +205,7 @@ export default function UpdateStrategiesVariantDPage() {
             <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-3">ECS Components</p>
             <div className="space-y-2">
               {components.map((c) => (
-                <div key={c.name} className="flex items-start gap-3 rounded-xl border border-white/[0.05] bg-white/[0.02] px-4 py-3">
+                <div key={c.name} className="flex items-start gap-3 page-card-sm rounded-xl px-4 py-3">
                   <div className="flex-shrink-0 mt-0.5">
                     <span className={`inline-block font-mono text-[9px] font-bold px-1.5 py-0.5 rounded ${
                       c.type === 'Tag' ? 'bg-neon/10 text-neon/80' : c.type === 'Data' ? 'bg-white/10 text-slate-400' : 'bg-blue-500/10 text-blue-400'
@@ -241,7 +241,7 @@ export default function UpdateStrategiesVariantDPage() {
           </div>
 
           {/* How chunk iteration works */}
-          <div className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-4">
+          <div className="page-card rounded-2xl p-4">
             <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-2">How Chunk Iteration Works</p>
             <p className="text-xs text-slate-400 leading-relaxed">
               ECS groups entities into 'chunks' — fixed 16 KB blocks containing all components for entities
@@ -275,7 +275,7 @@ export default function UpdateStrategiesVariantDPage() {
                   href={shot.src}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block overflow-hidden rounded-xl border border-white/10 bg-black/40 transition hover:border-neon/30"
+                  className="block overflow-hidden page-card-sm rounded-lg bg-black/40 transition"
                 >
                   <img src={shot.src} alt={shot.alt} loading="lazy" className="w-full object-cover" />
                 </a>
@@ -288,7 +288,7 @@ export default function UpdateStrategiesVariantDPage() {
         {/* Full architecture comparison */}
         <section className="mt-10 space-y-4">
           <h2 className="text-lg font-semibold text-white">Architecture Comparison (B / C / D)</h2>
-          <div className="overflow-x-auto rounded-2xl border border-white/10 bg-white/[0.02]">
+          <div className="overflow-x-auto page-card rounded-2xl">
             <table className="min-w-full divide-y divide-white/10 text-left text-sm">
               <thead className="bg-white/[0.03] text-xs uppercase tracking-wide text-slate-400">
                 <tr>
@@ -319,7 +319,7 @@ export default function UpdateStrategiesVariantDPage() {
             {teaches.map((item) => (
               <motion.div
                 key={item.id}
-                className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-4"
+                className="page-card rounded-2xl p-4"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -337,7 +337,7 @@ export default function UpdateStrategiesVariantDPage() {
 
         {/* Final interpretation */}
         <section className="mt-8">
-          <div className="rounded-2xl border border-neon/15 bg-neon/[0.04] p-5">
+          <div className="page-card-accent rounded-2xl border-2 border-neon/[0.22] bg-neon/[0.04] p-5">
             <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-neon/60 mb-3">Interpretation</p>
             <p className="text-sm text-slate-300 leading-relaxed">
               ECS is not magic — it is a different memory layout and execution model. The 4× improvement comes from

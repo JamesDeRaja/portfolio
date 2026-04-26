@@ -125,7 +125,7 @@ export default function UpdateStrategiesVariantBPage() {
         {/* Purpose */}
         <section className="mt-10 space-y-3">
           <h2 className="text-lg font-semibold text-white">Study Purpose</h2>
-          <div className="rounded-2xl border border-red-500/15 bg-red-500/[0.04] p-5">
+          <div className="page-card-accent rounded-2xl border-2 border-red-500/20 bg-red-500/[0.05] p-5">
             <p className="text-sm text-slate-300 leading-relaxed">
               Scene B isolates the cost of{' '}
               <span className="font-medium text-white">per-object MonoBehaviour Update dispatch</span> at scale.
@@ -161,7 +161,7 @@ export default function UpdateStrategiesVariantBPage() {
           </p>
           <div className="space-y-2">
             {setupItems.map((item) => (
-              <div key={item.label} className="flex items-start gap-3 rounded-xl border border-white/[0.05] bg-white/[0.02] px-4 py-3">
+              <div key={item.label} className="flex items-start gap-3 page-card-sm rounded-xl px-4 py-3">
                 <span className="mt-0.5 font-mono text-xs font-bold text-red-400/70">›</span>
                 <div>
                   <p className="text-sm font-medium text-white">{item.label}</p>
@@ -173,7 +173,7 @@ export default function UpdateStrategiesVariantBPage() {
 
           {/* Enemy vs Bullet */}
           <div className="grid gap-3 sm:grid-cols-2 mt-4">
-            <div className="rounded-2xl border border-red-500/15 bg-red-500/[0.04] p-4">
+            <div className="page-card-accent rounded-2xl border-2 border-red-500/20 bg-red-500/[0.05] p-4">
               <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-3">B_Enemy — Update Logic</p>
               <div className="space-y-2">
                 {[
@@ -190,7 +190,7 @@ export default function UpdateStrategiesVariantBPage() {
                 ))}
               </div>
             </div>
-            <div className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-4">
+            <div className="page-card rounded-2xl p-4">
               <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-3">B_Bullet — Update Logic</p>
               <div className="space-y-2">
                 {[
@@ -228,7 +228,7 @@ export default function UpdateStrategiesVariantBPage() {
                   href={shot.src}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block overflow-hidden rounded-xl border border-white/10 bg-black/40 transition hover:border-red-500/30"
+                  className="block overflow-hidden page-card-sm rounded-lg bg-black/40 transition"
                 >
                   <img src={shot.src} alt={shot.alt} loading="lazy" className="w-full object-cover" />
                 </a>
@@ -241,7 +241,7 @@ export default function UpdateStrategiesVariantBPage() {
         {/* Profiler Breakdown Table */}
         <section className="mt-10 space-y-4">
           <h2 className="text-lg font-semibold text-white">Profiler Breakdown</h2>
-          <div className="overflow-x-auto rounded-2xl border border-white/10 bg-white/[0.02]">
+          <div className="overflow-x-auto page-card rounded-2xl">
             <table className="min-w-full divide-y divide-white/10 text-left text-sm">
               <thead className="bg-white/[0.03] text-xs uppercase tracking-wide text-slate-400">
                 <tr>
@@ -272,7 +272,7 @@ export default function UpdateStrategiesVariantBPage() {
             {teaches.map((item) => (
               <motion.div
                 key={item.id}
-                className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-4"
+                className="page-card rounded-2xl p-4"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -290,7 +290,7 @@ export default function UpdateStrategiesVariantBPage() {
 
         {/* Key callout */}
         <section className="mt-8">
-          <div className="rounded-2xl border border-red-500/15 bg-red-500/[0.04] p-5">
+          <div className="page-card-accent rounded-2xl border-2 border-red-500/20 bg-red-500/[0.05] p-5">
             <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-red-400/60 mb-3">Core Finding</p>
             <p className="text-sm text-slate-300 leading-relaxed">
               The logic inside B_Enemy.Update() is{' '}

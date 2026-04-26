@@ -9,7 +9,7 @@ const card = {
   whileInView: { opacity: 1, y: 0 },
   transition: { duration: 0.5 },
   viewport: { once: true },
-  className: 'rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6 sm:p-8',
+  className: 'page-card rounded-2xl p-6 sm:p-8',
 };
 
 export default function PublishedMobileProjectsCaseStudyPage() {
@@ -101,7 +101,7 @@ export default function PublishedMobileProjectsCaseStudyPage() {
             <h2 className="text-lg font-bold text-white mb-4">Four-Part Optimisation Strategy</h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
-              <div className="rounded-xl border border-white/[0.07] bg-white/[0.02] p-4">
+              <div className="page-card rounded-xl p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="rounded-full bg-neon/10 border border-neon/20 w-6 h-6 flex items-center justify-center font-mono text-xs text-neon">1</span>
                   <p className="text-sm font-semibold text-white">Dynamic Skinned-Mesh Chunking</p>
@@ -112,7 +112,7 @@ export default function PublishedMobileProjectsCaseStudyPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-white/[0.07] bg-white/[0.02] p-4">
+              <div className="page-card rounded-xl p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="rounded-full bg-neon/10 border border-neon/20 w-6 h-6 flex items-center justify-center font-mono text-xs text-neon">2</span>
                   <p className="text-sm font-semibold text-white">Spatially Coherent Grouping</p>
@@ -124,7 +124,7 @@ export default function PublishedMobileProjectsCaseStudyPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-white/[0.07] bg-white/[0.02] p-4">
+              <div className="page-card rounded-xl p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="rounded-full bg-neon/10 border border-neon/20 w-6 h-6 flex items-center justify-center font-mono text-xs text-neon">3</span>
                   <p className="text-sm font-semibold text-white">Visibility-Driven Animation Suppression</p>
@@ -136,7 +136,7 @@ export default function PublishedMobileProjectsCaseStudyPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-white/[0.07] bg-white/[0.02] p-4">
+              <div className="page-card rounded-xl p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="rounded-full bg-neon/10 border border-neon/20 w-6 h-6 flex items-center justify-center font-mono text-xs text-neon">4</span>
                   <p className="text-sm font-semibold text-white">Burst Stability Validation</p>

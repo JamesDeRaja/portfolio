@@ -44,7 +44,7 @@ export default function XRFrameTimingLabPage() {
 
       <section className="mt-8 space-y-3">
         <h2 className="text-xl font-semibold text-white">The pipeline: deadlines and sync points</h2>
-        <div className="glass-card rounded-2xl p-4">
+        <div className="glass-card glass-card-hover rounded-xl p-4 transition-[border-color,box-shadow] duration-300">
           <div className="flex flex-wrap items-center gap-2 text-sm text-slate-300">
             <span className="rounded-md border border-white/10 px-2 py-1">CPU Simulation</span>
             <span>→</span>
@@ -77,7 +77,7 @@ export default function XRFrameTimingLabPage() {
           <img
             src="/lab/Overdraw_CPU_RenderThread_Comparison.png"
             alt="Unity Profiler capture showing CPU and Render Thread timing under stress"
-            className="rounded-xl border border-white/10"
+            className="rounded-lg border border-dashed border-white/[0.09]"
           />
           <figcaption className="text-sm text-slate-400">Profiler capture: CPU and Render Thread timing behavior under overdraw load.</figcaption>
         </figure>
@@ -86,7 +86,7 @@ export default function XRFrameTimingLabPage() {
           <img
             src="/lab/Overdraw_Experiment_Summary.png"
             alt="Overdraw experiment summary comparing baseline and stress"
-            className="rounded-xl border border-white/10"
+            className="rounded-lg border border-dashed border-white/[0.09]"
           />
           <figcaption className="text-sm text-slate-400">Controlled comparison: baseline vs overdraw stress with clear GPU escalation.</figcaption>
         </figure>
@@ -95,7 +95,7 @@ export default function XRFrameTimingLabPage() {
           <img
             src="/lab/Overdraw_FrameDebugger_TransparentPass.png"
             alt="Frame Debugger trace showing repeated transparent pass draws"
-            className="rounded-xl border border-white/10"
+            className="rounded-lg border border-dashed border-white/[0.09]"
           />
           <figcaption className="text-sm text-slate-400">Frame Debugger trace: repeated transparent draws amplifying fragment cost in stereo.</figcaption>
         </figure>
