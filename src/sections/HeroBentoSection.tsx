@@ -257,7 +257,7 @@ export default function HeroBentoSection() {
                 </div>
               </div>
               <div className="mt-4 pt-3 border-t border-white/[0.05] flex items-center justify-between">
-                <p className="text-[11px] text-slate-500">CPI & D1 retention across rapid iteration</p>
+                <p className="text-[11px] text-slate-500">CPI (cost per install) and D1 retention across rapid iteration</p>
                 <ExternalLink size={10} className="text-slate-600 group-hover:text-emerald-400 transition-colors" />
               </div>
             </BentoCard>
@@ -306,7 +306,7 @@ export default function HeroBentoSection() {
                   and engineering evidence that ships.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-1.5">
-                  {['Profiler-validated', 'Frame-budget aware', 'Deterministic benchmarks', 'Baseline vs stress'].map((tag) => (
+                  {['Profiler-validated', 'Frame budget aware', 'Deterministic benchmarks', 'Baseline vs stress'].map((tag) => (
                     <span
                       key={tag}
                       className="inline-block rounded border border-electric/15 bg-electric/[0.05] px-2 py-0.5 font-mono text-[11px] text-electric/80"

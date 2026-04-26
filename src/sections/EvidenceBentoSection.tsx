@@ -82,7 +82,7 @@ export default function EvidenceBentoSection() {
           Evidence, Not Claims
         </p>
         <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
-          Profiler screenshots, not marketing slides
+          Profiler screenshots and measured data
         </h2>
         <p className="mt-2 max-w-2xl text-sm text-slate-400 leading-relaxed">
           Every performance statement on this site is backed by a profiler screenshot, a Frame Debugger

@@ -36,7 +36,7 @@ export default function ContactSection() {
           {/* Positioning statement */}
           <p className="text-base text-slate-300 leading-relaxed">
             I&apos;m targeting rendering, XR performance, and engine optimization roles —
-            teams where profiler evidence matters more than marketing slides.
+            teams where measurable performance evidence is a priority.
             Open to <span className="font-medium text-white">remote work worldwide</span> and{' '}
             <span className="font-medium text-white">international relocation</span>.
           </p>

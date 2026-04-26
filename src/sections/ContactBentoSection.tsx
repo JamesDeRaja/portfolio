@@ -64,7 +64,7 @@ export default function ContactBentoSection() {
         </h2>
         <p className="mt-2 max-w-2xl text-sm text-slate-400 leading-relaxed">
           Open to remote roles worldwide and international relocation. Senior Unity, XR, and rendering
-          engineering positions where profiler evidence matters more than marketing slides.
+          engineering positions where measurable performance evidence is a priority.
         </p>
       </motion.div>
 
@@ -111,8 +111,8 @@ export default function ContactBentoSection() {
             <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] px-4 py-4">
               <p className="text-sm text-slate-300 leading-relaxed">
                 Targeting rendering, XR performance, and real-time systems engineering roles — teams
-                where frame budget discipline and profiler evidence are engineering requirements, not
-                afterthoughts.
+                that prioritize frame budget discipline and profiler evidence as core engineering
+                requirements.
               </p>
               <div className="mt-3 flex flex-wrap gap-1.5">
                 {targetRoles.map((role) => (
