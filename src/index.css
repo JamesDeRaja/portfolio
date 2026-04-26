@@ -238,6 +238,18 @@ body {
   50% { opacity: 0; }
 }
 
+@keyframes ticker-scroll-up {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+.animate-ticker {
+  animation: ticker-scroll-up 22s linear infinite;
+}
+.animate-ticker-paused {
+  animation: ticker-scroll-up 22s linear infinite;
+  animation-play-state: paused;
+}
+
 /* ── Chip / tag styles ── */
 .chip-glow {
   background: rgba(var(--neon), 0.07);
