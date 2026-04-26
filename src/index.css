@@ -245,10 +245,6 @@ body {
 .animate-ticker {
   animation: ticker-scroll-up 22s linear infinite;
 }
-.animate-ticker-paused {
-  animation: ticker-scroll-up 22s linear infinite;
-  animation-play-state: paused;
-}
 
 /* ── Chip / tag styles ── */
 .chip-glow {

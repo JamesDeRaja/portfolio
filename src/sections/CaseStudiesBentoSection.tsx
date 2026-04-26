@@ -69,7 +69,7 @@ function LabTicker() {
 
   return (
     <div
-      className="flex-1 overflow-hidden relative cursor-default"
+      className="flex-1 min-h-0 overflow-hidden relative cursor-default"
       style={{
         maskImage: 'linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%)',
         WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%)',
@@ -77,7 +77,10 @@ function LabTicker() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className={paused ? 'animate-ticker-paused' : 'animate-ticker'}>
+      <div
+        className="animate-ticker"
+        style={{ animationPlayState: paused ? 'paused' : 'running' }}
+      >
         {doubled.map((exp, i) => (
           <SmartLink
             key={`${exp.href}-${i}`}
@@ -359,7 +362,7 @@ export default function CaseStudiesBentoSection() {
           transition={{ duration: 0.45, delay: 0.21 }}
           viewport={{ once: true, margin: '-30px' }}
         >
-          <BentoCard variant="dim" padding="md" className="h-full flex flex-col">
+          <BentoCard variant="dim" padding="md" className="h-full flex flex-col overflow-hidden">
             <div className="flex items-center justify-between mb-3">
               <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500">
                 Lab Experiments
