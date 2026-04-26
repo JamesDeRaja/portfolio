@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, ExternalLink } from 'lucide-react';
+import { ArrowRight, ExternalLink, Github } from 'lucide-react';
 import BentoGrid from '../components/bento/BentoGrid';
 import BentoCard from '../components/bento/BentoCard';
 import MetricBadge from '../components/bento/MetricBadge';
@@ -193,6 +193,7 @@ export default function CaseStudiesBentoSection() {
                 </p>
               </div>
 
+              {/* Architecture frame times */}
               <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
                 {[
                   { label: 'Lifecycle Control', val: '~25 ms' },
@@ -206,6 +207,35 @@ export default function CaseStudiesBentoSection() {
                   </div>
                 ))}
               </div>
+
+              {/* Scale & methodology stats */}
+              <div className="grid grid-cols-2 gap-2">
+                {[
+                  { label: 'entities — same scene, same load', val: '10,000' },
+                  { label: 'architectures — isolated A / B / C / D', val: '4 variants' },
+                ].map((item) => (
+                  <div key={item.label} className="rounded-lg border border-electric/[0.10] bg-electric/[0.03] px-3 py-2">
+                    <p className="font-mono text-xs font-semibold text-electric/80">{item.val}</p>
+                    <p className="mt-0.5 text-[11px] text-slate-500">{item.label}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* GitHub source */}
+              <a
+                href="https://github.com/JamesDeRaja/ECS-Performance-Improvement"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-between rounded-lg border border-white/[0.07] bg-white/[0.02] px-4 py-2.5 hover:border-electric/25 hover:bg-electric/[0.04] transition-all"
+              >
+                <div className="flex items-center gap-2.5">
+                  <Github size={13} className="text-slate-500 group-hover:text-electric transition-colors" />
+                  <span className="font-mono text-xs text-slate-400 group-hover:text-white transition-colors">
+                    JamesDeRaja / ECS-Performance-Improvement
+                  </span>
+                </div>
+                <ExternalLink size={10} className="text-slate-600 group-hover:text-electric transition-colors flex-shrink-0" />
+              </a>
 
               <div className="mt-auto pt-1">
                 <SmartLink
