@@ -141,7 +141,7 @@ export default function CaseStudiesBentoSection() {
                 ))}
               </div>
 
-              <div className="mt-auto pt-1">
+              <div className="mt-auto pt-1 flex flex-wrap items-center gap-3">
                 <SmartLink
                   href="/case-studies/xr-stress-lab"
                   className="btn-primary group inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium"
@@ -149,6 +149,15 @@ export default function CaseStudiesBentoSection() {
                   Open Case Study
                   <ArrowRight size={14} className="transition group-hover:translate-x-1" />
                 </SmartLink>
+                <a
+                  href="https://github.com/JamesDeRaja/XRPerformanceLab"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary group inline-flex items-center gap-1.5 rounded-xl px-4 py-2.5 text-sm font-medium"
+                >
+                  <Github size={13} />
+                  Source
+                </a>
               </div>
             </div>
           </BentoCard>
@@ -221,23 +230,7 @@ export default function CaseStudiesBentoSection() {
                 ))}
               </div>
 
-              {/* GitHub source */}
-              <a
-                href="https://github.com/JamesDeRaja/ECS-Performance-Improvement"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-between rounded-lg border border-white/[0.07] bg-white/[0.02] px-4 py-2.5 hover:border-electric/25 hover:bg-electric/[0.04] transition-all"
-              >
-                <div className="flex items-center gap-2.5">
-                  <Github size={13} className="text-slate-500 group-hover:text-electric transition-colors" />
-                  <span className="font-mono text-xs text-slate-400 group-hover:text-white transition-colors">
-                    JamesDeRaja / ECS-Performance-Improvement
-                  </span>
-                </div>
-                <ExternalLink size={10} className="text-slate-600 group-hover:text-electric transition-colors flex-shrink-0" />
-              </a>
-
-              <div className="mt-auto pt-1">
+              <div className="mt-auto pt-1 flex flex-wrap items-center gap-3">
                 <SmartLink
                   href="/case-studies/update-strategies-scale"
                   className="btn-primary group inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium"
@@ -245,6 +238,15 @@ export default function CaseStudiesBentoSection() {
                   Open Case Study
                   <ArrowRight size={14} className="transition group-hover:translate-x-1" />
                 </SmartLink>
+                <a
+                  href="https://github.com/JamesDeRaja/ECS-Performance-Improvement"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary group inline-flex items-center gap-1.5 rounded-xl px-4 py-2.5 text-sm font-medium"
+                >
+                  <Github size={13} />
+                  Source
+                </a>
               </div>
             </div>
           </BentoCard>
