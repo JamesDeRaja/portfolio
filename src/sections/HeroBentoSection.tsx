@@ -65,7 +65,7 @@ export default function HeroBentoSection() {
           initial="hidden"
           animate="visible"
         >
-          <BentoCard variant="featured" padding="lg" elevated className="h-full flex flex-col justify-between gap-7">
+          <BentoCard variant="featured" padding="lg" elevated importance="priority" shape="soft" className="h-full flex flex-col justify-between gap-7">
             <div className="space-y-5">
               {/* Top row: badge + photo */}
               <div className="flex items-start justify-between gap-4">
@@ -144,7 +144,7 @@ export default function HeroBentoSection() {
         <div className="lg:col-span-4 md:col-span-6 flex flex-col gap-4">
           {/* Frame Budget card */}
           <motion.div custom={1} variants={fadeUp} initial="hidden" animate="visible">
-            <BentoCard variant="metric" padding="md" elevated className="h-full">
+            <BentoCard variant="metric" padding="md" importance="high" elevated className="h-full">
               <div className="flex items-center justify-between mb-5">
                 <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500">
                   Frame Budget
@@ -186,7 +186,7 @@ export default function HeroBentoSection() {
 
           {/* Profiler Evidence card */}
           <motion.div custom={2} variants={fadeUp} initial="hidden" animate="visible">
-            <BentoCard variant="metric" padding="md" elevated className="h-full">
+            <BentoCard variant="metric" padding="md" importance="high" elevated className="h-full">
               <div className="flex items-center justify-between mb-4">
                 <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500">
                   Profiler Metrics
@@ -226,7 +226,7 @@ export default function HeroBentoSection() {
           animate="visible"
         >
           <a href="#experience" className="block h-full group">
-            <BentoCard variant="default" padding="md" elevated glow="green" className="h-full flex flex-col justify-between transition-all group-hover:border-emerald-500/30">
+            <BentoCard variant="default" padding="md" importance="normal" elevated glow="green" className="h-full flex flex-col justify-between transition-all group-hover:border-emerald-500/30">
               <div>
                 <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-4">
                   Published Results
@@ -272,7 +272,7 @@ export default function HeroBentoSection() {
           initial="hidden"
           animate="visible"
         >
-          <BentoCard variant="dim" padding="md" elevated className="h-full">
+          <BentoCard variant="dim" padding="md" importance="low" elevated className="h-full">
             <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-4">
               Best Fit Roles
             </p>
@@ -296,7 +296,7 @@ export default function HeroBentoSection() {
           animate="visible"
         >
           <a href="#evidence" className="block h-full group">
-            <BentoCard variant="dim" padding="md" elevated className="h-full flex flex-col justify-between transition-all group-hover:border-electric/20">
+            <BentoCard variant="dim" padding="md" importance="low" elevated className="h-full flex flex-col justify-between transition-all group-hover:border-electric/20">
               <div>
                 <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-4">
                   Engineering Posture
@@ -332,7 +332,7 @@ export default function HeroBentoSection() {
           initial="hidden"
           animate="visible"
         >
-          <BentoCard variant="metric" padding="md" elevated className="h-full flex flex-col">
+          <BentoCard variant="metric" padding="md" importance="high" elevated className="h-full flex flex-col">
             <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-4">
               Explore the Portfolio
             </p>

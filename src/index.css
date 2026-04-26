@@ -144,6 +144,51 @@ body {
     0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
+/* ── Shared card priority styles ── */
+.card-surface {
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card-surface:hover {
+  transform: translateY(-3px) scale(1.01);
+}
+
+.card-surface--low {
+  border-style: dashed;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.card-surface--high {
+  border-width: 2px;
+  border-color: rgba(var(--neon), 0.25);
+}
+
+.card-surface--priority {
+  border-width: 2px;
+  border-color: rgba(var(--neon), 0.35);
+  background-image: linear-gradient(145deg, rgba(var(--neon), 0.1), rgba(var(--electric), 0.05) 45%, transparent 80%);
+  box-shadow: 0 14px 30px rgba(var(--neon), 0.15);
+}
+
+.light .card-surface {
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.light .card-surface--low {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.light .card-surface--high {
+  border-color: rgba(var(--neon), 0.35);
+}
+
+.light .card-surface--priority {
+  border-color: rgba(var(--neon), 0.4);
+  box-shadow: 0 12px 24px rgba(var(--neon), 0.13);
+}
+
 /* ── Page hero ambient background ── */
 .page-hero-glow {
   background: radial-gradient(ellipse 70% 40% at 50% 0%, rgba(var(--neon), 0.06), transparent);

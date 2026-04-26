@@ -77,7 +77,7 @@ export default function ContactBentoSection() {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <BentoCard variant="featured" padding="lg" className="h-full flex flex-col gap-6">
+          <BentoCard variant="featured" padding="lg" importance="priority" shape="soft" className="h-full flex flex-col gap-6">
             {/* Contact links */}
             <div>
               <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-4">
@@ -136,7 +136,7 @@ export default function ContactBentoSection() {
           transition={{ duration: 0.5, delay: 0.08 }}
           viewport={{ once: true }}
         >
-          <BentoCard variant="metric" padding="md" className="h-full flex flex-col gap-5">
+          <BentoCard variant="metric" padding="md" importance="high" className="h-full flex flex-col gap-5">
             <div>
               <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-4">
                 Resume Variants
