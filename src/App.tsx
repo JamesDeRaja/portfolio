@@ -3,6 +3,10 @@ import ProfilingToolkitCaseStudyPage from './caseStudies/pages/ProfilingToolkitC
 import PublishedMobileProjectsCaseStudyPage from './caseStudies/pages/PublishedMobileProjectsCaseStudyPage';
 import SoftMaskProCaseStudyPage from './caseStudies/pages/SoftMaskProCaseStudyPage';
 import UpdateStrategiesCaseStudyPage from './caseStudies/pages/UpdateStrategiesCaseStudyPage';
+import UpdateStrategiesVariantAPage from './caseStudies/pages/UpdateStrategiesVariantAPage';
+import UpdateStrategiesVariantBPage from './caseStudies/pages/UpdateStrategiesVariantBPage';
+import UpdateStrategiesVariantCPage from './caseStudies/pages/UpdateStrategiesVariantCPage';
+import UpdateStrategiesVariantDPage from './caseStudies/pages/UpdateStrategiesVariantDPage';
 import XRStressLabCaseStudyPage from './caseStudies/pages/XRStressLabCaseStudyPage';
 import FramePacingLabPage from './lab/pages/FramePacingLabPage';
 import FramePacingVsFPSLabPage from './lab/pages/FramePacingVsFPSLabPage';
@@ -25,6 +29,10 @@ function App() {
         <Route path="/case-studies/softmaskpro" element={<SoftMaskProCaseStudyPage />} />
         <Route path="/case-studies/profiling-toolkit" element={<ProfilingToolkitCaseStudyPage />} />
         <Route path="/case-studies/update-strategies-scale" element={<UpdateStrategiesCaseStudyPage />} />
+        <Route path="/case-studies/update-strategies-scale/variant-a" element={<UpdateStrategiesVariantAPage />} />
+        <Route path="/case-studies/update-strategies-scale/variant-b" element={<UpdateStrategiesVariantBPage />} />
+        <Route path="/case-studies/update-strategies-scale/variant-c" element={<UpdateStrategiesVariantCPage />} />
+        <Route path="/case-studies/update-strategies-scale/variant-d" element={<UpdateStrategiesVariantDPage />} />
         <Route path="/case-studies/sneaky-warrior-3d" element={<PublishedMobileProjectsCaseStudyPage />} />
         <Route path="/case-studies/published-mobile-projects" element={<PublishedMobileProjectsCaseStudyPage />} />
         <Route path="/lab/overdraw" element={<OverdrawLabPage />} />

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import PageHero from '../../components/PageHero';
 import MiniBars from '../../components/charts/MiniBars';
@@ -22,6 +23,7 @@ interface Variant {
   screenshots: VariantScreenshot[];
   metrics: { label: string; value: string; highlight?: boolean }[];
   observation: string;
+  deepDiveHref: string;
 }
 
 const variants: Variant[] = [
@@ -46,6 +48,7 @@ const variants: Variant[] = [
     ],
     observation:
       'System is not CPU-bound by scripts. Cost dominated by scene update and rendering. Establishes the minimum achievable cost floor for this scene.',
+    deepDiveHref: '/case-studies/update-strategies-scale/variant-a',
   },
   {
     id: 'b',
@@ -70,6 +73,7 @@ const variants: Variant[] = [
     ],
     observation:
       'Per-object Update introduces significant CPU overhead. Even minimal per-entity logic becomes expensive at scale because Unity dispatches 10,000 separate Update calls every frame.',
+    deepDiveHref: '/case-studies/update-strategies-scale/variant-b',
   },
   {
     id: 'c',
@@ -92,6 +96,7 @@ const variants: Variant[] = [
     ],
     observation:
       'Centralized update removes MonoBehaviour dispatch overhead and cuts script cost roughly in half. However, Transform reads/writes and cache-unfriendly object iteration still limit further gains.',
+    deepDiveHref: '/case-studies/update-strategies-scale/variant-c',
   },
   {
     id: 'd',
@@ -116,6 +121,7 @@ const variants: Variant[] = [
     ],
     observation:
       'ECS removes per-object overhead entirely and enables efficient chunk-based iteration. Simulation cost drops to ~9 ms while handling the identical 10,000-entity workload — a 4× improvement over the manager pattern.',
+    deepDiveHref: '/case-studies/update-strategies-scale/variant-d',
   },
 ];
 
@@ -264,9 +270,20 @@ export default function UpdateStrategiesCaseStudyPage() {
               </div>
 
               {/* Observation */}
-              <div className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-4">
-                <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-2">Observation</p>
-                <p className="text-sm text-slate-300 leading-relaxed">{v.observation}</p>
+              <div className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-4 flex flex-col justify-between gap-3">
+                <div>
+                  <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-2">Observation</p>
+                  <p className="text-sm text-slate-300 leading-relaxed">{v.observation}</p>
+                </div>
+                <Link
+                  to={v.deepDiveHref}
+                  className={`self-start flex items-center gap-1.5 rounded-lg border ${v.accentBorder} ${v.accentBg} px-3 py-1.5 text-xs font-medium ${v.accent} transition hover:opacity-80`}
+                >
+                  Explore Setup
+                  <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </Link>
               </div>
             </div>
           </motion.section>
