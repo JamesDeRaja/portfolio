@@ -118,6 +118,12 @@ const foundations = [
   'Burst compiler & Job System for cache-friendly hot paths',
 ];
 
+const zohoContext = [
+  'Multi-tenant SaaS — OAuth 2.0, webhook delivery, async event pipelines at 5M+ calls/day',
+  'Backwards-compatible deprecation strategy across 8,000+ live organizations — zero forced migrations',
+  'API versioning and migration path design under live production traffic — no downtime, no API breaks',
+];
+
 const sharedStrengths = [
   'Measure before touching anything — profiler or logs first, always',
   'Reproducible evidence for every performance or reliability claim',
@@ -228,11 +234,29 @@ export default function ExperienceBentoSection() {
             </div>
 
             {/* Achievements */}
-            <div className="divide-y divide-white/[0.04] flex-1">
+            <div className="divide-y divide-white/[0.04]">
               {zohoAchievements.map((item) => (
                 <AchievementRow key={item.title} item={item} accentColor="neon" />
               ))}
             </div>
+
+            {/* Scale & Systems Context */}
+            <div className="border-t border-white/[0.06] px-6 py-4">
+              <p className="mb-3 font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500">
+                Scale & Systems Context
+              </p>
+              <ul className="space-y-2">
+                {zohoContext.map((c) => (
+                  <li key={c} className="flex items-start gap-2">
+                    <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-neon/30" />
+                    <span className="text-xs text-slate-400 leading-relaxed">{c}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Spacer */}
+            <div className="flex-1" />
 
             {/* Tags */}
             <div className="border-t border-white/[0.06] px-6 py-3.5">
@@ -317,11 +341,14 @@ export default function ExperienceBentoSection() {
             </div>
 
             {/* Achievements */}
-            <div className="divide-y divide-white/[0.04] flex-1">
+            <div className="divide-y divide-white/[0.04]">
               {alphadenAchievements.map((item) => (
                 <AchievementRow key={item.title} item={item} accentColor="electric" />
               ))}
             </div>
+
+            {/* Spacer */}
+            <div className="flex-1" />
 
             {/* Foundations */}
             <div className="border-t border-electric/[0.08] px-6 py-4">

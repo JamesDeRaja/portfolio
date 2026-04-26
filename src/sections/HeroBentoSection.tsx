@@ -225,7 +225,7 @@ export default function HeroBentoSection() {
           initial="hidden"
           animate="visible"
         >
-          <a href="#shipped-titles" className="block h-full group">
+          <a href="#experience" className="block h-full group">
             <BentoCard variant="default" padding="md" elevated glow="green" className="h-full flex flex-col justify-between transition-all group-hover:border-emerald-500/30">
               <div>
                 <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-4">
