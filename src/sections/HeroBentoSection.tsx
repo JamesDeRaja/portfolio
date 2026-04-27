@@ -76,13 +76,13 @@ export default function HeroBentoSection() {
               </div>
 
               {/* Identity + title */}
-              <div className="flex items-end gap-4 sm:gap-6">
+              <div className="flex items-start gap-4 sm:gap-5">
                 <div className="relative flex-shrink-0">
-                  <div className="absolute -inset-2 rounded-[1.4rem] bg-neon/10 blur-xl" aria-hidden="true" />
+                  <div className="absolute -inset-1.5 rounded-xl bg-neon/10 blur-lg" aria-hidden="true" />
                   <img
                     src="/images/james.jpg"
                     alt="James De Raja"
-                    className="relative h-24 w-24 sm:h-32 sm:w-32 lg:h-40 lg:w-40 rounded-[1.4rem] object-cover ring-1 ring-neon/25 shadow-[0_0_24px_rgba(129,140,248,0.22)]"
+                    className="relative h-20 w-20 sm:h-24 sm:w-24 lg:h-24 lg:w-24 rounded-xl object-cover ring-1 ring-neon/25 shadow-[0_0_20px_rgba(129,140,248,0.2)]"
                   />
                 </div>
                 <div>
