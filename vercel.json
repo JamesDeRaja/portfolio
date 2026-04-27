@@ -14,7 +14,7 @@
   ],
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/((?!assets/|resume/|images/|lab/|case-studies/|metrics/|api/|favicon.ico|robots.txt|sitemap.xml|og-image.png).*)",
       "destination": "/index.html"
     }
   ]
