@@ -151,7 +151,7 @@ export default function ContactBentoSection() {
                   >
                     <div className="flex items-center gap-2.5">
                       <FileText size={13} className="text-slate-500 group-hover:text-neon transition-colors" />
-                      <span className="text-xs text-slate-300 group-hover:text-white transition-colors">
+                      <span className="text-xs text-slate-300 transition-colors">
                         {r.label}
                       </span>
                     </div>
