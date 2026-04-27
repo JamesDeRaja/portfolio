@@ -9,9 +9,11 @@ import EvidenceBentoSection from '../sections/EvidenceBentoSection';
 import ExperienceBentoSection from '../sections/ExperienceBentoSection';
 import SkillsBentoSection from '../sections/SkillsBentoSection';
 import ContactBentoSection from '../sections/ContactBentoSection';
+import { useTheme } from '../contexts/ThemeContext';
 
 export default function HomePage() {
   const location = useLocation();
+  const { theme } = useTheme();
 
   useEffect(() => {
     const hash = location.hash.replace('#', '');
@@ -32,7 +34,7 @@ export default function HomePage() {
       />
 
       {/* Particle background */}
-      <ParticleField />
+      <ParticleField theme={theme} />
 
       {/* Grid overlay */}
       <div className="pointer-events-none fixed inset-0 z-0 bg-grid-overlay" aria-hidden="true" />
