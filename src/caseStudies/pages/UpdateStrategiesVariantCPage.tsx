@@ -130,7 +130,21 @@ export default function UpdateStrategiesVariantCPage() {
           </div>
         </motion.div>
 
-        {/* Purpose */}
+        
+
+        <section className="mt-8 rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5">
+          <h2 className="text-lg font-semibold text-white">Problem</h2>
+          <p className="mt-2 text-sm text-slate-300">Large-entity Unity scenes can collapse frame budgets when update architecture and memory access patterns are not controlled.</p>
+          <h2 className="mt-4 text-lg font-semibold text-white">What you did</h2>
+          <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-300">
+            <li>Designed controlled scenarios with fixed scene load and one architecture variable at a time.</li>
+            <li>Captured Unity Profiler and runtime metrics to isolate CPU and GPU behavior.</li>
+            <li>Validated changes against frame budget targets before recording outcomes.</li>
+          </ul>
+          <h2 className="mt-4 text-lg font-semibold text-white">Result</h2>
+          <p className="mt-2 text-sm text-slate-300">Improved frame stability under load by removing per-object update dispatch.</p>
+        </section>
+{/* Purpose */}
         <section className="mt-10 space-y-3">
           <h2 className="text-lg font-semibold text-white">Study Purpose</h2>
           <div className="rounded-2xl border border-amber-500/15 bg-amber-500/[0.04] p-5">

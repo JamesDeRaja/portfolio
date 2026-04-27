@@ -34,6 +34,21 @@ export default function InstancingLabPage() {
         metricLabel="CPU reduction via instancing"
       />
 
+      <section className="mt-6 rounded-xl border border-white/[0.08] bg-white/[0.02] p-4">
+        <h2 className="text-base font-semibold text-white">Lab Metadata</h2>
+        <p className="mt-2 text-sm text-slate-300">Unity 6 · Mobile · 16.6ms Frame Budget</p>
+      </section>
+
+      <section className="mt-6 rounded-xl border border-white/[0.08] bg-white/[0.02] p-4">
+        <h2 className="text-base font-semibold text-white">Performance Evidence</h2>
+        <ul className="mt-2 space-y-1 text-sm text-slate-300">
+          <li>• Profiler Capture (Coming)</li>
+          <li>• Frame Debugger (Coming)</li>
+          <li>• Metrics Table (Coming)</li>
+        </ul>
+      </section>
+
+
       <MetricsSummary
         baselineCpu={15.03}
         baselineGpu={7.09}
@@ -44,7 +59,7 @@ export default function InstancingLabPage() {
 
       <section className="mt-8 space-y-3">
         <h2 className="text-xl font-semibold text-white">Evidence</h2>
-        <p className="text-slate-300">Capture export is being normalized for publication.</p>
+        <p className="text-slate-300">Profiler captures are queued in the evidence checklist below.</p>
       </section>
     </main>
     </div>

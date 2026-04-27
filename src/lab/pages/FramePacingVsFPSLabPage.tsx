@@ -35,6 +35,21 @@ export default function FramePacingVsFPSLabPage() {
         chips={['Lab Article', '8 min read', 'Performance', 'XR', 'Frame Timing']}
       />
 
+      <section className="mt-6 rounded-xl border border-white/[0.08] bg-white/[0.02] p-4">
+        <h2 className="text-base font-semibold text-white">Lab Metadata</h2>
+        <p className="mt-2 text-sm text-slate-300">Unity 6 · Mobile · 16.6ms Frame Budget</p>
+      </section>
+
+      <section className="mt-6 rounded-xl border border-white/[0.08] bg-white/[0.02] p-4">
+        <h2 className="text-base font-semibold text-white">Performance Evidence</h2>
+        <ul className="mt-2 space-y-1 text-sm text-slate-300">
+          <li>• Profiler Capture (Coming)</li>
+          <li>• Frame Debugger (Coming)</li>
+          <li>• Metrics Table (Coming)</li>
+        </ul>
+      </section>
+
+
       <div className="glass-card rounded-2xl p-4 text-sm text-slate-300 mt-6">
         <p className="font-semibold text-white">Test setup</p>
         <ul className="mt-2 list-disc space-y-1 pl-5">
@@ -95,6 +110,7 @@ export default function FramePacingVsFPSLabPage() {
           <img
             src="/lab/FramePacing_UnderTarget_LowFPS.png"
             alt="Unity Profiler capture showing low FPS and frame times exceeding the 72 Hz budget"
+            loading="lazy"
             className="rounded-xl border border-white/10"
           />
           <figcaption className="text-sm text-slate-400">
@@ -106,17 +122,13 @@ export default function FramePacingVsFPSLabPage() {
           <img
             src="/lab/FramePacing_OnTarget_72FPS.png"
             alt="Unity Profiler capture showing delivery near 72 FPS with present and sync markers in the timeline"
+            loading="lazy"
             className="rounded-xl border border-white/10"
           />
           <figcaption className="text-sm text-slate-400">
             <span className="font-semibold text-white">On target (72 FPS):</span> cadence still depends on variance and sync behavior. Markers like WaitForPresentOnGfxThread and WaitForSignal indicate present gating.
           </figcaption>
         </figure>
-        <div className="glass-card rounded-2xl p-4 text-sm text-slate-300">
-          Frame pacing screenshots are intentionally omitted for now to avoid binary upload constraints in this
-          environment. The article content remains focused on 72 Hz deadline behavior, variance interpretation, and
-          synchronization markers.
-        </div>
 
         <div className="glass-card rounded-2xl p-4 text-sm text-slate-300">
           <span className="font-semibold text-white">Takeaway:</span> FPS indicates whether budget is reached;

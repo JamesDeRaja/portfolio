@@ -53,35 +53,58 @@ export default function AboutSection() {
               <img
                 src="/images/james.jpg"
                 alt="James De Raja"
+                loading="lazy"
                 className="h-36 w-36 rounded-2xl object-cover ring-2 ring-neon/20"
               />
               <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10" />
             </div>
             <div className="text-center sm:text-left">
               <p className="text-sm font-semibold text-white">James De Raja</p>
-              <p className="mt-0.5 text-xs text-slate-400">Performance Engineer &bull; Game Developer</p>
-              <p className="mt-0.5 text-xs text-slate-500">Chennai &bull; Open to relocation</p>
-              <span className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-2 py-0.5 text-xs font-medium text-emerald-400">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                Available
-              </span>
+              <p className="mt-0.5 text-xs text-slate-400">Staff Software Engineer &bull; Unity Systems Engineer</p>
+              <p className="mt-0.5 text-xs text-slate-500">Chennai</p>
             </div>
           </div>
 
           {/* Bio */}
           <div className="space-y-4 text-sm text-slate-300 leading-relaxed">
             <p>
-              I&apos;m a real-time performance engineer with <span className="font-medium text-neon">13+ years</span> optimizing Unity rendering pipelines, frame pacing, and CPU/GPU bottleneck behaviour under strict 11ms / 16ms frame budgets. I find the problem, prove it with profiler evidence, fix it, and verify the fix holds.
+              I&apos;m a performance-focused Unity engineer with <span className="font-medium text-neon">9+ years</span> building production systems, optimizing frame budgets, and shipping measurable gameplay improvements.
             </p>
             <p>
               My current focus is the <span className="font-medium text-white">XR Performance Stress Lab</span> — a deterministic Unity 6 URP + OpenXR benchmark harness targeting Meta Quest / PCVR rendering constraints at <span className="font-medium text-neon">72Hz and 90Hz</span>. Before that, I shipped multiple mobile titles on iOS and Android where frame budget discipline was the difference between a 4-star and 2-star review.
             </p>
             <p>
-              In parallel, as a Senior Systems Engineer at <span className="font-medium text-white">Zoho Corporation</span> (2017–present), I architect enterprise API integrations and distributed systems — directly transferable to production-scale game backends and live service infrastructure.
+              In parallel, as a Staff Software Engineer at <span className="font-medium text-white">Zoho Corporation</span>, I architect scalable iPaaS and platform systems that translate directly to robust game infrastructure and tooling.
             </p>
             <p className="text-slate-400">
-              Open to remote roles and international relocation. <span className="font-medium text-white/80">B.E., Electrical &amp; Electronics — SSN College of Engineering, Chennai.</span>
+              <span className="font-medium text-white/80">B.E., Electrical &amp; Electronics — SSN College of Engineering, Chennai.</span>
             </p>
+          </div>
+        </div>
+      </AnimatedSection>
+
+
+      <AnimatedSection delay={0.05}>
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          <div className="glass-card rounded-2xl p-6">
+            <h3 className="font-mono text-xs font-semibold uppercase tracking-wide text-neon/60">Career Overview</h3>
+            <ul className="mt-4 space-y-2 text-sm text-slate-300">
+              <li>• Staff Software Engineer at Zoho (9+ years)</li>
+              <li>• Built scalable systems (iPaaS / platform engineering)</li>
+              <li>• Parallel indie game development (100+ Unity titles)</li>
+              <li>• Worked with publishers: Supersonic, Lion Studios, Voodoo</li>
+            </ul>
+            <p className="mt-4 text-xs text-slate-400">Zoho Title: Member Leadership Staff</p>
+            <p className="text-xs text-slate-300">Equivalent: Staff Software Engineer</p>
+          </div>
+
+          <div className="glass-card rounded-2xl p-6">
+            <h3 className="font-mono text-xs font-semibold uppercase tracking-wide text-neon/60">Focus</h3>
+            <ul className="mt-4 space-y-2 text-sm text-slate-300">
+              <li>• Gameplay systems</li>
+              <li>• Performance optimization</li>
+              <li>• Scalable Unity architecture</li>
+            </ul>
           </div>
         </div>
       </AnimatedSection>

@@ -34,6 +34,21 @@ export default function XRFrameTimingLabPage() {
         chips={['Lab Article', '9 min read', 'Unity', 'XR', 'Frame Pacing']}
       />
 
+      <section className="mt-6 rounded-xl border border-white/[0.08] bg-white/[0.02] p-4">
+        <h2 className="text-base font-semibold text-white">Lab Metadata</h2>
+        <p className="mt-2 text-sm text-slate-300">Unity 6 · Mobile · 16.6ms Frame Budget</p>
+      </section>
+
+      <section className="mt-6 rounded-xl border border-white/[0.08] bg-white/[0.02] p-4">
+        <h2 className="text-base font-semibold text-white">Performance Evidence</h2>
+        <ul className="mt-2 space-y-1 text-sm text-slate-300">
+          <li>• Profiler Capture (Coming)</li>
+          <li>• Frame Debugger (Coming)</li>
+          <li>• Metrics Table (Coming)</li>
+        </ul>
+      </section>
+
+
       <section className="mt-8 space-y-3">
         <h2 className="text-xl font-semibold text-white">Why XR timing is less forgiving</h2>
         <p className="text-slate-300">
@@ -77,6 +92,7 @@ export default function XRFrameTimingLabPage() {
           <img
             src="/lab/Overdraw_CPU_RenderThread_Comparison.png"
             alt="Unity Profiler capture showing CPU and Render Thread timing under stress"
+            loading="lazy"
             className="rounded-xl border border-white/10"
           />
           <figcaption className="text-sm text-slate-400">Profiler capture: CPU and Render Thread timing behavior under overdraw load.</figcaption>
@@ -86,6 +102,7 @@ export default function XRFrameTimingLabPage() {
           <img
             src="/lab/Overdraw_Experiment_Summary.png"
             alt="Overdraw experiment summary comparing baseline and stress"
+            loading="lazy"
             className="rounded-xl border border-white/10"
           />
           <figcaption className="text-sm text-slate-400">Controlled comparison: baseline vs overdraw stress with clear GPU escalation.</figcaption>
@@ -95,6 +112,7 @@ export default function XRFrameTimingLabPage() {
           <img
             src="/lab/Overdraw_FrameDebugger_TransparentPass.png"
             alt="Frame Debugger trace showing repeated transparent pass draws"
+            loading="lazy"
             className="rounded-xl border border-white/10"
           />
           <figcaption className="text-sm text-slate-400">Frame Debugger trace: repeated transparent draws amplifying fragment cost in stereo.</figcaption>

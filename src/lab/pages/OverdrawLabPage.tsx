@@ -34,6 +34,21 @@ export default function OverdrawLabPage() {
         metricLabel="GPU delta under overdraw stress"
       />
 
+      <section className="mt-6 rounded-xl border border-white/[0.08] bg-white/[0.02] p-4">
+        <h2 className="text-base font-semibold text-white">Lab Metadata</h2>
+        <p className="mt-2 text-sm text-slate-300">Unity 6 · Mobile · 16.6ms Frame Budget</p>
+      </section>
+
+      <section className="mt-6 rounded-xl border border-white/[0.08] bg-white/[0.02] p-4">
+        <h2 className="text-base font-semibold text-white">Performance Evidence</h2>
+        <ul className="mt-2 space-y-1 text-sm text-slate-300">
+          <li>• Profiler Capture (Coming)</li>
+          <li>• Frame Debugger (Coming)</li>
+          <li>• Metrics Table (Coming)</li>
+        </ul>
+      </section>
+
+
       <MetricsSummary
         baselineCpu={8.53}
         baselineGpu={6.88}
@@ -69,16 +84,19 @@ export default function OverdrawLabPage() {
           <img
             src="/lab/Overdraw_CPU_RenderThread_Comparison.png"
             alt="Overdraw CPU and render thread comparison"
+            loading="lazy"
             className="rounded-xl border border-white/10"
           />
           <img
             src="/lab/Overdraw_FrameDebugger_TransparentPass.png"
             alt="Overdraw frame debugger transparent pass"
+            loading="lazy"
             className="rounded-xl border border-white/10"
           />
           <img
             src="/lab/Overdraw_Experiment_Summary.png"
             alt="Overdraw experiment summary"
+            loading="lazy"
             className="rounded-xl border border-white/10"
           />
         </div>
