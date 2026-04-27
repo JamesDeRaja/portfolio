@@ -143,7 +143,7 @@ export default function PublishedMobileProjectsCaseStudyPage() {
                 </div>
                 <p className="text-xs text-slate-400 leading-relaxed">
                   Ragdoll activation and projectile bursts were treated as stutter sources. These moments were profiled explicitly
-                  to ensure frame pacing stayed stable during the burst itself, not just in steady-state.
+                  to ensure frame pacing stayed stable during the burst itself and in steady-state.
                 </p>
               </div>
             </div>

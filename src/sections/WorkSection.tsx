@@ -9,7 +9,7 @@ export default function WorkSection() {
       <SectionHeading
         eyebrow="Case Studies"
         title="Deep dives — rendering, tooling, optimization"
-        subtitle="Profiler-validated breakdowns of XR rendering bottlenecks, UI overdraw cost, runtime diagnostics, and mobile frame budget stabilisation."
+        subtitle="Profiled breakdowns of XR rendering bottlenecks, UI overdraw cost, runtime diagnostics, and mobile frame budget stabilisation."
       />
       <div className="grid gap-6 md:grid-cols-2">
         {workProjects.map((project, i) => (

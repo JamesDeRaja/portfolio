@@ -264,7 +264,7 @@ export default function CaseStudiesBentoSection() {
                 {[
                   { label: 'Overdraw stereo cost', val: '+7.27 ms' },
                   { label: 'MSAA 2× vs 4×', val: 'measured' },
-                  { label: 'Frame pacing @ 72 Hz', val: 'validated' },
+                  { label: 'Frame pacing @ 72 Hz', val: 'measured' },
                   { label: 'Instancing vs draws', val: 'compared' },
                   { label: 'UI mask GPU cost', val: '3 scenarios' },
                   { label: 'Baseline vs stress', val: 'reproducible' },

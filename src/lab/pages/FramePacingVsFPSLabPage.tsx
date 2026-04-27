@@ -46,7 +46,7 @@ export default function FramePacingVsFPSLabPage() {
             Platform: <span className="font-semibold text-white">{platform}</span>
           </li>
           <li>
-            Focus: <span className="font-semibold text-white">variance + sync-bound pacing</span> (not just average FPS)
+            Focus: <span className="font-semibold text-white">variance + sync-bound pacing</span> with average FPS
           </li>
         </ul>
       </div>
@@ -83,8 +83,8 @@ export default function FramePacingVsFPSLabPage() {
       <section className="mt-8 space-y-3">
         <h2 className="text-xl font-semibold text-white">Deadline framing (why 72 Hz matters)</h2>
         <p className="text-slate-300">
-          At {hz} Hz, each frame has {budgetMs.toFixed(2)} ms budget. The goal is deadline consistency, not just the
-          highest reported FPS.
+          At {hz} Hz, each frame has {budgetMs.toFixed(2)} ms budget. The goal is deadline consistency with high
+          reported FPS.
         </p>
       </section>
 
@@ -112,12 +112,6 @@ export default function FramePacingVsFPSLabPage() {
             <span className="font-semibold text-white">On target (72 FPS):</span> cadence still depends on variance and sync behavior. Markers like WaitForPresentOnGfxThread and WaitForSignal indicate present gating.
           </figcaption>
         </figure>
-        <div className="glass-card rounded-2xl p-4 text-sm text-slate-300">
-          Frame pacing screenshots are intentionally omitted for now to avoid binary upload constraints in this
-          environment. The article content remains focused on 72 Hz deadline behavior, variance interpretation, and
-          synchronization markers.
-        </div>
-
         <div className="glass-card rounded-2xl p-4 text-sm text-slate-300">
           <span className="font-semibold text-white">Takeaway:</span> FPS indicates whether budget is reached;
           pacing indicates whether budget is reached consistently.
