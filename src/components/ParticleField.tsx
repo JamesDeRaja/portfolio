@@ -10,11 +10,15 @@ type Particle = {
   hue: number;
 };
 
+type ParticleFieldProps = {
+  theme?: 'dark' | 'light';
+};
+
 const MAX_DPR = 1.75;
 const CONNECTION_DISTANCE = 150;
 const CONNECTION_DISTANCE_SQ = CONNECTION_DISTANCE * CONNECTION_DISTANCE;
 
-export default function ParticleField() {
+export default function ParticleField({ theme = 'dark' }: ParticleFieldProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number>(0);
   const particlesRef = useRef<Particle[]>([]);
@@ -49,14 +53,15 @@ export default function ParticleField() {
 
     const createParticles = () => {
       const count = Math.min(70, Math.floor(window.innerWidth / 24));
+      const isLightTheme = theme === 'light';
       particlesRef.current = Array.from({ length: count }, () => ({
         x: Math.random() * window.innerWidth,
         y: Math.random() * window.innerHeight,
         vx: (Math.random() - 0.5) * 0.3,
         vy: (Math.random() - 0.5) * 0.3,
         size: Math.random() * 2 + 0.5,
-        opacity: Math.random() * 0.45 + 0.12,
-        hue: Math.random() > 0.72 ? 270 : 185,
+        opacity: isLightTheme ? Math.random() * 0.28 + 0.2 : Math.random() * 0.45 + 0.12,
+        hue: Math.random() > 0.72 ? 270 : isLightTheme ? 225 : 185,
       }));
     };
 
@@ -97,6 +102,9 @@ export default function ParticleField() {
 
       ctx.clearRect(0, 0, width, height);
       const particles = particlesRef.current;
+      const isLightTheme = theme === 'light';
+      const particleLightness = isLightTheme ? '52%' : '70%';
+      const lineLightness = isLightTheme ? '46%' : '70%';
       const mouse = mouseRef.current;
 
       for (let i = 0; i < particles.length; i++) {
@@ -112,7 +120,7 @@ export default function ParticleField() {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(${p.hue}, 100%, 70%, ${p.opacity})`;
+        ctx.fillStyle = `hsla(${p.hue}, 100%, ${particleLightness}, ${p.opacity})`;
         ctx.fill();
 
         for (let j = i + 1; j < particles.length; j++) {
@@ -123,11 +131,12 @@ export default function ParticleField() {
 
           if (distSq < CONNECTION_DISTANCE_SQ) {
             const dist = Math.sqrt(distSq);
-            const alpha = 0.055 * (1 - dist / CONNECTION_DISTANCE);
+            const alphaBase = isLightTheme ? 0.095 : 0.055;
+            const alpha = alphaBase * (1 - dist / CONNECTION_DISTANCE);
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `hsla(185, 100%, 70%, ${alpha})`;
+            ctx.strokeStyle = `hsla(${isLightTheme ? 225 : 185}, 100%, ${lineLightness}, ${alpha})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -167,13 +176,13 @@ export default function ParticleField() {
       cancelAnimationFrame(resizeRaf);
       animationRef.current = 0;
     };
-  }, []);
+  }, [theme]);
 
   return (
     <canvas
       ref={canvasRef}
       className="pointer-events-none fixed inset-0 z-0 particle-canvas"
-      style={{ opacity: 0.55 }}
+      style={{ opacity: theme === 'light' ? 0.78 : 0.55 }}
       aria-hidden="true"
     />
   );

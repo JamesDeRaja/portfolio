@@ -13,6 +13,9 @@
   --void-700: 17 17 39;
   --neon: 129 140 248;
   --electric: 167 139 250;
+  --selection-bg: 129 140 248;
+  --selection-text: 255 255 255;
+  --selection-link-text: 255 255 255;
 
   color: #e2e8f0;
   background-color: rgb(var(--void-950));
@@ -28,6 +31,9 @@
   --void-700: 220 219 240;   /* #dcdbe0 — subtle border/divider */
   --neon: 99 102 241;
   --electric: 109 40 217;
+  --selection-bg: 99 102 241;
+  --selection-text: 15 23 42;
+  --selection-link-text: 15 23 42;
 
   color: #18181f;            /* near-black with the faintest blue — premium charcoal */
   color-scheme: light;
@@ -45,9 +51,16 @@ body {
 }
 
 /* ── Selection color ── */
-::selection {
-  background-color: rgba(var(--neon), 0.2);
-  color: #fff;
+*::selection {
+  background-color: rgba(var(--selection-bg), 0.35);
+  color: rgb(var(--selection-text));
+}
+
+a::selection,
+a *::selection {
+  background-color: rgba(var(--selection-bg), 0.5);
+  color: rgb(var(--selection-link-text));
+  -webkit-text-fill-color: rgb(var(--selection-link-text));
 }
 
 /* ── Scrollbar ── */

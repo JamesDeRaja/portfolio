@@ -67,33 +67,36 @@ export default function HeroBentoSection() {
         >
           <BentoCard variant="featured" padding="lg" elevated className="h-full flex flex-col justify-between gap-7">
             <div className="space-y-5">
-              {/* Top row: badge + photo */}
+              {/* Top row: availability badge */}
               <div className="flex items-start justify-between gap-4">
                 <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-500/[0.06] px-3 py-1 text-xs font-medium text-emerald-400">
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
                   Open to senior roles — Unity Rendering / XR Performance
                 </span>
-                <div className="hidden sm:block flex-shrink-0">
+              </div>
+
+              {/* Identity + title */}
+              <div className="flex items-start gap-4 sm:gap-5">
+                <div className="relative mt-1 flex-shrink-0">
+                  <div className="absolute -inset-2 rounded-2xl bg-neon/10 blur-xl" aria-hidden="true" />
                   <img
                     src="/images/james.jpg"
                     alt="James De Raja"
-                    className="h-16 w-16 rounded-xl object-cover ring-1 ring-neon/20 shadow-[0_0_16px_rgba(0,240,255,0.1)]"
+                    className="relative h-20 w-20 sm:h-24 sm:w-24 lg:h-28 lg:w-28 rounded-2xl object-cover ring-1 ring-neon/25 shadow-[0_0_24px_rgba(129,140,248,0.22)]"
                   />
                 </div>
-              </div>
-
-              {/* Name + title */}
-              <div>
-                <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-                  James{' '}
-                  <span className="gradient-text">De Raja</span>
-                </h1>
-                <p className="mt-3 text-xl font-semibold text-white/90 sm:text-2xl">
-                  Senior Real-Time Performance Engineer
-                </p>
-                <p className="mt-1.5 font-mono text-sm text-neon/80">
-                  Unity Rendering&nbsp;&bull;&nbsp;XR Frame Budgets&nbsp;&bull;&nbsp;CPU/GPU Bottleneck Isolation
-                </p>
+                <div>
+                  <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+                    James{' '}
+                    <span className="gradient-text">De Raja</span>
+                  </h1>
+                  <p className="mt-3 text-xl font-semibold text-white/90 sm:text-2xl">
+                    Senior Real-Time Performance Engineer
+                  </p>
+                  <p className="mt-1.5 font-mono text-sm text-neon/80">
+                    Unity Rendering&nbsp;&bull;&nbsp;XR Frame Budgets&nbsp;&bull;&nbsp;CPU/GPU Bottleneck Isolation
+                  </p>
+                </div>
               </div>
 
               {/* Value prop */}
