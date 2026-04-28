@@ -65,7 +65,7 @@ export default function HeroSection() {
           <motion.div variants={itemVariants}>
             <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-4 py-1.5 text-xs font-medium text-emerald-400">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              Open to remote &amp; relocation — rendering, XR performance, engine optimization
+              9+ Years Experience · 100+ Unity Titles · Supersonic · Lion Studios · Voodoo
             </span>
           </motion.div>
 
@@ -83,13 +83,13 @@ export default function HeroSection() {
             variants={itemVariants}
             className="mt-4 text-xl font-semibold text-neon/90 sm:text-2xl lg:text-3xl"
           >
-            Real-Time Performance Engineer
+            Staff Software Engineer · Zoho
           </motion.p>
           <motion.p
             variants={itemVariants}
             className="mt-1 text-base text-slate-400 sm:text-lg"
           >
-            Unity Rendering &bull; Frame Stability &bull; XR / Mobile / Shipped Titles
+            Unity Systems · Performance · Gameplay
           </motion.p>
 
           {/* Value prop */}

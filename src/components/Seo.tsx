@@ -25,7 +25,7 @@ export function Seo({
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'James De Raja',
-    jobTitle: 'Senior Real-Time Performance Engineer',
+    jobTitle: 'Staff Software Engineer · Unity Systems · Performance · Gameplay',
     url: 'https://jamesderaja.com',
     email: 'jamesderaja@gmail.com',
     address: {

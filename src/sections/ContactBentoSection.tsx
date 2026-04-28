@@ -63,8 +63,7 @@ export default function ContactBentoSection() {
           Let's talk performance engineering
         </h2>
         <p className="mt-2 max-w-2xl text-sm text-slate-400 leading-relaxed">
-          Open to remote roles worldwide and international relocation. Senior Unity, XR, and rendering
-          engineering positions where measurable performance evidence is a priority.
+          Senior Unity, XR, and rendering engineering conversations focused on measurable performance outcomes.
         </p>
       </motion.div>
 
@@ -104,7 +103,7 @@ export default function ContactBentoSection() {
             {/* Location */}
             <div className="flex items-center gap-2 text-sm text-slate-500">
               <MapPin size={14} />
-              <span>Chennai, India · Open to remote worldwide and international relocation</span>
+              <span>Email: jamesderaja@gmail.com · Response within 24 hours</span>
             </div>
 
             {/* Positioning statement */}
@@ -176,10 +175,10 @@ export default function ContactBentoSection() {
             <div className="rounded-xl border border-emerald-500/15 bg-emerald-500/[0.05] px-4 py-3">
               <div className="flex items-center gap-2 mb-1">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <p className="text-xs font-semibold text-emerald-400">Available</p>
+                <p className="text-xs font-semibold text-emerald-400">Contact Window</p>
               </div>
               <p className="text-[11px] text-slate-400">
-                Senior roles · Remote worldwide · Open to relocation
+                Response within 24 hours
               </p>
             </div>
           </BentoCard>

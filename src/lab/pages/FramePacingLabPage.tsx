@@ -30,6 +30,21 @@ export default function FramePacingLabPage() {
         description="This experiment track captures variance signatures under controlled workload modulation. Quantified results are published alongside the other stress paths once capture normalization is complete."
         chips={['Frame Pacing', 'Variance', 'Spike Analysis', 'Unity XR']}
       />
+
+      <section className="mt-6 rounded-xl border border-white/[0.08] bg-white/[0.02] p-4">
+        <h2 className="text-base font-semibold text-white">Lab Metadata</h2>
+        <p className="mt-2 text-sm text-slate-300">Unity 6 · Mobile · 16.6ms Frame Budget</p>
+      </section>
+
+      <section className="mt-6 rounded-xl border border-white/[0.08] bg-white/[0.02] p-4">
+        <h2 className="text-base font-semibold text-white">Performance Evidence</h2>
+        <ul className="mt-2 space-y-1 text-sm text-slate-300">
+          <li>• Profiler Capture (Coming)</li>
+          <li>• Frame Debugger (Coming)</li>
+          <li>• Metrics Table (Coming)</li>
+        </ul>
+      </section>
+
     </main>
     </div>
   );

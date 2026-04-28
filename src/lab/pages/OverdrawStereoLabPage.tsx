@@ -33,6 +33,21 @@ export default function OverdrawStereoLabPage() {
         chips={['Lab Article', '7 min read', 'XR', 'Unity', 'Fill-rate']}
       />
 
+      <section className="mt-6 rounded-xl border border-white/[0.08] bg-white/[0.02] p-4">
+        <h2 className="text-base font-semibold text-white">Lab Metadata</h2>
+        <p className="mt-2 text-sm text-slate-300">Unity 6 · Mobile · 16.6ms Frame Budget</p>
+      </section>
+
+      <section className="mt-6 rounded-xl border border-white/[0.08] bg-white/[0.02] p-4">
+        <h2 className="text-base font-semibold text-white">Performance Evidence</h2>
+        <ul className="mt-2 space-y-1 text-sm text-slate-300">
+          <li>• Profiler Capture (Coming)</li>
+          <li>• Frame Debugger (Coming)</li>
+          <li>• Metrics Table (Coming)</li>
+        </ul>
+      </section>
+
+
       <div className="glass-card rounded-2xl p-4 text-sm text-slate-300 mt-6">
         <p className="font-semibold text-white">Test Setup</p>
         <ul className="mt-2 list-disc space-y-1 pl-5">
@@ -117,6 +132,7 @@ export default function OverdrawStereoLabPage() {
           <img
             src="/lab/Overdraw_Experiment_Summary.png"
             alt="Overdraw experiment summary comparing baseline and overdraw stress"
+            loading="lazy"
             className="rounded-xl border border-white/10"
           />
           <figcaption className="text-sm text-slate-400">
@@ -127,6 +143,7 @@ export default function OverdrawStereoLabPage() {
           <img
             src="/lab/Overdraw_CPU_RenderThread_Comparison.png"
             alt="Unity Profiler capture comparing CPU and render thread behavior under overdraw"
+            loading="lazy"
             className="rounded-xl border border-white/10"
           />
           <figcaption className="text-sm text-slate-400">
@@ -137,6 +154,7 @@ export default function OverdrawStereoLabPage() {
           <img
             src="/lab/Overdraw_FrameDebugger_TransparentPass.png"
             alt="Frame Debugger transparent pass showing repeated draws"
+            loading="lazy"
             className="rounded-xl border border-white/10"
           />
           <figcaption className="text-sm text-slate-400">

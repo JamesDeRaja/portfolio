@@ -5,6 +5,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import SmartLink from './SmartLink';
 import { useTheme } from '../contexts/ThemeContext';
 
+const profileLinks = [
+  { label: 'Resume (PDF)', href: '/resume/JamesDeRaja_Resume.pdf' },
+  { label: 'GitHub', href: 'https://github.com/JamesDeRaja' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/james-de-raja/' },
+];
+
 const navItems = [
   { label: 'Case Studies', hash: 'case-studies' },
   { label: 'Evidence', hash: 'evidence' },
@@ -73,6 +79,15 @@ export default function Navbar() {
               {item.label}
             </button>
           ))}
+          {profileLinks.map((item) => (
+            <SmartLink
+              key={item.label}
+              href={item.href}
+              className="rounded-lg px-3 py-2 text-sm text-slate-400 transition-colors hover:bg-white/5 hover:text-neon"
+            >
+              {item.label}
+            </SmartLink>
+          ))}
         </div>
 
         {/* Actions */}
@@ -130,6 +145,15 @@ export default function Navbar() {
                 >
                   {item.label}
                 </button>
+              ))}
+              {profileLinks.map((item) => (
+                <SmartLink
+                  key={item.label}
+                  href={item.href}
+                  className="block w-full rounded-lg px-3 py-3 text-left text-sm text-slate-300 transition hover:bg-white/5 hover:text-neon"
+                >
+                  {item.label}
+                </SmartLink>
               ))}
             </div>
           </motion.div>

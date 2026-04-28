@@ -37,8 +37,6 @@ export default function ContactSection() {
           <p className="text-base text-slate-300 leading-relaxed">
             I&apos;m targeting rendering, XR performance, and engine optimization roles —
             teams where measurable performance evidence is a priority.
-            Open to <span className="font-medium text-white">remote work worldwide</span> and{' '}
-            <span className="font-medium text-white">international relocation</span>.
           </p>
 
           {/* Target roles */}
@@ -73,7 +71,7 @@ export default function ContactSection() {
 
           <div className="mt-6 flex items-center gap-2 text-sm text-slate-500">
             <MapPin size={14} />
-            <span>Chennai, India &bull; Ready to relocate</span>
+            <span>Email: jamesderaja@gmail.com · Response within 24 hours</span>
           </div>
         </div>
       </AnimatedSection>

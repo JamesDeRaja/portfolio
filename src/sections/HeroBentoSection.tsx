@@ -29,12 +29,11 @@ const profilerRows = [
 ];
 
 const proofBadges = [
-  '14+ years Unity',
+  '9+ years production',
+  '100+ Unity titles',
   'C# / Unity 6',
-  'URP / OpenXR',
-  'XR Interaction Toolkit',
-  '1M+ installs',
-  'Voodoo · Lion Studios · Supersonic',
+  'Mobile systems',
+  'Supersonic · Lion Studios · Voodoo',
 ];
 
 const bestFitRoles = [
@@ -67,14 +66,6 @@ export default function HeroBentoSection() {
         >
           <BentoCard variant="featured" padding="lg" elevated className="h-full flex flex-col justify-between gap-7">
             <div className="space-y-5">
-              {/* Top row: availability badge */}
-              <div className="flex items-start justify-between gap-4">
-                <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-500/[0.06] px-3 py-1 text-xs font-medium text-emerald-400">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  Open to senior roles — Unity Rendering / XR Performance
-                </span>
-              </div>
-
               {/* Identity + title */}
               <div className="flex items-start gap-4 sm:gap-6">
                 <div className="relative flex-shrink-0">
@@ -82,6 +73,7 @@ export default function HeroBentoSection() {
                   <img
                     src="/images/james.jpg"
                     alt="James De Raja"
+                    loading="lazy"
                     className="relative h-24 w-24 sm:h-28 sm:w-28 lg:h-[140px] lg:w-[140px] rounded-2xl object-cover ring-1 ring-neon/25 shadow-[0_0_20px_rgba(129,140,248,0.2)]"
                   />
                 </div>
@@ -91,13 +83,16 @@ export default function HeroBentoSection() {
                     <span className="gradient-text">De Raja</span>
                   </h1>
                   <p className="mt-3 text-xl font-semibold text-white/90 sm:text-2xl">
-                    Senior Real-Time Performance Engineer
+                    Staff Software Engineer · Zoho
                   </p>
                   <p className="mt-1.5 font-mono text-sm text-neon/80">
-                    Unity Rendering&nbsp;&bull;&nbsp;XR Frame Budgets&nbsp;&bull;&nbsp;CPU/GPU Bottleneck Isolation
+                    Unity Systems&nbsp;&bull;&nbsp;Performance&nbsp;&bull;&nbsp;Gameplay
                   </p>
                 </div>
               </div>
+                  <p className="mt-2 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-xs font-mono text-slate-300">
+                    9+ Years Experience · 100+ Unity Titles · Supersonic · Lion Studios · Voodoo
+                  </p>
 
               {/* Value prop */}
               <p className="max-w-xl text-base text-slate-300 leading-relaxed">
@@ -217,6 +212,25 @@ export default function HeroBentoSection() {
             </BentoCard>
           </motion.div>
         </div>
+
+
+        <motion.div
+          className="lg:col-span-12 md:col-span-12"
+          custom={2}
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+        >
+          <BentoCard variant="dim" padding="md" elevated>
+            <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+              {['100+ Titles Shipped', '9+ Years Production', '3 Major Publishers', 'Unity · C# · Mobile Systems'].map((item) => (
+                <div key={item} className="rounded-lg border border-white/[0.06] bg-white/[0.02] px-3 py-2 text-center text-xs font-mono text-slate-300">
+                  {item}
+                </div>
+              ))}
+            </div>
+          </BentoCard>
+        </motion.div>
 
         {/* ── Row 2: Four bottom cards ── */}
 
