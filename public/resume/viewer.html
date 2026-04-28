@@ -25,11 +25,11 @@
   <body>
     <iframe id="resumeFrame" title="Resume PDF"></iframe>
     <script>
-      const allowedFiles = new Set(['James DeRaja Resume.pdf']);
+      const allowedFiles = new Set(['James De Raja Resume.pdf']);
 
       const params = new URLSearchParams(window.location.search);
-      const file = params.get('file') || 'James DeRaja Resume.pdf';
-      const selectedFile = allowedFiles.has(file) ? file : 'James DeRaja Resume.pdf';
+      const file = params.get('file') || 'James De Raja Resume.pdf';
+      const selectedFile = allowedFiles.has(file) ? file : 'James De Raja Resume.pdf';
 
       const resumeName = selectedFile.replace(/\.pdf$/i, '');
       document.title = resumeName;

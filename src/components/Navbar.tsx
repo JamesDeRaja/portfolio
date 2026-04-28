@@ -78,13 +78,13 @@ export default function Navbar() {
         {/* Actions */}
         <div className="flex items-center gap-2">
           <SmartLink
-            href="/resume/viewer.html?file=James%20DeRaja%20Resume.pdf"
+            href="/resume/viewer.html?file=James%20De%20Raja%20Resume.pdf"
             className="btn-primary hidden rounded-lg px-4 py-2 text-sm font-medium sm:inline-flex"
           >
             View Resume
           </SmartLink>
           <a
-            href="/resume/James%20DeRaja%20Resume.pdf"
+            href="/resume/James%20De%20Raja%20Resume.pdf"
             download
             className="rounded-lg border border-white/10 p-2 text-slate-400 transition hover:border-neon/30 hover:text-neon"
             aria-label="Download resume PDF"
