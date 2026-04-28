@@ -124,13 +124,13 @@ export default function ContactBentoSection() {
 
         {/* Recruiter packet card */}
         <motion.div
-          className="lg:col-span-3 md:col-span-2"
+          className="lg:col-span-3 md:col-span-2 self-center"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.08 }}
           viewport={{ once: true }}
         >
-          <BentoCard variant="metric" padding="md" className="h-full flex flex-col justify-center">
+          <BentoCard variant="metric" padding="md" className="flex flex-col justify-center">
             <div className="w-full">
               <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500">
                 Get My Resume
