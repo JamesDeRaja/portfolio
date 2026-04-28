@@ -141,6 +141,8 @@ export default function TechFocusBentoSection() {
               <BentoCard
                 variant="default"
                 padding="md"
+                importance="normal"
+                shape="rect"
                 elevated
                 className="h-full flex flex-col gap-3.5"
               >

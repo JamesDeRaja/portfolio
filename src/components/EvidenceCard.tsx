@@ -15,7 +15,7 @@ export default function EvidenceCard({ title, description, imagePath, caption }:
     <motion.article
       whileHover={{ y: -3 }}
       transition={{ duration: 0.3 }}
-      className="glass-card glass-card-hover rounded-2xl p-4 transition-all duration-300"
+      className="glass-card glass-card-hover card-surface card-surface--low rounded-2xl p-4 transition-all duration-300"
     >
       <h4 className="text-sm font-semibold text-white">{title}</h4>
       <p className="mt-1 text-xs text-slate-400">{description}</p>

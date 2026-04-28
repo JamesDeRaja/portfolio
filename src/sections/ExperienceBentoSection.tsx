@@ -200,7 +200,7 @@ export default function ExperienceBentoSection() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <BentoCard variant="default" padding="none" glow="cyan" className="h-full flex flex-col">
+          <BentoCard variant="default" padding="none" importance="normal" glow="cyan" className="h-full flex flex-col">
             {/* Header */}
             <div className="px-6 pt-6 pb-5 border-b border-white/[0.06]">
               <div className="flex items-start justify-between gap-3">
@@ -283,7 +283,7 @@ export default function ExperienceBentoSection() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <BentoCard variant="highlight" padding="none" glow="purple" className="h-full flex flex-col">
+          <BentoCard variant="highlight" padding="none" importance="high" shape="rect" glow="purple" className="h-full flex flex-col">
             {/* Header */}
             <div className="px-6 pt-6 pb-5 border-b border-electric/[0.10]">
               <div className="flex items-start justify-between gap-3">
@@ -390,7 +390,7 @@ export default function ExperienceBentoSection() {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <BentoCard variant="dim" padding="md" glow="none" className="border-dashed">
+        <BentoCard variant="dim" padding="md" importance="low" glow="none" className="border-dashed">
           <p className="mb-4 font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-600">
             Shared Engineering Discipline
           </p>

@@ -13,7 +13,7 @@ export default function WorkCard({ project }: WorkCardProps) {
     <motion.article
       whileHover={{ y: -4 }}
       transition={{ duration: 0.3 }}
-      className={`glass-card glass-card-hover rounded-2xl p-6 transition-all duration-300 ${
+      className={`glass-card glass-card-hover card-surface card-surface--high rounded-2xl p-6 transition-all duration-300 ${
         project.featured ? 'gradient-border' : ''
       }`}
     >

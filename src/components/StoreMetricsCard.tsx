@@ -7,7 +7,7 @@ type StoreMetricsCardProps = {
 
 export default function StoreMetricsCard({ visitorsImg, acquisitionsImg, summary, metrics }: StoreMetricsCardProps) {
   return (
-    <div className="mt-6 rounded-xl border border-neon/10 bg-white/[0.02] p-6">
+    <div className="card-surface card-surface--priority mt-6 rounded-xl border border-neon/10 bg-white/[0.02] p-6">
       <h4 className="font-mono text-xs font-semibold uppercase tracking-wide text-neon/60">
         Store Funnel Impact
       </h4>

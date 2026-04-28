@@ -229,7 +229,7 @@ export default function CaseStudiesBentoSection() {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <BentoCard variant="featured" padding="none" className="h-full overflow-hidden flex flex-col">
+          <BentoCard variant="featured" padding="none" importance="priority" shape="soft" className="h-full overflow-hidden flex flex-col">
             <div className="border-b border-neon/10 px-6 py-5">
               <div className="flex items-start justify-between gap-3">
                 <div>
@@ -306,7 +306,7 @@ export default function CaseStudiesBentoSection() {
           transition={{ duration: 0.5, delay: 0.08 }}
           viewport={{ once: true }}
         >
-          <BentoCard variant="highlight" padding="none" className="h-full overflow-hidden flex flex-col">
+          <BentoCard variant="highlight" padding="none" importance="high" shape="rect" className="h-full overflow-hidden flex flex-col">
             <div className="border-b border-electric/10 px-6 py-5">
               <div className="flex items-start justify-between gap-3">
                 <div>
@@ -417,7 +417,7 @@ export default function CaseStudiesBentoSection() {
             transition={{ duration: 0.45, delay: i * 0.07 }}
             viewport={{ once: true, margin: '-30px' }}
           >
-            <BentoCard variant="default" padding="md" className="h-full flex flex-col gap-3">
+            <BentoCard variant="default" padding="md" importance="normal" className="h-full flex flex-col gap-3">
               {card.metric && (
                 <MetricBadge value={card.metric} color={card.metricColor ?? 'cyan'} size="sm" />
               )}
@@ -451,7 +451,7 @@ export default function CaseStudiesBentoSection() {
           transition={{ duration: 0.45, delay: 0.21 }}
           viewport={{ once: true, margin: '-30px' }}
         >
-          <BentoCard variant="dim" padding="md" className="h-full flex flex-col overflow-hidden">
+          <BentoCard variant="dim" padding="md" importance="low" className="h-full flex flex-col overflow-hidden">
             <div className="flex items-center justify-between mb-3">
               <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-neon/90">
                 Lab Experiments
