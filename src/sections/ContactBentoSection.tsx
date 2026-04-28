@@ -71,7 +71,7 @@ export default function ContactBentoSection() {
       <BentoGrid>
         {/* Main contact card */}
         <motion.div
-          className="lg:col-span-7 md:col-span-4"
+          className="lg:col-span-8 md:col-span-4"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -148,29 +148,29 @@ export default function ContactBentoSection() {
 
         {/* Recruiter packet card */}
         <motion.div
-          className="lg:col-span-5 md:col-span-2"
+          className="lg:col-span-4 md:col-span-2"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.08 }}
           viewport={{ once: true }}
         >
-          <BentoCard variant="metric" padding="md" className="flex flex-col gap-5 lg:px-7 lg:py-7">
+          <BentoCard variant="metric" padding="md" className="flex flex-col gap-4 lg:gap-4">
             <div>
               <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-4">
                 Application Packet
               </p>
-              <div className="space-y-5">
+              <div className="space-y-4">
                 <a
                   href="/resume/James%20DeRaja%20Resume.pdf"
                   download
-                  className="btn-primary group flex h-14 w-full items-center justify-center gap-2 rounded-xl px-4 text-sm font-medium"
+                  className="btn-primary group flex h-12 w-full items-center justify-center gap-2 rounded-xl px-4 text-sm font-medium"
                 >
                   <Download size={15} />
                   Download Resume
                 </a>
                 <SmartLink
                   href="/resume/viewer.html?file=James%20DeRaja%20Resume.pdf"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/[0.08] bg-white/[0.02] px-4 py-3 text-sm font-medium text-indigo-300 transition-all hover:border-indigo-300/40 hover:text-indigo-200"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/[0.08] bg-white/[0.02] px-4 py-2.5 text-sm font-medium text-indigo-300 transition-all hover:border-indigo-300/40 hover:text-indigo-200"
                 >
                   <FileText size={14} />
                   View Resume Online
@@ -179,7 +179,7 @@ export default function ContactBentoSection() {
             </div>
 
             {/* Availability status */}
-            <div className="rounded-xl border border-emerald-500/15 bg-emerald-500/[0.05] px-4 py-2.5 lg:mt-1">
+            <div className="rounded-xl border border-emerald-500/15 bg-emerald-500/[0.05] px-4 py-2">
               <div className="mb-1 flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
                 <p className="text-xs font-semibold text-emerald-400">Available</p>
