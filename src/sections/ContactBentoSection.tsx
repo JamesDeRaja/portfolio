@@ -155,7 +155,6 @@ export default function ContactBentoSection() {
 
               {/* Availability status */}
               <div className="mt-5 w-full rounded-xl border border-emerald-500/15 bg-emerald-500/[0.05] px-4 py-2">
-                <p className="mb-1 text-[11px] text-emerald-300/80">Available for senior roles</p>
                 <div className="mb-1 flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
                   <p className="text-xs font-semibold text-emerald-400">Available</p>
