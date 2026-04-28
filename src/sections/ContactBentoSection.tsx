@@ -34,12 +34,6 @@ const targetRoles = [
   'Technical Lead, Unity',
 ];
 
-const resumeVariants = [
-  { label: 'General Resume', file: 'JamesDeRaja_Resume.pdf' },
-  { label: 'Unity Rendering Focus', file: 'JamesDeRaja_Resume_Unity-Rendering-Performance.pdf' },
-  { label: 'XR Performance Focus', file: 'JamesDeRaja_Resume_XR-Performance-Engineer.pdf' },
-];
-
 export default function ContactBentoSection() {
   return (
     <section id="contact" className="relative mx-auto max-w-screen-2xl px-4 py-20 pb-24 sm:px-6 lg:px-8">
@@ -71,13 +65,13 @@ export default function ContactBentoSection() {
       <BentoGrid>
         {/* Main contact card */}
         <motion.div
-          className="lg:col-span-8 md:col-span-4"
+          className="lg:col-span-9 md:col-span-4"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <BentoCard variant="featured" padding="lg" className="h-full flex flex-col gap-6">
+          <BentoCard variant="featured" padding="lg" className="flex flex-col gap-5 lg:px-7 lg:py-7">
             {/* Contact links */}
             <div>
               <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-4">
@@ -107,12 +101,11 @@ export default function ContactBentoSection() {
               <span>Chennai, India · Open to remote worldwide and international relocation</span>
             </div>
 
-            {/* Positioning statement */}
+            {/* Target roles */}
             <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] px-4 py-4">
               <p className="text-sm text-slate-300 leading-relaxed">
-                Targeting rendering, XR performance, and real-time systems engineering roles — teams
-                that prioritize frame budget discipline and profiler evidence as core engineering
-                requirements.
+                Targeting senior Unity, rendering, XR performance, and real-time systems roles where
+                profiler evidence, frame-budget discipline, and scalable architecture matter.
               </p>
               <div className="mt-3 flex flex-wrap gap-1.5">
                 {targetRoles.map((role) => (
@@ -125,62 +118,51 @@ export default function ContactBentoSection() {
                 ))}
               </div>
             </div>
+
           </BentoCard>
         </motion.div>
 
-        {/* Resume variants card */}
+        {/* Recruiter packet card */}
         <motion.div
-          className="lg:col-span-4 md:col-span-2"
+          className="lg:col-span-3 md:col-span-2 lg:self-center"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.08 }}
           viewport={{ once: true }}
         >
-          <BentoCard variant="metric" padding="md" className="h-full flex flex-col gap-5">
-            <div>
-              <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-4">
-                Resume Variants
+          <BentoCard variant="metric" padding="md" className="flex flex-col justify-center">
+            <div className="w-full">
+              <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500">
+                Get My Resume
               </p>
-              <div className="space-y-2.5">
-                {resumeVariants.map((r) => (
-                  <a
-                    key={r.file}
-                    href={`/resume/${r.file}`}
-                    download
-                    className="group flex items-center justify-between gap-3 rounded-lg border border-white/[0.06] bg-white/[0.02] px-3 py-3 hover:border-neon/25 hover:bg-neon/[0.04] transition-all duration-200"
-                  >
-                    <div className="flex items-center gap-2.5">
-                      <FileText size={13} className="text-slate-500 group-hover:text-neon transition-colors" />
-                      <span className="text-xs text-slate-300 transition-colors">
-                        {r.label}
-                      </span>
-                    </div>
-                    <Download size={12} className="text-slate-600 group-hover:text-neon transition-colors flex-shrink-0" />
-                  </a>
-                ))}
+              <div className="mt-6 space-y-4">
+                <a
+                  href="/resume/James%20DeRaja%20Resume.pdf"
+                  download
+                  className="btn-primary group flex h-12 w-full items-center justify-center gap-2 rounded-xl px-4 text-sm font-semibold"
+                >
+                  <Download size={15} />
+                  Download Resume
+                </a>
+                <SmartLink
+                  href="/resume/viewer.html?file=James%20DeRaja%20Resume.pdf"
+                  className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-white/[0.12] bg-white/[0.02] px-4 text-sm font-medium text-indigo-300 transition-all hover:border-indigo-300/40 hover:text-indigo-200"
+                >
+                  <FileText size={14} />
+                  View Resume Online
+                </SmartLink>
               </div>
-            </div>
 
-            {/* Online resume */}
-            <div className="border-t border-white/[0.05] pt-4">
-              <SmartLink
-                href="/resume/viewer.html?file=JamesDeRaja_Resume.pdf"
-                className="btn-primary flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium w-full"
-              >
-                <FileText size={14} />
-                View Online
-              </SmartLink>
-            </div>
-
-            {/* Availability status */}
-            <div className="rounded-xl border border-emerald-500/15 bg-emerald-500/[0.05] px-4 py-3">
-              <div className="flex items-center gap-2 mb-1">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <p className="text-xs font-semibold text-emerald-400">Available</p>
+              {/* Availability status */}
+              <div className="mt-5 w-full rounded-xl border border-emerald-500/15 bg-emerald-500/[0.05] px-4 py-2">
+                <div className="mb-1 flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <p className="text-xs font-semibold text-emerald-400">Available</p>
+                </div>
+                <p className="text-[11px] text-slate-400">
+                  Senior roles · Remote worldwide · Open to relocation
+                </p>
               </div>
-              <p className="text-[11px] text-slate-400">
-                Senior roles · Remote worldwide · Open to relocation
-              </p>
             </div>
           </BentoCard>
         </motion.div>
