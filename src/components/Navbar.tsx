@@ -78,6 +78,12 @@ export default function Navbar() {
         {/* Actions */}
         <div className="flex items-center gap-2">
           <SmartLink
+            href="/visual-journey"
+            className="hidden rounded-lg border border-neon/20 bg-neon/10 px-3 py-2 text-sm font-medium text-neon transition hover:border-neon/40 hover:bg-neon/15 lg:inline-flex"
+          >
+            Visual Resume
+          </SmartLink>
+          <SmartLink
             href="/resume/viewer.html?file=James%20DeRaja%20Resume.pdf"
             className="btn-primary hidden rounded-lg px-4 py-2 text-sm font-medium sm:inline-flex"
           >
@@ -121,6 +127,13 @@ export default function Navbar() {
             className="overflow-hidden border-t border-white/5 bg-void-950/95 backdrop-blur-xl md:hidden"
           >
             <div className="px-4 py-4 space-y-1">
+              <SmartLink
+                href="/visual-journey"
+                className="mb-2 block w-full rounded-lg border border-neon/20 bg-neon/10 px-3 py-3 text-left text-sm font-medium text-neon transition hover:border-neon/40 hover:bg-neon/15"
+                onClick={() => setMobileOpen(false)}
+              >
+                Visual Resume
+              </SmartLink>
               {navItems.map((item) => (
                 <button
                   key={item.label}
