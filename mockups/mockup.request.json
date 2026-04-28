@@ -1,0 +1,6 @@
+{
+  "action": "generate_mockups",
+  "formats": ["svg", "png"],
+  "themes": ["minimal-professional", "creative-bold", "modern-monochrome", "soft-pastel"],
+  "page_modes": ["letter", "a4"]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "James De Raja",
+  "headline": "Senior Unity Developer",
+  "specialization": "Performance Optimization • AR/VR/XR • Rendering • Frame Stability",
+  "summary": "Senior Unity performance engineer with 13+ years optimizing rendering pipelines, frame pacing, and CPU/GPU bottlenecks for mobile and XR under strict 11 ms / 72–90 Hz budgets.",
+  "availability": "Open to remote & relocation for rendering, XR performance, and engine optimization roles.",
+  "location": "UNSPECIFIED",
+  "email": "UNSPECIFIED",
+  "linkedin": "UNSPECIFIED",
+  "github": "UNSPECIFIED",
+  "resume_pdf": "/resume/james-de-raja-resume.pdf",
+  "metrics": [
+    { "value": "13+ years", "label": "Unity performance engineering" },
+    { "value": "72/90 Hz", "label": "XR budget discipline" },
+    { "value": "100+", "label": "rapid prototypes delivered" }
+  ]
+}

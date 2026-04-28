@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820">
+  <rect width="1200" height="820" fill="#F8FAFC"/>
+  <rect x="40" y="40" width="740" height="180" rx="24" fill="#0F172A"/>
+  <rect x="800" y="40" width="360" height="180" rx="24" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="76" y="140" font-family="Georgia, serif" font-size="44" fill="#FFFFFF">James De Raja</text>
+</svg>
