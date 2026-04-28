@@ -34,12 +34,6 @@ const targetRoles = [
   'Technical Lead, Unity',
 ];
 
-const proofLinks = [
-  { label: 'View Case Studies', href: '#case-studies' },
-  { label: 'View GitHub', href: 'https://github.com/JamesDeRaja' },
-  { label: 'View LinkedIn', href: 'https://www.linkedin.com/in/james-de-raja/' },
-];
-
 export default function ContactBentoSection() {
   return (
     <section id="contact" className="relative mx-auto max-w-screen-2xl px-4 py-20 pb-24 sm:px-6 lg:px-8">
@@ -71,7 +65,7 @@ export default function ContactBentoSection() {
       <BentoGrid>
         {/* Main contact card */}
         <motion.div
-          className="lg:col-span-8 md:col-span-4"
+          className="lg:col-span-9 md:col-span-4"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -125,36 +119,18 @@ export default function ContactBentoSection() {
               </div>
             </div>
 
-            {/* Proof links */}
-            <div className="border-t border-white/[0.08] pt-4">
-              <p className="mb-3 font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500">
-                Proof
-              </p>
-              <div className="flex flex-wrap gap-4">
-                {proofLinks.map((link) => (
-                  <SmartLink
-                    key={link.label}
-                    href={link.href}
-                    className="inline-flex items-center justify-between gap-2 rounded-lg border border-white/[0.08] bg-white/[0.02] px-3 py-2 text-xs text-indigo-300 transition-all hover:border-indigo-300/40 hover:text-indigo-200"
-                  >
-                    {link.label}
-                    <ArrowUpRight size={12} />
-                  </SmartLink>
-                ))}
-              </div>
-            </div>
           </BentoCard>
         </motion.div>
 
         {/* Recruiter packet card */}
         <motion.div
-          className="lg:col-span-4 md:col-span-2"
+          className="lg:col-span-3 md:col-span-2"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.08 }}
           viewport={{ once: true }}
         >
-          <BentoCard variant="metric" padding="md" className="flex flex-col gap-4 lg:gap-4">
+          <BentoCard variant="metric" padding="md" className="h-full flex flex-col gap-4 lg:gap-4">
             <div>
               <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-4">
                 Application Packet
