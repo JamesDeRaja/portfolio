@@ -13,7 +13,7 @@ export default function FramePacingVsFPSLabPage() {
       <Seo
         title="Frame Pacing vs FPS Lab — James De Raja"
         description="Lab article showing why stable frame pacing can outperform higher but inconsistent FPS in XR and real-time rendering workloads."
-        url="https://jamesderaja.com/lab/frame-pacing-vs-fps"
+        url="https://james.alphaden.club/lab/frame-pacing-vs-fps"
         keywords="frame pacing vs FPS, XR performance, frame stability, Unity"
         type="article"
         structuredData={{

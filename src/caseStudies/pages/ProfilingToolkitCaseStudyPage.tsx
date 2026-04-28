@@ -16,7 +16,7 @@ export default function ProfilingToolkitCaseStudyPage() {
         <Seo
           title="Profiling Toolkit Case Study — James De Raja"
           description="Case study on a Unity runtime profiling overlay that shortens bottleneck triage from symptom capture to mitigation-ready evidence."
-          url="https://jamesderaja.com/case-studies/profiling-toolkit"
+          url="https://james.alphaden.club/case-studies/profiling-toolkit"
           keywords="Unity profiler toolkit, runtime overlay, bottleneck triage, performance telemetry"
           type="article"
           structuredData={{

@@ -1,87 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://jamesderaja.com/</loc>
+    <loc>https://james.alphaden.club/</loc>
     <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://jamesderaja.com/case-studies/xr-stress-lab</loc>
+    <loc>https://james.alphaden.club/case-studies/xr-stress-lab</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jamesderaja.com/case-studies/softmaskpro</loc>
+    <loc>https://james.alphaden.club/case-studies/softmaskpro</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jamesderaja.com/case-studies/profiling-toolkit</loc>
+    <loc>https://james.alphaden.club/case-studies/profiling-toolkit</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jamesderaja.com/case-studies/sneaky-warrior-3d</loc>
+    <loc>https://james.alphaden.club/case-studies/sneaky-warrior-3d</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jamesderaja.com/case-studies/published-mobile-projects</loc>
+    <loc>https://james.alphaden.club/case-studies/published-mobile-projects</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jamesderaja.com/lab/overdraw</loc>
+    <loc>https://james.alphaden.club/lab/overdraw</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jamesderaja.com/lab/msaa</loc>
+    <loc>https://james.alphaden.club/lab/msaa</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jamesderaja.com/lab/msaa-overdraw</loc>
+    <loc>https://james.alphaden.club/lab/msaa-overdraw</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jamesderaja.com/lab/instancing</loc>
+    <loc>https://james.alphaden.club/lab/instancing</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jamesderaja.com/lab/frame-pacing</loc>
+    <loc>https://james.alphaden.club/lab/frame-pacing</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jamesderaja.com/lab/frame-pacing-vs-fps</loc>
+    <loc>https://james.alphaden.club/lab/frame-pacing-vs-fps</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jamesderaja.com/lab/xr-frame-timing</loc>
+    <loc>https://james.alphaden.club/lab/xr-frame-timing</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jamesderaja.com/lab/overdraw-stereo</loc>
+    <loc>https://james.alphaden.club/lab/overdraw-stereo</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://james.alphaden.club/visual-journey</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

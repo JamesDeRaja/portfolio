@@ -19,6 +19,7 @@ import XRFrameTimingLabPage from './lab/pages/XRFrameTimingLabPage';
 import SiteLayout from './layouts/SiteLayout';
 import HomePage from './pages/HomePage';
 import NotFoundPage from './pages/NotFoundPage';
+import VisualJourney from './pages/VisualJourney';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
         <Route path="/lab/frame-pacing-vs-fps" element={<FramePacingVsFPSLabPage />} />
         <Route path="/lab/xr-frame-timing" element={<XRFrameTimingLabPage />} />
         <Route path="/lab/overdraw-stereo" element={<OverdrawStereoLabPage />} />
+        <Route path="/visual-journey" element={<VisualJourney />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

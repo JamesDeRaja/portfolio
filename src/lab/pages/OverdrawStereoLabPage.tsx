@@ -11,7 +11,7 @@ export default function OverdrawStereoLabPage() {
       <Seo
         title="Stereo Overdraw Lab — James De Raja"
         description="Stereo overdraw lab evaluating double-eye transparency cost, fragment amplification, and GPU budget pressure in XR rendering."
-        url="https://jamesderaja.com/lab/overdraw-stereo"
+        url="https://james.alphaden.club/lab/overdraw-stereo"
         keywords="stereo overdraw, XR rendering, fragment cost, Unity performance"
         type="article"
         structuredData={{

@@ -157,7 +157,7 @@ export default function UpdateStrategiesCaseStudyPage() {
       <Seo
         title="Update Strategies at Scale — James De Raja"
         description="Profiler-driven comparison of 4 Unity update architectures (MonoBehaviour, Manager, ECS) across 10,000 entities. Frame time reduced from ~40 ms to ~9.4 ms."
-        url="https://jamesderaja.com/case-studies/update-strategies-scale"
+        url="https://james.alphaden.club/case-studies/update-strategies-scale"
         keywords="Unity ECS, MonoBehaviour update, central manager, DOTS, performance, 10000 entities, Unity profiling"
         type="article"
         structuredData={{

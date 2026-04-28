@@ -76,7 +76,7 @@ export default function UpdateStrategiesVariantAPage() {
       <Seo
         title="Variant A — Lifecycle Control | Update Strategies at Scale"
         description="Deep dive into Scene A of the Unity update architecture study: 10,000 passive enemies with bullet lifecycle churn. Establishes the render and GC baseline."
-        url="https://jamesderaja.com/case-studies/update-strategies-scale/variant-a"
+        url="https://james.alphaden.club/case-studies/update-strategies-scale/variant-a"
         keywords="Unity lifecycle, MonoBehaviour baseline, Instantiate Destroy, GC alloc, Unity profiling, 10000 entities"
         type="article"
       />

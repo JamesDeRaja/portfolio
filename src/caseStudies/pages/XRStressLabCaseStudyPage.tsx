@@ -62,7 +62,7 @@ export default function XRStressLabCaseStudyPage() {
       <Seo
         title="XR Stress Lab Case Study — James De Raja"
         description="Controlled XR stress tests isolating overdraw, MSAA bandwidth, submission overhead, and frame pacing variance with profiler-backed evidence."
-        url="https://jamesderaja.com/case-studies/xr-stress-lab"
+        url="https://james.alphaden.club/case-studies/xr-stress-lab"
         keywords="XR stress lab, overdraw, MSAA, instancing, frame pacing, Unity profiling"
         type="article"
         structuredData={{
