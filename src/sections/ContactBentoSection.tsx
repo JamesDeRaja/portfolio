@@ -34,12 +34,6 @@ const targetRoles = [
   'Technical Lead, Unity',
 ];
 
-const quickFitRows = [
-  '13+ years Unity / real-time systems',
-  'XR, rendering, ECS, multiplayer',
-  'Open to remote worldwide + relocation',
-];
-
 const proofLinks = [
   { label: 'View Case Studies', href: '#case-studies' },
   { label: 'View GitHub', href: 'https://github.com/JamesDeRaja' },
@@ -83,7 +77,7 @@ export default function ContactBentoSection() {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <BentoCard variant="featured" padding="lg" className="h-full flex flex-col gap-5">
+          <BentoCard variant="featured" padding="lg" className="flex flex-col gap-5">
             {/* Contact links */}
             <div>
               <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-4">
@@ -115,12 +109,20 @@ export default function ContactBentoSection() {
 
             {/* Target roles */}
             <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] px-4 py-4">
-              <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500">
-                Target Roles
+              <p className="text-sm text-slate-300 leading-relaxed">
+                Targeting senior Unity, rendering, XR performance, and real-time systems roles where
+                profiler evidence, frame-budget discipline, and scalable architecture matter.
               </p>
-              <p className="mt-2 text-sm text-slate-300 leading-relaxed">
-                {targetRoles.join(' · ')}
-              </p>
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {targetRoles.map((role) => (
+                  <span
+                    key={role}
+                    className="chip-glow rounded-full px-2.5 py-0.5 font-mono text-[11px]"
+                  >
+                    {role}
+                  </span>
+                ))}
+              </div>
             </div>
           </BentoCard>
         </motion.div>
@@ -133,12 +135,12 @@ export default function ContactBentoSection() {
           transition={{ duration: 0.5, delay: 0.08 }}
           viewport={{ once: true }}
         >
-          <BentoCard variant="metric" padding="md" className="h-full flex flex-col gap-4 lg:gap-5 lg:px-6 lg:py-6">
+          <BentoCard variant="metric" padding="md" className="flex flex-col gap-4 lg:gap-4 lg:px-7 lg:py-7">
             <div>
               <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-4">
                 Application Packet
               </p>
-              <div className="space-y-3">
+              <div className="space-y-4">
                 <a
                   href="/resume/James%20DeRaja%20Resume.pdf"
                   download
@@ -152,33 +154,9 @@ export default function ContactBentoSection() {
                   className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/[0.08] bg-white/[0.02] px-4 py-3 text-sm font-medium text-indigo-300 transition-all hover:border-indigo-300/40 hover:text-indigo-200"
                 >
                   <FileText size={14} />
-                  View Online
+                  View Resume Online
                 </SmartLink>
               </div>
-            </div>
-
-            {/* Quick fit summary */}
-            <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] px-4 py-3">
-              <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500">
-                Quick Fit
-              </p>
-              <div className="mt-2 space-y-1.5">
-                {quickFitRows.map((row) => (
-                  <p key={row} className="text-xs text-slate-300 leading-relaxed">
-                    {row}
-                  </p>
-                ))}
-              </div>
-            </div>
-
-            {/* Best fit */}
-            <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] px-4 py-3">
-              <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500">
-                Best Fit
-              </p>
-              <p className="mt-2 text-xs text-slate-300 leading-relaxed">
-                Rendering · XR Performance · Unity Systems · Technical Lead
-              </p>
             </div>
 
             {/* Proof links */}
@@ -186,7 +164,7 @@ export default function ContactBentoSection() {
               <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-2.5">
                 Proof Links
               </p>
-              <div className="grid grid-cols-1 gap-2 sm:grid-cols-3 md:grid-cols-1">
+              <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-3 md:grid-cols-1">
                 {proofLinks.map((link) => (
                   <SmartLink
                     key={link.label}
@@ -207,7 +185,7 @@ export default function ContactBentoSection() {
                 <p className="text-xs font-semibold text-emerald-400">Available</p>
               </div>
               <p className="text-[11px] text-slate-400">
-                Senior roles · Remote worldwide · Relocation open
+                Senior roles · Remote worldwide · Open to relocation
               </p>
             </div>
           </BentoCard>
