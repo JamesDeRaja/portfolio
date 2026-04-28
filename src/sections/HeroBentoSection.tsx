@@ -29,21 +29,18 @@ const profilerRows = [
 ];
 
 const proofBadges = [
-  '14+ years Unity',
+  '100+ Unity titles shipped',
+  '9+ years production',
+  'Staff Software Engineer @ Zoho',
   'C# / Unity 6',
-  'URP / OpenXR',
-  'XR Interaction Toolkit',
-  '1M+ installs',
   'Voodoo · Lion Studios · Supersonic',
 ];
 
-const bestFitRoles = [
-  'Senior Unity Engineer',
-  'Unity Performance Engineer',
-  'XR Performance Engineer',
-  'Rendering Engineer',
-  'Real-Time Systems Engineer',
-  'Technical Lead, Unity',
+const topProofMetrics = [
+  { value: '100+', label: 'Titles shipped' },
+  { value: '9 yrs', label: 'Production' },
+  { value: '3', label: 'Publishers (Supersonic · Lion Studios · Voodoo)' },
+  { value: 'Unity 6 / C#', label: 'Stack' },
 ];
 
 export default function HeroBentoSection() {
@@ -71,7 +68,7 @@ export default function HeroBentoSection() {
               <div className="flex items-start justify-between gap-4">
                 <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-500/[0.06] px-3 py-1 text-xs font-medium text-emerald-400">
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  Open to senior roles — Unity Rendering / XR Performance
+                  Staff-level Unity / systems engineering focus
                 </span>
               </div>
 
@@ -91,7 +88,7 @@ export default function HeroBentoSection() {
                     <span className="gradient-text">De Raja</span>
                   </h1>
                   <p className="mt-3 text-xl font-semibold text-white/90 sm:text-2xl">
-                    Senior Real-Time Performance Engineer
+                    Staff Software Engineer at Zoho · 9+ yrs · 100+ Unity titles shipped
                   </p>
                   <p className="mt-1.5 font-mono text-sm text-neon/80">
                     Unity Rendering&nbsp;&bull;&nbsp;XR Frame Budgets&nbsp;&bull;&nbsp;CPU/GPU Bottleneck Isolation
@@ -112,6 +109,15 @@ export default function HeroBentoSection() {
                   <span key={badge} className="chip-glow rounded-full px-2.5 py-1 font-mono text-xs">
                     {badge}
                   </span>
+                ))}
+              </div>
+
+              <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+                {topProofMetrics.map((item) => (
+                  <div key={item.label} className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2.5">
+                    <p className="font-mono text-sm font-bold text-white">{item.value}</p>
+                    <p className="mt-0.5 text-[10px] text-slate-400">{item.label}</p>
+                  </div>
                 ))}
               </div>
             </div>

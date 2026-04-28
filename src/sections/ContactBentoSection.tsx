@@ -63,8 +63,8 @@ export default function ContactBentoSection() {
           Let's talk performance engineering
         </h2>
         <p className="mt-2 max-w-2xl text-sm text-slate-400 leading-relaxed">
-          Open to remote roles worldwide and international relocation. Senior Unity, XR, and rendering
-          engineering positions where measurable performance evidence is a priority.
+          Looking for Senior / Staff Unity engineering roles at US-based game studios focused on
+          gameplay systems, performance, and tooling.
         </p>
       </motion.div>
 
@@ -104,7 +104,7 @@ export default function ContactBentoSection() {
             {/* Location */}
             <div className="flex items-center gap-2 text-sm text-slate-500">
               <MapPin size={14} />
-              <span>Chennai, India · Open to remote worldwide and international relocation</span>
+              <span>Chennai, India · Open to onsite (US relocation) or hybrid</span>
             </div>
 
             {/* Positioning statement */}
@@ -179,7 +179,13 @@ export default function ContactBentoSection() {
                 <p className="text-xs font-semibold text-emerald-400">Available</p>
               </div>
               <p className="text-[11px] text-slate-400">
-                Senior roles · Remote worldwide · Open to relocation
+                Senior / Staff roles · Unity/C# performance & systems
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] px-4 py-3">
+              <p className="text-[11px] text-slate-400">
+                Work authorization: H-1B (FY26) / O-1A pathway in progress.
               </p>
             </div>
           </BentoCard>

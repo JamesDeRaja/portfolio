@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, Download, Sun, Moon } from 'lucide-react';
+import { Menu, X, Download, Sun, Moon, Linkedin, Github, Mail, Gamepad2, Smartphone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import SmartLink from './SmartLink';
 import { useTheme } from '../contexts/ThemeContext';
@@ -78,10 +78,52 @@ export default function Navbar() {
         {/* Actions */}
         <div className="flex items-center gap-2">
           <SmartLink
-            href="/resume/viewer.html?file=JamesDeRaja_Resume.pdf"
+            href="https://www.linkedin.com/in/james-de-raja/"
+            className="hidden rounded-lg border border-white/10 p-2 text-slate-400 transition hover:border-neon/30 hover:text-neon lg:inline-flex"
+            aria-label="LinkedIn"
+          >
+            <Linkedin size={15} />
+          </SmartLink>
+          <SmartLink
+            href="https://github.com/JamesDeRaja"
+            className="hidden rounded-lg border border-white/10 p-2 text-slate-400 transition hover:border-neon/30 hover:text-neon lg:inline-flex"
+            aria-label="GitHub"
+          >
+            <Github size={15} />
+          </SmartLink>
+          <SmartLink
+            href="https://jamesderaja.itch.io/"
+            className="hidden rounded-lg border border-white/10 p-2 text-slate-400 transition hover:border-neon/30 hover:text-neon lg:inline-flex"
+            aria-label="itch.io"
+          >
+            <Gamepad2 size={15} />
+          </SmartLink>
+          <SmartLink
+            href="https://play.google.com/store/apps/dev?id=8149791665541446457"
+            className="hidden rounded-lg border border-white/10 p-2 text-slate-400 transition hover:border-neon/30 hover:text-neon lg:inline-flex"
+            aria-label="Google Play developer profile"
+          >
+            <Smartphone size={15} />
+          </SmartLink>
+          <SmartLink
+            href="https://apps.apple.com/us/app/sneaky-warriour-3d/id1626719884"
+            className="hidden rounded-lg border border-white/10 p-2 text-slate-400 transition hover:border-neon/30 hover:text-neon lg:inline-flex"
+            aria-label="App Store profile"
+          >
+            <Smartphone size={15} />
+          </SmartLink>
+          <SmartLink
+            href="mailto:jamesderaja@gmail.com"
+            className="hidden rounded-lg border border-white/10 p-2 text-slate-400 transition hover:border-neon/30 hover:text-neon lg:inline-flex"
+            aria-label="Email"
+          >
+            <Mail size={15} />
+          </SmartLink>
+          <SmartLink
+            href="/resume/JamesDeRaja_Resume.pdf"
             className="btn-primary hidden rounded-lg px-4 py-2 text-sm font-medium sm:inline-flex"
           >
-            View Resume
+            Resume (PDF)
           </SmartLink>
           <a
             href="/resume/JamesDeRaja_Resume.pdf"
