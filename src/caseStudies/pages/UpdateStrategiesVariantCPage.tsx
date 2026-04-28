@@ -83,7 +83,7 @@ export default function UpdateStrategiesVariantCPage() {
       <Seo
         title="Variant C — Central Manager | Update Strategies at Scale"
         description="Deep dive into Scene C: a single manager MonoBehaviour replaces 10,000 per-object Updates. Script cost drops from 8.62 ms to 4.34 ms, but Transform iteration remains the bottleneck."
-        url="https://jamesderaja.com/case-studies/update-strategies-scale/variant-c"
+        url="https://james.alphaden.club/case-studies/update-strategies-scale/variant-c"
         keywords="Unity central manager, MonoBehaviour optimization, Transform iteration, Unity performance, update pattern"
         type="article"
       />

@@ -9,7 +9,7 @@ export default function OverdrawLabPage() {
       <Seo
         title="Overdraw Lab — James De Raja"
         description="Controlled overdraw stress test quantifying fragment pressure, transparent pass escalation, and GPU bottleneck behavior in Unity XR."
-        url="https://jamesderaja.com/lab/overdraw"
+        url="https://james.alphaden.club/lab/overdraw"
         keywords="overdraw lab, GPU fragment pressure, Unity XR, transparent pass"
         type="article"
         structuredData={{

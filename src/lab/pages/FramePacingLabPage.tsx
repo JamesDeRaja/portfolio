@@ -8,7 +8,7 @@ export default function FramePacingLabPage() {
       <Seo
         title="Frame Pacing Lab — James De Raja"
         description="Frame pacing lab focused on variance, spikes, and cadence stability beyond average FPS using profiler-backed measurements."
-        url="https://jamesderaja.com/lab/frame-pacing"
+        url="https://james.alphaden.club/lab/frame-pacing"
         keywords="frame pacing, frame variance, Unity profiler, stutter analysis"
         type="article"
         structuredData={{

@@ -26,7 +26,7 @@ export function Seo({
     '@type': 'Person',
     name: 'James De Raja',
     jobTitle: 'Senior Real-Time Performance Engineer',
-    url: 'https://jamesderaja.com',
+    url: 'https://james.alphaden.club',
     email: 'jamesderaja@gmail.com',
     address: {
       '@type': 'PostalAddress',

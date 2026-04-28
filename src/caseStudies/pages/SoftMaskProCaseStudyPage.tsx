@@ -78,7 +78,7 @@ export default function SoftMaskProCaseStudyPage() {
         <Seo
           title="SoftMaskPro Optimization Case Study — James De Raja"
           description="SoftMaskPro profiling and patching case study focused on UI mask draw calls, render pass overhead, and frame-time stabilization in Unity."
-          url="https://jamesderaja.com/case-studies/softmaskpro"
+          url="https://james.alphaden.club/case-studies/softmaskpro"
           keywords="SoftMaskPro, Unity UI optimization, draw calls, frame timing, profiling"
           type="article"
           structuredData={{

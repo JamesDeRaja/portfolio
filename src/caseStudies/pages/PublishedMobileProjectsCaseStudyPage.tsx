@@ -24,7 +24,7 @@ export default function PublishedMobileProjectsCaseStudyPage() {
       <Seo
         title="Sneaky Warrior 3D Case Study — James De Raja"
         description="Mobile performance case study covering frame budget stabilization for Sneaky Warrior 3D under heavy AI, ragdoll, and projectile load."
-        url="https://jamesderaja.com/case-studies/published-mobile-projects"
+        url="https://james.alphaden.club/case-studies/published-mobile-projects"
         keywords="mobile performance, Unity optimization, frame budget, Sneaky Warrior 3D, frame pacing"
         type="article"
         structuredData={{

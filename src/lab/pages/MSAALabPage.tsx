@@ -9,7 +9,7 @@ export default function MSAALabPage() {
       <Seo
         title="MSAA Scaling Lab — James De Raja"
         description="MSAA scaling lab measuring GPU bandwidth amplification and frame-time impact across anti-aliasing levels in controlled Unity scenes."
-        url="https://jamesderaja.com/lab/msaa"
+        url="https://james.alphaden.club/lab/msaa"
         keywords="MSAA scaling, Unity performance, GPU bandwidth, anti-aliasing"
         type="article"
         structuredData={{
