@@ -126,7 +126,7 @@ export default function HeroBentoSection() {
                 <ArrowRight size={14} className="transition group-hover:translate-x-1" />
               </a>
               <SmartLink
-                href="/resume/viewer.html?file=JamesDeRaja_Resume.pdf"
+                href="/resume/viewer.html?file=James%20DeRaja%20Resume.pdf"
                 className="btn-secondary inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium"
               >
                 <FileText size={14} />
