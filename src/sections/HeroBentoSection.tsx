@@ -113,6 +113,23 @@ export default function HeroBentoSection() {
                   </span>
                 ))}
               </div>
+
+              {/* Compact proof block */}
+              <div className="rounded-xl border border-white/[0.07] bg-white/[0.02] px-3.5 py-3 space-y-1.5">
+                <p className="text-xs text-slate-300">
+                  Reduced GPU frame cost by <span className="font-semibold text-white">~7ms</span> under XR overdraw stress
+                </p>
+                <p className="text-xs text-slate-300">
+                  Stabilized mobile frame pacing from <span className="font-semibold text-white">sub-30 FPS</span> to{' '}
+                  <span className="font-semibold text-white">sustained 60 FPS</span>
+                </p>
+                <p className="font-mono text-[11px] text-slate-400">
+                  XR rendering · Mobile systems · 100+ shipped Unity titles
+                </p>
+                <p className="font-mono text-[10px] text-slate-500">
+                  Voodoo · Lion Studios · Supersonic
+                </p>
+              </div>
             </div>
 
             {/* CTAs */}
