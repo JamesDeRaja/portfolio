@@ -130,39 +130,40 @@ export default function ContactBentoSection() {
           transition={{ duration: 0.5, delay: 0.08 }}
           viewport={{ once: true }}
         >
-          <BentoCard variant="metric" padding="md" className="h-full flex flex-col gap-4 lg:gap-4">
-            <div>
-              <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-4">
-                Application Packet
+          <BentoCard variant="metric" padding="md" className="h-full flex flex-col justify-center">
+            <div className="w-full">
+              <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500">
+                Get My Resume
               </p>
-              <div className="space-y-4">
+              <div className="mt-6 space-y-4">
                 <a
                   href="/resume/James%20DeRaja%20Resume.pdf"
                   download
-                  className="btn-primary group flex h-12 w-full items-center justify-center gap-2 rounded-xl px-4 text-sm font-medium"
+                  className="btn-primary group flex h-12 w-full items-center justify-center gap-2 rounded-xl px-4 text-sm font-semibold"
                 >
                   <Download size={15} />
                   Download Resume
                 </a>
                 <SmartLink
                   href="/resume/viewer.html?file=James%20DeRaja%20Resume.pdf"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/[0.08] bg-white/[0.02] px-4 py-2.5 text-sm font-medium text-indigo-300 transition-all hover:border-indigo-300/40 hover:text-indigo-200"
+                  className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-white/[0.12] bg-white/[0.02] px-4 text-sm font-medium text-indigo-300 transition-all hover:border-indigo-300/40 hover:text-indigo-200"
                 >
                   <FileText size={14} />
                   View Resume Online
                 </SmartLink>
               </div>
-            </div>
 
-            {/* Availability status */}
-            <div className="rounded-xl border border-emerald-500/15 bg-emerald-500/[0.05] px-4 py-2">
-              <div className="mb-1 flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <p className="text-xs font-semibold text-emerald-400">Available</p>
+              {/* Availability status */}
+              <div className="mt-5 w-full rounded-xl border border-emerald-500/15 bg-emerald-500/[0.05] px-4 py-2">
+                <p className="mb-1 text-[11px] text-emerald-300/80">Available for senior roles</p>
+                <div className="mb-1 flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <p className="text-xs font-semibold text-emerald-400">Available</p>
+                </div>
+                <p className="text-[11px] text-slate-400">
+                  Senior roles · Remote worldwide · Open to relocation
+                </p>
               </div>
-              <p className="text-[11px] text-slate-400">
-                Senior roles · Remote worldwide · Open to relocation
-              </p>
             </div>
           </BentoCard>
         </motion.div>
