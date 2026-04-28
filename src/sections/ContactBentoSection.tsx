@@ -124,20 +124,20 @@ export default function ContactBentoSection() {
 
         {/* Recruiter packet card */}
         <motion.div
-          className="lg:col-span-3 md:col-span-2"
+          className="lg:col-span-3 md:col-span-2 self-center"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.08 }}
           viewport={{ once: true }}
         >
-          <BentoCard variant="metric" padding="md" className="h-full flex flex-col justify-center">
+          <BentoCard variant="metric" padding="md" className="flex flex-col justify-center">
             <div className="w-full">
               <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500">
                 Get My Resume
               </p>
               <div className="mt-6 space-y-4">
                 <a
-                  href="/resume/James%20DeRaja%20Resume.pdf"
+                  href="/resume/James%20De%20Raja%20Resume.pdf"
                   download
                   className="btn-primary group flex h-12 w-full items-center justify-center gap-2 rounded-xl px-4 text-sm font-semibold"
                 >
@@ -145,7 +145,7 @@ export default function ContactBentoSection() {
                   Download Resume
                 </a>
                 <SmartLink
-                  href="/resume/viewer.html?file=James%20DeRaja%20Resume.pdf"
+                  href="/resume/viewer.html?file=James%20De%20Raja%20Resume.pdf"
                   className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-white/[0.12] bg-white/[0.02] px-4 text-sm font-medium text-indigo-300 transition-all hover:border-indigo-300/40 hover:text-indigo-200"
                 >
                   <FileText size={14} />
