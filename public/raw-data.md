@@ -135,6 +135,32 @@ Use these as raw protocol definitions when deriving new writeups:
 
 ---
 
+
+## Additional business/impact facts (Zoho + AlphaDen + SoftMaskPro)
+
+### Zoho systems scale facts
+- `~5M` executions/day on Zoho Flow CRM integration actions/triggers.
+- `8,000+` organizations on the same integration.
+- `5 of top 10` most-used integrations were built by James.
+- `100+` integrations shipped total on platform.
+- Zoho Creator environment-variable system shipped with `1M+ / day` usage and zero incidents noted.
+- Production load-reduction incident: `70–85%` system load reduction while preserving API contract.
+
+### AlphaDen / game delivery facts
+- `100+` titles shipped (iOS/Android/itch.io).
+- `500K+` cumulative downloads (Experience section source of truth).
+- `~1M installs` appears in hero/case-study marketing context.
+- Supersonic hypercasual competition: `Round 1` winner (`$2M` prize pool context).
+- Built `50+` commissioned prototypes for publishers: Voodoo, Lion Studios, Supersonic.
+
+### SoftMaskPro raw findings
+- Scenario A: `1` masked object (baseline), frame debugger shows `1 Draw Mesh`.
+- Scenario B: `1` mask + `2` masked objects, frame debugger shows `3 Draw Mesh`.
+- Scenario C: `13` masked objects, stats overlay shows Materials `13`, RT `13`, BufferRendering `13`, frame debugger around `40 Draw Mesh`.
+- Root-cause diagnosis: continuous redraw driven by `DirtyVerticesCallback` (not only GPU-side).
+- Patch evidence: `QueuePlayerLoopUpdate` gating + dirty-trigger control reduces steady-state rebuild cost.
+- Post-patch captures are documented for both good and worst captured cases.
+
 ## Reusable Codex instruction template
 ```md
 Task: Add/update [SECTION_OR_PAGE].
