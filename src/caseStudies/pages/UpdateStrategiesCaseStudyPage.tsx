@@ -155,11 +155,10 @@ export default function UpdateStrategiesCaseStudyPage() {
   return (
     <div className="min-h-screen bg-void-950">
       <Seo
-        title="Update Strategies at Scale — James De Raja"
-        description="Profiler-driven comparison of 4 Unity update architectures (MonoBehaviour, Manager, ECS) across 10,000 entities. Frame time reduced from ~40 ms to ~9.4 ms."
-        url="https://jamesderaja.com/case-studies/update-strategies-scale"
-        keywords="Unity ECS, MonoBehaviour update, central manager, DOTS, performance, 10000 entities, Unity profiling"
-        type="article"
+        title="Update strategies at scale — Unity Update, manager and ECS benchmark | James De Raja"
+        description="A Unity performance benchmark comparing per-object Update, centralized manager execution, and ECS architecture under large-scale enemy and projectile simulation."
+        canonicalPath="https://james.alphaden.club/case-studies/update-strategies-scale"
+        ogType="article"
         structuredData={{
           '@context': 'https://schema.org',
           '@type': 'Article',

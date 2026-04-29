@@ -76,11 +76,10 @@ export default function SoftMaskProCaseStudyPage() {
 
       <main className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
         <Seo
-          title="SoftMaskPro Optimization Case Study — James De Raja"
-          description="SoftMaskPro profiling and patching case study focused on UI mask draw calls, render pass overhead, and frame-time stabilization in Unity."
-          url="https://jamesderaja.com/case-studies/softmaskpro"
-          keywords="SoftMaskPro, Unity UI optimization, draw calls, frame timing, profiling"
-          type="article"
+          title="SoftMaskPro performance study — Unity UI masking and overdraw | James De Raja"
+          description="A Unity UI performance study analyzing masking cost, stacked transparency, overdraw, Canvas rebuild behavior, and GPU/CPU bottlenecks in controlled rendering tests."
+          canonicalPath="https://james.alphaden.club/case-studies/softmaskpro"
+          ogType="article"
           structuredData={{
             '@context': 'https://schema.org',
             '@type': 'Article',

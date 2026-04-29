@@ -107,9 +107,8 @@ export default function UpdateStrategiesVariantDPage() {
       <Seo
         title="Variant D — ECS (DOTS) | Update Strategies at Scale"
         description="Deep dive into Scene D: Unity ECS replaces MonoBehaviours entirely. Frame time drops from ~40 ms to ~9.4 ms — a 4× improvement under 10,000 enemies and maximum bullet pressure."
-        url="https://jamesderaja.com/case-studies/update-strategies-scale/variant-d"
-        keywords="Unity ECS, DOTS, entity component system, Burst compiler, chunk iteration, MonoBehaviour replacement, Unity performance"
-        type="article"
+        canonicalPath="https://james.alphaden.club/case-studies/update-strategies-scale/variant-d"
+        ogType="article"
       />
 
       <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">

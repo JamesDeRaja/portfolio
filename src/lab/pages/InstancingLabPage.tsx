@@ -9,9 +9,8 @@ export default function InstancingLabPage() {
       <Seo
         title="Instancing Lab — James De Raja"
         description="Instancing lab comparing draw submission overhead and CPU render-thread savings between instanced and non-instanced scenes."
-        url="https://jamesderaja.com/lab/instancing"
-        keywords="instancing lab, draw calls, render thread, Unity optimization"
-        type="article"
+        canonicalPath="https://james.alphaden.club/lab/instancing"
+        ogType="article"
         structuredData={{
           '@context': 'https://schema.org',
           '@type': 'CreativeWork',

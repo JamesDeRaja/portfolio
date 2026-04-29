@@ -7,9 +7,8 @@ export default function MSAAOverdrawLabPage() {
       <Seo
         title="MSAA + Overdraw Lab — James De Raja"
         description="Landing route for the MSAA-overdraw interaction study covering compounded bandwidth and fragment pressure in Unity XR rendering."
-        url="https://jamesderaja.com/lab/msaa-overdraw"
-        keywords="MSAA overdraw, Unity XR, bandwidth amplification, fragment bottleneck"
-        type="article"
+        canonicalPath="https://james.alphaden.club/lab/msaa-overdraw"
+        ogType="article"
         structuredData={{
           '@context': 'https://schema.org',
           '@type': 'CreativeWork',

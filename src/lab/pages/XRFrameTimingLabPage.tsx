@@ -12,9 +12,8 @@ export default function XRFrameTimingLabPage() {
       <Seo
         title="XR Frame Timing Lab — James De Raja"
         description="Lab article on XR frame deadlines, compositor sync points, and practical profiling signals for reducing reprojection risk."
-        url="https://jamesderaja.com/lab/xr-frame-timing"
-        keywords="XR frame timing, compositor deadlines, reprojection, Unity XR"
-        type="article"
+        canonicalPath="https://james.alphaden.club/lab/xr-frame-timing"
+        ogType="article"
         structuredData={{
           '@context': 'https://schema.org',
           '@type': 'CreativeWork',
