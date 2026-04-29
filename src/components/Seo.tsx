@@ -5,28 +5,43 @@ type JsonLd = Record<string, unknown> | Array<Record<string, unknown>>;
 export type SEOProps = {
   title: string;
   description: string;
-  url: string;
-  image?: string;
-  keywords?: string;
-  type?: string;
+  canonicalPath: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  ogType?: string;
+  twitterTitle?: string;
+  twitterDescription?: string;
+  noindex?: boolean;
   structuredData?: JsonLd;
 };
 
 export function Seo({
   title,
   description,
-  url,
-  image = '/og-image.png',
-  keywords,
-  type = 'website',
+  canonicalPath,
+  ogTitle,
+  ogDescription,
+  ogImage = '/og-image.png',
+  ogType = 'website',
+  twitterTitle,
+  twitterDescription,
+  noindex = false,
   structuredData,
 }: SEOProps) {
+  const siteUrl = 'https://james.alphaden.club';
+  const canonicalUrl = new URL(canonicalPath, siteUrl).toString();
+  const resolvedOgTitle = ogTitle ?? title;
+  const resolvedOgDescription = ogDescription ?? description;
+  const resolvedTwitterTitle = twitterTitle ?? resolvedOgTitle;
+  const resolvedTwitterDescription = twitterDescription ?? resolvedOgDescription;
+  const resolvedImage = new URL(ogImage, siteUrl).toString();
   const personSchema = {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'James De Raja',
     jobTitle: 'Senior Real-Time Performance Engineer',
-    url: 'https://jamesderaja.com',
+    url: 'https://james.alphaden.club',
     email: 'jamesderaja@gmail.com',
     address: {
       '@type': 'PostalAddress',
@@ -62,20 +77,19 @@ export function Seo({
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
-      {keywords && <meta name="keywords" content={keywords} />}
-      <link rel="canonical" href={url} />
-      <meta name="robots" content="index,follow" />
+      <link rel="canonical" href={canonicalUrl} />
+      <meta name="robots" content={noindex ? 'noindex,nofollow' : 'index,follow'} />
       <meta name="author" content="James De Raja" />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:type" content={type} />
-      <meta property="og:url" content={url} />
-      <meta property="og:image" content={image} />
+      <meta property="og:title" content={resolvedOgTitle} />
+      <meta property="og:description" content={resolvedOgDescription} />
+      <meta property="og:type" content={ogType} />
+      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:image" content={resolvedImage} />
       <meta property="og:site_name" content="James De Raja Portfolio" />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:title" content={resolvedTwitterTitle} />
+      <meta name="twitter:description" content={resolvedTwitterDescription} />
+      <meta name="twitter:image" content={resolvedImage} />
       {schemas.map((schema, index) => (
         <script key={index} type="application/ld+json">{JSON.stringify(schema)}</script>
       ))}

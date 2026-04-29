@@ -60,17 +60,16 @@ export default function XRStressLabCaseStudyPage() {
       </div>
 
       <Seo
-        title="XR Stress Lab Case Study — James De Raja"
-        description="Controlled XR stress tests isolating overdraw, MSAA bandwidth, submission overhead, and frame pacing variance with profiler-backed evidence."
-        url="https://jamesderaja.com/case-studies/xr-stress-lab"
-        keywords="XR stress lab, overdraw, MSAA, instancing, frame pacing, Unity profiling"
-        type="article"
+        title="XR performance lab — Stereo rendering and overdraw analysis | James De Raja"
+        description="A Unity XR performance study measuring stereo rendering cost, overdraw amplification, GPU frame time, MSAA impact, and rendering bottlenecks under controlled stress."
+        canonicalPath="https://james.alphaden.club/case-studies/xr-stress-lab"
+        ogType="article"
         structuredData={{
           '@context': 'https://schema.org',
           '@type': 'Article',
           headline: 'XR Stress Lab Case Study',
           description:
-            'Controlled XR stress tests isolating overdraw, MSAA bandwidth, submission overhead, and frame pacing variance with profiler-backed evidence.',
+            'A Unity XR performance study measuring stereo rendering cost, overdraw amplification, GPU frame time, MSAA impact, and rendering bottlenecks under controlled stress.',
           author: { '@type': 'Person', name: 'James De Raja' },
           datePublished: '2025-01-01',
           image: '/og-image.png',

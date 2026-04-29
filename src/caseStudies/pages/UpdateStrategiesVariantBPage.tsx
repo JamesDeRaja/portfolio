@@ -74,9 +74,8 @@ export default function UpdateStrategiesVariantBPage() {
       <Seo
         title="Variant B — Per-Object Update | Update Strategies at Scale"
         description="Deep dive into Scene B: 10,000 MonoBehaviour Update calls, 8.62 ms ScriptRunBehaviourUpdate, and why per-object update does not scale in Unity."
-        url="https://jamesderaja.com/case-studies/update-strategies-scale/variant-b"
-        keywords="MonoBehaviour Update, ScriptRunBehaviourUpdate, Unity performance, 10000 entities, update dispatch overhead"
-        type="article"
+        canonicalPath="https://james.alphaden.club/case-studies/update-strategies-scale/variant-b"
+        ogType="article"
       />
 
       <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
