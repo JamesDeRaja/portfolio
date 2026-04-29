@@ -335,3 +335,28 @@ Output format:
 - `/resume/JamesDeRaja_Resume_Performance-Systems.pdf`
 - `/resume/JamesDeRaja_Resume_Unity-Rendering-Performance.pdf`
 - `/resume/JamesDeRaja_Resume_XR-Performance-Engineer.pdf`
+
+
+## Completeness addendum (critical profile details)
+
+### Contact / availability / location facts
+- Location string used on site: `Chennai, India` / `Chennai` with relocation-ready messaging.
+- Availability: open to remote roles worldwide and international relocation.
+- Social links: LinkedIn `https://www.linkedin.com/in/james-de-raja/`, GitHub `https://github.com/JamesDeRaja`.
+- Resume endpoints: `/resume/James%20De%20Raja%20Resume.pdf` and `/resume/viewer.html?file=James%20De%20Raja%20Resume.pdf`.
+
+### Skills/tooling facts to keep in raw exports
+- Rendering/XR stack includes: Unity 6, URP, OpenXR, XR Interaction Toolkit, Frame Debugger, ShaderLab/HLSL.
+- Profiling stack includes: Unity Profiler (timeline/hierarchy), RenderDoc, Xcode Instruments, Android Profiler, OVR Metrics Tool.
+- Systems/tooling includes: RESTful API design, multi-tenant architecture, observability/monitoring, async I/O and CI/CD pipelines.
+
+### SoftMaskPro checklist (explicit)
+- Include scenario progression (A: 1 draw mesh, B: 3 draw mesh, C: ~40 draw mesh).
+- Include 13-mask stats (`Materials 13`, `RT 13`, `BufferRendering 13`).
+- Include root-cause (`DirtyVerticesCallback`) and patch mechanism (`QueuePlayerLoopUpdate` gating).
+- Include after-patch good/worst captures and operating constraints section.
+
+### Zoho + AlphaDen high-signal impact details
+- Zoho: 5M+ executions/day, 8,000+ organizations, 5/10 top integrations, 100+ integrations shipped, 20+ engineers mentored.
+- AlphaDen: 100+ titles shipped, 500K+ cumulative downloads, ~1M installs context, 50+ commissioned prototypes, ~80% draw-call reduction example.
+
