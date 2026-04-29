@@ -78,6 +78,12 @@ export default function Navbar() {
         {/* Actions */}
         <div className="flex items-center gap-2">
           <SmartLink
+            href="/raw-data"
+            className="hidden rounded-lg border border-neon/20 px-3 py-2 text-xs font-medium text-neon transition hover:border-neon/40 hover:text-neon-300 sm:inline-flex"
+          >
+            Raw Data
+          </SmartLink>
+          <SmartLink
             href="/resume/viewer.html?file=James%20De%20Raja%20Resume.pdf"
             className="btn-primary hidden rounded-lg px-4 py-2 text-sm font-medium sm:inline-flex"
           >
@@ -121,6 +127,7 @@ export default function Navbar() {
             className="overflow-hidden border-t border-white/5 bg-void-950/95 backdrop-blur-xl md:hidden"
           >
             <div className="px-4 py-4 space-y-1">
+              <Link to="/raw-data" onClick={() => setMobileOpen(false)} className="block w-full rounded-lg px-3 py-3 text-left text-sm text-neon transition hover:bg-white/5 hover:text-neon-300">Raw Data</Link>
               {navItems.map((item) => (
                 <button
                   key={item.label}
