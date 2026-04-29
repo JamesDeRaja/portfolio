@@ -145,6 +145,7 @@ Use these as raw protocol definitions when deriving new writeups:
 - `100+` integrations shipped total on platform.
 - Zoho Creator environment-variable system shipped with `1M+ / day` usage and zero incidents noted.
 - Production load-reduction incident: `70–85%` system load reduction while preserving API contract.
+- Mentorship impact at Zoho: mentored `20+` engineers overall (including active mentees and direct reports).
 
 ### AlphaDen / game delivery facts
 - `100+` titles shipped (iOS/Android/itch.io).
