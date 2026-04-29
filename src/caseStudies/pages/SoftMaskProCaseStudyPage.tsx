@@ -153,7 +153,7 @@ export default function SoftMaskProCaseStudyPage() {
           {/* Scenario B */}
           <ScenarioCard badge="Scenario B" heading="1 mask + 2 masked objects">
             <p className="text-sm text-slate-400 leading-relaxed mb-6">
-              Masking cost scales with masked draw items, not just mask count. Frame Debugger shows 3 Draw Mesh total
+              Masking cost scales with masked draw items and mask count. Frame Debugger shows 3 Draw Mesh total
               (1 mask + 2 masked objects), matching expected pass multiplication.
             </p>
             <div className="space-y-4">

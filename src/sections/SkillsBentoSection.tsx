@@ -117,9 +117,7 @@ export default function SkillsBentoSection() {
         <p className="font-mono text-xs font-semibold uppercase tracking-widest text-neon/60">
           Skills
         </p>
-        <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
-          Tools used in production, not on a resume checkbox list
-        </h2>
+        <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">Production tools and systems</h2>
         <p className="mt-2 max-w-2xl text-sm text-slate-400">
           Grouped by technical domain. Each tool or technique has been applied in a shipped product or
           documented benchmark.

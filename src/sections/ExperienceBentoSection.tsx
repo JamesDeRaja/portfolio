@@ -186,7 +186,7 @@ export default function ExperienceBentoSection() {
         <p className="mt-2 max-w-2xl text-sm text-slate-400 leading-relaxed">
           Enterprise API infrastructure at Zoho — millions of executions per day, thousands of
           organizations. Game and XR performance engineering at AlphaDen — 100+ shipped titles,
-          three published performance studies, and profiler-validated results.
+          three published performance studies, and profiled results.
         </p>
       </motion.div>
 

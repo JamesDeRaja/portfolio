@@ -28,7 +28,7 @@ export default function HomePage() {
     <div className="relative min-h-screen bg-void-950 text-slate-200">
       <Seo
         title="James De Raja — Senior Real-Time Performance Engineer | Unity Rendering & XR Performance"
-        description="Senior Unity and real-time performance engineer focused on XR frame budgets, rendering optimisation, CPU/GPU bottleneck isolation, and profiler-validated case studies."
+        description="Senior Unity and real-time performance engineer focused on XR frame budgets, rendering optimisation, CPU/GPU bottleneck isolation, and profiled case studies."
         url="https://jamesderaja.com/"
         keywords="senior unity engineer, real-time performance engineer, Unity rendering, XR optimization, frame pacing, GPU bottleneck, CPU bottleneck isolation, mobile game optimization, Unity profiler, XR performance, James De Raja"
       />

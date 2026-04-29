@@ -47,7 +47,7 @@ const techCards: TechCard[] = [
   },
   {
     title: 'XR Frame Pacing',
-    body: 'Maintain compositor deadline discipline at 72 Hz and 90 Hz. Frame drops in XR cause reprojection artifacts — measure prediction window variance and frame cadence, not just average FPS.',
+    body: 'Maintain compositor deadline discipline at 72 Hz and 90 Hz. Frame drops in XR cause reprojection artifacts — measure prediction window variance, frame cadence, and average FPS.',
     keywords: ['72 Hz / 90 Hz', 'compositor deadline', 'reprojection', 'OpenXR'],
     accent: 'purple',
     icon: Timer,
