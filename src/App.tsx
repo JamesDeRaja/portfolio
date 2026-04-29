@@ -19,12 +19,14 @@ import XRFrameTimingLabPage from './lab/pages/XRFrameTimingLabPage';
 import SiteLayout from './layouts/SiteLayout';
 import HomePage from './pages/HomePage';
 import NotFoundPage from './pages/NotFoundPage';
+import RawDataPage from './pages/RawDataPage';
 
 function App() {
   return (
     <Routes>
       <Route element={<SiteLayout />}>
         <Route path="/" element={<HomePage />} />
+        <Route path="/raw-data" element={<RawDataPage />} />
         <Route path="/case-studies/xr-stress-lab" element={<XRStressLabCaseStudyPage />} />
         <Route path="/case-studies/softmaskpro" element={<SoftMaskProCaseStudyPage />} />
         <Route path="/case-studies/profiling-toolkit" element={<ProfilingToolkitCaseStudyPage />} />
