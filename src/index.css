@@ -11,9 +11,9 @@
   --void-900: 6 6 15;
   --void-800: 10 10 26;
   --void-700: 17 17 39;
-  --neon: 129 140 248;
-  --electric: 167 139 250;
-  --selection-bg: 129 140 248;
+  --neon: 167 255 0;
+  --electric: 122 199 0;
+  --selection-bg: 167 255 0;
   --selection-text: 255 255 255;
   --selection-link-text: 255 255 255;
 
@@ -29,9 +29,9 @@
   --void-900: 241 240 253;   /* #f1f0fd — slightly deeper for section contrast */
   --void-800: 255 255 255;   /* pure white card surfaces */
   --void-700: 220 219 240;   /* #dcdbe0 — subtle border/divider */
-  --neon: 99 102 241;
-  --electric: 109 40 217;
-  --selection-bg: 99 102 241;
+  --neon: 167 255 0;
+  --electric: 122 199 0;
+  --selection-bg: 167 255 0;
   --selection-text: 15 23 42;
   --selection-link-text: 15 23 42;
 
