@@ -53,8 +53,8 @@ export default function Navbar() {
       >
         {/* Logo */}
         <Link to="/" className="group flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-lg border border-neon/20 bg-neon/5">
-            <img src="/favicon.ico" alt="JD favicon logo" className="h-5 w-5 object-contain" />
+          <div className="h-8 w-8 overflow-hidden rounded-lg border border-neon/35 bg-neon/5 ring-1 ring-neon/15 ring-offset-1 ring-offset-void-950">
+            <img src="/favicon.ico" alt="JD favicon logo" className="h-full w-full object-cover" />
           </div>
           <span className="text-sm font-semibold tracking-tight text-white/90 transition group-hover:text-neon">
             James De Raja
