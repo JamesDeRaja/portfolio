@@ -77,7 +77,7 @@ export default function HeroBentoSection() {
               </div>
 
               {/* Identity + title */}
-              <div className="flex items-start gap-4 sm:gap-6">
+              <div className="flex items-center gap-4 sm:gap-6">
                 <div className="relative flex-shrink-0">
                   <div className="absolute -inset-2 rounded-2xl bg-neon/10 blur-lg" aria-hidden="true" />
                   <img
