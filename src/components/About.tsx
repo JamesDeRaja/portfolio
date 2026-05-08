@@ -1,5 +1,6 @@
 import React from 'react';
 import { Target, Users, Trophy, Zap } from 'lucide-react';
+import { unityGameDevYearsLabel } from '../utils/experience';
 
 const About = () => {
   return (
@@ -18,7 +19,7 @@ const About = () => {
             About AlphaDen — Independent Unity R&D
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Independent Unity R&D with 13+ years of game development experience, published mobile game work, and publisher-style production/testing pipelines.
+            Independent Unity R&D with {unityGameDevYearsLabel} years of game development experience, published mobile game work, and publisher-style production/testing pipelines.
           </p>
         </div>
 
@@ -51,7 +52,7 @@ const About = () => {
             <Zap className="w-12 h-12 text-black mx-auto mb-4 hover-pulse-grow" />
             <h3 className="text-xl font-bold text-gray-900 mb-2">Innovation</h3>
             <p className="text-gray-600">
-              13+ years of continuous innovation in game development
+              {unityGameDevYearsLabel} years of continuous innovation in game development
             </p>
           </div>
         </div>

@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import BentoGrid from '../components/bento/BentoGrid';
 import BentoCard from '../components/bento/BentoCard';
 import SmartLink from '../components/SmartLink';
+import { unityGameDevYearsLabel } from '../utils/experience';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 16 },
@@ -182,7 +183,7 @@ export default function ExperienceBentoSection() {
           Experience
         </p>
         <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
-          13+ years building games and systems that run under real load
+          {unityGameDevYearsLabel} years building games and systems that run under real load
         </h2>
         <p className="mt-2 max-w-2xl text-sm text-slate-400 leading-relaxed">
           Enterprise API infrastructure at Zoho — millions of executions per day, thousands of
@@ -295,7 +296,7 @@ export default function ExperienceBentoSection() {
                   <p className="mt-0.5 text-sm font-medium text-electric/80">2013–Present · Unity game development, mobile publishing pipelines, performance research</p>
                 </div>
                 <div className="flex-shrink-0 rounded-xl border border-electric/20 bg-electric/[0.07] px-4 py-2.5 text-center">
-                  <p className="font-mono text-xl font-bold text-electric">13+</p>
+                  <p className="font-mono text-xl font-bold text-electric">{unityGameDevYearsLabel}</p>
                   <p className="text-[11px] text-slate-500">years</p>
                 </div>
               </div>

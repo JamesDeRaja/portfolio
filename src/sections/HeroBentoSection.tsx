@@ -4,6 +4,7 @@ import BentoGrid from '../components/bento/BentoGrid';
 import BentoCard from '../components/bento/BentoCard';
 import SmartLink from '../components/SmartLink';
 import CountUp from '../components/CountUp';
+import { unityGameDevYearsLabel } from '../utils/experience';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 18 },
@@ -29,7 +30,7 @@ const profilerRows = [
 ];
 
 const proofBadges = [
-  '13+ years Unity',
+  `${unityGameDevYearsLabel} years Unity`,
   'C# / Unity 6',
   'URP / OpenXR',
   'XR Interaction Toolkit',

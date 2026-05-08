@@ -1,6 +1,7 @@
 import React from 'react';
 import { Download, Award, Calendar } from 'lucide-react';
 import SmartLink from './SmartLink';
+import { unityGameDevYearsLabel } from '../utils/experience';
 
 const Hero = () => {
   return (
@@ -47,7 +48,7 @@ const Hero = () => {
             
             <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10 animate-fade-in-delay-4 hover:scale-110 hover:-translate-y-3 hover:-rotate-2 transition-all duration-300 cursor-pointer">
               <Calendar className="w-8 h-8 text-gray-300 mx-auto mb-4 hover-wiggle" />
-              <h3 className="text-2xl font-bold text-white mb-2">13+</h3>
+              <h3 className="text-2xl font-bold text-white mb-2">{unityGameDevYearsLabel}</h3>
               <p className="text-gray-300">Years Experience</p>
             </div>
             
