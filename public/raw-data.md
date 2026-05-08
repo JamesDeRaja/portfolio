@@ -139,7 +139,7 @@ Use these as raw protocol definitions when deriving new writeups:
 ## Additional business/impact facts (Zoho + AlphaDen + SoftMaskPro)
 
 ### Zoho systems scale facts
-- `~5M` executions/day on Zoho Flow CRM integration actions/triggers.
+- `5M+` executions/day on Zoho Flow’s Zoho CRM integration actions/triggers; work also spans Zoho Creator, Microsoft, Google, Shopify, and other triggers/actions.
 - `8,000+` organizations on the same integration.
 - `5 of top 10` most-used integrations were built by James.
 - `100+` integrations shipped total on platform.
@@ -357,6 +357,6 @@ Output format:
 - Include after-patch good/worst captures and operating constraints section.
 
 ### Zoho + AlphaDen high-signal impact details
-- Zoho: 5M+ executions/day, 8,000+ organizations, 5/10 top integrations, 100+ integrations shipped, 20+ engineers mentored.
+- Zoho: Zoho Flow triggers/actions across Zoho CRM, Zoho Creator, Microsoft, Google, Shopify, and other integrations; Zoho CRM integration alone has 5M+ executions/day across 8,000+ organizations; 5/10 top integrations, 100+ integrations shipped, 20+ engineers mentored.
 - AlphaDen: 100+ released mobile titles, 500K+ total downloads across published mobile games, ~10 titles with active live-ops / post-launch improvement work, 50+ commissioned prototypes, ~80% draw-call reduction example.
 

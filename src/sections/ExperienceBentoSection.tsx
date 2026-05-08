@@ -14,8 +14,8 @@ const fadeUp = {
 };
 
 const zohoMetrics = [
-  { value: '5M+', label: 'daily executions', sub: 'Zoho CRM module workflows' },
-  { value: '8,000+', label: 'organizations served', sub: 'Zoho CRM module' },
+  { value: '5M+', label: 'daily executions', sub: 'Zoho Flow · Zoho CRM triggers/actions' },
+  { value: '8,000+', label: 'organizations served', sub: 'Zoho Flow · Zoho CRM integration' },
   { value: '3M+', label: 'executions / day', sub: 'Zoho Creator affected subsystem' },
 ];
 
@@ -33,8 +33,8 @@ interface Achievement {
 
 const zohoAchievements: Achievement[] = [
   {
-    title: 'Own the Zoho CRM integration for Flow',
-    detail: '5M+ daily executions across Zoho CRM module workflows, serving 8,000+ organizations. Leading a backwards-incompatible deprecation designed with a migration path that requires zero action from customers.',
+    title: 'Own Zoho Flow triggers and actions across major integrations',
+    detail: 'Developed Zoho Flow triggers and actions for Zoho CRM, Zoho Creator, Microsoft, Google, Shopify, and other integrations; the Zoho CRM integration alone handles 5M+ daily executions across 8,000+ organizations. Leading a backwards-incompatible deprecation designed with a migration path that requires zero action from customers.',
     scale: '5M+ / day · 8,000+ orgs',
   },
   {
@@ -119,7 +119,8 @@ const foundations = [
 ];
 
 const zohoContext = [
-  'Multi-tenant SaaS — OAuth 2.0, webhook delivery, async event pipelines at 5M+ calls/day',
+  'Zoho Flow execution platform — triggers/actions across Zoho CRM, Zoho Creator, Microsoft, Google, Shopify, and other integrations',
+  'Zoho CRM integration alone handles 5M+ executions/day across 8,000+ organizations',
   'Backwards-compatible deprecation strategy across 8,000+ live organizations — zero forced migrations',
   'API versioning and migration path design under live production traffic — no downtime, no API breaks',
 ];

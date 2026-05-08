@@ -94,7 +94,7 @@ export default function HeroBentoSection() {
                     Senior Performance Engineer — Unity, XR, Distributed Systems
                   </p>
                   <p className="mt-1.5 font-mono text-sm text-neon/80">
-                    500K+ total downloads across published mobile games · 100+ released mobile titles · 5M+ daily executions in Zoho CRM systems
+                    500K+ total downloads across published mobile games · 100+ released mobile titles · 5M+ daily executions in Zoho Flow’s Zoho CRM integration
                   </p>
                 </div>
               </div>
