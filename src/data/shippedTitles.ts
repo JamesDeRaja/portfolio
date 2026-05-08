@@ -11,11 +11,11 @@ export type ShippedTitle = {
 export const shippedTitles: ShippedTitle[] = [
   {
     name: 'Sneaky Warrior 3D',
-    platform: 'iOS & Android',
-    genre: '3D Action / Hyper-Casual',
+    platform: 'iOS',
+    genre: '3D Stealth Action / Hyper-Casual',
     technicalFocus:
       'Tiered skinned-mesh spawn system chunking enemies into groups of 5–50 to match scene density — eliminating draw calls and skeleton updates for off-screen units. LOD-aware spawning reduced vertex throughput and CPU animation cost during high-density combat.',
-    keyMetric: 'Pushed sustained FPS from sub-60 to 60+ on target devices within 16.6ms budget',
+    keyMetric: 'Live iOS title informing next-iteration performance R&D',
     appStore: 'https://apps.apple.com/us/app/sneaky-warriour-3d/id1626719884',
   },
   {

@@ -29,12 +29,12 @@ const profilerRows = [
 ];
 
 const proofBadges = [
-  '14+ years Unity',
+  '13+ years Unity',
   'C# / Unity 6',
   'URP / OpenXR',
   'XR Interaction Toolkit',
-  '1M+ installs',
-  'Voodoo · Lion Studios · Supersonic',
+  '500K+ total downloads',
+  '100+ released mobile titles',
 ];
 
 const bestFitRoles = [
@@ -71,7 +71,7 @@ export default function HeroBentoSection() {
               <div className="flex items-start justify-between gap-4">
                 <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-500/[0.06] px-3 py-1 text-xs font-medium text-emerald-400">
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  Open to senior roles — Unity Rendering / XR Performance
+                  Open to senior roles — Unity · XR · Distributed Systems
                 </span>
               </div>
 
@@ -91,19 +91,17 @@ export default function HeroBentoSection() {
                     <span className="gradient-text">De Raja</span>
                   </h1>
                   <p className="mt-3 text-xl font-semibold text-white/90 sm:text-2xl">
-                    Senior Real-Time Performance Engineer
+                    Senior Performance Engineer — Unity, XR, Distributed Systems
                   </p>
                   <p className="mt-1.5 font-mono text-sm text-neon/80">
-                    Unity Rendering&nbsp;&bull;&nbsp;XR Frame Budgets&nbsp;&bull;&nbsp;CPU/GPU Bottleneck Isolation
+                    500K+ total downloads across published mobile games · 100+ released mobile titles · 5M+ daily executions in Zoho CRM systems
                   </p>
                 </div>
               </div>
 
               {/* Value prop */}
               <p className="max-w-xl text-base text-slate-300 leading-relaxed">
-                I build profiler-validated real-time systems where frame stability, rendering cost, and
-                reproducible performance evidence matter. Every claim on this site is backed by a profiler
-                screenshot, a benchmark harness, or a shipped product.
+                Since 2013, I’ve shipped and optimized Unity mobile games through publisher pipelines while building production-scale distributed systems at Zoho since 2017.
               </p>
 
               {/* Proof badges */}
@@ -237,15 +235,15 @@ export default function HeroBentoSection() {
                 <div className="space-y-3">
                   <div>
                     <p className="font-mono text-3xl font-bold text-emerald-400">
-                      ~<CountUp to={1} suffix="M" duration={1.6} />
+                      <CountUp to={500} suffix="K+" duration={1.6} />
                     </p>
-                    <p className="text-xs text-slate-400 mt-0.5">game installs</p>
+                    <p className="text-xs text-slate-400 mt-0.5">total downloads across published mobile games</p>
                   </div>
                   <div>
                     <p className="font-mono text-xl font-bold text-white">
                       <CountUp to={100} suffix="+" duration={1.4} />
                     </p>
-                    <p className="text-xs text-slate-400 mt-0.5">publisher-tested prototypes</p>
+                    <p className="text-xs text-slate-400 mt-0.5">released mobile titles</p>
                   </div>
                   <div className="flex flex-wrap gap-1.5">
                     {['Voodoo', 'Lion Studios', 'Supersonic'].map((p) => (

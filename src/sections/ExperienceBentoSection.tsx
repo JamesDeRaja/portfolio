@@ -14,15 +14,15 @@ const fadeUp = {
 };
 
 const zohoMetrics = [
-  { value: '5M+', label: 'executions / day', sub: 'CRM integration' },
-  { value: '8,000+', label: 'organizations', sub: 'on one integration' },
-  { value: '5 of 10', label: 'top integrations', sub: 'built by me' },
+  { value: '5M+', label: 'daily executions', sub: 'Zoho CRM module workflows' },
+  { value: '8,000+', label: 'organizations served', sub: 'Zoho CRM module' },
+  { value: '3M+', label: 'executions / day', sub: 'Zoho Creator affected subsystem' },
 ];
 
 const alphadenMetrics = [
-  { value: '100+', label: 'titles shipped', sub: 'iOS · Android · itch.io' },
-  { value: '500K+', label: 'cumulative downloads', sub: 'across published titles' },
-  { value: 'Round 1', label: 'Supersonic winner', sub: '$2M prize pool' },
+  { value: '500K+', label: 'total downloads', sub: 'across published mobile games' },
+  { value: '100+', label: 'released mobile titles', sub: 'publisher-style pipelines' },
+  { value: '~10', label: 'live-ops titles', sub: 'post-launch improvement work' },
 ];
 
 interface Achievement {
@@ -34,8 +34,8 @@ interface Achievement {
 const zohoAchievements: Achievement[] = [
   {
     title: 'Own the Zoho CRM integration for Flow',
-    detail: 'Actions and triggers I wrote run ~5M times per day across 8,000+ organizations. Leading a backwards-incompatible deprecation designed with a migration path that requires zero action from customers.',
-    scale: '5M / day · 8,000+ orgs',
+    detail: '5M+ daily executions across Zoho CRM module workflows, serving 8,000+ organizations. Leading a backwards-incompatible deprecation designed with a migration path that requires zero action from customers.',
+    scale: '5M+ / day · 8,000+ orgs',
   },
   {
     title: 'Built 5 of the top 10 most-used integrations on Zoho Flow',
@@ -45,12 +45,12 @@ const zohoAchievements: Achievement[] = [
   {
     title: 'Zero-downtime environment variable system — Zoho Creator',
     detail: 'Full design, implementation, test, and release. Went live without a single incident. No customer-reported issues post-release.',
-    scale: '1M+ / day · zero incidents',
+    scale: 'zero incidents',
   },
   {
-    title: 'Fixed a live production server crash',
-    detail: 'A data overload was crashing servers in production. Diagnosed root cause, reduced system load by 70–85% without changing the customer-facing API contract. 2,500+ orgs stayed unaffected.',
-    scale: '70–85% load reduction',
+    title: 'Diagnosed production crash impact in Zoho Creator',
+    detail: 'Diagnosed production crash impact in Zoho Creator subsystem handling 3M+ executions/day across 2,500+ organizations; reduced system load by 70–85% without changing the customer-facing API contract.',
+    scale: '3M+ / day · 2,500+ orgs',
   },
   {
     title: 'Mentoring 6+ engineers · advising cross-team on API design',
@@ -73,12 +73,12 @@ interface PerformanceStudy {
 const performanceStudies: PerformanceStudy[] = [
   {
     title: 'XR Performance Stress Lab',
-    result: '+7.27 ms GPU isolated under overdraw stress',
+    result: 'Isolated +7.27 ms GPU cost under MSAA 4× transparent overdraw',
     href: '/case-studies/xr-stress-lab',
   },
   {
     title: 'Update Strategies at Scale (10K entities)',
-    result: '~40 ms → ~9.4 ms — MonoBehaviour to ECS',
+    result: '40 ms → 9.4 ms · 24 FPS → 106 FPS under matched workload',
     href: '/case-studies/update-strategies-scale',
   },
   {
@@ -90,14 +90,14 @@ const performanceStudies: PerformanceStudy[] = [
 
 const alphadenAchievements: Achievement[] = [
   {
-    title: '100+ titles shipped across iOS, Android, and itch.io',
-    detail: 'Production titles including Sneaky Warrior 3D, Snake Hole Puzzle, and Bolt Pop 3D. Held stable 60 FPS on low-end Android via tiered skinned-mesh spawning, deterministic bullet pooling, and runtime voxelisation pipelines.',
-    scale: '500K+ downloads',
+    title: '500K+ total downloads across published mobile games',
+    detail: '100+ released mobile titles through publisher-style production and testing pipelines, including Sneaky Warrior 3D, Snake Hole Puzzle, and Bolt Pop 3D.',
+    scale: '100+ released titles',
   },
   {
-    title: 'Supersonic Hypercasual Competition — Round 1 Winner',
-    detail: 'Selected from a global submission pool judged on CPI, D1 retention, and first-time-user experience. Built 50+ commissioned prototypes for hypercasual publishers (Voodoo, Lion Studios, Supersonic).',
-    scale: '$2M prize pool',
+    title: 'Advanced in Supersonic’s Hypercasual Competition',
+    detail: 'Advanced in Supersonic’s Hypercasual Competition, selected on CPI, D1 retention, and FTUE performance. Built 50+ commissioned prototypes for hypercasual publishers (Voodoo, Lion Studios, Supersonic).',
+    scale: 'CPI · D1 · FTUE',
   },
   {
     title: 'Real-time multiplayer netcode — 8 concurrent players',
@@ -112,10 +112,10 @@ const alphadenAchievements: Achievement[] = [
 ];
 
 const foundations = [
-  'Data structures & algorithms in C#',
-  'Game Programming Patterns — Sequencing, Behavioral, Decoupling, Optimization',
-  'ECS / DOTS — active production projects',
-  'Burst compiler & Job System for cache-friendly hot paths',
+  'Unity Profiler, Frame Debugger, and RenderDoc',
+  'URP, XR frame pacing, and OVR Metrics Tool',
+  'ECS / DOTS, Burst / Jobs, and NativeArray',
+  'Android Profiler and Xcode Instruments',
 ];
 
 const zohoContext = [
@@ -181,12 +181,12 @@ export default function ExperienceBentoSection() {
           Experience
         </p>
         <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
-          14+ years building systems that run under real load
+          13+ years building games and systems that run under real load
         </h2>
         <p className="mt-2 max-w-2xl text-sm text-slate-400 leading-relaxed">
           Enterprise API infrastructure at Zoho — millions of executions per day, thousands of
-          organizations. Game and XR performance engineering at AlphaDen — 100+ shipped titles,
-          three published performance studies, and profiler-validated results.
+          organizations. Unity game development and performance research at AlphaDen — 100+ released mobile titles,
+          500K+ total downloads across published mobile games, and profiler-validated results.
         </p>
       </motion.div>
 
@@ -208,13 +208,12 @@ export default function ExperienceBentoSection() {
                   <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500">
                     Enterprise Systems · Integration Platform
                   </p>
-                  <h3 className="mt-2 text-xl font-bold text-white">Zoho Corporation</h3>
-                  <p className="mt-0.5 text-sm font-medium text-neon/80">Senior Systems Engineer</p>
-                  <p className="mt-0.5 font-mono text-xs text-slate-500">2017 – Present · 9+ years</p>
+                  <h3 className="mt-2 text-xl font-bold text-white">Member Leadership Staff — Zoho</h3>
+                  <p className="mt-0.5 text-sm font-medium text-neon/80">Since 2017 · Distributed systems, production reliability, API execution platforms</p>
                 </div>
                 <div className="flex-shrink-0 rounded-xl border border-neon/20 bg-neon/[0.07] px-4 py-2.5 text-center">
-                  <p className="font-mono text-xl font-bold text-neon">9+</p>
-                  <p className="text-[11px] text-slate-500">years</p>
+                  <p className="font-mono text-xl font-bold text-neon">2017</p>
+                  <p className="text-[11px] text-slate-500">since</p>
                 </div>
               </div>
 
@@ -291,12 +290,11 @@ export default function ExperienceBentoSection() {
                   <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500">
                     Game Studio · XR Performance Research
                   </p>
-                  <h3 className="mt-2 text-xl font-bold text-white">AlphaDen</h3>
-                  <p className="mt-0.5 text-sm font-medium text-electric/80">Founder · Performance Engineer</p>
-                  <p className="mt-0.5 font-mono text-xs text-slate-500">2012 – Present · 14+ years</p>
+                  <h3 className="mt-2 text-xl font-bold text-white">AlphaDen — Independent Unity R&D</h3>
+                  <p className="mt-0.5 text-sm font-medium text-electric/80">2013–Present · Unity game development, mobile publishing pipelines, performance research</p>
                 </div>
                 <div className="flex-shrink-0 rounded-xl border border-electric/20 bg-electric/[0.07] px-4 py-2.5 text-center">
-                  <p className="font-mono text-xl font-bold text-electric">14+</p>
+                  <p className="font-mono text-xl font-bold text-electric">13+</p>
                   <p className="text-[11px] text-slate-500">years</p>
                 </div>
               </div>
@@ -353,7 +351,7 @@ export default function ExperienceBentoSection() {
             {/* Foundations */}
             <div className="border-t border-electric/[0.08] px-6 py-4">
               <p className="mb-3 font-mono text-[10px] font-semibold uppercase tracking-widest text-electric/60">
-                Foundations · Always Studying
+                Current Technical Focus
               </p>
               <ul className="space-y-1.5">
                 {foundations.map((f) => (
@@ -403,7 +401,7 @@ export default function ExperienceBentoSection() {
             ))}
           </div>
           <p className="mt-4 text-xs text-slate-500 italic">
-            Whether it's a 3M-execution-per-day API system or a 16.67 ms XR frame budget —
+            Whether it's an affected 3M-execution-per-day subsystem or a 16.67 ms XR frame budget —
             the approach is the same. Diagnose with evidence. Fix without breaking what works. Verify the result.
           </p>
         </BentoCard>

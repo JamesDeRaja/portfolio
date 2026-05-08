@@ -27,8 +27,8 @@ export default function HomePage() {
   return (
     <div className="relative min-h-screen bg-void-950 text-slate-200">
       <Seo
-        title="James De Raja — Real-time performance engineer | Unity, XR and rendering"
-        description="Portfolio of James De Raja, a Unity and real-time performance engineer specializing in frame pacing, XR optimization, rendering bottlenecks, and profiler-backed performance studies."
+        title="James De Raja — Senior Performance Engineer — Unity, XR, Distributed Systems"
+        description="Portfolio of James Deraja, Senior Performance Engineer focused on Unity, XR, rendering, frame pacing, ECS/DOTS, and distributed systems. Includes profiler-backed case studies, benchmark captures, and published mobile game work."
         canonicalPath="/"
       />
 

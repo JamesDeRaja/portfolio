@@ -37,7 +37,7 @@ const supportCards: SupportCard[] = [
   {
     title: 'Overdraw & Transparency Cost',
     summary:
-      'Measured the real GPU cost of transparent draw calls in XR stereo — 201 draws, ZWrite Off, stereo 90 Hz. Documented a +7.27 ms GPU delta against a clean baseline.',
+      'Isolated a +7.27 ms GPU cost increase in stereo rendering caused by transparent overdraw under MSAA 4×, with CPU remaining stable while GPU/render-thread pressure increased.',
     tags: ['ZWrite Off', 'alpha blending', 'stereo cost', 'GPU-bound'],
     href: '/lab/overdraw-stereo',
     metric: '+7.27 ms GPU',
@@ -55,10 +55,10 @@ const supportCards: SupportCard[] = [
   {
     title: 'Shipped Mobile Games',
     summary:
-      'Production titles published on iOS and Google Play. Went through publisher feedback loops with Voodoo, Lion Studios, and Supersonic — iterating on CPI and Day-1 retention.',
+      'Published mobile game work across iOS and Google Play, with 500K+ total downloads across published mobile games and publisher feedback loops focused on CPI and D1 retention.',
     tags: ['iOS / Android', 'publisher PPP', 'CPI', 'D1 retention', '60 FPS shipped'],
     href: '/case-studies/published-mobile-projects',
-    metric: '~1M installs',
+    metric: '500K+ downloads',
     metricColor: 'green',
   },
 ];
@@ -256,7 +256,7 @@ export default function CaseStudiesBentoSection() {
                   +7.27 ms GPU — overdraw stress at stereo 90 Hz
                 </p>
                 <p className="mt-1 text-xs text-slate-500">
-                  201 transparent draws, ZWrite Off. Measured delta against a clean baseline.
+                  201 transparent draws / layers, ZWrite Off, MSAA 4×. Measured delta against a clean baseline.
                 </p>
               </div>
 
@@ -323,17 +323,15 @@ export default function CaseStudiesBentoSection() {
 
             <div className="flex flex-col flex-1 gap-4 p-6">
               <p className="text-sm text-slate-300 leading-relaxed">
-                Four Unity update architectures stress-tested at 10,000 simultaneous entities —
-                same scene, same workload, only the update model changes. Shows exactly why
-                MonoBehaviour Update doesn't scale and what ECS actually delivers in numbers.
+                Compared four architecture variants under the same 10K-entity workload to isolate how update ownership, object lifecycle, and ECS/DOTS migration affect frame time.
               </p>
 
               <div className="rounded-xl border border-electric/20 bg-electric/[0.05] px-4 py-3">
                 <p className="font-mono text-xs font-semibold text-electric">
-                  ~40 ms → ~9.4 ms — per-object Update to ECS
+                  40 ms → 9.4 ms frame time
                 </p>
                 <p className="mt-1 text-xs text-slate-500">
-                  Same 10,000 entities. ScriptRunBehaviourUpdate went from ~8.6 ms to ~0.01 ms.
+                  Best result: 40 ms → 9.4 ms frame time, equivalent to 24 FPS → 106 FPS under the matched test workload.
                 </p>
               </div>
 

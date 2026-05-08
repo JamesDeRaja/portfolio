@@ -15,11 +15,10 @@ const About = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            About AlphaDen
+            About AlphaDen — Independent Unity R&D
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We are a professional game development studio with over 13 years of experience in creating 
-            engaging mobile games. Specializing in hyper-casual and hybrid games for the past 10 years.
+            Independent Unity R&D with 13+ years of game development experience, published mobile game work, and publisher-style production/testing pipelines.
           </p>
         </div>
 
@@ -44,7 +43,7 @@ const About = () => {
             <Trophy className="w-12 h-12 text-gray-800 mx-auto mb-4 hover-rotate" />
             <h3 className="text-xl font-bold text-gray-900 mb-2">Proven Success</h3>
             <p className="text-gray-600">
-              Over 1 million downloads across our game portfolio
+              500K+ total downloads across published mobile games
             </p>
           </div>
 

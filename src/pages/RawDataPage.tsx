@@ -15,13 +15,13 @@ export default function RawDataPage() {
   return (
     <div className="min-h-screen bg-void-950">
       <Seo
-        title="Raw Study Data | James De Raja"
+        title="Profiler Captures & Benchmark Data | James De Raja"
         description="Machine-readable raw route/data/media inventory for the james.alphaden.club portfolio."
         canonicalPath="https://james.alphaden.club/raw-data"
       />
       <main className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="mb-4 flex items-center justify-between">
-          <h1 className="text-xl font-semibold text-white">Raw Data</h1>
+          <h1 className="text-xl font-semibold text-white">Profiler Captures & Benchmark Data</h1>
           <Link to="/" className="text-sm text-neon hover:text-neon-300">Back to Home</Link>
         </div>
         <p className="mb-4 text-sm text-slate-400">

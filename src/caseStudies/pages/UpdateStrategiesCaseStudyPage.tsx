@@ -177,19 +177,17 @@ export default function UpdateStrategiesCaseStudyPage() {
           category="Case Study"
           title="Update Strategies at Scale"
           subtitle="10,000 Entities — MonoBehaviour vs Manager vs ECS"
-          description="Profiler-driven comparison of four Unity update architectures under identical load. Same scene, same entity count, same bullet system — only the update model changes."
+          description="Compared four architecture variants under the same 10K-entity workload to isolate how update ownership, object lifecycle, and ECS/DOTS migration affect frame time."
           chips={['Unity', 'C#', 'ECS / DOTS', 'Burst', 'CPU Profiling']}
-          metric="~40 ms → ~9.4 ms"
-          metricLabel="frame time: per-object Update → ECS"
+          metric="40 ms → 9.4 ms"
+          metricLabel="24 FPS → 106 FPS under matched workload"
         />
 
         {/* Test Setup */}
         <section className="mt-8 space-y-4">
           <h2 className="text-xl font-semibold text-white">Test Setup</h2>
           <p className="text-slate-300 leading-relaxed">
-            Each variant runs the exact same scene: 10,000 enemy entities, the same bullet system firing at the same rate, identical
-            prefabs, transforms, rendering, and batching configuration. The <em className="text-white not-italic font-medium">only</em> variable
-            is how entities receive their per-frame update.
+            Compared four architecture variants under the same 10K-entity workload to isolate how update ownership, object lifecycle, and ECS/DOTS migration affect frame time. Best result: 40 ms → 9.4 ms frame time, equivalent to 24 FPS → 106 FPS under the matched test workload. Each variant runs the exact same scene: 10,000 enemy entities, the same bullet system firing at the same rate, identical prefabs, transforms, rendering, and batching configuration. The <em className="text-white not-italic font-medium">only</em> variable is how entities receive their per-frame update.
           </p>
           <div className="grid gap-3 sm:grid-cols-2">
             {[

@@ -27,7 +27,7 @@ const toolCategories = [
   },
   {
     label: 'Design & Dev',
-    tools: ['Photoshop', 'Figma', 'Git', 'REST APIs', 'CI/CD'],
+    tools: ['Git', 'REST APIs', 'CI/CD', 'Android Profiler', 'Xcode Instruments'],
   },
 ];
 

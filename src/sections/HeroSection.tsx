@@ -97,7 +97,7 @@ export default function HeroSection() {
             variants={itemVariants}
             className="mt-8 max-w-2xl text-lg text-slate-200 leading-relaxed sm:text-xl"
           >
-            Delivered 100+ rapid prototypes and production titles for global publishers across 13+ years in Unity.
+            Delivered 100+ released mobile titles through publisher-style production and testing pipelines across 13+ years in Unity.
             I find the bottleneck, prove it with a profiler, fix it, and{' '}
             <span className="text-neon font-semibold">ship it at 60fps</span>.
           </motion.p>

@@ -22,16 +22,16 @@ export default function PublishedMobileProjectsCaseStudyPage() {
       </div>
 
       <Seo
-        title="Sneaky Warrior 3D Case Study — James De Raja"
-        description="Mobile performance case study covering frame budget stabilization for Sneaky Warrior 3D under heavy AI, ragdoll, and projectile load."
+        title="Sneaky Warrior / Next-Gen Stealth Action R&D — James De Raja"
+        description="Sneaky Warrior 3D is live on iOS, and the next iteration is a practical testbed for XR rendering, ECS-scale simulation, frame pacing, and large-scene performance research."
         canonicalPath="https://james.alphaden.club/case-studies/published-mobile-projects"
         ogType="article"
         structuredData={{
           '@context': 'https://schema.org',
           '@type': 'Article',
-          headline: 'Sneaky Warrior 3D Frame Budget Stabilization',
+          headline: 'Sneaky Warrior / Next-Gen Stealth Action R&D',
           description:
-            'Mobile performance case study covering frame budget stabilization for Sneaky Warrior 3D under heavy AI, ragdoll, and projectile load.',
+            'Sneaky Warrior 3D is live on iOS, and the next iteration is a practical testbed for XR rendering, ECS-scale simulation, frame pacing, and large-scene performance research.',
           author: { '@type': 'Person', name: 'James De Raja' },
           datePublished: '2025-01-01',
           image: '/og-image.png',
@@ -43,12 +43,12 @@ export default function PublishedMobileProjectsCaseStudyPage() {
           backHref="/"
           backLabel="Back to Portfolio"
           category="Case Study"
-          title="Sneaky Warrior 3D — Frame Budget Stabilization"
-          subtitle="Frame Budget Stability Across Device Tiers"
-          description="Production mobile performance work focused on stable frame pacing under heavy runtime load: 100+ animated enemies, ragdolls, active navigation, and high projectile throughput. Target: consistent 16 ms pacing across device tiers including tile-based GPUs."
-          chips={['iOS / Android', '60 FPS shipped', 'Mobile GPU', 'GC Discipline', 'LOD Optimisation']}
-          metric="45 → 60+ FPS"
-          metricLabel="frame recovery under peak combat load"
+          title="Sneaky Warrior / Next-Gen Stealth Action R&D"
+          subtitle="Live iOS game plus next-iteration R&D"
+          description="Sneaky Warrior 3D is live on iOS, and the next iteration is being used as a practical testbed for XR rendering, ECS-scale simulation, frame pacing, and large-scene performance research."
+          chips={['iOS live', 'Next-iteration R&D', 'XR rendering', 'ECS-scale simulation', 'Frame pacing']}
+          metric="Live iOS + R&D"
+          metricLabel="performance-focused stealth action project"
         />
 
         <div className="mt-8 space-y-4">
@@ -56,15 +56,15 @@ export default function PublishedMobileProjectsCaseStudyPage() {
           {/* Problem / Context */}
           <motion.div {...card}>
             <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-neon/60 mb-1">Problem / Context</p>
-            <h2 className="text-lg font-bold text-white mb-4">Peak-Load Combat Risks</h2>
+            <h2 className="text-lg font-bold text-white mb-4">Live Game + Next-Iteration R&D Scope</h2>
 
-            <h3 className="text-sm font-semibold text-white/90 mb-2">At peak moments, combat scenes could include:</h3>
+            <h3 className="text-sm font-semibold text-white/90 mb-2">Building the next iteration of Sneaky Warrior as a performance-focused stealth action R&D project. Research areas include:</h3>
             <ul className="space-y-2">
               {[
-                '100+ complex enemy skinned mesh renderers active concurrently',
-                'Full city environment with active NavMesh agents',
-                'Ragdoll activation on death events',
-                'Thousands of pooled projectiles during bursts',
+                'XR rendering experiments feeding the next iteration, not claimed as live iOS features',
+                'ECS-scale simulation tests under matched benchmark workloads',
+                'Frame pacing validation across representative device tiers',
+                'Large-scene performance research informed by shipped mobile constraints',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2.5">
                   <span className="mt-[5px] h-1 w-1 flex-shrink-0 rounded-full bg-neon/40" />
@@ -73,12 +73,12 @@ export default function PublishedMobileProjectsCaseStudyPage() {
               ))}
             </ul>
 
-            <h3 className="text-sm font-semibold text-white/90 mb-2 mt-5">Primary risks:</h3>
+            <h3 className="text-sm font-semibold text-white/90 mb-2 mt-5">Current framing:</h3>
             <ul className="space-y-2">
               {[
-                'CPU overload from skinning/animation updates and render submission',
-                'GPU fill/tile pressure from poor occlusion behavior and large bounds',
-                'Frame-time variance (stutter) during burst moments (ragdolls + projectiles)',
+                'Sneaky Warrior 3D is the live published iOS proof point.',
+                'XR/ECS/large-scene studies are R&D feeding into the next iteration.',
+                'Claims are separated from the live title unless backed by direct captures.',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2.5">
                   <span className="mt-[5px] h-1 w-1 flex-shrink-0 rounded-full bg-neon/40" />
@@ -89,8 +89,7 @@ export default function PublishedMobileProjectsCaseStudyPage() {
 
             <h3 className="text-sm font-semibold text-white/90 mb-2 mt-5">Goal:</h3>
             <p className="text-sm text-slate-400 leading-relaxed">
-              Keep frame time within budget by reducing per-frame work, preserving culling effectiveness, and eliminating
-              off-screen animation cost.
+              Use shipped mobile constraints and profiler-backed research to validate the next iteration without over-claiming that all R&D systems already exist in the live game.
             </p>
           </motion.div>
 
