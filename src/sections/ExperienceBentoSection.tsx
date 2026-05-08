@@ -96,9 +96,9 @@ const alphadenAchievements: Achievement[] = [
     scale: '100+ released titles',
   },
   {
-    title: 'Advanced in Supersonic’s Hypercasual Competition',
-    detail: 'Advanced in Supersonic’s Hypercasual Competition, selected on CPI, D1 retention, and FTUE performance. Built 50+ commissioned prototypes for hypercasual publishers (Voodoo, Lion Studios, Supersonic).',
-    scale: 'CPI · D1 · FTUE',
+    title: 'Lowest CPI in Supersonic’s Round 1 cohort',
+    detail: 'Lowest CPI across Supersonic’s global hypercasual competition cohort, ranking #1 in Round 1 under publisher-side CPI testing. Built 50+ commissioned prototypes for hypercasual publishers (Voodoo, Lion Studios, Supersonic).',
+    scale: '#1 Round 1 CPI',
   },
   {
     title: 'Real-time multiplayer netcode — 8 concurrent players',

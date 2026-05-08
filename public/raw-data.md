@@ -151,7 +151,7 @@ Use these as raw protocol definitions when deriving new writeups:
 - `100+` released mobile titles through publisher-style production and testing pipelines.
 - `500K+` total downloads across published mobile games.
 - Legacy install-estimate copy was removed; use `500K+ total downloads across published mobile games`.
-- Advanced in Supersonic’s Hypercasual Competition, selected on CPI, D1 retention, and FTUE performance.
+- Lowest CPI across Supersonic’s global hypercasual competition cohort, ranking #1 in Round 1 under publisher-side CPI testing.
 - Built `50+` commissioned prototypes for publishers: Voodoo, Lion Studios, Supersonic.
 
 ### SoftMaskPro raw findings
