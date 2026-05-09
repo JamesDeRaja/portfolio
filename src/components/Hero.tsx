@@ -1,6 +1,7 @@
 import React from 'react';
 import { Download, Award, Calendar } from 'lucide-react';
 import SmartLink from './SmartLink';
+import { unityGameDevYearsLabel } from '../utils/experience';
 
 const Hero = () => {
   return (
@@ -23,12 +24,12 @@ const Hero = () => {
         <div className="text-center max-w-4xl mx-auto pt-20 md:pt-0">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in">
             <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-              AlphaDen
+              AlphaDen — Independent Unity R&D
             </span>
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-300 mb-8 animate-fade-in-delay">
-            Building addictive, satisfying games with Unity + AI.
+            Independent Unity R&D for published mobile games, performance research, and publisher-style production pipelines.
           </p>
           
           <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto animate-fade-in-delay-2">
@@ -41,20 +42,20 @@ const Hero = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10 animate-fade-in-delay-3 hover:scale-110 hover:-translate-y-3 hover:rotate-2 transition-all duration-300 cursor-pointer">
               <Download className="w-8 h-8 text-white mx-auto mb-4 hover-rotate" />
-              <h3 className="text-2xl font-bold text-white mb-2">1M+</h3>
-              <p className="text-gray-300">Total Downloads</p>
+              <h3 className="text-2xl font-bold text-white mb-2">500K+</h3>
+              <p className="text-gray-300">Total Downloads Across Published Mobile Games</p>
             </div>
             
             <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10 animate-fade-in-delay-4 hover:scale-110 hover:-translate-y-3 hover:-rotate-2 transition-all duration-300 cursor-pointer">
               <Calendar className="w-8 h-8 text-gray-300 mx-auto mb-4 hover-wiggle" />
-              <h3 className="text-2xl font-bold text-white mb-2">13+</h3>
+              <h3 className="text-2xl font-bold text-white mb-2">{unityGameDevYearsLabel}</h3>
               <p className="text-gray-300">Years Experience</p>
             </div>
             
             <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10 animate-fade-in-delay-5 hover:scale-110 hover:-translate-y-3 hover:rotate-3 transition-all duration-300 cursor-pointer">
               <Award className="w-8 h-8 text-gray-400 mx-auto mb-4 hover-spin-scale" />
-              <h3 className="text-2xl font-bold text-white mb-2">1000+</h3>
-              <p className="text-gray-300">Published Hyper/Hybrid Games</p>
+              <h3 className="text-2xl font-bold text-white mb-2">100+</h3>
+              <p className="text-gray-300">Released Mobile Titles</p>
             </div>
           </div>
 

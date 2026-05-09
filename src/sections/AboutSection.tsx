@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { unityGameDevYearsLabel } from '../utils/experience';
 import SectionHeading from '../components/SectionHeading';
 import AnimatedSection from '../components/AnimatedSection';
 
@@ -27,7 +28,7 @@ const toolCategories = [
   },
   {
     label: 'Design & Dev',
-    tools: ['Photoshop', 'Figma', 'Git', 'REST APIs', 'CI/CD'],
+    tools: ['Git', 'REST APIs', 'CI/CD', 'Android Profiler', 'Xcode Instruments'],
   },
 ];
 
@@ -71,7 +72,7 @@ export default function AboutSection() {
           {/* Bio */}
           <div className="space-y-4 text-sm text-slate-300 leading-relaxed">
             <p>
-              I&apos;m a real-time performance engineer with <span className="font-medium text-neon">13+ years</span> optimizing Unity rendering pipelines, frame pacing, and CPU/GPU bottleneck behaviour under strict 11ms / 16ms frame budgets. I find the problem, prove it with profiler evidence, fix it, and verify the fix holds.
+              I&apos;m a real-time performance engineer with <span className="font-medium text-neon">{unityGameDevYearsLabel} years</span> optimizing Unity rendering pipelines, frame pacing, and CPU/GPU bottleneck behaviour under strict 11ms / 16ms frame budgets. I find the problem, prove it with profiler evidence, fix it, and verify the fix holds.
             </p>
             <p>
               My current focus is the <span className="font-medium text-white">XR Performance Stress Lab</span> — a deterministic Unity 6 URP + OpenXR benchmark harness targeting Meta Quest / PCVR rendering constraints at <span className="font-medium text-neon">72Hz and 90Hz</span>. Before that, I shipped multiple mobile titles on iOS and Android where frame budget discipline was the difference between a 4-star and 2-star review.

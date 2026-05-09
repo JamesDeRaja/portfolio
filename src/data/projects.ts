@@ -53,16 +53,16 @@ export const workProjects: WorkProject[] = [
   },
   {
     id: 'mobile-projects',
-    title: 'Selected Published Projects',
+    title: 'Sneaky Warrior / Next-Gen Stealth Action R&D',
     summary:
-      'Production mobile performance work focused on stable frame pacing under extreme agent density (100+ skinned meshes, nav, ragdolls, projectiles).',
+      'Sneaky Warrior 3D is live on iOS, and the next iteration is a practical testbed for XR rendering, ECS-scale simulation, frame pacing, and large-scene performance research.',
     highlights: [
-      'Optimized AI agent tick budgets to prevent frame spikes during 100+ concurrent NavMesh agents.',
-      'Tuned LOD transitions and texture streaming for consistent visual quality on low-end mobile GPUs.'
+      'Building the next iteration of Sneaky Warrior as a performance-focused stealth action R&D project.',
+      'Keeping live-title proof separate from XR/ECS research systems until backed by direct captures.'
     ],
     impact: [
-      'Shipped Sneaky Warrior 3D on iOS with stable 30fps under peak combat load.',
-      'Reduced memory footprint allowing reliable play on 2GB RAM devices.'
+      'Published Sneaky Warrior 3D on iOS.',
+      'Using shipped mobile constraints to guide profiler-backed next-iteration R&D.'
     ],
     caseStudyUrl: '/case-studies/sneaky-warrior-3d',
     repoUrl: 'https://apps.apple.com/us/app/sneaky-warriour-3d/id1626719884'

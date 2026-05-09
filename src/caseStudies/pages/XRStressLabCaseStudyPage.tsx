@@ -248,12 +248,7 @@ export default function XRStressLabCaseStudyPage() {
             </ul>
 
             <p className="mt-4 text-sm text-slate-400 leading-relaxed">
-              Key measured deltas are tracked per stress path and classified by bottleneck signature: Overdraw Stress —
-              RenderLoop (GPU) 6.37 ms to 13.64 ms (Δ +7.27 ms), CPU stable around 0.5 ms, indicating GPU-bound fragment
-              cost. MSAA Scaling — measured as a GPU/bandwidth amplification stress path with results tracked per MSAA
-              step. Instancing vs Non-Instancing — measured as submission pressure across CPU and render thread
-              contribution with draw call deltas. Frame Pacing — measured as variance and spike behavior under controlled
-              workload changes.
+              Key measured deltas are tracked per stress path and classified by bottleneck signature: Overdraw Stress — isolated a +7.27 ms GPU cost increase in stereo rendering caused by transparent overdraw under MSAA 4×, with CPU remaining stable while GPU/render-thread pressure increased. MSAA Scaling — measured as a GPU/bandwidth amplification stress path with results tracked per MSAA step. Instancing vs Non-Instancing — measured as submission pressure across CPU and render thread contribution with draw call deltas. Frame Pacing — measured as variance and spike behavior under controlled workload changes.
             </p>
           </motion.div>
 

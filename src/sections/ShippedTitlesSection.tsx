@@ -24,13 +24,13 @@ export default function ShippedTitlesSection() {
                 <p className="font-mono text-xs font-semibold uppercase tracking-wide text-neon/60">Industry Execution</p>
                 <h3 className="mt-2 text-xl font-bold text-white">Rapid Prototyping at Scale</h3>
                 <p className="mt-2 text-sm text-slate-300 leading-relaxed max-w-2xl">
-                  Delivered 100+ rapid prototypes for major hyper-casual publishers through paid prototype programs (PPP),
+                  Delivered 100+ released mobile titles through publisher-style production and testing pipelines,
                   optimizing gameplay feel, frame stability, and test-ready performance under aggressive iteration cycles.
                 </p>
               </div>
               <div className="flex-shrink-0 rounded-xl border border-neon/15 bg-neon/5 px-5 py-3 text-center">
                 <p className="font-mono text-3xl font-bold text-neon text-glow-cyan">100+</p>
-                <p className="mt-1 text-xs text-slate-400">prototypes delivered</p>
+                <p className="mt-1 text-xs text-slate-400">released mobile titles</p>
               </div>
             </div>
           </div>

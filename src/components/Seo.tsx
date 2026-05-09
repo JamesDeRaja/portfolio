@@ -40,7 +40,7 @@ export function Seo({
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'James De Raja',
-    jobTitle: 'Senior Real-Time Performance Engineer',
+    jobTitle: 'Senior Performance Engineer — Unity, XR, Distributed Systems',
     url: 'https://james.alphaden.club',
     email: 'jamesderaja@gmail.com',
     address: {

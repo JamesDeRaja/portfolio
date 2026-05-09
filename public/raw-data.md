@@ -50,7 +50,7 @@
 
 ### Performance findings (narrative facts)
 - Overdraw extreme case note: **200 layers** measured around CPU **18.23 ms** / GPU **17.79 ms**.
-- Instancing finding note: non-instanced ~**66 FPS** (~15.04 ms frame) vs instanced ~**136 FPS** (~7.34 ms frame).
+- Instancing finding note: moved 10K identical meshes to GPU instancing, improving throughput from **66 FPS** to **136 FPS** and shifting the bottleneck away from CPU-side render submission.
 - MSAA edge-density sequence note: GPU **3.50 → 3.73 → 4.36 ms** at 0x / 2x / 4x.
 
 
@@ -139,19 +139,19 @@ Use these as raw protocol definitions when deriving new writeups:
 ## Additional business/impact facts (Zoho + AlphaDen + SoftMaskPro)
 
 ### Zoho systems scale facts
-- `~5M` executions/day on Zoho Flow CRM integration actions/triggers.
+- `5M+` executions/day on Zoho Flow’s Zoho CRM integration actions/triggers; work also spans Zoho Creator, Microsoft, Google, Shopify, and other triggers/actions.
 - `8,000+` organizations on the same integration.
 - `5 of top 10` most-used integrations were built by James.
 - `100+` integrations shipped total on platform.
-- Zoho Creator environment-variable system shipped with `1M+ / day` usage and zero incidents noted.
+- Zoho Creator environment-variable system shipped with zero incidents noted.
 - Production load-reduction incident: `70–85%` system load reduction while preserving API contract.
 - Mentorship impact at Zoho: mentored `20+` engineers overall (including active mentees and direct reports).
 
 ### AlphaDen / game delivery facts
-- `100+` titles shipped (iOS/Android/itch.io).
-- `500K+` cumulative downloads (Experience section source of truth).
-- `~1M installs` appears in hero/case-study marketing context.
-- Supersonic hypercasual competition: `Round 1` winner (`$2M` prize pool context).
+- `100+` released mobile titles through publisher-style production and testing pipelines.
+- `500K+` total downloads across published mobile games.
+- Legacy install-estimate copy was removed; use `500K+ total downloads across published mobile games`.
+- Lowest CPI across Supersonic’s global hypercasual competition cohort, ranking #1 in Round 1 under publisher-side CPI testing.
 - Built `50+` commissioned prototypes for publishers: Voodoo, Lion Studios, Supersonic.
 
 ### SoftMaskPro raw findings
@@ -357,6 +357,6 @@ Output format:
 - Include after-patch good/worst captures and operating constraints section.
 
 ### Zoho + AlphaDen high-signal impact details
-- Zoho: 5M+ executions/day, 8,000+ organizations, 5/10 top integrations, 100+ integrations shipped, 20+ engineers mentored.
-- AlphaDen: 100+ titles shipped, 500K+ cumulative downloads, ~1M installs context, 50+ commissioned prototypes, ~80% draw-call reduction example.
+- Zoho: Zoho Flow triggers/actions across Zoho CRM, Zoho Creator, Microsoft, Google, Shopify, and other integrations; Zoho CRM integration alone has 5M+ executions/day across 8,000+ organizations; 5/10 top integrations, 100+ integrations shipped, 20+ engineers mentored.
+- AlphaDen: 100+ released mobile titles, 500K+ total downloads across published mobile games, ~10 titles with active live-ops / post-launch improvement work, 50+ commissioned prototypes, ~80% draw-call reduction example.
 

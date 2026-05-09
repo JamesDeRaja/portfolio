@@ -69,6 +69,6 @@ export const performanceResults: ExperimentResult[] = [
     mitigation:
       'Enable GPU Instancing on the material and render many identical meshes with the same material; keep per-instance material properties off unless using MaterialPropertyBlock carefully.',
     notes:
-      'No Instancing: ~66 FPS (frame ~15.04 ms). Instancing: ~136 FPS (frame ~7.34 ms). Massive CPU time reduction proves submission bottleneck.'
+      'Moved 10K identical meshes to GPU instancing, improving throughput from 66 FPS to 136 FPS and shifting the bottleneck away from CPU-side render submission.'
   }
 ];
