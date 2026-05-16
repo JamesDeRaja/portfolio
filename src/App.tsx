@@ -19,6 +19,7 @@ import XRFrameTimingLabPage from './lab/pages/XRFrameTimingLabPage';
 import SiteLayout from './layouts/SiteLayout';
 import HomePage from './pages/HomePage';
 import NotFoundPage from './pages/NotFoundPage';
+import MiniShuffleChessPage from './pages/MiniShuffleChessPage';
 import RawDataPage from './pages/RawDataPage';
 
 function App() {
@@ -47,6 +48,8 @@ function App() {
         <Route path="/lab/overdraw-stereo" element={<OverdrawStereoLabPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
+      <Route path="/mini-shuffle-chess" element={<MiniShuffleChessPage />} />
+      <Route path="/games/mini-shuffle-chess" element={<MiniShuffleChessPage />} />
     </Routes>
   );
 }
