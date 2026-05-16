@@ -36,9 +36,15 @@ export default function WritingSection() {
           return (
             <AnimatedSection key={post.slug} delay={i * 0.1}>
               <motion.article
-                whileHover={{ y: -4 }}
-                transition={{ duration: 0.3 }}
-                className="glass-card glass-card-hover group flex h-full flex-col rounded-2xl p-6 transition-all duration-300 cursor-pointer"
+                whileHover={i === 0 ? { y: -6 } : { y: -4 }}
+                transition={
+                  i === 0
+                    ? { type: 'spring', stiffness: 300, damping: 20 }
+                    : { duration: 0.3 }
+                }
+                className={`glass-card glass-card-hover group flex h-full flex-col p-6 transition-[border-color,box-shadow] duration-300 cursor-pointer ${
+                  i === 0 ? 'rounded-2xl' : 'rounded-xl'
+                }`}
                 onClick={() => {
                   if (cardIsLabRoute) {
                     navigate(target);

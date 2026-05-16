@@ -132,7 +132,7 @@ export default function UpdateStrategiesVariantCPage() {
         {/* Purpose */}
         <section className="mt-10 space-y-3">
           <h2 className="text-lg font-semibold text-white">Study Purpose</h2>
-          <div className="rounded-2xl border border-amber-500/15 bg-amber-500/[0.04] p-5">
+          <div className="page-card-accent rounded-2xl border-2 border-amber-500/20 bg-amber-500/[0.05] p-5">
             <p className="text-sm text-slate-300 leading-relaxed">
               Scene C answers:{' '}
               <span className="font-medium text-white">how much of Scene B's cost was dispatch, vs. actual data work?</span>{' '}
@@ -170,7 +170,7 @@ export default function UpdateStrategiesVariantCPage() {
           <div className="space-y-2">
             <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest font-mono">Manager Responsibilities</p>
             {systems.map((s) => (
-              <div key={s.name} className="flex items-start gap-3 rounded-xl border border-white/[0.05] bg-white/[0.02] px-4 py-3">
+              <div key={s.name} className="flex items-start gap-3 page-card-sm rounded-xl px-4 py-3">
                 <span className="mt-0.5 font-mono text-xs font-bold text-amber-400/70">›</span>
                 <div>
                   <p className="text-sm font-medium text-white">{s.name}</p>
@@ -198,7 +198,7 @@ export default function UpdateStrategiesVariantCPage() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-4">
+          <div className="page-card rounded-2xl p-4">
             <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-2">Why it still has a ceiling</p>
             <p className="text-xs text-slate-400 leading-relaxed">
               Even though iteration is centralized, the manager must call{' '}
@@ -228,7 +228,7 @@ export default function UpdateStrategiesVariantCPage() {
                   href={shot.src}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block overflow-hidden rounded-xl border border-white/10 bg-black/40 transition hover:border-amber-500/30"
+                  className="block overflow-hidden page-card-sm rounded-lg bg-black/40 transition"
                 >
                   <img src={shot.src} alt={shot.alt} loading="lazy" className="w-full object-cover" />
                 </a>
@@ -241,7 +241,7 @@ export default function UpdateStrategiesVariantCPage() {
         {/* B vs C comparison */}
         <section className="mt-10 space-y-4">
           <h2 className="text-lg font-semibold text-white">Scene B → Scene C Comparison</h2>
-          <div className="overflow-x-auto rounded-2xl border border-white/10 bg-white/[0.02]">
+          <div className="overflow-x-auto page-card rounded-2xl">
             <table className="min-w-full divide-y divide-white/10 text-left text-sm">
               <thead className="bg-white/[0.03] text-xs uppercase tracking-wide text-slate-400">
                 <tr>
@@ -272,7 +272,7 @@ export default function UpdateStrategiesVariantCPage() {
             {teaches.map((item) => (
               <motion.div
                 key={item.id}
-                className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-4"
+                className="page-card rounded-2xl p-4"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -290,7 +290,7 @@ export default function UpdateStrategiesVariantCPage() {
 
         {/* Interpretation */}
         <section className="mt-8">
-          <div className="rounded-2xl border border-amber-500/15 bg-amber-500/[0.04] p-5">
+          <div className="page-card-accent rounded-2xl border-2 border-amber-500/20 bg-amber-500/[0.05] p-5">
             <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-amber-400/60 mb-3">Interpretation</p>
             <p className="text-sm text-slate-300 leading-relaxed">
               Scene C proves that the manager pattern is a real and practical optimization — it halves script cost

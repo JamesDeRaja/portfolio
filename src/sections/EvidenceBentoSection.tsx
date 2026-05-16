@@ -100,7 +100,7 @@ export default function EvidenceBentoSection() {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <BentoCard variant="dim" padding="none" className="overflow-hidden h-full">
+          <BentoCard variant="dim" rounded="xl" padding="none" className="overflow-hidden h-full">
             <div className="relative">
               <img
                 src="/lab/Overdraw_CPU_RenderThread_Comparison.png"
@@ -132,7 +132,7 @@ export default function EvidenceBentoSection() {
           transition={{ duration: 0.5, delay: 0.07 }}
           viewport={{ once: true }}
         >
-          <BentoCard variant="dim" padding="none" className="overflow-hidden h-full">
+          <BentoCard variant="dim" rounded="xl" padding="none" className="overflow-hidden h-full">
             <div className="relative">
               <img
                 src="/case-studies/overdraw-heatmap.png"
@@ -157,7 +157,7 @@ export default function EvidenceBentoSection() {
           transition={{ duration: 0.45, delay: 0.05 }}
           viewport={{ once: true }}
         >
-          <BentoCard variant="dim" padding="none" className="overflow-hidden h-full">
+          <BentoCard variant="dim" rounded="xl" padding="none" className="overflow-hidden h-full">
             <div className="relative">
               <img
                 src="/lab/Overdraw_FrameDebugger_TransparentPass.png"
@@ -185,7 +185,7 @@ export default function EvidenceBentoSection() {
           transition={{ duration: 0.45, delay: 0.1 }}
           viewport={{ once: true }}
         >
-          <BentoCard variant="dim" padding="none" className="overflow-hidden h-full">
+          <BentoCard variant="dim" rounded="xl" padding="none" className="overflow-hidden h-full">
             <div className="relative">
               <img
                 src="/lab/SoftMaskPro_ScenarioA_Profiler_WaitForPresent.png"
@@ -213,7 +213,7 @@ export default function EvidenceBentoSection() {
           transition={{ duration: 0.45, delay: 0.13 }}
           viewport={{ once: true }}
         >
-          <BentoCard variant="dim" padding="none" className="overflow-hidden h-full">
+          <BentoCard variant="dim" rounded="xl" padding="none" className="overflow-hidden h-full">
             <div className="relative">
               <img
                 src="/lab/FramePacing_OnTarget_72FPS.png"
@@ -245,7 +245,7 @@ export default function EvidenceBentoSection() {
             transition={{ duration: 0.4, delay: i * 0.06 }}
             viewport={{ once: true }}
           >
-            <BentoCard variant="dim" padding="none" className="overflow-hidden">
+            <BentoCard variant="dim" rounded="lg" padding="none" className="overflow-hidden">
               <div className="relative">
                 <img
                   src={img.src}
@@ -273,7 +273,7 @@ export default function EvidenceBentoSection() {
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
       >
-        <BentoCard variant="default" padding="none" className="overflow-hidden">
+        <BentoCard variant="default" rounded="xl" padding="none" className="overflow-hidden">
           <div className="border-b border-white/[0.06] px-6 py-4">
             <p className="font-mono text-xs font-semibold uppercase tracking-widest text-slate-500">
               Baseline vs Stress — Bottleneck Classification

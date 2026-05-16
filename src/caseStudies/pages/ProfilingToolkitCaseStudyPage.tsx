@@ -47,7 +47,7 @@ export default function ProfilingToolkitCaseStudyPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6 sm:p-8"
+              className="page-card rounded-2xl p-6 sm:p-8"
             >
               <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-neon/60 mb-1">
                 Context
@@ -65,7 +65,7 @@ export default function ProfilingToolkitCaseStudyPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.05 }}
               viewport={{ once: true }}
-              className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6 sm:p-8"
+              className="page-card rounded-2xl p-6 sm:p-8"
             >
               <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-neon/60 mb-1">
                 Implementation
@@ -105,7 +105,7 @@ export default function ProfilingToolkitCaseStudyPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6 sm:p-8"
+              className="page-card rounded-2xl p-6 sm:p-8"
             >
               <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-neon/60 mb-1">
                 Captures
@@ -122,7 +122,7 @@ export default function ProfilingToolkitCaseStudyPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.05 }}
               viewport={{ once: true }}
-              className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6 sm:p-8"
+              className="page-card rounded-2xl p-6 sm:p-8"
             >
               <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-neon/60 mb-1">
                 Workflow

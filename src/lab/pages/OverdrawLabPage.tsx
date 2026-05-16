@@ -41,7 +41,7 @@ export default function OverdrawLabPage() {
         bottleneck="GPU-bound (fragment / overdraw)"
       />
 
-      <section className="mt-6 space-y-3 glass-card rounded-xl p-4">
+      <section className="mt-6 space-y-3 glass-card glass-card-hover rounded-xl p-4 transition-[border-color,box-shadow] duration-300">
         <h3 className="text-base font-semibold text-white">RenderLoop (GPU) Summary</h3>
         <div className="grid gap-3 md:grid-cols-3">
           <div>
@@ -68,17 +68,17 @@ export default function OverdrawLabPage() {
           <img
             src="/lab/Overdraw_CPU_RenderThread_Comparison.png"
             alt="Overdraw CPU and render thread comparison"
-            className="rounded-xl border border-white/10"
+            className="rounded-lg border border-dashed border-white/[0.09]"
           />
           <img
             src="/lab/Overdraw_FrameDebugger_TransparentPass.png"
             alt="Overdraw frame debugger transparent pass"
-            className="rounded-xl border border-white/10"
+            className="rounded-lg border border-dashed border-white/[0.09]"
           />
           <img
             src="/lab/Overdraw_Experiment_Summary.png"
             alt="Overdraw experiment summary"
-            className="rounded-xl border border-white/10"
+            className="rounded-lg border border-dashed border-white/[0.09]"
           />
         </div>
       </section>

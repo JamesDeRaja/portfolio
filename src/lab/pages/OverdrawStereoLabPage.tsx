@@ -32,7 +32,7 @@ export default function OverdrawStereoLabPage() {
         chips={['Lab Article', '7 min read', 'XR', 'Unity', 'Fill-rate']}
       />
 
-      <div className="glass-card rounded-2xl p-4 text-sm text-slate-300 mt-6">
+      <div className="glass-card glass-card-hover rounded-xl p-4 text-sm text-slate-300 mt-6 transition-[border-color,box-shadow] duration-300">
         <p className="font-semibold text-white">Test Setup</p>
         <ul className="mt-2 list-disc space-y-1 pl-5">
           <li>
@@ -67,7 +67,7 @@ export default function OverdrawStereoLabPage() {
           Controlled overdraw stress raises both CPU and GPU time, with a primary GPU-bound signature once GPU cost
           crosses the {budgetMs.toFixed(2)} ms deadline for 90 Hz.
         </p>
-        <div className="overflow-x-auto glass-card rounded-2xl">
+        <div className="overflow-x-auto glass-card glass-card-hover rounded-xl transition-[border-color,box-shadow] duration-300">
           <table className="min-w-full divide-y divide-white/10 text-left text-sm">
             <thead className="bg-white/[0.03] text-xs uppercase tracking-wide text-slate-400">
               <tr>
@@ -99,7 +99,7 @@ export default function OverdrawStereoLabPage() {
 
       <section className="mt-8 space-y-3">
         <h2 className="text-xl font-semibold text-white">Cost Model</h2>
-        <div className="glass-card rounded-2xl p-4 text-slate-300">
+        <div className="glass-card glass-card-hover rounded-xl p-4 text-slate-300 transition-[border-color,box-shadow] duration-300">
           <p className="font-semibold text-white">Work ≈ Pixels × Layers × Eyes × (MSAA samples)</p>
           <p className="mt-2 text-sm">
             In this test, <span className="font-semibold text-white">Layers = 40</span>,{' '}
@@ -116,7 +116,7 @@ export default function OverdrawStereoLabPage() {
           <img
             src="/lab/Overdraw_Experiment_Summary.png"
             alt="Overdraw experiment summary comparing baseline and overdraw stress"
-            className="rounded-xl border border-white/10"
+            className="rounded-lg border border-dashed border-white/[0.09]"
           />
           <figcaption className="text-sm text-slate-400">
             Baseline vs stress summary showing steep GPU escalation from transparent layer stacking.
@@ -126,7 +126,7 @@ export default function OverdrawStereoLabPage() {
           <img
             src="/lab/Overdraw_CPU_RenderThread_Comparison.png"
             alt="Unity Profiler capture comparing CPU and render thread behavior under overdraw"
-            className="rounded-xl border border-white/10"
+            className="rounded-lg border border-dashed border-white/[0.09]"
           />
           <figcaption className="text-sm text-slate-400">
             CPU/Render Thread comparison indicating additional pressure and synchronization overhead during stress.
@@ -136,7 +136,7 @@ export default function OverdrawStereoLabPage() {
           <img
             src="/lab/Overdraw_FrameDebugger_TransparentPass.png"
             alt="Frame Debugger transparent pass showing repeated draws"
-            className="rounded-xl border border-white/10"
+            className="rounded-lg border border-dashed border-white/[0.09]"
           />
           <figcaption className="text-sm text-slate-400">
             Frame Debugger evidence of repeated transparent passes driving fragment amplification.

@@ -34,7 +34,7 @@ export default function FramePacingVsFPSLabPage() {
         chips={['Lab Article', '8 min read', 'Performance', 'XR', 'Frame Timing']}
       />
 
-      <div className="glass-card rounded-2xl p-4 text-sm text-slate-300 mt-6">
+      <div className="glass-card glass-card-hover rounded-xl p-4 text-sm text-slate-300 mt-6 transition-[border-color,box-shadow] duration-300">
         <p className="font-semibold text-white">Test setup</p>
         <ul className="mt-2 list-disc space-y-1 pl-5">
           <li>
@@ -67,7 +67,7 @@ export default function FramePacingVsFPSLabPage() {
           Frame pacing is governed by distribution, not only mean frame time. The worst frames define perceived
           instability.
         </p>
-        <div className="glass-card rounded-2xl p-4 text-slate-300">
+        <div className="glass-card glass-card-hover rounded-xl p-4 text-slate-300 transition-[border-color,box-shadow] duration-300">
           <p className="text-sm">
             <span className="font-semibold text-white">Prefer:</span> average + p95 + p99 frame time and spike
             frequency.
@@ -94,7 +94,7 @@ export default function FramePacingVsFPSLabPage() {
           <img
             src="/lab/FramePacing_UnderTarget_LowFPS.png"
             alt="Unity Profiler capture showing low FPS and frame times exceeding the 72 Hz budget"
-            className="rounded-xl border border-white/10"
+            className="rounded-lg border border-dashed border-white/[0.09]"
           />
           <figcaption className="text-sm text-slate-400">
             <span className="font-semibold text-white">Under target:</span> frequent overruns beyond {budgetMs.toFixed(2)} ms lead to unstable delivery.
@@ -105,19 +105,19 @@ export default function FramePacingVsFPSLabPage() {
           <img
             src="/lab/FramePacing_OnTarget_72FPS.png"
             alt="Unity Profiler capture showing delivery near 72 FPS with present and sync markers in the timeline"
-            className="rounded-xl border border-white/10"
+            className="rounded-lg border border-dashed border-white/[0.09]"
           />
           <figcaption className="text-sm text-slate-400">
             <span className="font-semibold text-white">On target (72 FPS):</span> cadence still depends on variance and sync behavior. Markers like WaitForPresentOnGfxThread and WaitForSignal indicate present gating.
           </figcaption>
         </figure>
-        <div className="glass-card rounded-2xl p-4 text-sm text-slate-300">
+        <div className="glass-card glass-card-hover rounded-xl p-4 text-sm text-slate-300 transition-[border-color,box-shadow] duration-300">
           Frame pacing screenshots are intentionally omitted for now to avoid binary upload constraints in this
           environment. The article content remains focused on 72 Hz deadline behavior, variance interpretation, and
           synchronization markers.
         </div>
 
-        <div className="glass-card rounded-2xl p-4 text-sm text-slate-300">
+        <div className="glass-card glass-card-hover rounded-xl p-4 text-sm text-slate-300 transition-[border-color,box-shadow] duration-300">
           <span className="font-semibold text-white">Takeaway:</span> FPS indicates whether budget is reached;
           pacing indicates whether budget is reached consistently.
         </div>

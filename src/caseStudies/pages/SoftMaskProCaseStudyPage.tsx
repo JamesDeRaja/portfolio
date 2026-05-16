@@ -17,7 +17,7 @@ function SectionCard({ label, title, children }: { label: string; title: string;
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6 sm:p-8"
+      className="page-card rounded-2xl p-6 sm:p-8"
     >
       <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-neon/60 mb-1">{label}</p>
       <h2 className="text-lg font-bold text-white mb-4">{title}</h2>
@@ -41,7 +41,7 @@ function ScenarioCard({
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6 sm:p-8"
+      className="page-card rounded-2xl p-6 sm:p-8"
     >
       <div className="mb-4 flex items-center gap-2">
         <span className="rounded-full bg-neon/10 border border-neon/20 px-2.5 py-0.5 font-mono text-xs text-neon">
@@ -56,7 +56,7 @@ function ScenarioCard({
 
 function CaptionedImage({ src, alt, caption }: { src: string; alt: string; caption: string }) {
   return (
-    <figure className="overflow-hidden rounded-xl border border-white/[0.08]">
+    <figure className="overflow-hidden rounded-lg border border-dashed border-white/[0.09]">
       <img src={src} alt={alt} loading="lazy" className="w-full" />
       <figcaption className="border-t border-white/[0.06] bg-white/[0.02] px-4 py-2 font-mono text-[11px] text-slate-500">
         {caption}

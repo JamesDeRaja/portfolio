@@ -17,7 +17,7 @@ export default function ShippedTitlesSection() {
 
       {/* Industry execution — PPP prototype experience */}
       <AnimatedSection>
-        <div className="mb-8 glass-card rounded-2xl overflow-hidden">
+        <div className="mb-8 card-priority rounded-2xl overflow-hidden">
           <div className="border-b border-white/5 p-6 sm:p-8">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
@@ -99,9 +99,9 @@ export default function ShippedTitlesSection() {
         {shippedTitles.map((title, i) => (
           <AnimatedSection key={title.name} delay={i * 0.1}>
             <motion.article
-              whileHover={{ y: -3 }}
-              transition={{ duration: 0.3 }}
-              className="glass-card glass-card-hover rounded-2xl overflow-hidden transition-all duration-300"
+              whileHover={{ y: -5 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 22 }}
+              className="glass-card glass-card-hover rounded-xl overflow-hidden transition-[border-color,box-shadow] duration-300"
             >
               <div className="flex flex-col sm:flex-row">
                 {/* Left: Identity + Platform */}

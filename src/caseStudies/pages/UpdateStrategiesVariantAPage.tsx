@@ -125,7 +125,7 @@ export default function UpdateStrategiesVariantAPage() {
         {/* Purpose */}
         <section className="mt-10 space-y-3">
           <h2 className="text-lg font-semibold text-white">Study Purpose</h2>
-          <div className="rounded-2xl border border-emerald-500/15 bg-emerald-500/[0.04] p-5">
+          <div className="page-card-accent rounded-2xl border-2 border-emerald-500/20 bg-emerald-500/[0.05] p-5">
             <p className="text-sm text-slate-300 leading-relaxed">
               Scene A answers one question:{' '}
               <span className="font-medium text-white">what does this scene cost when scripts are not the bottleneck?</span>{' '}
@@ -161,7 +161,7 @@ export default function UpdateStrategiesVariantAPage() {
           </p>
           <div className="space-y-2">
             {setupItems.map((item) => (
-              <div key={item.label} className="flex items-start gap-3 rounded-xl border border-white/[0.05] bg-white/[0.02] px-4 py-3">
+              <div key={item.label} className="flex items-start gap-3 page-card-sm rounded-xl px-4 py-3">
                 <span className="mt-0.5 font-mono text-xs font-bold text-emerald-400/70">›</span>
                 <div>
                   <p className="text-sm font-medium text-white">{item.label}</p>
@@ -173,7 +173,7 @@ export default function UpdateStrategiesVariantAPage() {
 
           {/* Enemy vs Bullet behavior */}
           <div className="grid gap-3 sm:grid-cols-2 mt-4">
-            <div className="rounded-2xl border border-emerald-500/15 bg-emerald-500/[0.04] p-4">
+            <div className="page-card-accent rounded-2xl border-2 border-emerald-500/20 bg-emerald-500/[0.05] p-4">
               <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-3">Enemy Behavior</p>
               <div className="space-y-2">
                 {['No Update() method on enemy prefab', 'Placed in deterministic grid at spawn', 'Exist as visual load only', 'No per-frame C# execution', 'No transform writes per frame'].map((line) => (
@@ -184,7 +184,7 @@ export default function UpdateStrategiesVariantAPage() {
                 ))}
               </div>
             </div>
-            <div className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-4">
+            <div className="page-card rounded-2xl p-4">
               <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-3">Bullet Behavior</p>
               <div className="space-y-2">
                 {['Instantiated from muzzle on fire', 'Moves forward each frame', 'Has lifetime timer', 'Destroyed on timeout or collision', 'GC allocation from Instantiate/Destroy'].map((line) => (
@@ -204,7 +204,7 @@ export default function UpdateStrategiesVariantAPage() {
           <p className="text-sm text-slate-400">
             Every screenshot includes an IMGUI overlay. These fields appear in all four variants with the same meaning.
           </p>
-          <div className="overflow-x-auto rounded-2xl border border-white/10 bg-white/[0.02]">
+          <div className="overflow-x-auto page-card rounded-2xl">
             <table className="min-w-full divide-y divide-white/10 text-left text-sm">
               <thead className="bg-white/[0.03] text-xs uppercase tracking-wide text-slate-400">
                 <tr>
@@ -251,7 +251,7 @@ export default function UpdateStrategiesVariantAPage() {
                   href={shot.src}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block overflow-hidden rounded-xl border border-white/10 bg-black/40 transition hover:border-emerald-500/30"
+                  className="block overflow-hidden page-card-sm rounded-lg bg-black/40 transition"
                 >
                   <img src={shot.src} alt={shot.alt} loading="lazy" className="w-full object-cover" />
                 </a>
@@ -264,7 +264,7 @@ export default function UpdateStrategiesVariantAPage() {
         {/* Key Metrics */}
         <section className="mt-10 space-y-4">
           <h2 className="text-lg font-semibold text-white">Captured Metrics</h2>
-          <div className="rounded-2xl border border-emerald-500/15 bg-emerald-500/[0.04] p-5">
+          <div className="page-card-accent rounded-2xl border-2 border-emerald-500/20 bg-emerald-500/[0.05] p-5">
             <div className="space-y-2.5">
               {metrics.map((m) => (
                 <div key={m.label} className="flex items-baseline justify-between gap-2 border-b border-white/[0.04] pb-2.5 last:border-0 last:pb-0">
@@ -285,7 +285,7 @@ export default function UpdateStrategiesVariantAPage() {
             {teaches.map((item) => (
               <motion.div
                 key={item.id}
-                className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-4"
+                className="page-card rounded-2xl p-4"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -303,7 +303,7 @@ export default function UpdateStrategiesVariantAPage() {
 
         {/* Interpretation */}
         <section className="mt-8">
-          <div className="rounded-2xl border border-emerald-500/15 bg-emerald-500/[0.04] p-5">
+          <div className="page-card-accent rounded-2xl border-2 border-emerald-500/20 bg-emerald-500/[0.05] p-5">
             <p className="font-mono text-[10px] font-semibold uppercase tracking-widest text-emerald-400/60 mb-3">Interpretation</p>
             <p className="text-sm text-slate-300 leading-relaxed">
               Scene A is not "good performance" — 22–30 ms is already a heavy scene. The point is that this cost is{' '}
